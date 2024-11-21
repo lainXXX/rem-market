@@ -1,0 +1,130 @@
+server:
+  port: 8098
+  tomcat:
+    mbeanregistry:
+      enabled: true
+    max-connections: 200
+    threads:
+      max: 150        # 设定处理客户请求的线程的最大数目，决定了服务器可以同时响应客户请求的数,默认200
+      min-spare: 50   # 初始化线程数,最小空闲线程数,默认是10
+    accept-count: 10  # 等待队列长度
+
+# 应用配置
+app:
+  config:
+    # 版本，方便通过接口版本升级
+    api-version: v1
+    # 跨域，开发阶段可以设置为 * 不限制
+    cross-origin: '*'
+
+spring:
+  datasource:
+    username: root
+    password: 123
+    url: jdbc:mysql://110.41.180.185:3306/big-market?useUnicode=true&characterEncoding=utf8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai&useSSL=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#  redis:
+#    #  地址
+#    host: 110.41.180.185
+#    #  连接端口
+#    port: 6379
+#    #  连接密码（默认为空）
+##    password: 123456
+#    pool:
+#      #  连接池最大连接数（使用负值表示没有限制）
+#      max-active: 2000
+#      #  连接池最大阻塞等待时间（使用负值表示没有限制）
+#      max-wait: -1
+#      #  连接池中的最大空闲连接
+#      max-idle: 500
+#      #  连接池中的最小空闲连接
+#      min-idle: 0
+#    #  连接超时时间（毫秒）
+#    timeout: 3000
+#    #  Redisson配置 spring.redisson.singleServerConfig
+#    redisson:
+#      config:
+#        singleServerConfig:
+#          #  连接空闲超时，单位：毫秒
+#          idleConnectionTimeout: 100000
+#          #  连接超时，单位：毫秒
+#          connectTimeout: 10000
+#          #  命令等待超时，单位：毫秒
+#          timeout: 3000
+#          #  命令失败重试次数
+#          retryAttempts: 3
+#          #  命令重试发送时间间隔，单位：毫秒
+#          retryInterval: 1500
+#          #  密码
+#          password: null
+#          #  单个连接最大订阅数量
+#          subscriptionsPerConnection: 5
+#          #  客户端名称
+#          clientName: null
+#          #  节点地址
+#          address: redis://110.41.180.185:6379
+#          #  发布和订阅连接的最小空闲连接数
+#          subscriptionConnectionMinimumIdleSize: 1
+#          #  发布和订阅连接池大小
+#          subscriptionConnectionPoolSize: 50
+#          #  最小空闲连接数
+#          connectionMinimumIdleSize: 32
+#          #  连接池大小
+#          connectionPoolSize: 64
+#          #  redis数据库编号
+#          database: 0
+#          #  DNS监测时间间隔，单位：毫秒
+#          dnsMonitoringInterval: 5000
+#        #  线程池数量
+#        threads: 0
+#        #  Netty线程池数量
+#        nettyThreads: 0
+#        #  编码
+#        codec:
+#          class: "org.redisson.codec.JsonJacksonCodec"
+#        #  传输模式
+#        transportMode: "NIO"
+#        #  配置看门狗的默认超时时间为30s，这里改为10s
+#        lockWatchdogTimeout: 10000
+
+# 线程池配置
+thread:
+  pool:
+    executor:
+      config:
+        core-pool-size: 20
+        max-pool-size: 50
+        keep-alive-time: 5000
+        block-queue-size: 5000
+        policy: CallerRunsPolicy
+# Redis
+redis:
+  sdk:
+    config:
+      host: 110.41.180.185
+      port: 6379
+      pool-size: 10
+      min-idle-size: 5
+      idle-timeout: 30000
+      connect-timeout: 5000
+      retry-attempts: 3
+      retry-interval: 1000
+      ping-interval: 60000
+      keep-alive: true
+mybatis-plus:
+  configuration:
+    # MyBatis 配置
+    map-underscore-to-camel-case: true
+#    日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    # 全局配置
+    db-config:
+      # 数据库配置
+      id-type: auto
+  mapper-locations: classpath:mapper/*.xml
+# 日志
+logging:
+  level:
+    root: info
+  config: classpath:logback-spring.xml
