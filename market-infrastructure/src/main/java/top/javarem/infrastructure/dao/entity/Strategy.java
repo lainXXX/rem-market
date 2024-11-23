@@ -27,6 +27,11 @@ public class Strategy implements Serializable {
     private String strategyDesc;
 
     /**
+     * 策略规则模型
+     */
+    private String ruleModels;
+
+    /**
      * 创建时间
      */
     private Date createTime;

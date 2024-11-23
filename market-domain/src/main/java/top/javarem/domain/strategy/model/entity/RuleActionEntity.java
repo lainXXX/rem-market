@@ -12,8 +12,8 @@ import top.javarem.domain.strategy.model.vo.RuleLogicCheckTypeVO;
 @NoArgsConstructor
 public class RuleActionEntity<T extends RuleActionEntity.RaffleEntity> {
 
-    private String code = RuleLogicCheckTypeVO.ALLOW.getCode();
-    private String info = RuleLogicCheckTypeVO.ALLOW.getInfo();
+    private String code = RuleLogicCheckTypeVO.FILTER_PASS.getCode();
+    private String info = RuleLogicCheckTypeVO.FILTER_PASS.getInfo();
     private String ruleModel;
     private T data;
 
@@ -32,18 +32,10 @@ public class RuleActionEntity<T extends RuleActionEntity.RaffleEntity> {
         private Integer awardId;
     }
 
-    @Data
-    @Builder
-    @AllArgsConstructor
-    @NoArgsConstructor
     public static class RaffleExecuteEntity {
 
     }
 
-    @Data
-    @Builder
-    @AllArgsConstructor
-    @NoArgsConstructor
     public static class RaffleAfterEntity {
 
     }

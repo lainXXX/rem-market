@@ -14,5 +14,4 @@ import top.javarem.infrastructure.dao.entity.Award;
 @Mapper
 public interface AwardMapper extends BaseMapper<Award> {
 
-
 }

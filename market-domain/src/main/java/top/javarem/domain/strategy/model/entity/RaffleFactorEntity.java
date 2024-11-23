@@ -15,10 +15,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class RaffleFactor {
+public class RaffleFactorEntity {
 
     private String userId;
 
-    private Long StrategyId;
+    private Long strategyId;
 
 }

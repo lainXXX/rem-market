@@ -8,11 +8,11 @@ import java.util.Date;
 /**
  * @Author: rem
  * @Date: 2024/11/21/16:47
- * @Description:用户黑名单
+ * @Description:用户
  */
 
 @Data
-public class Blacklist implements Serializable {
+public class User implements Serializable {
 
     /**
      * 自增id

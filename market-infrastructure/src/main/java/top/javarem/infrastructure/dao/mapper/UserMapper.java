@@ -2,7 +2,7 @@ package top.javarem.infrastructure.dao.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
-import top.javarem.infrastructure.dao.entity.Blacklist;
+import top.javarem.infrastructure.dao.entity.User;
 
 /**
  * @Author: rem
@@ -10,5 +10,5 @@ import top.javarem.infrastructure.dao.entity.Blacklist;
  * @Description:
  */
 @Mapper
-public interface BlacklistMapper extends BaseMapper<Blacklist> {
+public interface UserMapper extends BaseMapper<User> {
 }

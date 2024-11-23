@@ -3,6 +3,7 @@ package top.javarem.domain.strategy.repository;
 
 import top.javarem.domain.strategy.model.entity.StrategyAwardEntity;
 import top.javarem.domain.strategy.model.entity.RuleEntity;
+import top.javarem.domain.strategy.model.entity.StrategyEntity;
 
 import java.util.List;
 import java.util.Map;
@@ -21,5 +22,12 @@ public interface IStrategyRepository {
 
     RuleEntity getRuleEntity(Long strategyId);
 
-    Integer getBlacklistEntity(String userId);
+    String getBlacklistEntity(String userId);
+
+    void storeRuleWeightKey(double score, String ruleWeightKey);
+
+    String getMinMatchScore(Long userScore);
+
+    StrategyEntity getStrategyEntity(Long strategyId);
+
 }

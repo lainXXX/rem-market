@@ -1,4 +1,4 @@
-package top.javarem.domain.strategy.service.raffle;
+package top.javarem.domain.strategy.service.rule;
 
 import top.javarem.domain.strategy.model.entity.RuleActionEntity;
 import top.javarem.domain.strategy.model.entity.RuleMatterEntity;

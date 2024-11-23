@@ -7,13 +7,11 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * @Author: rem
- * @Date: 2024/11/22/13:58
- * @Description:
+ * 
+ * @TableName award
  */
 @Data
-public class Award implements Serializable {
-
+public class StrategyAward implements Serializable {
     /**
      * 自增id
      */
@@ -30,19 +28,39 @@ public class Award implements Serializable {
     private Integer awardId;
 
     /**
-     * 奖品对接标识 - 每一个都是一个对应的发奖策略
+     * 奖品标题
      */
-    private String awardKey;
+    private String awardTitle;
 
     /**
-     * 奖品配置信息
+     * 奖品副标题
      */
-    private String awardConfig;
+    private String awardSubtitle;
 
     /**
-     * 奖品描述
+     * 奖品库存总量
      */
-    private String awardDesc;
+    private Integer awardCount;
+
+    /**
+     * 库存剩余
+     */
+    private Integer awardCountSurplus;
+
+    /**
+     * 中奖概率
+     */
+    private BigDecimal rate;
+
+    /**
+     * 规则模型 rule配置模型同步到此表
+     */
+    private String models;
+
+    /**
+     * 排序
+     */
+    private String sort;
 
     /**
      * 创建时间
@@ -55,5 +73,4 @@ public class Award implements Serializable {
     private Date updateTime;
 
     private static final long serialVersionUID = 1L;
-
 }

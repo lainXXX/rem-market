@@ -43,17 +43,20 @@ public class StrategyArmoryImpl implements IStrategyArmory, IStrategyArmoryDispa
         }
 //        解析权重
         Map<String, List<Integer>> ruleWeightValues = ruleEntity.getRuleWeightValues();
-        log.info(ruleWeightValues.toString());
         if (CollectionUtils.isEmpty(ruleWeightValues)) {
             throw new AppException(ResponseCode.RULE_WEIGHT_NULL.getInfo());
         }
-        for (String ruleWeightValue : ruleWeightValues.keySet()) {
+        double score = 1.0;
+        for (String ruleWeightKey : ruleWeightValues.keySet()) {
 //            复用之前通过策略id获取的awardEntities 避免了再一次从数据库中获取
             List<StrategyAwardEntity> strategyAwardEntityCloneList = new ArrayList<>(awardEntities);
-            List<Integer> keys = ruleWeightValues.get(ruleWeightValue);
+            List<Integer> keys = ruleWeightValues.get(ruleWeightKey);
 //            使用集合的removeIf() 如果awardEntities的awardId不包含在权重配置中则移除
             strategyAwardEntityCloneList.removeIf(strategyAwardEntity -> !keys.contains(strategyAwardEntity.getAwardId()));
-            assembleLotteryStrategy(strategyId.toString().concat("_").concat(ruleWeightValue), strategyAwardEntityCloneList);
+            assembleLotteryStrategy(strategyId.toString().concat("_").concat(ruleWeightKey), strategyAwardEntityCloneList);
+//            将权重的键 4000 5000 6000 存入redis
+            repository.storeRuleWeightKey(score, ruleWeightKey);
+            score = score + 1.0;
         }
 
         return true;
@@ -73,9 +76,9 @@ public class StrategyArmoryImpl implements IStrategyArmory, IStrategyArmoryDispa
     }
 
     @Override
-    public Integer getRandomAwardId(Long strategyId, String ruleWeightValue) {
+    public Integer getRandomAwardId(Long strategyId, String ruleWeightKey) {
 //        先获取该策略下的奖品数量范围
-        String key = strategyId.toString().concat("_").concat(ruleWeightValue);
+        String key = strategyId.toString().concat("_").concat(ruleWeightKey);
         int awardRange = repository.getAwardRange(key);
 //        通过奖品数量范围生成随机数从奖品随即表中随机获取
         return repository.getRandomAwardId(key, new SecureRandom().nextInt(awardRange));
@@ -120,25 +123,19 @@ public class StrategyArmoryImpl implements IStrategyArmory, IStrategyArmoryDispa
                 maxRateAwardId = awardId;
             }
         }
-        log.info("{}", awardRateSearchTable.size());
-        log.info("{}", awardRateSearchTable.contains(107));
 //        计算查找表和概率范围的误差 并修正保持两者一致 在概率最大的奖品上修正查找表的误差
         int deviation = awardRateSearchTable.size() - awardRange;
         for (int i = 0; i < deviation; i++) {
             awardRateSearchTable.remove(maxRateAwardId);
         }
-        log.info("{}", awardRateSearchTable.contains(107));
 //        6.对概率查找表中的数据进行乱序
         Collections.shuffle(awardRateSearchTable);
-        log.info("{}", awardRateSearchTable.contains(107));
         // 7. 生成出Map集合，key值，对应的就是后续的概率值。通过概率来获得对应的奖品ID
         Map<Integer, Integer> shuffleAwardSearchRateTable = new LinkedHashMap<>();
         for (int i = 0; i < awardRateSearchTable.size(); i++) {
             shuffleAwardSearchRateTable.put(i, awardRateSearchTable.get(i));
         }
-        log.info("{}", (shuffleAwardSearchRateTable.size() == awardRange));
         boolean b = shuffleAwardSearchRateTable.containsValue(107);
-        System.out.println("shuffleAwardSearchRateTable.containsValue(107)" + b);
         // 8. 存放到 Redis
         repository.storeShuffleAwardTable(key, shuffleAwardSearchRateTable.size(), shuffleAwardSearchRateTable);
 

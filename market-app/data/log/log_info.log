@@ -1,122 +1,224 @@
-24-11-20.00:10:03.265 [main            ] INFO  Demo                   - Starting Demo using Java 1.8.0_151 on mile with PID 33724 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.00:10:03.265 [main            ] INFO  Demo                   - The following 1 profile is active: "dev"
-24-11-20.00:10:04.023 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.00:10:04.031 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.00:10:04.056 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
-24-11-20.00:10:07.610 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.00:10:08.669 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.00:10:09.173 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.00:10:11.673 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.00:10:11.756 [main            ] INFO  Demo                   - Started Demo in 8.938 seconds (JVM running for 10.536)
-24-11-20.00:10:12.507 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-24-11-20.00:10:15.155 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-24-11-20.00:10:15.477 [main            ] INFO  StrategyArmoryImpl     - awardRange 706
-24-11-20.00:10:15.477 [main            ] INFO  StrategyArmoryImpl     - awardRateSearchTable 706
-24-11-20.00:10:15.678 [main            ] INFO  Demo                   - 测试结果：true
-24-11-20.00:10:15.826 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-24-11-20.00:10:16.038 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-24-11-20.00:16:38.157 [main            ] INFO  Demo                   - Starting Demo using Java 1.8.0_151 on mile with PID 30204 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.00:16:38.157 [main            ] INFO  Demo                   - The following 1 profile is active: "dev"
-24-11-20.00:16:38.964 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.00:16:38.966 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.00:16:38.991 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
-24-11-20.00:16:42.616 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.00:16:43.543 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.00:16:44.226 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.00:16:46.465 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.00:16:46.615 [main            ] INFO  Demo                   - Started Demo in 8.923 seconds (JVM running for 10.06)
-24-11-20.00:23:22.838 [main            ] INFO  Demo                   - Starting Demo using Java 1.8.0_151 on mile with PID 34400 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.00:23:22.838 [main            ] INFO  Demo                   - The following 1 profile is active: "dev"
-24-11-20.00:23:23.531 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.00:23:23.531 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.00:23:23.555 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
-24-11-20.00:23:27.119 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.00:23:28.077 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.00:23:28.570 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.00:23:30.997 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.00:23:31.077 [main            ] INFO  Demo                   - Started Demo in 8.7 seconds (JVM running for 10.307)
-24-11-20.00:23:31.689 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-24-11-20.00:23:34.095 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-24-11-20.00:23:34.643 [main            ] INFO  StrategyArmoryImpl     - awardId 106 429.1
-24-11-20.00:23:34.643 [main            ] INFO  StrategyArmoryImpl     - awardId 107 1.0
-24-11-20.00:23:34.643 [main            ] INFO  StrategyArmoryImpl     - awardId 108 118.7
-24-11-20.00:23:34.643 [main            ] INFO  StrategyArmoryImpl     - awardId 109 157.3
-24-11-20.00:23:34.643 [main            ] INFO  Demo                   - 测试结果：true
-24-11-20.00:23:34.780 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-24-11-20.00:23:35.012 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-24-11-20.00:24:45.867 [main            ] INFO  Demo                   - Starting Demo using Java 1.8.0_151 on mile with PID 36648 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.00:24:45.867 [main            ] INFO  Demo                   - The following 1 profile is active: "dev"
-24-11-20.00:24:46.603 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.00:24:46.603 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.00:24:46.635 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
-24-11-20.00:24:50.175 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.00:24:51.141 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.00:24:51.632 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.00:24:54.063 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.00:24:54.156 [main            ] INFO  Demo                   - Started Demo in 8.752 seconds (JVM running for 10.419)
-24-11-20.00:24:54.816 [main            ] INFO  Demo                   - 测试结果：true
-24-11-20.00:25:20.653 [main            ] INFO  Demo                   - Starting Demo using Java 1.8.0_151 on mile with PID 31808 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.00:25:20.653 [main            ] INFO  Demo                   - The following 1 profile is active: "dev"
-24-11-20.00:25:21.345 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.00:25:21.345 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.00:25:21.369 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
-24-11-20.00:25:24.794 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.00:25:25.814 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.00:25:27.562 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.00:25:29.877 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.00:25:29.965 [main            ] INFO  Demo                   - Started Demo in 9.772 seconds (JVM running for 11.18)
-24-11-20.00:25:30.789 [main            ] INFO  Demo                   - 测试结果：true
-24-11-20.00:27:40.771 [main            ] INFO  Demo                   - Starting Demo using Java 1.8.0_151 on mile with PID 36276 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.00:27:40.771 [main            ] INFO  Demo                   - The following 1 profile is active: "dev"
-24-11-20.00:27:41.868 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.00:27:41.877 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.00:27:41.909 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 22 ms. Found 0 Redis repository interfaces.
-24-11-20.00:27:47.382 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.00:27:48.452 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.00:27:48.952 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.00:27:51.384 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.00:27:51.457 [main            ] INFO  Demo                   - Started Demo in 11.341 seconds (JVM running for 13.25)
-24-11-20.00:28:10.766 [main            ] INFO  Demo                   - Starting Demo using Java 1.8.0_151 on mile with PID 37272 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.00:28:10.766 [main            ] INFO  Demo                   - The following 1 profile is active: "dev"
-24-11-20.00:28:11.459 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.00:28:11.459 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.00:28:11.483 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
-24-11-20.00:28:15.026 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.00:28:16.192 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.00:28:16.727 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.00:28:19.120 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.00:28:19.193 [main            ] INFO  Demo                   - Started Demo in 8.88 seconds (JVM running for 10.351)
-24-11-20.14:31:30.204 [main            ] INFO  Demo                   - Starting Demo using Java 1.8.0_151 on mile with PID 49180 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.14:31:30.205 [main            ] INFO  Demo                   - The following 1 profile is active: "dev"
-24-11-20.14:31:30.937 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.14:31:30.940 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.14:31:30.968 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
-24-11-20.14:31:34.466 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.14:31:35.420 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.14:31:35.823 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.14:31:35.903 [main            ] WARN  GenericWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'strategyRepository': Unsatisfied dependency expressed through field 'ruleService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'ruleServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'top.javarem.infrastructure.dao.mapper.RuleMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-24-11-20.14:31:35.985 [main            ] INFO  ConditionEvaluationReportLoggingListener - 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-24-11-20.14:31:36.010 [main            ] ERROR SpringApplication      - Application run failed
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'strategyRepository': Unsatisfied dependency expressed through field 'ruleService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'ruleServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'top.javarem.infrastructure.dao.mapper.RuleMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:920)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+24-11-23.00:05:44.672 [main            ] INFO  StrategyTest           - Starting StrategyTest using Java 1.8.0_151 on mile with PID 51908 (started by aaa in D:\Develop\project\rem-market\market-app)
+24-11-23.00:05:44.672 [main            ] INFO  StrategyTest           - The following 1 profile is active: "dev"
+24-11-23.00:05:45.448 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-11-23.00:05:45.448 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-11-23.00:05:45.474 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 21 ms. Found 0 Redis repository interfaces.
+24-11-23.00:05:46.904 [main            ] INFO  Version                - Redisson 3.26.0
+24-11-23.00:05:47.783 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-11-23.00:05:48.184 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-11-23.00:05:51.504 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-11-23.00:05:51.557 [main            ] INFO  StrategyTest           - Started StrategyTest in 7.303 seconds (JVM running for 8.352)
+24-11-23.00:05:51.857 [main            ] INFO  StrategyArmoryImpl     - 1432
+24-11-23.00:05:51.857 [main            ] INFO  StrategyArmoryImpl     - true
+24-11-23.00:05:51.857 [main            ] INFO  StrategyArmoryImpl     - true
+24-11-23.00:05:51.857 [main            ] INFO  StrategyArmoryImpl     - true
+24-11-23.00:05:51.857 [main            ] INFO  StrategyArmoryImpl     - true
+24-11-23.00:05:52.197 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-11-23.00:05:53.772 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-11-23.00:05:53.898 [main            ] INFO  StrategyArmoryImpl     - {6000=[102, 103, 104, 105, 106, 107, 108, 109], 4000=[101, 102, 103, 104, 105, 106]}
+24-11-23.00:05:53.898 [main            ] INFO  StrategyArmoryImpl     - 1289
+24-11-23.00:05:53.898 [main            ] INFO  StrategyArmoryImpl     - true
+24-11-23.00:05:53.898 [main            ] INFO  StrategyArmoryImpl     - true
+24-11-23.00:05:53.898 [main            ] INFO  StrategyArmoryImpl     - true
+24-11-23.00:05:53.898 [main            ] INFO  StrategyArmoryImpl     - true
+24-11-23.00:05:54.168 [main            ] INFO  StrategyArmoryImpl     - 103
+24-11-23.00:05:54.168 [main            ] INFO  StrategyArmoryImpl     - false
+24-11-23.00:05:54.168 [main            ] INFO  StrategyArmoryImpl     - false
+24-11-23.00:05:54.168 [main            ] INFO  StrategyArmoryImpl     - false
+24-11-23.00:05:54.168 [main            ] INFO  StrategyArmoryImpl     - true
+24-11-23.00:05:54.326 [main            ] INFO  StrategyTest           - 测试结果：true
+24-11-23.00:05:54.360 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-11-23.00:05:54.546 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-11-23.00:07:06.796 [main            ] INFO  StrategyRaffleTest     - Starting StrategyRaffleTest using Java 1.8.0_151 on mile with PID 61692 (started by aaa in D:\Develop\project\rem-market\market-app)
+24-11-23.00:07:06.796 [main            ] INFO  StrategyRaffleTest     - The following 1 profile is active: "dev"
+24-11-23.00:07:07.476 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-11-23.00:07:07.476 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-11-23.00:07:07.508 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
+24-11-23.00:07:08.927 [main            ] INFO  Version                - Redisson 3.26.0
+24-11-23.00:07:09.807 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-11-23.00:07:10.216 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-11-23.00:07:13.531 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-11-23.00:07:13.597 [main            ] INFO  StrategyRaffleTest     - Started StrategyRaffleTest in 7.194 seconds (JVM running for 8.311)
+24-11-23.00:07:13.942 [main            ] INFO  BlacklistLogicFilter   - 前置过滤黑名单规则
+24-11-23.00:07:14.045 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-11-23.00:07:15.654 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-11-23.00:07:15.775 [main            ] INFO  BlacklistLogicFilter   - 前置过滤黑名单规则
+24-11-23.00:07:15.853 [main            ] INFO  DefaultStrategyRaffle  - 抽奖前规则过滤 userId: 3 ruleModel: rule_blacklist code: 0001 info: 直接放行；按流程执行下一步
+24-11-23.00:07:16.090 [main            ] INFO  StrategyRaffleTest     - 请求参数：{"strategyId":100001,"userId":"3"}
+24-11-23.00:07:16.090 [main            ] INFO  StrategyRaffleTest     - 测试结果：{"awardId":108}
+24-11-23.00:07:16.106 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-11-23.00:07:16.301 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-11-23.00:23:48.802 [main            ] INFO  StrategyRaffleTest     - Starting StrategyRaffleTest using Java 1.8.0_151 on mile with PID 62800 (started by aaa in D:\Develop\project\rem-market\market-app)
+24-11-23.00:23:48.802 [main            ] INFO  StrategyRaffleTest     - The following 1 profile is active: "dev"
+24-11-23.00:23:49.513 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-11-23.00:23:49.513 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-11-23.00:23:49.543 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
+24-11-23.00:23:50.972 [main            ] INFO  Version                - Redisson 3.26.0
+24-11-23.00:23:51.916 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-11-23.00:23:52.317 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-11-23.00:23:56.057 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-11-23.00:23:56.104 [main            ] INFO  StrategyRaffleTest     - Started StrategyRaffleTest in 7.737 seconds (JVM running for 8.781)
+24-11-23.00:23:56.441 [main            ] INFO  BlacklistLogicFilter   - 执行黑名单规则过滤
+24-11-23.00:23:56.552 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-11-23.00:23:58.099 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-11-23.00:23:58.208 [main            ] INFO  BlacklistLogicFilter   - 执行黑名单规则过滤
+24-11-23.00:23:58.287 [main            ] INFO  DefaultStrategyRaffle  - 抽奖前规则过滤 userId: 3 ruleModel: rule_blacklist code: 0001 info: 直接放行；按流程执行下一步
+24-11-23.00:23:58.287 [main            ] INFO  AbstractStrategyRaffle - 执行正常抽奖
+24-11-23.00:23:58.524 [main            ] INFO  StrategyRaffleTest     - 请求参数：{"strategyId":100001,"userId":"3"}
+24-11-23.00:23:58.524 [main            ] INFO  StrategyRaffleTest     - 测试结果：{"awardId":108}
+24-11-23.00:23:58.527 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-11-23.00:23:58.767 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-11-23.00:25:19.389 [main            ] INFO  StrategyRaffleTest     - Starting StrategyRaffleTest using Java 1.8.0_151 on mile with PID 53488 (started by aaa in D:\Develop\project\rem-market\market-app)
+24-11-23.00:25:19.389 [main            ] INFO  StrategyRaffleTest     - The following 1 profile is active: "dev"
+24-11-23.00:25:20.065 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-11-23.00:25:20.065 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-11-23.00:25:20.097 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23 ms. Found 0 Redis repository interfaces.
+24-11-23.00:25:21.496 [main            ] INFO  Version                - Redisson 3.26.0
+24-11-23.00:25:22.378 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-11-23.00:25:22.844 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-11-23.00:25:26.161 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-11-23.00:25:26.208 [main            ] INFO  StrategyRaffleTest     - Started StrategyRaffleTest in 7.268 seconds (JVM running for 8.307)
+24-11-23.00:25:26.508 [main            ] INFO  BlacklistLogicFilter   - 执行黑名单规则过滤
+24-11-23.00:25:26.610 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-11-23.00:25:28.166 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-11-23.00:25:28.295 [main            ] INFO  BlacklistLogicFilter   - 执行黑名单规则过滤
+24-11-23.00:25:28.419 [main            ] INFO  DefaultStrategyRaffle  - 抽奖前规则过滤 userId: 3 ruleModel: rule_blacklist code: 0001 info: 直接放行；按流程执行下一步
+24-11-23.00:25:28.419 [main            ] INFO  AbstractStrategyRaffle - 执行正常抽奖
+24-11-23.00:25:28.635 [main            ] INFO  StrategyRaffleTest     - 请求参数：{"strategyId":100001,"userId":"3"}
+24-11-23.00:25:28.635 [main            ] INFO  StrategyRaffleTest     - 测试结果：{"awardId":104}
+24-11-23.00:25:28.651 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-11-23.00:25:28.887 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-11-23.00:25:36.961 [main            ] INFO  StrategyRaffleTest     - Starting StrategyRaffleTest using Java 1.8.0_151 on mile with PID 65904 (started by aaa in D:\Develop\project\rem-market\market-app)
+24-11-23.00:25:36.961 [main            ] INFO  StrategyRaffleTest     - The following 1 profile is active: "dev"
+24-11-23.00:25:37.623 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-11-23.00:25:37.623 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-11-23.00:25:37.654 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
+24-11-23.00:25:39.038 [main            ] INFO  Version                - Redisson 3.26.0
+24-11-23.00:25:39.948 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-11-23.00:25:40.550 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-11-23.00:25:43.877 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-11-23.00:25:43.924 [main            ] INFO  StrategyRaffleTest     - Started StrategyRaffleTest in 7.398 seconds (JVM running for 8.455)
+24-11-23.00:25:44.215 [main            ] INFO  BlacklistLogicFilter   - 执行黑名单规则过滤
+24-11-23.00:25:44.302 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-11-23.00:25:45.778 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-11-23.00:25:45.903 [main            ] INFO  BlacklistLogicFilter   - 执行黑名单规则过滤
+24-11-23.00:25:45.983 [main            ] INFO  DefaultStrategyRaffle  - 抽奖前规则过滤 userId: 3 ruleModel: rule_blacklist code: 0001 info: 直接放行；按流程执行下一步
+24-11-23.00:25:45.983 [main            ] INFO  AbstractStrategyRaffle - 执行正常抽奖
+24-11-23.00:25:46.195 [main            ] INFO  StrategyRaffleTest     - 请求参数：{"strategyId":100001,"userId":"3"}
+24-11-23.00:25:46.195 [main            ] INFO  StrategyRaffleTest     - 测试结果：{"awardId":101}
+24-11-23.00:25:46.210 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-11-23.00:25:46.498 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-11-23.00:29:37.264 [main            ] INFO  StrategyRaffleTest     - Starting StrategyRaffleTest using Java 1.8.0_151 on mile with PID 66808 (started by aaa in D:\Develop\project\rem-market\market-app)
+24-11-23.00:29:37.264 [main            ] INFO  StrategyRaffleTest     - The following 1 profile is active: "dev"
+24-11-23.00:29:37.943 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-11-23.00:29:37.943 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-11-23.00:29:37.975 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
+24-11-23.00:29:39.341 [main            ] INFO  Version                - Redisson 3.26.0
+24-11-23.00:29:40.220 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-11-23.00:29:40.691 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-11-23.00:29:44.014 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-11-23.00:29:44.062 [main            ] INFO  StrategyRaffleTest     - Started StrategyRaffleTest in 7.191 seconds (JVM running for 8.247)
+24-11-23.00:29:44.350 [main            ] INFO  BlacklistLogicFilter   - 执行黑名单规则过滤
+24-11-23.00:29:44.464 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-11-23.00:29:46.020 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-11-23.00:29:46.146 [main            ] INFO  RuleWeightLogicFilter  - 前置过滤权重规则
+24-11-23.00:29:46.261 [main            ] INFO  DefaultStrategyRaffle  - 抽奖前规则过滤 userId: 3 ruleModel: rule_weight code: 0000 info: 过滤拦截；直接执行过滤逻辑
+24-11-23.00:29:46.483 [main            ] INFO  StrategyRaffleTest     - 请求参数：{"strategyId":100001,"userId":"3"}
+24-11-23.00:29:46.483 [main            ] INFO  StrategyRaffleTest     - 测试结果：{"awardId":108}
+24-11-23.00:29:46.498 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-11-23.00:29:46.723 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-11-23.00:33:24.932 [main            ] INFO  StrategyRaffleTest     - Starting StrategyRaffleTest using Java 1.8.0_151 on mile with PID 67872 (started by aaa in D:\Develop\project\rem-market\market-app)
+24-11-23.00:33:24.932 [main            ] INFO  StrategyRaffleTest     - The following 1 profile is active: "dev"
+24-11-23.00:33:25.660 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-11-23.00:33:25.661 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-11-23.00:33:25.689 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
+24-11-23.00:33:27.106 [main            ] INFO  Version                - Redisson 3.26.0
+24-11-23.00:33:28.025 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-11-23.00:33:28.423 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-11-23.00:33:31.870 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-11-23.00:33:31.917 [main            ] INFO  StrategyRaffleTest     - Started StrategyRaffleTest in 7.387 seconds (JVM running for 8.43)
+24-11-23.00:33:32.123 [main            ] INFO  AbstractStrategyRaffle - 开始执行抽奖流程 用户id : 3, 策略id : 100001
+24-11-23.00:33:32.252 [main            ] INFO  BlacklistLogicFilter   - 执行黑名单规则过滤
+24-11-23.00:33:32.346 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-11-23.00:33:33.859 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-11-23.00:33:33.989 [main            ] INFO  RuleWeightLogicFilter  - 前置过滤权重规则
+24-11-23.00:33:34.102 [main            ] INFO  DefaultStrategyRaffle  - 抽奖前规则过滤  ruleModel: 3 code: rule_weight info: 0000
+24-11-23.00:33:34.322 [main            ] INFO  StrategyRaffleTest     - 请求参数：{"strategyId":100001,"userId":"3"}
+24-11-23.00:33:34.329 [main            ] INFO  StrategyRaffleTest     - 测试结果：{"awardId":108}
+24-11-23.00:33:34.338 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-11-23.00:33:34.512 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-11-23.01:19:41.745 [main            ] INFO  StrategyRaffleTest     - Starting StrategyRaffleTest using Java 1.8.0_151 on mile with PID 72664 (started by aaa in D:\Develop\project\rem-market\market-app)
+24-11-23.01:19:41.745 [main            ] INFO  StrategyRaffleTest     - The following 1 profile is active: "dev"
+24-11-23.01:19:42.376 [main            ] DEBUG MybatisPlusAutoConfiguration - Searching for mappers annotated with @Mapper
+24-11-23.01:19:42.376 [main            ] DEBUG MybatisPlusAutoConfiguration - Using auto-configuration base package 'top.javarem'
+24-11-23.01:19:42.503 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-11-23.01:19:42.503 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-11-23.01:19:42.534 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
+24-11-23.01:19:42.629 [main            ] DEBUG ClassPathMapperScanner - Identified candidate component class: file [D:\Develop\project\rem-market\market-infrastructure\target\classes\top\javarem\infrastructure\dao\mapper\AwardMapper.class]
+24-11-23.01:19:42.629 [main            ] DEBUG ClassPathMapperScanner - Identified candidate component class: file [D:\Develop\project\rem-market\market-infrastructure\target\classes\top\javarem\infrastructure\dao\mapper\RuleMapper.class]
+24-11-23.01:19:42.629 [main            ] DEBUG ClassPathMapperScanner - Identified candidate component class: file [D:\Develop\project\rem-market\market-infrastructure\target\classes\top\javarem\infrastructure\dao\mapper\StrategyAwardMapper.class]
+24-11-23.01:19:42.629 [main            ] DEBUG ClassPathMapperScanner - Identified candidate component class: file [D:\Develop\project\rem-market\market-infrastructure\target\classes\top\javarem\infrastructure\dao\mapper\StrategyMapper.class]
+24-11-23.01:19:42.629 [main            ] DEBUG ClassPathMapperScanner - Identified candidate component class: file [D:\Develop\project\rem-market\market-infrastructure\target\classes\top\javarem\infrastructure\dao\mapper\UserMapper.class]
+24-11-23.01:19:42.629 [main            ] DEBUG ClassPathMapperScanner - Creating MapperFactoryBean with name 'awardMapper' and 'top.javarem.infrastructure.dao.mapper.AwardMapper' mapperInterface
+24-11-23.01:19:42.629 [main            ] DEBUG ClassPathMapperScanner - Creating MapperFactoryBean with name 'ruleMapper' and 'top.javarem.infrastructure.dao.mapper.RuleMapper' mapperInterface
+24-11-23.01:19:42.629 [main            ] DEBUG ClassPathMapperScanner - Creating MapperFactoryBean with name 'strategyAwardMapper' and 'top.javarem.infrastructure.dao.mapper.StrategyAwardMapper' mapperInterface
+24-11-23.01:19:42.629 [main            ] DEBUG ClassPathMapperScanner - Creating MapperFactoryBean with name 'strategyMapper' and 'top.javarem.infrastructure.dao.mapper.StrategyMapper' mapperInterface
+24-11-23.01:19:42.629 [main            ] DEBUG ClassPathMapperScanner - Creating MapperFactoryBean with name 'userMapper' and 'top.javarem.infrastructure.dao.mapper.UserMapper' mapperInterface
+24-11-23.01:19:43.932 [main            ] INFO  Version                - Redisson 3.26.0
+24-11-23.01:19:44.861 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-11-23.01:19:45.271 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-11-23.01:19:45.503 [main            ] DEBUG MybatisSqlSessionFactoryBean - Parsed mapper file: 'file [D:\Develop\project\rem-market\market-app\target\classes\mapper\AwardMapper.xml]'
+24-11-23.01:19:45.508 [main            ] DEBUG MybatisSqlSessionFactoryBean - Parsed mapper file: 'file [D:\Develop\project\rem-market\market-app\target\classes\mapper\RuleMapper.xml]'
+24-11-23.01:19:45.508 [main            ] DEBUG MybatisSqlSessionFactoryBean - Parsed mapper file: 'file [D:\Develop\project\rem-market\market-app\target\classes\mapper\StrategyAwardMapper.xml]'
+24-11-23.01:19:45.524 [main            ] DEBUG MybatisSqlSessionFactoryBean - Parsed mapper file: 'file [D:\Develop\project\rem-market\market-app\target\classes\mapper\StrategyMapper.xml]'
+24-11-23.01:19:45.524 [main            ] DEBUG MybatisSqlSessionFactoryBean - Parsed mapper file: 'file [D:\Develop\project\rem-market\market-app\target\classes\mapper\UserMapper.xml]'
+24-11-23.01:19:46.606 [main            ] DEBUG Sequence               - Get /192.168.137.1 network interface 
+24-11-23.01:19:47.144 [main            ] DEBUG Sequence               - Get network interface info: name:wlan4 (Microsoft Wi-Fi Direct Virtual Adapter #4)
+24-11-23.01:19:47.155 [main            ] DEBUG Sequence               - Initialization Sequence datacenterId:24 workerId:23
+24-11-23.01:19:48.082 [main            ] DEBUG MybatisPlusAutoConfiguration - Not found configuration for registering mapper bean using @MapperScan, MapperFactoryBean and MapperScannerConfigurer.
+24-11-23.01:19:48.633 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-11-23.01:19:48.682 [main            ] INFO  StrategyRaffleTest     - Started StrategyRaffleTest in 7.374 seconds (JVM running for 8.488)
+24-11-23.01:19:48.869 [main            ] INFO  AbstractStrategyRaffle - 开始执行抽奖流程 用户id : 3, 策略id : 100001
+24-11-23.01:19:48.982 [main            ] DEBUG SqlSessionUtils        - Creating a new SqlSession
+24-11-23.01:19:48.982 [main            ] DEBUG SqlSessionUtils        - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4f6ff62] was not registered for synchronization because synchronization is not active
+24-11-23.01:19:49.045 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-11-23.01:19:50.601 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-11-23.01:19:50.608 [main            ] DEBUG SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1039550799 wrapping com.mysql.cj.jdbc.ConnectionImpl@1b5f960a] will not be managed by Spring
+24-11-23.01:19:50.714 [main            ] DEBUG SqlSessionUtils        - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4f6ff62]
+24-11-23.01:19:50.809 [main            ] INFO  BlacklistLogicFilter   - 执行黑名单规则过滤
+24-11-23.01:19:50.809 [main            ] DEBUG SqlSessionUtils        - Creating a new SqlSession
+24-11-23.01:19:50.809 [main            ] DEBUG SqlSessionUtils        - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@414d2821] was not registered for synchronization because synchronization is not active
+24-11-23.01:19:50.809 [main            ] DEBUG SpringManagedTransaction - JDBC Connection [HikariProxyConnection@1937294500 wrapping com.mysql.cj.jdbc.ConnectionImpl@1b5f960a] will not be managed by Spring
+24-11-23.01:19:50.909 [main            ] DEBUG SqlSessionUtils        - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@414d2821]
+24-11-23.01:19:50.909 [main            ] INFO  RuleWeightLogicFilter  - 前置过滤权重规则
+24-11-23.01:19:50.949 [main            ] INFO  DefaultStrategyRaffle  - 抽奖前规则过滤  ruleModel: 3 code: rule_weight info: 0001
+24-11-23.01:19:50.949 [main            ] INFO  AbstractStrategyRaffle - 执行正常抽奖
+24-11-23.01:19:51.030 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-11-23.01:19:51.249 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-11-23.01:24:58.335 [main            ] ERROR SpringApplication      - Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [STDOUT]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [STDOUT]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [STDOUT]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:344)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:298)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:85)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:66)
+	at java.util.ArrayList.forEach(ArrayList.java:1255)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:120)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:114)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:301)
 	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:136)
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:141)
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:90)
@@ -191,30 +293,20 @@ org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating
 	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
 	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
 	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'ruleServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'top.javarem.infrastructure.dao.mapper.RuleMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657)
-	... 90 common frames omitted
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'top.javarem.infrastructure.dao.mapper.RuleMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1801)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1357)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657)
-	... 104 common frames omitted
-24-11-20.14:31:36.013 [main            ] ERROR TestContextManager     - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@350aac89] to prepare test instance [top.javarem.StrategyTest@10fb4575]
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [STDOUT]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [STDOUT]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [STDOUT]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:179)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithSpecificConfig(AbstractLoggingSystem.java:66)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:57)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:132)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:332)
+	... 89 common frames omitted
+24-11-23.01:24:58.335 [main            ] ERROR TestContextManager     - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@7bd7d6d6] to prepare test instance [top.javarem.StrategyRaffleTest@6e1d8f9e]
 java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:98)
 	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124)
@@ -288,82 +380,153 @@ java.lang.IllegalStateException: Failed to load ApplicationContext
 	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
 	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
 	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'strategyRepository': Unsatisfied dependency expressed through field 'ruleService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'ruleServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'top.javarem.infrastructure.dao.mapper.RuleMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:920)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+Caused by: java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [STDOUT]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [STDOUT]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [STDOUT]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:344)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:298)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:85)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:66)
+	at java.util.ArrayList.forEach(ArrayList.java:1255)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:120)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:114)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:301)
 	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:136)
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:141)
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:90)
 	... 71 common frames omitted
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'ruleServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'top.javarem.infrastructure.dao.mapper.RuleMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657)
-	... 90 common frames omitted
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'top.javarem.infrastructure.dao.mapper.RuleMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1801)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1357)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657)
-	... 104 common frames omitted
-24-11-20.14:33:12.167 [main            ] INFO  StrategyTest           - Starting StrategyTest using Java 1.8.0_151 on mile with PID 49260 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.14:33:12.168 [main            ] INFO  StrategyTest           - The following 1 profile is active: "dev"
-24-11-20.14:33:12.843 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.14:33:12.845 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.14:33:12.871 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
-24-11-20.14:33:16.168 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.14:33:17.056 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.14:33:17.507 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.14:33:17.547 [main            ] WARN  GenericWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'strategyRepository': Unsatisfied dependency expressed through field 'ruleService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'ruleServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'top.javarem.infrastructure.dao.mapper.RuleMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-24-11-20.14:33:17.627 [main            ] INFO  ConditionEvaluationReportLoggingListener - 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-24-11-20.14:33:17.648 [main            ] ERROR SpringApplication      - Application run failed
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'strategyRepository': Unsatisfied dependency expressed through field 'ruleService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'ruleServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'top.javarem.infrastructure.dao.mapper.RuleMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:920)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [STDOUT]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [STDOUT]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [STDOUT]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:179)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithSpecificConfig(AbstractLoggingSystem.java:66)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:57)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:132)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:332)
+	... 89 common frames omitted
+24-11-23.01:26:40.532 [main            ] INFO  StrategyRaffleTest     - Starting StrategyRaffleTest using Java 1.8.0_151 on mile with PID 68400 (started by aaa in D:\Develop\project\rem-market\market-app)
+24-11-23.01:26:40.532 [main            ] INFO  StrategyRaffleTest     - The following 1 profile is active: "dev"
+24-11-23.01:26:41.178 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-11-23.01:26:41.194 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-11-23.01:26:41.210 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
+24-11-23.01:26:42.609 [main            ] INFO  Version                - Redisson 3.26.0
+24-11-23.01:26:43.479 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-11-23.01:26:43.882 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-11-23.01:26:47.236 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-11-23.01:26:47.283 [main            ] INFO  StrategyRaffleTest     - Started StrategyRaffleTest in 7.169 seconds (JVM running for 8.217)
+24-11-23.01:26:47.609 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-11-23.01:26:49.150 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-11-23.01:26:49.662 [main            ] INFO  StrategyArmoryImpl     - {6000=[102, 103, 104, 105, 106, 107, 108, 109], 4000=[101, 102, 103, 104, 105, 106]}
+24-11-23.01:26:50.035 [main            ] INFO  StrategyRaffleTest     - 测试结果：true
+24-11-23.01:26:50.035 [main            ] INFO  AbstractStrategyRaffle - 开始执行抽奖流程 用户id : 3, 策略id : 100001
+24-11-23.01:26:50.100 [main            ] INFO  BlacklistLogicFilter   - 执行黑名单规则过滤
+24-11-23.01:26:50.178 [main            ] INFO  RuleWeightLogicFilter  - 前置过滤权重规则
+24-11-23.01:26:50.272 [main            ] INFO  RuleWeightLogicFilter  - minMatchWeightKey 6000
+24-11-23.01:26:50.272 [main            ] INFO  DefaultStrategyRaffle  - 抽奖前规则过滤  ruleModel: 3 code: rule_weight info: 0000
+24-11-23.01:26:50.479 [main            ] INFO  StrategyRaffleTest     - 请求参数：{"strategyId":100001,"userId":"3"}
+24-11-23.01:26:50.479 [main            ] INFO  StrategyRaffleTest     - 测试结果：{"awardId":105}
+24-11-23.01:26:50.494 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-11-23.01:26:50.957 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-11-23.01:28:55.693 [main            ] INFO  StrategyRaffleTest     - Starting StrategyRaffleTest using Java 1.8.0_151 on mile with PID 18164 (started by aaa in D:\Develop\project\rem-market\market-app)
+24-11-23.01:28:55.693 [main            ] INFO  StrategyRaffleTest     - The following 1 profile is active: "dev"
+24-11-23.01:28:56.337 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-11-23.01:28:56.337 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-11-23.01:28:56.368 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
+24-11-23.01:28:57.735 [main            ] INFO  Version                - Redisson 3.26.0
+24-11-23.01:28:58.600 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-11-23.01:28:58.995 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-11-23.01:29:02.473 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-11-23.01:29:02.520 [main            ] INFO  StrategyRaffleTest     - Started StrategyRaffleTest in 7.245 seconds (JVM running for 8.268)
+24-11-23.01:29:03.154 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-11-23.01:29:04.700 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-11-23.01:29:04.823 [main            ] INFO  StrategyArmoryImpl     - {6000=[102, 103, 104, 105, 106, 107, 108, 109], 4000=[101, 102, 103, 104, 105, 106]}
+24-11-23.01:29:05.310 [main            ] INFO  StrategyRaffleTest     - 测试结果：true
+24-11-23.01:29:05.310 [main            ] INFO  AbstractStrategyRaffle - 开始执行抽奖流程 用户id : 3, 策略id : 100001
+24-11-23.01:29:05.357 [main            ] INFO  BlacklistLogicFilter   - 执行黑名单规则过滤
+24-11-23.01:29:05.516 [main            ] INFO  RuleWeightLogicFilter  - 前置过滤权重规则
+24-11-23.01:29:05.610 [main            ] INFO  RuleWeightLogicFilter  - minMatchWeightKey 6000
+24-11-23.01:29:05.610 [main            ] INFO  DefaultStrategyRaffle  - 抽奖前规则过滤  ruleModel: 3 code: rule_weight info: 0000
+24-11-23.01:29:05.833 [main            ] INFO  StrategyRaffleTest     - 请求参数：{"strategyId":100001,"userId":"3"}
+24-11-23.01:29:05.833 [main            ] INFO  StrategyRaffleTest     - 测试结果：{"awardId":103}
+24-11-23.01:29:05.853 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-11-23.01:29:05.926 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-11-23.01:36:13.970 [main            ] INFO  StrategyRaffleTest     - Starting StrategyRaffleTest using Java 1.8.0_151 on mile with PID 77196 (started by aaa in D:\Develop\project\rem-market\market-app)
+24-11-23.01:36:13.970 [main            ] INFO  StrategyRaffleTest     - The following 1 profile is active: "dev"
+24-11-23.01:36:14.665 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-11-23.01:36:14.665 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-11-23.01:36:14.697 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
+24-11-23.01:36:16.151 [main            ] INFO  Version                - Redisson 3.26.0
+24-11-23.01:36:17.079 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-11-23.01:36:17.484 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-11-23.01:36:21.079 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-11-23.01:36:21.129 [main            ] INFO  StrategyRaffleTest     - Started StrategyRaffleTest in 7.555 seconds (JVM running for 8.639)
+24-11-23.01:36:21.749 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-11-23.01:36:23.283 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-11-23.01:36:23.829 [main            ] INFO  StrategyRaffleTest     - 测试结果：true
+24-11-23.01:36:23.833 [main            ] INFO  AbstractStrategyRaffle - 开始执行抽奖流程 用户id : 3, 策略id : 100001
+24-11-23.01:36:23.985 [main            ] INFO  BlacklistLogicFilter   - 黑名单过滤结果 放行
+24-11-23.01:36:24.099 [main            ] INFO  RuleWeightLogicFilter  - 权重过滤结果 拦截
+24-11-23.01:36:24.100 [main            ] INFO  DefaultStrategyRaffle  - 抽奖前规则过滤  ruleModel: 3 code: rule_weight info: 0000
+24-11-23.01:36:24.305 [main            ] INFO  StrategyRaffleTest     - 请求参数：{"strategyId":100001,"userId":"3"}
+24-11-23.01:36:24.305 [main            ] INFO  StrategyRaffleTest     - 测试结果：{"awardId":106}
+24-11-23.01:36:24.321 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-11-23.01:36:24.507 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-11-23.01:45:22.041 [main            ] INFO  StrategyRaffleTest     - Starting StrategyRaffleTest using Java 1.8.0_151 on mile with PID 70164 (started by aaa in D:\Develop\project\rem-market\market-app)
+24-11-23.01:45:22.041 [main            ] INFO  StrategyRaffleTest     - The following 1 profile is active: "dev"
+24-11-23.01:45:22.735 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-11-23.01:45:22.735 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-11-23.01:45:22.771 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
+24-11-23.01:45:24.164 [main            ] INFO  Version                - Redisson 3.26.0
+24-11-23.01:45:25.074 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-11-23.01:45:25.495 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-11-23.01:45:28.834 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-11-23.01:45:28.881 [main            ] INFO  StrategyRaffleTest     - Started StrategyRaffleTest in 7.259 seconds (JVM running for 8.348)
+24-11-23.01:45:29.500 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-11-23.01:45:31.066 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-11-23.01:45:31.634 [main            ] INFO  StrategyRaffleTest     - 测试结果：true
+24-11-23.01:45:31.645 [main            ] INFO  AbstractStrategyRaffle - 开始执行抽奖流程 用户id : 3, 策略id : 100001
+24-11-23.01:45:31.845 [main            ] INFO  DefaultStrategyRaffle  - 黑名单过滤结果 放行
+24-11-23.01:45:31.948 [main            ] INFO  DefaultStrategyRaffle  - 抽奖前规则过滤 rule_weight 结果 拦截
+24-11-23.01:45:32.153 [main            ] INFO  StrategyRaffleTest     - 请求参数：{"strategyId":100001,"userId":"3"}
+24-11-23.01:45:32.153 [main            ] INFO  StrategyRaffleTest     - 测试结果：{"awardId":106}
+24-11-23.01:45:32.168 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-11-23.01:45:32.392 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-11-23.01:59:34.755 [main            ] ERROR SpringApplication      - Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [STDOUT]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:344)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:298)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:85)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:66)
+	at java.util.ArrayList.forEach(ArrayList.java:1255)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:120)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:114)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:301)
 	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:136)
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:141)
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:90)
@@ -438,30 +601,16 @@ org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating
 	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
 	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
 	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'ruleServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'top.javarem.infrastructure.dao.mapper.RuleMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657)
-	... 90 common frames omitted
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'top.javarem.infrastructure.dao.mapper.RuleMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1801)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1357)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657)
-	... 104 common frames omitted
-24-11-20.14:33:17.650 [main            ] ERROR TestContextManager     - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@350aac89] to prepare test instance [top.javarem.StrategyTest@11e17893]
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [STDOUT]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:179)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithSpecificConfig(AbstractLoggingSystem.java:66)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:57)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:132)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:332)
+	... 89 common frames omitted
+24-11-23.01:59:34.770 [main            ] ERROR TestContextManager     - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@7bd7d6d6] to prepare test instance [top.javarem.StrategyRaffleTest@44828f6b]
 java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:98)
 	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124)
@@ -535,718 +684,35 @@ java.lang.IllegalStateException: Failed to load ApplicationContext
 	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
 	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
 	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'strategyRepository': Unsatisfied dependency expressed through field 'ruleService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'ruleServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'top.javarem.infrastructure.dao.mapper.RuleMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:920)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+Caused by: java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [STDOUT]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:344)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:298)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:85)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:66)
+	at java.util.ArrayList.forEach(ArrayList.java:1255)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:120)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:114)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:343)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:301)
 	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:136)
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:141)
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:90)
 	... 71 common frames omitted
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'ruleServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'top.javarem.infrastructure.dao.mapper.RuleMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657)
-	... 90 common frames omitted
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'top.javarem.infrastructure.dao.mapper.RuleMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1801)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1357)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657)
-	... 104 common frames omitted
-24-11-20.14:35:10.852 [main            ] INFO  StrategyTest           - Starting StrategyTest using Java 1.8.0_151 on mile with PID 50912 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.14:35:10.853 [main            ] INFO  StrategyTest           - The following 1 profile is active: "dev"
-24-11-20.14:35:11.524 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.14:35:11.526 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.14:35:11.550 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
-24-11-20.14:35:14.866 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.14:35:15.730 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.14:35:16.127 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.14:35:17.458 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.14:35:17.518 [main            ] INFO  StrategyTest           - Started StrategyTest in 7.098 seconds (JVM running for 8.09)
-24-11-20.14:35:17.870 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-24-11-20.14:35:19.619 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-24-11-20.14:35:20.233 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-24-11-20.14:35:20.329 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-24-11-20.14:38:40.330 [main            ] INFO  StrategyTest           - Starting StrategyTest using Java 1.8.0_151 on mile with PID 50120 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.14:38:40.331 [main            ] INFO  StrategyTest           - The following 1 profile is active: "dev"
-24-11-20.14:38:41.037 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.14:38:41.039 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.14:38:41.063 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
-24-11-20.14:38:44.361 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.14:38:45.241 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.14:38:45.636 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.14:38:46.905 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.14:38:46.967 [main            ] INFO  StrategyTest           - Started StrategyTest in 7.079 seconds (JVM running for 8.079)
-24-11-20.14:38:47.555 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-24-11-20.14:38:49.086 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-24-11-20.14:38:49.297 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-24-11-20.14:38:49.754 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-24-11-20.14:44:38.234 [main            ] INFO  StrategyTest           - Starting StrategyTest using Java 1.8.0_151 on mile with PID 45812 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.14:44:38.235 [main            ] INFO  StrategyTest           - The following 1 profile is active: "dev"
-24-11-20.14:44:38.905 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.14:44:38.907 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.14:44:38.931 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
-24-11-20.14:44:42.264 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.14:44:43.131 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.14:44:43.530 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.14:44:44.780 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.14:44:44.840 [main            ] INFO  StrategyTest           - Started StrategyTest in 7.034 seconds (JVM running for 8.044)
-24-11-20.14:44:45.378 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-24-11-20.14:44:46.982 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-24-11-20.14:44:47.188 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-24-11-20.14:44:47.695 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-24-11-20.14:51:59.241 [main            ] INFO  StrategyTest           - Starting StrategyTest using Java 1.8.0_151 on mile with PID 50388 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.14:51:59.241 [main            ] INFO  StrategyTest           - The following 1 profile is active: "dev"
-24-11-20.14:51:59.913 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.14:51:59.913 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.14:51:59.945 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
-24-11-20.14:52:03.336 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.14:52:04.231 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.14:52:04.638 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.14:52:05.894 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.14:52:05.954 [main            ] INFO  StrategyTest           - Started StrategyTest in 7.116 seconds (JVM running for 8.097)
-24-11-20.14:52:06.512 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-24-11-20.14:52:08.023 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-24-11-20.14:52:08.241 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-24-11-20.14:52:08.667 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-24-11-20.14:58:26.245 [main            ] INFO  StrategyTest           - Starting StrategyTest using Java 1.8.0_151 on mile with PID 55664 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.14:58:26.246 [main            ] INFO  StrategyTest           - The following 1 profile is active: "dev"
-24-11-20.14:58:26.893 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.14:58:26.895 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.14:58:26.918 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
-24-11-20.14:58:30.192 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.14:58:31.100 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.14:58:31.509 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.14:58:32.745 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.14:58:32.804 [main            ] INFO  StrategyTest           - Started StrategyTest in 6.989 seconds (JVM running for 7.993)
-24-11-20.14:58:33.395 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-24-11-20.14:58:35.099 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-24-11-20.14:58:35.313 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-24-11-20.14:58:35.753 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-24-11-20.15:02:54.366 [main            ] INFO  StrategyTest           - Starting StrategyTest using Java 1.8.0_151 on mile with PID 31864 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.15:02:54.367 [main            ] INFO  StrategyTest           - The following 1 profile is active: "dev"
-24-11-20.15:02:55.019 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.15:02:55.021 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.15:02:55.046 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
-24-11-20.15:02:58.408 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.15:02:59.295 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.15:02:59.697 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.15:03:00.982 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.15:03:01.040 [main            ] INFO  StrategyTest           - Started StrategyTest in 7.061 seconds (JVM running for 8.042)
-24-11-20.15:03:01.366 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-24-11-20.15:03:02.877 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-24-11-20.15:03:03.077 [main            ] INFO  StrategyTest           - 测试结果：false
-24-11-20.15:03:03.228 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-24-11-20.15:03:03.522 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-24-11-20.15:06:43.112 [main            ] INFO  StrategyTest           - Starting StrategyTest using Java 1.8.0_151 on mile with PID 49684 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.15:06:43.113 [main            ] INFO  StrategyTest           - The following 1 profile is active: "dev"
-24-11-20.15:06:43.804 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.15:06:43.807 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.15:06:43.831 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
-24-11-20.15:07:03.644 [main            ] INFO  StrategyTest           - Starting StrategyTest using Java 1.8.0_151 on mile with PID 52816 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.15:07:03.645 [main            ] INFO  StrategyTest           - The following 1 profile is active: "dev"
-24-11-20.15:07:04.320 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.15:07:04.323 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.15:07:04.347 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
-24-11-20.15:07:07.713 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.15:07:08.587 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.15:07:09.045 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.15:07:10.270 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.15:07:10.327 [main            ] INFO  StrategyTest           - Started StrategyTest in 7.091 seconds (JVM running for 8.066)
-24-11-20.15:07:10.666 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-24-11-20.15:07:12.225 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-24-11-20.15:07:12.923 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-24-11-20.15:07:13.450 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-24-11-20.15:20:10.722 [main            ] INFO  StrategyTest           - Starting StrategyTest using Java 1.8.0_151 on mile with PID 20996 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.15:20:10.722 [main            ] INFO  StrategyTest           - The following 1 profile is active: "dev"
-24-11-20.15:20:11.410 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.15:20:11.410 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.15:20:11.434 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
-24-11-20.15:20:14.849 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.15:20:15.738 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.15:20:16.202 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.15:20:17.454 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.15:20:17.510 [main            ] INFO  StrategyTest           - Started StrategyTest in 7.213 seconds (JVM running for 8.217)
-24-11-20.15:20:18.144 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-24-11-20.15:20:19.688 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-24-11-20.15:20:19.892 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-24-11-20.15:20:20.339 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-24-11-20.15:22:33.057 [main            ] INFO  StrategyTest           - Starting StrategyTest using Java 1.8.0_151 on mile with PID 52316 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.15:22:33.066 [main            ] INFO  StrategyTest           - The following 1 profile is active: "dev"
-24-11-20.15:22:33.762 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.15:22:33.762 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.15:22:33.786 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
-24-11-20.15:22:37.131 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.15:22:38.036 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.15:22:38.433 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.15:22:39.760 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.15:22:39.814 [main            ] INFO  StrategyTest           - Started StrategyTest in 7.209 seconds (JVM running for 8.197)
-24-11-20.15:22:40.426 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-24-11-20.15:22:42.021 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-24-11-20.15:22:42.229 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-24-11-20.15:22:42.736 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-24-11-20.15:24:13.738 [main            ] INFO  StrategyTest           - Starting StrategyTest using Java 1.8.0_151 on mile with PID 56488 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.15:24:13.738 [main            ] INFO  StrategyTest           - The following 1 profile is active: "dev"
-24-11-20.15:24:14.406 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.15:24:14.406 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.15:24:14.438 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
-24-11-20.15:24:17.782 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.15:24:18.695 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.15:24:19.131 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.15:24:20.369 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.15:24:20.433 [main            ] INFO  StrategyTest           - Started StrategyTest in 7.107 seconds (JVM running for 8.088)
-24-11-20.15:24:21.032 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-24-11-20.15:24:22.584 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-24-11-20.15:24:22.989 [main            ] INFO  StrategyTest           - 测试结果：true
-24-11-20.15:24:23.094 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-24-11-20.15:24:23.228 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-24-11-20.15:26:07.728 [main            ] INFO  StrategyTest           - Starting StrategyTest using Java 1.8.0_151 on mile with PID 60936 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.15:26:07.728 [main            ] INFO  StrategyTest           - The following 1 profile is active: "dev"
-24-11-20.15:26:08.520 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.15:26:08.520 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.15:26:08.544 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
-24-11-20.15:26:11.857 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.15:26:12.767 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.15:26:13.171 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.15:26:14.474 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.15:26:14.527 [main            ] INFO  StrategyTest           - Started StrategyTest in 7.226 seconds (JVM running for 8.241)
-24-11-20.15:26:14.895 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-24-11-20.15:26:16.346 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-24-11-20.15:26:17.164 [main            ] INFO  StrategyTest           - 测试结果：true
-24-11-20.15:26:17.277 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-24-11-20.15:26:17.620 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-24-11-20.15:27:19.781 [main            ] INFO  StrategyTest           - Starting StrategyTest using Java 1.8.0_151 on mile with PID 61940 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.15:27:19.781 [main            ] INFO  StrategyTest           - The following 1 profile is active: "dev"
-24-11-20.15:27:20.481 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.15:27:20.481 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.15:27:20.506 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
-24-11-20.15:27:23.873 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.15:27:24.758 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.15:27:25.160 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.15:27:26.490 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.15:27:26.546 [main            ] INFO  StrategyTest           - Started StrategyTest in 7.241 seconds (JVM running for 8.301)
-24-11-20.15:31:52.236 [main            ] INFO  StrategyTest           - Starting StrategyTest using Java 1.8.0_151 on mile with PID 62548 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.15:31:52.236 [main            ] INFO  StrategyTest           - The following 1 profile is active: "dev"
-24-11-20.15:31:52.898 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.15:31:52.900 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.15:31:52.925 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
-24-11-20.15:31:56.286 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.15:31:57.177 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.15:31:57.589 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.15:31:58.880 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.15:31:58.952 [main            ] INFO  StrategyTest           - Started StrategyTest in 7.156 seconds (JVM running for 8.16)
-24-11-20.15:35:37.558 [main            ] INFO  StrategyTest           - Starting StrategyTest using Java 1.8.0_151 on mile with PID 63264 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.15:35:37.558 [main            ] INFO  StrategyTest           - The following 1 profile is active: "dev"
-24-11-20.15:35:38.232 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.15:35:38.232 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.15:35:38.257 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
-24-11-20.15:35:41.633 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.15:35:42.525 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.15:35:42.932 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.15:35:44.172 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.15:35:44.228 [main            ] INFO  StrategyTest           - Started StrategyTest in 7.085 seconds (JVM running for 8.064)
-24-11-20.15:35:44.871 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-24-11-20.15:35:46.420 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-24-11-20.15:35:46.540 [main            ] INFO  StrategyArmoryImpl     - {6000=[102, 103, 104, 105, 106, 107, 108, 109], 4000=[101, 102, 103, 104, 105, 106]}
-24-11-20.15:35:46.823 [main            ] INFO  StrategyTest           - 测试结果：true
-24-11-20.15:35:46.930 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-24-11-20.15:35:47.129 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-24-11-20.15:36:44.276 [main            ] INFO  StrategyTest           - Starting StrategyTest using Java 1.8.0_151 on mile with PID 64108 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.15:36:44.282 [main            ] INFO  StrategyTest           - The following 1 profile is active: "dev"
-24-11-20.15:36:44.981 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.15:36:44.981 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.15:36:45.005 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
-24-11-20.15:36:48.429 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.15:36:49.334 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.15:36:49.729 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.15:36:51.025 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.15:36:51.090 [main            ] INFO  StrategyTest           - Started StrategyTest in 7.221 seconds (JVM running for 8.217)
-24-11-20.15:36:51.743 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-24-11-20.15:36:53.287 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-24-11-20.15:36:53.407 [main            ] INFO  StrategyArmoryImpl     - {6000=[102, 103, 104, 105, 106, 107, 108, 109], 4000=[101, 102, 103, 104, 105, 106]}
-24-11-20.15:36:53.586 [main            ] INFO  StrategyArmoryImpl     - [AwardEntity(strategyId=100001, awardId=102, awardCount=10000, awardCountSurplus=10000, rate=0.1000), AwardEntity(strategyId=100001, awardId=103, awardCount=5000, awardCountSurplus=5000, rate=0.1000), AwardEntity(strategyId=100001, awardId=104, awardCount=4000, awardCountSurplus=4000, rate=0.1000), AwardEntity(strategyId=100001, awardId=105, awardCount=600, awardCountSurplus=600, rate=0.1000), AwardEntity(strategyId=100001, awardId=106, awardCount=200, awardCountSurplus=200, rate=0.3000), AwardEntity(strategyId=100001, awardId=107, awardCount=200, awardCountSurplus=200, rate=0.0007), AwardEntity(strategyId=100001, awardId=108, awardCount=199, awardCountSurplus=199, rate=0.0830), AwardEntity(strategyId=100001, awardId=109, awardCount=1, awardCountSurplus=1, rate=0.1100)]
-24-11-20.15:36:53.690 [main            ] INFO  StrategyArmoryImpl     - [AwardEntity(strategyId=100001, awardId=101, awardCount=80000, awardCountSurplus=80000, rate=0.1000), AwardEntity(strategyId=100001, awardId=102, awardCount=10000, awardCountSurplus=10000, rate=0.1000), AwardEntity(strategyId=100001, awardId=103, awardCount=5000, awardCountSurplus=5000, rate=0.1000), AwardEntity(strategyId=100001, awardId=104, awardCount=4000, awardCountSurplus=4000, rate=0.1000), AwardEntity(strategyId=100001, awardId=105, awardCount=600, awardCountSurplus=600, rate=0.1000), AwardEntity(strategyId=100001, awardId=106, awardCount=200, awardCountSurplus=200, rate=0.3000)]
-24-11-20.15:36:53.690 [main            ] INFO  StrategyTest           - 测试结果：true
-24-11-20.15:36:53.827 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-24-11-20.15:36:53.929 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-24-11-20.15:39:59.118 [main            ] INFO  StrategyTest           - Starting StrategyTest using Java 1.8.0_151 on mile with PID 57596 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.15:39:59.118 [main            ] INFO  StrategyTest           - The following 1 profile is active: "dev"
-24-11-20.15:39:59.789 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.15:39:59.789 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.15:39:59.815 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
-24-11-20.15:40:03.119 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.15:40:04.011 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.15:40:04.464 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.15:40:05.708 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.15:40:05.767 [main            ] INFO  StrategyTest           - Started StrategyTest in 7.074 seconds (JVM running for 8.08)
-24-11-20.15:40:06.412 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-24-11-20.15:40:07.947 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-24-11-20.15:40:08.078 [main            ] INFO  StrategyArmoryImpl     - {6000=[102, 103, 104, 105, 106, 107, 108, 109], 4000=[101, 102, 103, 104, 105, 106]}
-24-11-20.15:40:08.256 [main            ] INFO  StrategyArmoryImpl     - [AwardEntity(strategyId=100001, awardId=102, awardCount=10000, awardCountSurplus=10000, rate=0.1000), AwardEntity(strategyId=100001, awardId=103, awardCount=5000, awardCountSurplus=5000, rate=0.1000), AwardEntity(strategyId=100001, awardId=104, awardCount=4000, awardCountSurplus=4000, rate=0.1000), AwardEntity(strategyId=100001, awardId=105, awardCount=600, awardCountSurplus=600, rate=0.1000), AwardEntity(strategyId=100001, awardId=106, awardCount=200, awardCountSurplus=200, rate=0.3000), AwardEntity(strategyId=100001, awardId=107, awardCount=200, awardCountSurplus=200, rate=0.0007), AwardEntity(strategyId=100001, awardId=108, awardCount=199, awardCountSurplus=199, rate=0.0830), AwardEntity(strategyId=100001, awardId=109, awardCount=1, awardCountSurplus=1, rate=0.1100)]
-24-11-20.15:40:08.354 [main            ] INFO  StrategyArmoryImpl     - [AwardEntity(strategyId=100001, awardId=101, awardCount=80000, awardCountSurplus=80000, rate=0.1000), AwardEntity(strategyId=100001, awardId=102, awardCount=10000, awardCountSurplus=10000, rate=0.1000), AwardEntity(strategyId=100001, awardId=103, awardCount=5000, awardCountSurplus=5000, rate=0.1000), AwardEntity(strategyId=100001, awardId=104, awardCount=4000, awardCountSurplus=4000, rate=0.1000), AwardEntity(strategyId=100001, awardId=105, awardCount=600, awardCountSurplus=600, rate=0.1000), AwardEntity(strategyId=100001, awardId=106, awardCount=200, awardCountSurplus=200, rate=0.3000)]
-24-11-20.15:40:08.354 [main            ] INFO  StrategyTest           - 测试结果：true
-24-11-20.15:40:08.467 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-24-11-20.15:40:08.596 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-24-11-20.17:14:02.279 [main            ] INFO  StrategyTest           - Starting StrategyTest using Java 1.8.0_151 on mile with PID 15636 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.17:14:02.279 [main            ] INFO  StrategyTest           - The following 1 profile is active: "dev"
-24-11-20.17:14:02.995 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.17:14:02.995 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.17:14:03.027 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
-24-11-20.17:14:06.184 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.17:14:07.129 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.17:14:07.603 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.17:14:09.024 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.17:14:09.088 [main            ] INFO  StrategyTest           - Started StrategyTest in 7.263 seconds (JVM running for 8.777)
-24-11-20.17:14:20.227 [main            ] INFO  StrategyTest           - Starting StrategyTest using Java 1.8.0_151 on mile with PID 2308 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.17:14:20.236 [main            ] INFO  StrategyTest           - The following 1 profile is active: "dev"
-24-11-20.17:14:20.961 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.17:14:20.961 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.17:14:20.985 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
-24-11-20.17:14:24.038 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.17:14:24.816 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.17:14:25.259 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.17:14:26.567 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.17:14:26.631 [main            ] INFO  StrategyTest           - Started StrategyTest in 6.883 seconds (JVM running for 7.927)
-24-11-20.17:14:27.012 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-24-11-20.17:14:28.702 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-24-11-20.17:14:29.517 [main            ] INFO  StrategyArmoryImpl     - {6000=[102, 103, 104, 105, 106, 107, 108, 109], 4000=[101, 102, 103, 104, 105, 106]}
-24-11-20.17:14:29.720 [main            ] INFO  StrategyArmoryImpl     - [AwardEntity(strategyId=100001, awardId=102, awardCount=10000, awardCountSurplus=10000, rate=0.1000), AwardEntity(strategyId=100001, awardId=103, awardCount=5000, awardCountSurplus=5000, rate=0.1000), AwardEntity(strategyId=100001, awardId=104, awardCount=4000, awardCountSurplus=4000, rate=0.1000), AwardEntity(strategyId=100001, awardId=105, awardCount=600, awardCountSurplus=600, rate=0.1000), AwardEntity(strategyId=100001, awardId=106, awardCount=200, awardCountSurplus=200, rate=0.3000), AwardEntity(strategyId=100001, awardId=107, awardCount=200, awardCountSurplus=200, rate=0.0007), AwardEntity(strategyId=100001, awardId=108, awardCount=199, awardCountSurplus=199, rate=0.0830), AwardEntity(strategyId=100001, awardId=109, awardCount=1, awardCountSurplus=1, rate=0.1100)]
-24-11-20.17:14:29.824 [main            ] INFO  StrategyArmoryImpl     - [AwardEntity(strategyId=100001, awardId=101, awardCount=80000, awardCountSurplus=80000, rate=0.1000), AwardEntity(strategyId=100001, awardId=102, awardCount=10000, awardCountSurplus=10000, rate=0.1000), AwardEntity(strategyId=100001, awardId=103, awardCount=5000, awardCountSurplus=5000, rate=0.1000), AwardEntity(strategyId=100001, awardId=104, awardCount=4000, awardCountSurplus=4000, rate=0.1000), AwardEntity(strategyId=100001, awardId=105, awardCount=600, awardCountSurplus=600, rate=0.1000), AwardEntity(strategyId=100001, awardId=106, awardCount=200, awardCountSurplus=200, rate=0.3000)]
-24-11-20.17:14:29.824 [main            ] INFO  StrategyTest           - 测试结果：true
-24-11-20.17:14:29.937 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-24-11-20.17:14:30.131 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-24-11-20.17:15:04.988 [main            ] INFO  StrategyTest           - Starting StrategyTest using Java 1.8.0_151 on mile with PID 11732 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.17:15:04.988 [main            ] INFO  StrategyTest           - The following 1 profile is active: "dev"
-24-11-20.17:15:05.656 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.17:15:05.656 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.17:15:05.681 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
-24-11-20.17:15:08.652 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.17:15:09.458 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.17:15:09.861 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.17:15:11.178 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.17:15:11.242 [main            ] INFO  StrategyTest           - Started StrategyTest in 6.669 seconds (JVM running for 7.696)
-24-11-20.17:18:23.492 [main            ] INFO  StrategyTest           - Starting StrategyTest using Java 1.8.0_151 on mile with PID 2720 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.17:18:23.492 [main            ] INFO  StrategyTest           - The following 1 profile is active: "dev"
-24-11-20.17:18:24.189 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.17:18:24.189 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.17:18:24.213 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
-24-11-20.17:18:27.455 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.17:18:28.320 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.17:18:28.827 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.17:18:30.055 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.17:18:30.111 [main            ] INFO  StrategyTest           - Started StrategyTest in 7.014 seconds (JVM running for 7.99)
-24-11-20.17:18:30.766 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-24-11-20.17:18:32.419 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-24-11-20.17:18:32.543 [main            ] INFO  StrategyArmoryImpl     - {6000=[102, 103, 104, 105, 106, 107, 108, 109], 4000=[101, 102, 103, 104, 105, 106]}
-24-11-20.17:18:32.761 [main            ] INFO  StrategyArmoryImpl     - [AwardEntity(strategyId=100001, awardId=102, awardCount=10000, awardCountSurplus=10000, rate=0.1000), AwardEntity(strategyId=100001, awardId=103, awardCount=5000, awardCountSurplus=5000, rate=0.1000), AwardEntity(strategyId=100001, awardId=104, awardCount=4000, awardCountSurplus=4000, rate=0.1000), AwardEntity(strategyId=100001, awardId=105, awardCount=600, awardCountSurplus=600, rate=0.1000), AwardEntity(strategyId=100001, awardId=106, awardCount=200, awardCountSurplus=200, rate=0.3000), AwardEntity(strategyId=100001, awardId=107, awardCount=200, awardCountSurplus=200, rate=0.0007), AwardEntity(strategyId=100001, awardId=108, awardCount=199, awardCountSurplus=199, rate=0.0830), AwardEntity(strategyId=100001, awardId=109, awardCount=1, awardCountSurplus=1, rate=0.1100)]
-24-11-20.17:18:32.860 [main            ] INFO  StrategyArmoryImpl     - [AwardEntity(strategyId=100001, awardId=101, awardCount=80000, awardCountSurplus=80000, rate=0.1000), AwardEntity(strategyId=100001, awardId=102, awardCount=10000, awardCountSurplus=10000, rate=0.1000), AwardEntity(strategyId=100001, awardId=103, awardCount=5000, awardCountSurplus=5000, rate=0.1000), AwardEntity(strategyId=100001, awardId=104, awardCount=4000, awardCountSurplus=4000, rate=0.1000), AwardEntity(strategyId=100001, awardId=105, awardCount=600, awardCountSurplus=600, rate=0.1000), AwardEntity(strategyId=100001, awardId=106, awardCount=200, awardCountSurplus=200, rate=0.3000)]
-24-11-20.17:18:32.860 [main            ] INFO  StrategyTest           - 测试结果：true
-24-11-20.17:18:32.973 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-24-11-20.17:18:33.134 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-24-11-20.17:27:18.871 [main            ] INFO  StrategyTest           - Starting StrategyTest using Java 1.8.0_151 on mile with PID 10216 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.17:27:18.871 [main            ] INFO  StrategyTest           - The following 1 profile is active: "dev"
-24-11-20.17:27:19.522 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.17:27:19.522 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.17:27:19.546 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
-24-11-20.17:27:22.867 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.17:27:23.776 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.17:27:24.227 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.17:27:25.475 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.17:27:25.539 [main            ] INFO  StrategyTest           - Started StrategyTest in 7.088 seconds (JVM running for 8.095)
-24-11-20.17:29:05.005 [main            ] INFO  StrategyTest           - Starting StrategyTest using Java 1.8.0_151 on mile with PID 2508 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.17:29:05.005 [main            ] INFO  StrategyTest           - The following 1 profile is active: "dev"
-24-11-20.17:29:05.702 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.17:29:05.702 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.17:29:05.729 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
-24-11-20.17:29:09.072 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.17:29:10.006 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.17:29:10.680 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.17:29:11.985 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.17:29:12.050 [main            ] INFO  StrategyTest           - Started StrategyTest in 7.487 seconds (JVM running for 8.483)
-24-11-20.17:29:12.401 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-24-11-20.17:29:14.105 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-24-11-20.17:29:14.714 [main            ] INFO  StrategyArmoryImpl     - {6000=[102, 103, 104, 105, 106, 107, 108, 109], 4000=[101, 102, 103, 104, 105, 106]}
-24-11-20.17:29:14.982 [main            ] INFO  StrategyArmoryImpl     - [AwardEntity(strategyId=100001, awardId=102, awardCount=10000, awardCountSurplus=10000, rate=0.1000), AwardEntity(strategyId=100001, awardId=103, awardCount=5000, awardCountSurplus=5000, rate=0.1000), AwardEntity(strategyId=100001, awardId=104, awardCount=4000, awardCountSurplus=4000, rate=0.1000), AwardEntity(strategyId=100001, awardId=105, awardCount=600, awardCountSurplus=600, rate=0.1000), AwardEntity(strategyId=100001, awardId=106, awardCount=200, awardCountSurplus=200, rate=0.3000), AwardEntity(strategyId=100001, awardId=107, awardCount=200, awardCountSurplus=200, rate=0.0007), AwardEntity(strategyId=100001, awardId=108, awardCount=199, awardCountSurplus=199, rate=0.0893), AwardEntity(strategyId=100001, awardId=109, awardCount=1, awardCountSurplus=1, rate=0.1100)]
-24-11-20.17:29:15.130 [main            ] INFO  StrategyArmoryImpl     - [AwardEntity(strategyId=100001, awardId=101, awardCount=80000, awardCountSurplus=80000, rate=0.1000), AwardEntity(strategyId=100001, awardId=102, awardCount=10000, awardCountSurplus=10000, rate=0.1000), AwardEntity(strategyId=100001, awardId=103, awardCount=5000, awardCountSurplus=5000, rate=0.1000), AwardEntity(strategyId=100001, awardId=104, awardCount=4000, awardCountSurplus=4000, rate=0.1000), AwardEntity(strategyId=100001, awardId=105, awardCount=600, awardCountSurplus=600, rate=0.1000), AwardEntity(strategyId=100001, awardId=106, awardCount=200, awardCountSurplus=200, rate=0.3000)]
-24-11-20.17:29:15.130 [main            ] INFO  StrategyTest           - 测试结果：true
-24-11-20.17:29:15.237 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-24-11-20.17:29:15.598 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-24-11-20.17:30:06.229 [main            ] INFO  StrategyTest           - Starting StrategyTest using Java 1.8.0_151 on mile with PID 14144 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.17:30:06.229 [main            ] INFO  StrategyTest           - The following 1 profile is active: "dev"
-24-11-20.17:30:06.910 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.17:30:06.918 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.17:30:06.942 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
-24-11-20.17:30:10.240 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.17:30:11.107 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.17:30:11.611 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.17:30:12.856 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.17:30:12.920 [main            ] INFO  StrategyTest           - Started StrategyTest in 7.108 seconds (JVM running for 8.097)
-24-11-20.17:32:27.151 [main            ] INFO  StrategyTest           - Starting StrategyTest using Java 1.8.0_151 on mile with PID 10196 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.17:32:27.159 [main            ] INFO  StrategyTest           - The following 1 profile is active: "dev"
-24-11-20.17:32:27.830 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.17:32:27.833 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.17:32:27.853 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
-24-11-20.17:32:31.149 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.17:32:32.042 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.17:32:32.617 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.17:32:33.848 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.17:32:33.912 [main            ] INFO  StrategyTest           - Started StrategyTest in 7.157 seconds (JVM running for 8.144)
-24-11-20.17:32:34.218 [main            ] INFO  StrategyArmoryImpl     - 101 143
-24-11-20.17:32:34.218 [main            ] INFO  StrategyArmoryImpl     - 102 143
-24-11-20.17:32:34.218 [main            ] INFO  StrategyArmoryImpl     - 103 143
-24-11-20.17:32:34.218 [main            ] INFO  StrategyArmoryImpl     - 104 143
-24-11-20.17:32:34.218 [main            ] INFO  StrategyArmoryImpl     - 105 143
-24-11-20.17:32:34.218 [main            ] INFO  StrategyArmoryImpl     - 106 429
-24-11-20.17:32:34.218 [main            ] INFO  StrategyArmoryImpl     - 107 2
-24-11-20.17:32:34.218 [main            ] INFO  StrategyArmoryImpl     - 108 128
-24-11-20.17:32:34.218 [main            ] INFO  StrategyArmoryImpl     - 109 158
-24-11-20.17:32:34.548 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-24-11-20.17:32:36.306 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-24-11-20.17:32:36.430 [main            ] INFO  StrategyArmoryImpl     - {6000=[102, 103, 104, 105, 106, 107, 108, 109], 4000=[101, 102, 103, 104, 105, 106]}
-24-11-20.17:32:36.430 [main            ] INFO  StrategyArmoryImpl     - 102 143
-24-11-20.17:32:36.430 [main            ] INFO  StrategyArmoryImpl     - 103 143
-24-11-20.17:32:36.430 [main            ] INFO  StrategyArmoryImpl     - 104 143
-24-11-20.17:32:36.430 [main            ] INFO  StrategyArmoryImpl     - 105 143
-24-11-20.17:32:36.430 [main            ] INFO  StrategyArmoryImpl     - 106 429
-24-11-20.17:32:36.430 [main            ] INFO  StrategyArmoryImpl     - 107 2
-24-11-20.17:32:36.430 [main            ] INFO  StrategyArmoryImpl     - 108 128
-24-11-20.17:32:36.430 [main            ] INFO  StrategyArmoryImpl     - 109 158
-24-11-20.17:32:36.648 [main            ] INFO  StrategyArmoryImpl     - [AwardEntity(strategyId=100001, awardId=102, awardCount=10000, awardCountSurplus=10000, rate=0.1000), AwardEntity(strategyId=100001, awardId=103, awardCount=5000, awardCountSurplus=5000, rate=0.1000), AwardEntity(strategyId=100001, awardId=104, awardCount=4000, awardCountSurplus=4000, rate=0.1000), AwardEntity(strategyId=100001, awardId=105, awardCount=600, awardCountSurplus=600, rate=0.1000), AwardEntity(strategyId=100001, awardId=106, awardCount=200, awardCountSurplus=200, rate=0.3000), AwardEntity(strategyId=100001, awardId=107, awardCount=200, awardCountSurplus=200, rate=0.0007), AwardEntity(strategyId=100001, awardId=108, awardCount=199, awardCountSurplus=199, rate=0.0893), AwardEntity(strategyId=100001, awardId=109, awardCount=1, awardCountSurplus=1, rate=0.1100)]
-24-11-20.17:32:36.655 [main            ] INFO  StrategyArmoryImpl     - 101 1
-24-11-20.17:32:36.655 [main            ] INFO  StrategyArmoryImpl     - 102 1
-24-11-20.17:32:36.655 [main            ] INFO  StrategyArmoryImpl     - 103 1
-24-11-20.17:32:36.655 [main            ] INFO  StrategyArmoryImpl     - 104 1
-24-11-20.17:32:36.655 [main            ] INFO  StrategyArmoryImpl     - 105 1
-24-11-20.17:32:36.655 [main            ] INFO  StrategyArmoryImpl     - 106 3
-24-11-20.17:32:36.816 [main            ] INFO  StrategyArmoryImpl     - [AwardEntity(strategyId=100001, awardId=101, awardCount=80000, awardCountSurplus=80000, rate=0.1000), AwardEntity(strategyId=100001, awardId=102, awardCount=10000, awardCountSurplus=10000, rate=0.1000), AwardEntity(strategyId=100001, awardId=103, awardCount=5000, awardCountSurplus=5000, rate=0.1000), AwardEntity(strategyId=100001, awardId=104, awardCount=4000, awardCountSurplus=4000, rate=0.1000), AwardEntity(strategyId=100001, awardId=105, awardCount=600, awardCountSurplus=600, rate=0.1000), AwardEntity(strategyId=100001, awardId=106, awardCount=200, awardCountSurplus=200, rate=0.3000)]
-24-11-20.17:32:36.816 [main            ] INFO  StrategyTest           - 测试结果：true
-24-11-20.17:32:36.921 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-24-11-20.17:32:37.062 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-24-11-20.17:39:09.723 [main            ] INFO  StrategyTest           - Starting StrategyTest using Java 1.8.0_151 on mile with PID 19760 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.17:39:09.731 [main            ] INFO  StrategyTest           - The following 1 profile is active: "dev"
-24-11-20.17:39:10.376 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.17:39:10.384 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.17:39:10.408 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
-24-11-20.17:39:13.676 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.17:39:14.548 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.17:39:15.156 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.17:39:16.430 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.17:39:16.494 [main            ] INFO  StrategyTest           - Started StrategyTest in 7.197 seconds (JVM running for 8.2)
-24-11-20.17:39:16.761 [main            ] INFO  StrategyArmoryImpl     - 101 143
-24-11-20.17:39:16.761 [main            ] INFO  StrategyArmoryImpl     - 102 143
-24-11-20.17:39:16.761 [main            ] INFO  StrategyArmoryImpl     - 103 143
-24-11-20.17:39:16.761 [main            ] INFO  StrategyArmoryImpl     - 104 143
-24-11-20.17:39:16.761 [main            ] INFO  StrategyArmoryImpl     - 105 143
-24-11-20.17:39:16.761 [main            ] INFO  StrategyArmoryImpl     - 106 429
-24-11-20.17:39:16.761 [main            ] INFO  StrategyArmoryImpl     - 107 2
-24-11-20.17:39:16.761 [main            ] INFO  StrategyArmoryImpl     - 108 128
-24-11-20.17:39:16.761 [main            ] INFO  StrategyArmoryImpl     - 109 158
-24-11-20.17:39:16.761 [main            ] INFO  StrategyArmoryImpl     - 1432
-24-11-20.17:39:16.761 [main            ] INFO  StrategyArmoryImpl     - false
-24-11-20.17:39:16.761 [main            ] INFO  StrategyArmoryImpl     - false
-24-11-20.17:39:17.202 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-24-11-20.17:39:18.884 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-24-11-20.17:39:19.012 [main            ] INFO  StrategyArmoryImpl     - {6000=[102, 103, 104, 105, 106, 107, 108, 109], 4000=[101, 102, 103, 104, 105, 106]}
-24-11-20.17:39:19.013 [main            ] INFO  StrategyArmoryImpl     - 102 143
-24-11-20.17:39:19.013 [main            ] INFO  StrategyArmoryImpl     - 103 143
-24-11-20.17:39:19.013 [main            ] INFO  StrategyArmoryImpl     - 104 143
-24-11-20.17:39:19.013 [main            ] INFO  StrategyArmoryImpl     - 105 143
-24-11-20.17:39:19.013 [main            ] INFO  StrategyArmoryImpl     - 106 429
-24-11-20.17:39:19.013 [main            ] INFO  StrategyArmoryImpl     - 107 2
-24-11-20.17:39:19.013 [main            ] INFO  StrategyArmoryImpl     - 108 128
-24-11-20.17:39:19.013 [main            ] INFO  StrategyArmoryImpl     - 109 158
-24-11-20.17:39:19.013 [main            ] INFO  StrategyArmoryImpl     - 1289
-24-11-20.17:39:19.013 [main            ] INFO  StrategyArmoryImpl     - false
-24-11-20.17:39:19.013 [main            ] INFO  StrategyArmoryImpl     - false
-24-11-20.17:39:19.252 [main            ] INFO  StrategyArmoryImpl     - 101 1
-24-11-20.17:39:19.252 [main            ] INFO  StrategyArmoryImpl     - 102 1
-24-11-20.17:39:19.252 [main            ] INFO  StrategyArmoryImpl     - 103 1
-24-11-20.17:39:19.252 [main            ] INFO  StrategyArmoryImpl     - 104 1
-24-11-20.17:39:19.252 [main            ] INFO  StrategyArmoryImpl     - 105 1
-24-11-20.17:39:19.252 [main            ] INFO  StrategyArmoryImpl     - 106 3
-24-11-20.17:39:19.252 [main            ] INFO  StrategyArmoryImpl     - 8
-24-11-20.17:39:19.252 [main            ] INFO  StrategyArmoryImpl     - false
-24-11-20.17:39:19.252 [main            ] INFO  StrategyArmoryImpl     - false
-24-11-20.17:39:19.356 [main            ] INFO  StrategyTest           - 测试结果：true
-24-11-20.17:39:19.469 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-24-11-20.17:39:19.665 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-24-11-20.17:40:52.348 [main            ] INFO  StrategyTest           - Starting StrategyTest using Java 1.8.0_151 on mile with PID 9724 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.17:40:52.348 [main            ] INFO  StrategyTest           - The following 1 profile is active: "dev"
-24-11-20.17:40:52.994 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.17:40:52.998 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.17:40:53.022 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
-24-11-20.17:40:56.288 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.17:40:57.194 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.17:40:57.705 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.17:40:58.948 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.17:40:59.013 [main            ] INFO  StrategyTest           - Started StrategyTest in 7.086 seconds (JVM running for 8.052)
-24-11-20.17:40:59.337 [main            ] INFO  StrategyArmoryImpl     - 101 143
-24-11-20.17:40:59.337 [main            ] INFO  StrategyArmoryImpl     - 102 143
-24-11-20.17:40:59.337 [main            ] INFO  StrategyArmoryImpl     - 103 143
-24-11-20.17:40:59.337 [main            ] INFO  StrategyArmoryImpl     - 104 143
-24-11-20.17:40:59.337 [main            ] INFO  StrategyArmoryImpl     - 105 143
-24-11-20.17:40:59.337 [main            ] INFO  StrategyArmoryImpl     - 106 429
-24-11-20.17:40:59.337 [main            ] INFO  StrategyArmoryImpl     - 107 2
-24-11-20.17:40:59.337 [main            ] INFO  StrategyArmoryImpl     - 108 128
-24-11-20.17:40:59.337 [main            ] INFO  StrategyArmoryImpl     - 109 158
-24-11-20.17:40:59.337 [main            ] INFO  StrategyArmoryImpl     - 1432
-24-11-20.17:40:59.337 [main            ] INFO  StrategyArmoryImpl     - true
-24-11-20.17:40:59.337 [main            ] INFO  StrategyArmoryImpl     - true
-24-11-20.17:40:59.707 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-24-11-20.17:41:01.389 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-24-11-20.17:41:01.579 [main            ] INFO  StrategyArmoryImpl     - {6000=[102, 103, 104, 105, 106, 107, 108, 109], 4000=[101, 102, 103, 104, 105, 106]}
-24-11-20.17:41:01.579 [main            ] INFO  StrategyArmoryImpl     - 102 143
-24-11-20.17:41:01.579 [main            ] INFO  StrategyArmoryImpl     - 103 143
-24-11-20.17:41:01.579 [main            ] INFO  StrategyArmoryImpl     - 104 143
-24-11-20.17:41:01.579 [main            ] INFO  StrategyArmoryImpl     - 105 143
-24-11-20.17:41:01.579 [main            ] INFO  StrategyArmoryImpl     - 106 429
-24-11-20.17:41:01.579 [main            ] INFO  StrategyArmoryImpl     - 107 2
-24-11-20.17:41:01.579 [main            ] INFO  StrategyArmoryImpl     - 108 128
-24-11-20.17:41:01.579 [main            ] INFO  StrategyArmoryImpl     - 109 158
-24-11-20.17:41:01.579 [main            ] INFO  StrategyArmoryImpl     - 1289
-24-11-20.17:41:01.579 [main            ] INFO  StrategyArmoryImpl     - true
-24-11-20.17:41:01.579 [main            ] INFO  StrategyArmoryImpl     - true
-24-11-20.17:41:01.863 [main            ] INFO  StrategyArmoryImpl     - 101 1
-24-11-20.17:41:01.863 [main            ] INFO  StrategyArmoryImpl     - 102 1
-24-11-20.17:41:01.863 [main            ] INFO  StrategyArmoryImpl     - 103 1
-24-11-20.17:41:01.863 [main            ] INFO  StrategyArmoryImpl     - 104 1
-24-11-20.17:41:01.863 [main            ] INFO  StrategyArmoryImpl     - 105 1
-24-11-20.17:41:01.863 [main            ] INFO  StrategyArmoryImpl     - 106 3
-24-11-20.17:41:01.863 [main            ] INFO  StrategyArmoryImpl     - 8
-24-11-20.17:41:01.863 [main            ] INFO  StrategyArmoryImpl     - false
-24-11-20.17:41:01.863 [main            ] INFO  StrategyArmoryImpl     - false
-24-11-20.17:41:01.961 [main            ] INFO  StrategyTest           - 测试结果：true
-24-11-20.17:41:02.078 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-24-11-20.17:41:02.271 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-24-11-20.17:48:11.284 [main            ] INFO  StrategyTest           - Starting StrategyTest using Java 1.8.0_151 on mile with PID 21888 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.17:48:11.284 [main            ] INFO  StrategyTest           - The following 1 profile is active: "dev"
-24-11-20.17:48:11.970 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.17:48:11.970 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.17:48:11.994 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
-24-11-20.17:48:15.320 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.17:48:16.248 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.17:48:16.897 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.17:48:18.212 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.17:48:18.268 [main            ] INFO  StrategyTest           - Started StrategyTest in 7.393 seconds (JVM running for 8.473)
-24-11-20.17:48:18.564 [main            ] INFO  StrategyArmoryImpl     - 101 143
-24-11-20.17:48:18.564 [main            ] INFO  StrategyArmoryImpl     - 102 143
-24-11-20.17:48:18.564 [main            ] INFO  StrategyArmoryImpl     - 103 143
-24-11-20.17:48:18.564 [main            ] INFO  StrategyArmoryImpl     - 104 143
-24-11-20.17:48:18.564 [main            ] INFO  StrategyArmoryImpl     - 105 143
-24-11-20.17:48:18.564 [main            ] INFO  StrategyArmoryImpl     - 106 429
-24-11-20.17:48:18.564 [main            ] INFO  StrategyArmoryImpl     - 107 2
-24-11-20.17:48:18.564 [main            ] INFO  StrategyArmoryImpl     - 108 128
-24-11-20.17:48:18.564 [main            ] INFO  StrategyArmoryImpl     - 109 158
-24-11-20.17:48:18.564 [main            ] INFO  StrategyArmoryImpl     - 1432
-24-11-20.17:48:18.564 [main            ] INFO  StrategyArmoryImpl     - true
-24-11-20.17:48:18.564 [main            ] INFO  StrategyArmoryImpl     - true
-24-11-20.17:48:18.564 [main            ] INFO  StrategyArmoryImpl     - true
-24-11-20.17:48:18.564 [main            ] INFO  StrategyArmoryImpl     - true
-24-11-20.17:48:18.949 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-24-11-20.17:48:20.588 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-24-11-20.17:48:20.708 [main            ] INFO  StrategyArmoryImpl     - {6000=[102, 103, 104, 105, 106, 107, 108, 109], 4000=[101, 102, 103, 104, 105, 106]}
-24-11-20.17:48:20.708 [main            ] INFO  StrategyArmoryImpl     - 102 143
-24-11-20.17:48:20.708 [main            ] INFO  StrategyArmoryImpl     - 103 143
-24-11-20.17:48:20.708 [main            ] INFO  StrategyArmoryImpl     - 104 143
-24-11-20.17:48:20.708 [main            ] INFO  StrategyArmoryImpl     - 105 143
-24-11-20.17:48:20.708 [main            ] INFO  StrategyArmoryImpl     - 106 429
-24-11-20.17:48:20.708 [main            ] INFO  StrategyArmoryImpl     - 107 2
-24-11-20.17:48:20.708 [main            ] INFO  StrategyArmoryImpl     - 108 128
-24-11-20.17:48:20.708 [main            ] INFO  StrategyArmoryImpl     - 109 158
-24-11-20.17:48:20.708 [main            ] INFO  StrategyArmoryImpl     - 1289
-24-11-20.17:48:20.708 [main            ] INFO  StrategyArmoryImpl     - true
-24-11-20.17:48:20.708 [main            ] INFO  StrategyArmoryImpl     - true
-24-11-20.17:48:20.708 [main            ] INFO  StrategyArmoryImpl     - true
-24-11-20.17:48:20.708 [main            ] INFO  StrategyArmoryImpl     - true
-24-11-20.17:48:20.958 [main            ] INFO  StrategyArmoryImpl     - 101 1
-24-11-20.17:48:20.958 [main            ] INFO  StrategyArmoryImpl     - 102 1
-24-11-20.17:48:20.958 [main            ] INFO  StrategyArmoryImpl     - 103 1
-24-11-20.17:48:20.958 [main            ] INFO  StrategyArmoryImpl     - 104 1
-24-11-20.17:48:20.958 [main            ] INFO  StrategyArmoryImpl     - 105 1
-24-11-20.17:48:20.958 [main            ] INFO  StrategyArmoryImpl     - 106 3
-24-11-20.17:48:20.958 [main            ] INFO  StrategyArmoryImpl     - 8
-24-11-20.17:48:20.958 [main            ] INFO  StrategyArmoryImpl     - false
-24-11-20.17:48:20.958 [main            ] INFO  StrategyArmoryImpl     - false
-24-11-20.17:48:20.958 [main            ] INFO  StrategyArmoryImpl     - false
-24-11-20.17:48:20.958 [main            ] INFO  StrategyArmoryImpl     - true
-24-11-20.17:48:21.054 [main            ] INFO  StrategyTest           - 测试结果：true
-24-11-20.17:48:21.166 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-24-11-20.17:48:21.367 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-24-11-20.17:50:30.135 [main            ] INFO  StrategyTest           - Starting StrategyTest using Java 1.8.0_151 on mile with PID 20932 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.17:50:30.135 [main            ] INFO  StrategyTest           - The following 1 profile is active: "dev"
-24-11-20.17:50:30.821 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.17:50:30.821 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.17:50:30.845 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
-24-11-20.17:50:34.127 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.17:50:35.045 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.17:50:35.512 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.17:50:36.746 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.17:50:36.806 [main            ] INFO  StrategyTest           - Started StrategyTest in 7.065 seconds (JVM running for 8.071)
-24-11-20.17:50:37.119 [main            ] INFO  StrategyArmoryImpl     - 1432
-24-11-20.17:50:37.119 [main            ] INFO  StrategyArmoryImpl     - true
-24-11-20.17:50:37.119 [main            ] INFO  StrategyArmoryImpl     - true
-24-11-20.17:50:37.119 [main            ] INFO  StrategyArmoryImpl     - true
-24-11-20.17:50:37.119 [main            ] INFO  StrategyArmoryImpl     - true
-24-11-20.17:50:37.445 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-24-11-20.17:50:39.244 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-24-11-20.17:50:39.369 [main            ] INFO  StrategyArmoryImpl     - {6000=[102, 103, 104, 105, 106, 107, 108, 109], 4000=[101, 102, 103, 104, 105, 106]}
-24-11-20.17:50:39.369 [main            ] INFO  StrategyArmoryImpl     - 1289
-24-11-20.17:50:39.369 [main            ] INFO  StrategyArmoryImpl     - true
-24-11-20.17:50:39.369 [main            ] INFO  StrategyArmoryImpl     - true
-24-11-20.17:50:39.369 [main            ] INFO  StrategyArmoryImpl     - true
-24-11-20.17:50:39.369 [main            ] INFO  StrategyArmoryImpl     - true
-24-11-20.17:50:39.551 [main            ] INFO  StrategyArmoryImpl     - 8
-24-11-20.17:50:39.551 [main            ] INFO  StrategyArmoryImpl     - false
-24-11-20.17:50:39.551 [main            ] INFO  StrategyArmoryImpl     - false
-24-11-20.17:50:39.551 [main            ] INFO  StrategyArmoryImpl     - false
-24-11-20.17:50:39.551 [main            ] INFO  StrategyArmoryImpl     - true
-24-11-20.17:50:39.711 [main            ] INFO  StrategyTest           - 测试结果：true
-24-11-20.17:50:39.823 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-24-11-20.17:50:40.018 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-24-11-20.17:53:28.493 [main            ] INFO  StrategyTest           - Starting StrategyTest using Java 1.8.0_151 on mile with PID 22188 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.17:53:28.493 [main            ] INFO  StrategyTest           - The following 1 profile is active: "dev"
-24-11-20.17:53:29.185 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.17:53:29.187 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.17:53:29.213 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
-24-11-20.17:53:32.557 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.17:53:33.494 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.17:53:33.940 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.17:53:35.324 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.17:53:35.405 [main            ] INFO  StrategyTest           - Started StrategyTest in 7.303 seconds (JVM running for 8.299)
-24-11-20.17:56:22.695 [main            ] INFO  StrategyTest           - Starting StrategyTest using Java 1.8.0_151 on mile with PID 20628 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.17:56:22.695 [main            ] INFO  StrategyTest           - The following 1 profile is active: "dev"
-24-11-20.17:56:23.332 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.17:56:23.332 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.17:56:23.356 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
-24-11-20.17:56:26.684 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.17:56:27.605 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.17:56:28.221 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.17:56:29.505 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.17:56:29.569 [main            ] INFO  StrategyTest           - Started StrategyTest in 7.282 seconds (JVM running for 8.306)
-24-11-20.18:04:49.018 [main            ] INFO  StrategyTest           - Starting StrategyTest using Java 1.8.0_151 on mile with PID 27844 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.18:04:49.018 [main            ] INFO  StrategyTest           - The following 1 profile is active: "dev"
-24-11-20.18:04:49.681 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.18:04:49.681 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.18:04:49.710 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
-24-11-20.18:04:53.127 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.18:04:54.054 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.18:04:54.457 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.18:04:55.755 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.18:04:55.821 [main            ] INFO  StrategyTest           - Started StrategyTest in 7.205 seconds (JVM running for 8.173)
-24-11-20.18:06:20.168 [main            ] INFO  StrategyTest           - Starting StrategyTest using Java 1.8.0_151 on mile with PID 29516 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.18:06:20.168 [main            ] INFO  StrategyTest           - The following 1 profile is active: "dev"
-24-11-20.18:06:20.819 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.18:06:20.819 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.18:06:20.843 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
-24-11-20.18:06:24.158 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.18:06:25.084 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.18:06:25.489 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.18:06:26.756 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.18:06:26.812 [main            ] INFO  StrategyTest           - Started StrategyTest in 7.066 seconds (JVM running for 8.064)
-24-11-20.18:10:36.557 [main            ] INFO  StrategyTest           - Starting StrategyTest using Java 1.8.0_151 on mile with PID 28736 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.18:10:36.557 [main            ] INFO  StrategyTest           - The following 1 profile is active: "dev"
-24-11-20.18:10:37.233 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.18:10:37.233 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.18:10:37.256 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
-24-11-20.18:10:40.622 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.18:10:41.489 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.18:10:41.890 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.18:10:43.189 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.18:10:43.253 [main            ] INFO  StrategyTest           - Started StrategyTest in 7.112 seconds (JVM running for 8.092)
-24-11-20.18:10:43.529 [main            ] INFO  StrategyArmoryImpl     - awardRange: 1429
-24-11-20.18:10:43.632 [main            ] INFO  StrategyArmoryImpl     - awardRange: 1429
-24-11-20.18:10:43.729 [main            ] INFO  StrategyArmoryImpl     - awardRange: 1429
-24-11-20.18:10:43.836 [main            ] INFO  StrategyArmoryImpl     - awardRange: 1429
-24-11-20.18:10:43.934 [main            ] INFO  StrategyArmoryImpl     - awardRange: 1429
-24-11-20.18:10:44.034 [main            ] INFO  StrategyArmoryImpl     - awardRange: 1429
-24-11-20.18:10:44.143 [main            ] INFO  StrategyArmoryImpl     - awardRange: 1429
-24-11-20.18:10:44.245 [main            ] INFO  StrategyArmoryImpl     - awardRange: 1429
-24-11-20.18:10:44.348 [main            ] INFO  StrategyArmoryImpl     - awardRange: 1429
-24-11-20.18:10:44.450 [main            ] INFO  StrategyArmoryImpl     - awardRange: 1429
-24-11-20.18:12:21.735 [main            ] INFO  StrategyTest           - Starting StrategyTest using Java 1.8.0_151 on mile with PID 24716 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.18:12:21.736 [main            ] INFO  StrategyTest           - The following 1 profile is active: "dev"
-24-11-20.18:12:22.375 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.18:12:22.375 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.18:12:22.407 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
-24-11-20.18:12:25.811 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.18:12:26.749 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.18:12:27.089 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.18:12:28.323 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.18:12:28.383 [main            ] INFO  StrategyTest           - Started StrategyTest in 7.071 seconds (JVM running for 8.076)
-24-11-20.18:12:51.132 [main            ] INFO  StrategyTest           - Starting StrategyTest using Java 1.8.0_151 on mile with PID 2076 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.18:12:51.133 [main            ] INFO  StrategyTest           - The following 1 profile is active: "dev"
-24-11-20.18:12:51.828 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.18:12:51.828 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.18:12:51.852 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
-24-11-20.18:12:55.231 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.18:12:56.147 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.18:12:56.549 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.18:12:57.837 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.18:12:57.894 [main            ] INFO  StrategyTest           - Started StrategyTest in 7.158 seconds (JVM running for 8.143)
-24-11-20.18:12:58.134 [main            ] INFO  StrategyArmoryImpl     - awardRange: 8
-24-11-20.18:12:58.284 [main            ] INFO  StrategyArmoryImpl     - awardRange: 8
-24-11-20.18:12:58.391 [main            ] INFO  StrategyArmoryImpl     - awardRange: 8
-24-11-20.18:12:58.493 [main            ] INFO  StrategyArmoryImpl     - awardRange: 8
-24-11-20.18:12:58.596 [main            ] INFO  StrategyArmoryImpl     - awardRange: 8
-24-11-20.18:12:58.692 [main            ] INFO  StrategyArmoryImpl     - awardRange: 8
-24-11-20.18:12:58.801 [main            ] INFO  StrategyArmoryImpl     - awardRange: 8
-24-11-20.18:12:58.904 [main            ] INFO  StrategyArmoryImpl     - awardRange: 8
-24-11-20.18:12:59.006 [main            ] INFO  StrategyArmoryImpl     - awardRange: 8
-24-11-20.18:12:59.108 [main            ] INFO  StrategyArmoryImpl     - awardRange: 8
-24-11-20.18:14:32.327 [main            ] INFO  StrategyTest           - Starting StrategyTest using Java 1.8.0_151 on mile with PID 24456 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.18:14:32.327 [main            ] INFO  StrategyTest           - The following 1 profile is active: "dev"
-24-11-20.18:14:33.204 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.18:14:33.204 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.18:14:33.228 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
-24-11-20.18:14:36.621 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.18:14:37.518 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.18:14:37.923 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.18:14:39.230 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.18:14:39.294 [main            ] INFO  StrategyTest           - Started StrategyTest in 7.465 seconds (JVM running for 8.542)
-24-11-20.18:14:39.560 [main            ] INFO  StrategyArmoryImpl     - awardRange: 8
-24-11-20.18:14:39.666 [main            ] INFO  StrategyArmoryImpl     - awardRange: 8
-24-11-20.18:14:39.763 [main            ] INFO  StrategyArmoryImpl     - awardRange: 8
-24-11-20.18:14:39.871 [main            ] INFO  StrategyArmoryImpl     - awardRange: 8
-24-11-20.18:14:39.975 [main            ] INFO  StrategyArmoryImpl     - awardRange: 8
-24-11-20.18:14:40.075 [main            ] INFO  StrategyArmoryImpl     - awardRange: 8
-24-11-20.18:14:40.178 [main            ] INFO  StrategyArmoryImpl     - awardRange: 8
-24-11-20.18:14:40.281 [main            ] INFO  StrategyArmoryImpl     - awardRange: 8
-24-11-20.18:14:40.383 [main            ] INFO  StrategyArmoryImpl     - awardRange: 8
-24-11-20.18:14:40.483 [main            ] INFO  StrategyArmoryImpl     - awardRange: 8
-24-11-20.18:15:08.646 [main            ] INFO  StrategyTest           - Starting StrategyTest using Java 1.8.0_151 on mile with PID 21308 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-11-20.18:15:08.646 [main            ] INFO  StrategyTest           - The following 1 profile is active: "dev"
-24-11-20.18:15:09.359 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-20.18:15:09.359 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-20.18:15:09.383 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
-24-11-20.18:15:12.750 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-20.18:15:13.672 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.18:15:14.307 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-20.18:15:15.583 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-20.18:15:15.646 [main            ] INFO  StrategyTest           - Started StrategyTest in 7.43 seconds (JVM running for 8.416)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - Could not find an appender named [STDOUT]. Did you define it below instead of above in the configuration file?
+ERROR in ch.qos.logback.core.joran.action.AppenderRefAction - See http://logback.qos.ch/codes.html#appender_order for more details.
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:179)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithSpecificConfig(AbstractLoggingSystem.java:66)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:57)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:132)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:332)
+	... 89 common frames omitted

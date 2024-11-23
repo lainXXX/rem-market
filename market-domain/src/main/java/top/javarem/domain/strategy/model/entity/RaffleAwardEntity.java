@@ -1,11 +1,20 @@
 package top.javarem.domain.strategy.model.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 /**
  * @Author: rem
  * @Date: 2024/11/21/17:57
  * @Description:
  */
-public class AwardDetailEntity {
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class RaffleAwardEntity {
 
     /**
      * 抽奖策略id

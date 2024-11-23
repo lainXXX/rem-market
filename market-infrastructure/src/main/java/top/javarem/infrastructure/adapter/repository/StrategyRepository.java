@@ -1,6 +1,7 @@
 package top.javarem.infrastructure.adapter.repository;
 
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import lombok.extern.slf4j.Slf4j;
+import org.redisson.api.RScoredSortedSet;
 import org.redisson.api.RedissonClient;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,14 +9,13 @@ import org.springframework.stereotype.Repository;
 import org.springframework.util.CollectionUtils;
 import top.javarem.domain.strategy.model.entity.StrategyAwardEntity;
 import top.javarem.domain.strategy.model.entity.RuleEntity;
+import top.javarem.domain.strategy.model.entity.StrategyEntity;
 import top.javarem.domain.strategy.repository.IStrategyRepository;
-import top.javarem.infrastructure.dao.Iservice.IBlacklistService;
-import top.javarem.infrastructure.dao.Iservice.IRuleService;
-import top.javarem.infrastructure.dao.entity.Blacklist;
+import top.javarem.infrastructure.dao.Iservice.*;
+import top.javarem.infrastructure.dao.entity.User;
 import top.javarem.infrastructure.dao.entity.Rule;
-import top.javarem.infrastructure.dao.mapper.AwardMapper;
-import top.javarem.infrastructure.dao.Iservice.IAwardService;
-import top.javarem.infrastructure.dao.entity.Award;
+import top.javarem.infrastructure.dao.entity.Strategy;
+import top.javarem.infrastructure.dao.entity.StrategyAward;
 import top.javarem.types.common.constants.Constants;
 
 import java.util.List;
@@ -23,19 +23,30 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @Repository
-public class StrategyRepository extends ServiceImpl<AwardMapper, Award> implements IAwardService, IStrategyRepository {
+@Slf4j
+public class StrategyRepository implements IStrategyRepository {
 
-    @Autowired
-    private RedissonClient redissonClient;
+    private final RedissonClient redissonClient;
 
-    @Autowired
-    private IRuleService ruleService;
+    private final IStrategyAwardService strategyAwardService;
 
-    @Autowired
-    private IBlacklistService blacklistService;
+    private final IRuleService ruleService;
+
+    private final IUserService userService;
+
+    private final IStrategyService strategyService;
+
+    public StrategyRepository(RedissonClient redissonClient, IStrategyAwardService strategyAwardService, IRuleService ruleService, IUserService userService, IStrategyService strategyService) {
+        this.redissonClient = redissonClient;
+        this.strategyAwardService = strategyAwardService;
+        this.ruleService = ruleService;
+        this.userService = userService;
+        this.strategyService = strategyService;
+    }
 
     /**
      * 获取策略下的奖品集合
+     *
      * @param strategyId
      * @return
      */
@@ -46,13 +57,13 @@ public class StrategyRepository extends ServiceImpl<AwardMapper, Award> implemen
         List<StrategyAwardEntity> awardEntities = (List<StrategyAwardEntity>) redissonClient.getBucket(cacheKey).get();
         if (!CollectionUtils.isEmpty(awardEntities)) return awardEntities;
 //        2.如果不存在缓存 从数据库中取出Award 再通过属性复制转为AwardEntity
-        awardEntities = this.lambdaQuery().select(Award::getAwardId, Award::getStrategyId, Award::getAwardCount, Award::getAwardCountSurplus, Award::getRate)
-                .eq(Award::getStrategyId, strategyId)
+        awardEntities = strategyAwardService.lambdaQuery().select(StrategyAward::getAwardId, StrategyAward::getStrategyId, StrategyAward::getAwardCount, StrategyAward::getAwardCountSurplus, StrategyAward::getRate)
+                .eq(StrategyAward::getStrategyId, strategyId)
                 .list()
                 .stream()
-                .map(award -> {
+                .map(strategyAward -> {
                     StrategyAwardEntity strategyAwardEntity = new StrategyAwardEntity();
-                    BeanUtils.copyProperties(award, strategyAwardEntity);
+                    BeanUtils.copyProperties(strategyAward, strategyAwardEntity);
                     return strategyAwardEntity;
                 }).collect(Collectors.toList());
 //        3.存入缓存
@@ -62,6 +73,7 @@ public class StrategyRepository extends ServiceImpl<AwardMapper, Award> implemen
 
     /**
      * 储存奖品随机表
+     *
      * @param key
      * @param range
      * @param ShuffleAwardTable
@@ -75,7 +87,6 @@ public class StrategyRepository extends ServiceImpl<AwardMapper, Award> implemen
     }
 
     /**
-     *
      * @param strategyId
      * @return
      */
@@ -86,16 +97,18 @@ public class StrategyRepository extends ServiceImpl<AwardMapper, Award> implemen
 
     @Override
     public int getAwardRange(String key) {
-        return (int) redissonClient.getBucket(Constants.RedisKey.AWARD_RANGE_KEY + key).get();
+        return redissonClient.<Integer>getBucket(Constants.RedisKey.AWARD_RANGE_KEY + key).get();
     }
 
     @Override
     public Integer getRandomAwardId(String key, int rangeKey) {
+
         return (Integer) redissonClient.getMap(Constants.RedisKey.AWARD_TABLE_KEY + key).get(rangeKey);
     }
 
     @Override
     public RuleEntity getRuleEntity(Long strategyId) {
+
         RuleEntity ruleEntity = new RuleEntity();
         Rule rule = ruleService.lambdaQuery()
                 .select(Rule::getRuleModel, Rule::getRuleValue)
@@ -104,19 +117,74 @@ public class StrategyRepository extends ServiceImpl<AwardMapper, Award> implemen
                 .one();
         BeanUtils.copyProperties(rule, ruleEntity);
         return ruleEntity;
+
     }
 
     @Override
-    public Integer getBlacklistEntity(String userId) {
+    public String getBlacklistEntity(String userId) {
 //        因为使用.one()如果没有查询到会报错空指针异常
-         try {
-            return blacklistService.lambdaQuery()
-                    .select(Blacklist::getAwardId)
-                    .eq(Blacklist::getUserId, userId)
+        try {
+            return userService.lambdaQuery()
+                    .select(User::getRuleModel)
+                    .eq(User::getUserId, userId)
                     .one()
-                    .getAwardId();
+                    .getRuleModel();
         } catch (NullPointerException e) {
-             return null;
-         }
+            return null;
+        }
     }
+
+    /**
+     * 储存权重值
+     * @param score 排序分数
+     * @param ruleWeightKey 权重值
+     */
+    @Override
+    public void storeRuleWeightKey(double score, String ruleWeightKey) {
+//        将权重键存入有序集合中
+        redissonClient.<Long>getScoredSortedSet(Constants.RULE_WEIGHT_KEY).add(score, Long.parseLong(ruleWeightKey));
+    }
+
+    /**
+     * 获取满足条件的最小的权重
+     *
+     * @param userScore
+     * @return 最小权重
+     */
+    public String getMinMatchScore(Long userScore) {
+//        redis的ZSet默认是按分数升序排序 所以第一个元素是最小的 使用filter来找出满足条件的第一个元素返回 如果没有则返回null
+        RScoredSortedSet<Long> ZSet = redissonClient.getScoredSortedSet(Constants.RULE_WEIGHT_KEY);
+        if (ZSet == null || ZSet.isEmpty()) return null;
+        Long MinMatchScore = ZSet
+                .stream()
+                .filter(key -> key >= userScore)
+                .findFirst()
+                .orElse(null);
+        return MinMatchScore == null ? null : String.valueOf(MinMatchScore);
+    }
+
+    /**
+     * 获取策略实体
+     * @param strategyId 策略id
+     * @return 策略实体
+     */
+    @Override
+    public StrategyEntity getStrategyEntity(Long strategyId) {
+
+        StrategyEntity strategyEntity = redissonClient.<StrategyEntity>getBucket(Constants.RedisKey.STRATEGY_KEY + strategyId).get();
+        if (strategyEntity != null) return strategyEntity;
+        try {
+            Strategy strategy = strategyService.lambdaQuery()
+                    .eq(Strategy::getStrategyId, strategyId)
+                    .one();
+            strategyEntity = new StrategyEntity();
+            BeanUtils.copyProperties(strategy, strategyEntity);
+            redissonClient.<StrategyEntity>getBucket(Constants.RedisKey.STRATEGY_KEY + strategyId).set(strategyEntity);
+            return strategyEntity;
+        } catch (NullPointerException e) {
+            log.info(e.getMessage());
+            return null;
+        }
+    }
+
 }

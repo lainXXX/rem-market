@@ -1,6 +1,7 @@
 package top.javarem.domain.strategy.service;
 
-import top.javarem.domain.strategy.model.entity.AwardDetailEntity;
+import top.javarem.domain.strategy.model.entity.RaffleAwardEntity;
+import top.javarem.domain.strategy.model.entity.RaffleFactorEntity;
 
 /**
  * @Author: rem
@@ -9,6 +10,6 @@ import top.javarem.domain.strategy.model.entity.AwardDetailEntity;
  */
 public interface IStrategyRaffle {
 
-    void performRaffle(AwardDetailEntity awardDetail);
+    RaffleAwardEntity performRaffle(RaffleFactorEntity factor);
 
 }
