@@ -11,6 +11,7 @@ import top.javarem.domain.strategy.model.entity.RaffleAwardEntity;
 import top.javarem.domain.strategy.model.entity.RaffleFactorEntity;
 import top.javarem.domain.strategy.service.IStrategyRaffle;
 import top.javarem.domain.strategy.service.armory.IStrategyArmory;
+import top.javarem.domain.strategy.service.rule.impl.RuleLockLogicFilter;
 import top.javarem.domain.strategy.service.rule.impl.RuleWeightLogicFilter;
 
 import javax.annotation.Resource;
@@ -33,27 +34,36 @@ public class StrategyRaffleTest {
     @Resource
     private RuleWeightLogicFilter ruleWeightLogicFilter;
 
-    @BeforeEach
-    public void setUp() {
-        // 策略装配 100001、100002、100003
-        log.info("测试结果：{}", strategyArmory.assembleLotteryStrategy(100001L));
+    @Resource
+    private RuleLockLogicFilter lockLogicFilter;
 
-        // 通过反射 mock 规则中的值
-        ReflectionTestUtils.setField(ruleWeightLogicFilter, "userScore", 4050L);
+
+    @Test
+    public void test_strategyArmory() {
+        // 策略装配 100001、100002、100003
+        boolean success = strategyArmory.assembleLotteryStrategy(100001L);
+        log.info("策略装配测试结果：{}", success);
     }
 
-/*    @Test
+    @BeforeEach
+    public void setUp() {
+        // 通过反射 mock 规则中的值
+        ReflectionTestUtils.setField(ruleWeightLogicFilter, "userScore", 4050L);
+        ReflectionTestUtils.setField(lockLogicFilter, "userRaffleCount", 0L);
+    }
+
+    @Test
     public void test_raffle_center_rule_lock(){
         RaffleFactorEntity raffleFactorEntity = RaffleFactorEntity.builder()
-                .userId("1")
-                .StrategyId(100001L)
+                .userId("3")
+                .strategyId(100001L)
                 .build();
 
         RaffleAwardEntity raffleAwardEntity = strategyRaffle.performRaffle(raffleFactorEntity);
 
         log.info("请求参数：{}", JSON.toJSONString(raffleFactorEntity));
         log.info("测试结果：{}", JSON.toJSONString(raffleAwardEntity));
-    }*/
+    }
 
     @Test
     public void test_performRaffle_blacklist() {

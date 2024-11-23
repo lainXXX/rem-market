@@ -116,7 +116,7 @@ mybatis-plus:
     # MyBatis 配置
     map-underscore-to-camel-case: true
 #    日志
-#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   global-config:
     # 全局配置
     db-config:

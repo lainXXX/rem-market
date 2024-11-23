@@ -20,13 +20,13 @@ public interface IStrategyRepository {
 
     Integer getRandomAwardId(String key, int rangeKey);
 
-    RuleEntity getRuleEntity(Long strategyId);
-
     String getBlacklistEntity(String userId);
 
-    void storeRuleWeightKey(double score, String ruleWeightKey);
+    void storeRuleWeightKey(double score, Long ruleWeightKey);
 
-    String getMinMatchScore(Long userScore);
+    String getMinMatchScore(Long strategyId, String ruleModel, Long userScore);
+
+    RuleEntity getRuleEntity(Long strategyId, String ruleModel, Integer awardId);
 
     StrategyEntity getStrategyEntity(Long strategyId);
 

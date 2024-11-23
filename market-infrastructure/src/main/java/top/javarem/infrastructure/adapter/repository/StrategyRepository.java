@@ -4,7 +4,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.RScoredSortedSet;
 import org.redisson.api.RedissonClient;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.CollectionUtils;
 import top.javarem.domain.strategy.model.entity.StrategyAwardEntity;
@@ -18,6 +17,7 @@ import top.javarem.infrastructure.dao.entity.Strategy;
 import top.javarem.infrastructure.dao.entity.StrategyAward;
 import top.javarem.types.common.constants.Constants;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -107,17 +107,17 @@ public class StrategyRepository implements IStrategyRepository {
     }
 
     @Override
-    public RuleEntity getRuleEntity(Long strategyId) {
-
-        RuleEntity ruleEntity = new RuleEntity();
+    public RuleEntity getRuleEntity(Long strategyId, String ruleModel, Integer awardId) {
         Rule rule = ruleService.lambdaQuery()
-                .select(Rule::getRuleModel, Rule::getRuleValue)
+                .select(Rule::getRuleValue)
                 .eq(Rule::getStrategyId, strategyId)
-                .eq(Rule::getRuleModel, "rule_weight")
+                .eq(Rule::getRuleModel, ruleModel)
+                .eq(awardId != null, Rule::getAwardId, awardId)
                 .one();
+        if (rule == null) return null;
+        RuleEntity ruleEntity = new RuleEntity();
         BeanUtils.copyProperties(rule, ruleEntity);
         return ruleEntity;
-
     }
 
     @Override
@@ -136,35 +136,55 @@ public class StrategyRepository implements IStrategyRepository {
 
     /**
      * 储存权重值
-     * @param score 排序分数
+     *
+     * @param score         排序分数
      * @param ruleWeightKey 权重值
      */
     @Override
-    public void storeRuleWeightKey(double score, String ruleWeightKey) {
+    public void storeRuleWeightKey(double score, Long ruleWeightKey) {
 //        将权重键存入有序集合中
-        redissonClient.<Long>getScoredSortedSet(Constants.RULE_WEIGHT_KEY).add(score, Long.parseLong(ruleWeightKey));
+        redissonClient.<Long>getScoredSortedSet(Constants.RULE_WEIGHT_KEY).add(score, ruleWeightKey);
     }
 
     /**
      * 获取满足条件的最小的权重
      *
+     * @param strategyId
+     * @param ruleModel
      * @param userScore
      * @return 最小权重
      */
-    public String getMinMatchScore(Long userScore) {
+    public String getMinMatchScore(Long strategyId, String ruleModel, Long userScore) {
 //        redis的ZSet默认是按分数升序排序 所以第一个元素是最小的 使用filter来找出满足条件的第一个元素返回 如果没有则返回null
         RScoredSortedSet<Long> ZSet = redissonClient.getScoredSortedSet(Constants.RULE_WEIGHT_KEY);
-        if (ZSet == null || ZSet.isEmpty()) return null;
-        Long MinMatchScore = ZSet
+//        如果集合不为空 则直接返回
+        if (ZSet != null && !ZSet.isEmpty()) {
+            return ZSet
+                    .stream()
+                    .filter(key -> key >= userScore)
+                    .findFirst()
+                    .map(String::valueOf)
+                    .orElse(null);
+        }
+//        集合为空 从数据库中获取 并重新存入redis
+        String ruleValue = this.getRuleEntity(strategyId, ruleModel, null).getRuleValue();
+        double scoreKey = 1.0;
+        List<Long> weightKeys = this.getWeightKeys(ruleValue);
+        for (Long weightKey : weightKeys) {
+            this.storeRuleWeightKey(scoreKey, weightKey);
+            scoreKey += 1.0;
+        }
+        return weightKeys
                 .stream()
                 .filter(key -> key >= userScore)
                 .findFirst()
+                .map(String::valueOf)
                 .orElse(null);
-        return MinMatchScore == null ? null : String.valueOf(MinMatchScore);
     }
 
     /**
      * 获取策略实体
+     *
      * @param strategyId 策略id
      * @return 策略实体
      */
@@ -185,6 +205,14 @@ public class StrategyRepository implements IStrategyRepository {
             log.info(e.getMessage());
             return null;
         }
+    }
+
+    private List<Long> getWeightKeys(String ruleValue) {
+        List<Long> weightKeys = new ArrayList<>();
+        for (String ruleWeights : ruleValue.split(" ")) {
+            weightKeys.add(Long.parseLong(ruleWeights.split(":")[0]));
+        }
+        return weightKeys;
     }
 
 }

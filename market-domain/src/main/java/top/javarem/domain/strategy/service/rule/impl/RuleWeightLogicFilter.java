@@ -11,6 +11,8 @@ import top.javarem.domain.strategy.repository.IStrategyRepository;
 import top.javarem.domain.strategy.service.rule.ILogicFilter;
 import top.javarem.domain.strategy.service.rule.factory.DefaultLogicFactory;
 
+import java.util.List;
+
 import static top.javarem.domain.strategy.model.entity.RuleActionEntity.*;
 
 /**
@@ -20,7 +22,7 @@ import static top.javarem.domain.strategy.model.entity.RuleActionEntity.*;
  */
 @Component
 @Slf4j
-@StrategyLogic(logicModel = DefaultLogicFactory.LogicModel.RULE_WIGHT)
+@StrategyLogic(logicModel = DefaultLogicFactory.LogicModel.RULE_WEIGHT)
 public class RuleWeightLogicFilter implements ILogicFilter<RaffleBeforeEntity> {
 
     @Autowired
@@ -31,9 +33,10 @@ public class RuleWeightLogicFilter implements ILogicFilter<RaffleBeforeEntity> {
     public RuleActionEntity<RaffleBeforeEntity> filter(RuleMatterEntity ruleMatterEntity) {
         Long strategyId = ruleMatterEntity.getStrategyId();
         Integer awardId = ruleMatterEntity.getAwardId();
+        String ruleModel = ruleMatterEntity.getRuleModel();
         String userId = ruleMatterEntity.getUserId();
 
-        String minMatchWeightKey = repository.getMinMatchScore(userScore);
+        String minMatchWeightKey = repository.getMinMatchScore(strategyId, ruleModel, userScore);
         if (minMatchWeightKey == null) {
             return RuleActionEntity.<RaffleBeforeEntity>builder()
                     .code(RuleLogicCheckTypeVO.FILTER_PASS.getCode())
@@ -44,7 +47,7 @@ public class RuleWeightLogicFilter implements ILogicFilter<RaffleBeforeEntity> {
         return RuleActionEntity.<RaffleBeforeEntity>builder()
                 .code(RuleLogicCheckTypeVO.FILTER_BLOCK.getCode())
                 .info(RuleLogicCheckTypeVO.FILTER_BLOCK.getInfo())
-                .ruleModel(DefaultLogicFactory.LogicModel.RULE_WIGHT.getCode())
+                .ruleModel(DefaultLogicFactory.LogicModel.RULE_WEIGHT.getCode())
                 .data(RaffleBeforeEntity.builder()
                         .strategyId(strategyId)
                         .awardId(awardId)

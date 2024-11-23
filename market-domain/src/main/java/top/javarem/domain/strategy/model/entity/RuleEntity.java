@@ -50,7 +50,6 @@ public class RuleEntity implements Serializable {
 //    4000:101,102,103,104,105,106 6000:102,103,104,105,106,107,108,109
 //    拆分规则权重 装入map集合 如4000 {101,102,103} 6000 {102,103}
     public Map<String, List<Integer>> getRuleWeightValues() {
-        if (!"rule_weight".equals(ruleModel)) return null;
         Map<String, List<Integer>> ruleWeightValues = new HashMap<String, List<Integer>>();
         for (String ruleWeights : ruleValue.split(" ")) {
             String[] ruleWeight = ruleWeights.split(":");
