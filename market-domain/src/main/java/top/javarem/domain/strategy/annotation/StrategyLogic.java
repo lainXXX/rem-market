@@ -1,6 +1,6 @@
 package top.javarem.domain.strategy.annotation;
 
-import top.javarem.domain.strategy.service.rule.factory.DefaultLogicFactory.LogicModel;
+import top.javarem.domain.strategy.service.rule.filter.factory.DefaultFilterLogicFactory.LogicModel;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

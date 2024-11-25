@@ -11,9 +11,11 @@ import top.javarem.domain.strategy.model.entity.RuleActionEntity.RaffleExecuting
 import top.javarem.domain.strategy.model.entity.RuleMatterEntity;
 import top.javarem.domain.strategy.model.vo.RuleLogicCheckTypeVO;
 import top.javarem.domain.strategy.repository.IStrategyRepository;
+import top.javarem.domain.strategy.service.AbstractStrategyRaffle;
 import top.javarem.domain.strategy.service.armory.IStrategyArmoryDispatch;
-import top.javarem.domain.strategy.service.rule.ILogicFilter;
-import top.javarem.domain.strategy.service.rule.factory.DefaultLogicFactory;
+import top.javarem.domain.strategy.service.rule.chain.factory.DefaultChainFactory;
+import top.javarem.domain.strategy.service.rule.filter.ILogicFilter;
+import top.javarem.domain.strategy.service.rule.filter.factory.DefaultFilterLogicFactory;
 
 import java.util.List;
 import java.util.Map;
@@ -28,12 +30,11 @@ import java.util.stream.Collectors;
 @Service
 public class DefaultStrategyRaffle extends AbstractStrategyRaffle {
 
-    private final DefaultLogicFactory logicFactory;
+    private DefaultFilterLogicFactory logicFactory;
 
     @Autowired
-    public DefaultStrategyRaffle(IStrategyRepository repository, IStrategyArmoryDispatch dispatch, DefaultLogicFactory logicFactory) {
-        super(repository, dispatch);
-        this.logicFactory = logicFactory;
+    public DefaultStrategyRaffle(IStrategyRepository repository, IStrategyArmoryDispatch dispatch, DefaultChainFactory chainFactory) {
+        super(repository, dispatch, chainFactory);
     }
 
     /**
@@ -43,7 +44,7 @@ public class DefaultStrategyRaffle extends AbstractStrategyRaffle {
      * @param ruleModels 抽奖规则模型
      * @return 抽奖规则行为实体
      */
-    @Override
+/*    @Override
     protected RuleActionEntity<RuleActionEntity.RaffleBeforeEntity> doRaffleBeforeLogic(RaffleFactorEntity factor, List<String> ruleModels) {
 //        如果该过滤器没有传入规则 则直接放行
         if (CollectionUtils.isEmpty(ruleModels))
@@ -56,16 +57,16 @@ public class DefaultStrategyRaffle extends AbstractStrategyRaffle {
         RuleMatterEntity matter = RuleMatterEntity.builder()
                 .userId(factor.getUserId())
                 .strategyId(factor.getStrategyId())
-                .ruleModel(DefaultLogicFactory.LogicModel.RULE_BLACKLIST.getCode())
+                .ruleModel(DefaultFilterLogicFactory.LogicModel.RULE_BLACKLIST.getCode())
                 .build();
 //        优先过滤黑名单规则
         String ruleBlacklist = ruleModels.stream()
-                .filter(model -> model.equals(DefaultLogicFactory.LogicModel.RULE_BLACKLIST.getCode()))
+                .filter(model -> model.equals(DefaultFilterLogicFactory.LogicModel.RULE_BLACKLIST.getCode()))
                 .findFirst()
                 .orElse(null);
         if (StringUtils.isNotBlank(ruleBlacklist)) {
 //            从ILogicFilter的实现集合获取黑名单过滤器
-            ILogicFilter<RuleActionEntity.RaffleBeforeEntity> blacklistFilter = filterMap.get(DefaultLogicFactory.LogicModel.RULE_BLACKLIST.getCode());
+            ILogicFilter<RuleActionEntity.RaffleBeforeEntity> blacklistFilter = filterMap.get(DefaultFilterLogicFactory.LogicModel.RULE_BLACKLIST.getCode());
 //            装配RuleMatterEntity对象
 
             RuleActionEntity<RuleActionEntity.RaffleBeforeEntity> ruleAction = blacklistFilter.filter(matter);
@@ -78,7 +79,7 @@ public class DefaultStrategyRaffle extends AbstractStrategyRaffle {
 
 //        后续的过滤
         List<String> models = ruleModels.stream()
-                .filter(model -> !model.equals(DefaultLogicFactory.LogicModel.RULE_BLACKLIST.getCode()))
+                .filter(model -> !model.equals(DefaultFilterLogicFactory.LogicModel.RULE_BLACKLIST.getCode()))
                 .collect(Collectors.toList());
 
         RuleActionEntity<RuleActionEntity.RaffleBeforeEntity> ruleAction = null;
@@ -99,7 +100,7 @@ public class DefaultStrategyRaffle extends AbstractStrategyRaffle {
 
         return ruleAction;
 
-    }
+    }*/
 
     @Override
     protected RuleActionEntity<RaffleExecutingEntity> doRaffleExecutingLogic(RaffleFactorEntity factor, List<String> ruleModels) {

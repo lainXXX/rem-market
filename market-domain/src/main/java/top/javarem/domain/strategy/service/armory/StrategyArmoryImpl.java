@@ -7,7 +7,7 @@ import top.javarem.domain.strategy.model.entity.RuleEntity;
 import top.javarem.domain.strategy.repository.IStrategyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import top.javarem.domain.strategy.service.rule.factory.DefaultLogicFactory;
+import top.javarem.domain.strategy.service.rule.filter.factory.DefaultFilterLogicFactory;
 import top.javarem.types.common.constants.Constants;
 import top.javarem.types.enums.ResponseCode;
 import top.javarem.types.exception.AppException;
@@ -38,7 +38,7 @@ public class StrategyArmoryImpl implements IStrategyArmory, IStrategyArmoryDispa
         if (CollectionUtils.isEmpty(awardEntities)) return false;
         assembleLotteryStrategy(strategyId.toString(), awardEntities);
 //        获取规则权重
-        RuleEntity ruleEntity = repository.getRuleEntity(strategyId, DefaultLogicFactory.LogicModel.RULE_WEIGHT.getCode(), null);
+        RuleEntity ruleEntity = repository.getRuleEntity(strategyId, DefaultFilterLogicFactory.LogicModel.RULE_WEIGHT.getCode(), null);
         if (ruleEntity == null) {
             throw new AppException(ResponseCode.RULE_WEIGHT_NULL.getInfo());
         }

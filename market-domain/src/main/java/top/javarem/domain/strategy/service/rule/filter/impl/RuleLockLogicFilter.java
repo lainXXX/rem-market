@@ -1,4 +1,4 @@
-package top.javarem.domain.strategy.service.rule.impl;
+package top.javarem.domain.strategy.service.rule.filter.impl;
 
 import org.springframework.stereotype.Component;
 import top.javarem.domain.strategy.annotation.StrategyLogic;
@@ -8,8 +8,8 @@ import top.javarem.domain.strategy.model.entity.RuleEntity;
 import top.javarem.domain.strategy.model.entity.RuleMatterEntity;
 import top.javarem.domain.strategy.model.vo.RuleLogicCheckTypeVO;
 import top.javarem.domain.strategy.repository.IStrategyRepository;
-import top.javarem.domain.strategy.service.rule.ILogicFilter;
-import top.javarem.domain.strategy.service.rule.factory.DefaultLogicFactory;
+import top.javarem.domain.strategy.service.rule.filter.ILogicFilter;
+import top.javarem.domain.strategy.service.rule.filter.factory.DefaultFilterLogicFactory;
 
 import javax.annotation.Resource;
 
@@ -19,7 +19,7 @@ import javax.annotation.Resource;
  * @Description:
  */
 @Component
-@StrategyLogic(logicModel = DefaultLogicFactory.LogicModel.RULE_LOCK)
+@StrategyLogic(logicModel = DefaultFilterLogicFactory.LogicModel.RULE_LOCK)
 public class RuleLockLogicFilter implements ILogicFilter<RaffleExecutingEntity> {
 
     @Resource

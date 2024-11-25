@@ -20,7 +20,7 @@ public interface IStrategyRepository {
 
     Integer getRandomAwardId(String key, int rangeKey);
 
-    String getBlacklistEntity(String userId);
+    String getUserRuleModel(String userId);
 
     void storeRuleWeightKey(double score, Long ruleWeightKey);
 

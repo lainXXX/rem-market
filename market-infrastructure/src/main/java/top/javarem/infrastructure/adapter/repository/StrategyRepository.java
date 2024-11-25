@@ -121,7 +121,7 @@ public class StrategyRepository implements IStrategyRepository {
     }
 
     @Override
-    public String getBlacklistEntity(String userId) {
+    public String getUserRuleModel(String userId) {
 //        因为使用.one()如果没有查询到会报错空指针异常
         try {
             return userService.lambdaQuery()

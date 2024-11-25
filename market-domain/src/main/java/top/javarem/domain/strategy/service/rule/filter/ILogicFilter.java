@@ -1,4 +1,4 @@
-package top.javarem.domain.strategy.service.rule;
+package top.javarem.domain.strategy.service.rule.filter;
 
 import top.javarem.domain.strategy.model.entity.RuleActionEntity;
 import top.javarem.domain.strategy.model.entity.RuleMatterEntity;

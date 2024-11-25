@@ -1,4 +1,4 @@
-package top.javarem.domain.strategy.service.rule.factory;
+package top.javarem.domain.strategy.service.rule.filter.factory;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,7 +7,7 @@ import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.stereotype.Service;
 import top.javarem.domain.strategy.annotation.StrategyLogic;
 import top.javarem.domain.strategy.model.entity.RuleActionEntity;
-import top.javarem.domain.strategy.service.rule.ILogicFilter;
+import top.javarem.domain.strategy.service.rule.filter.ILogicFilter;
 
 import java.util.List;
 import java.util.Map;
@@ -19,7 +19,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * @Description:
  */
 @Service
-public class DefaultLogicFactory {
+public class DefaultFilterLogicFactory {
 
     public Map<String, ILogicFilter<?>> filterMap = new ConcurrentHashMap<>();
 
@@ -27,7 +27,7 @@ public class DefaultLogicFactory {
 //    在定义参数List<ILogicFilter<?>> logicFilters时 如果ILogicFilter的实现标注了@Component相关的注解 那么spring会自动把这些满足条件的bean收集到list集合中
 //    在收集到list后 ILogicFilter的实现如果标准了@StrategyLogic注解 则会被收集到map集合中
     @Autowired
-    public DefaultLogicFactory(List<ILogicFilter<?>> logicFilters) {
+    public DefaultFilterLogicFactory(List<ILogicFilter<?>> logicFilters) {
 
         logicFilters.forEach(logicFilter -> {
             StrategyLogic strategyLogic = AnnotationUtils.findAnnotation(logicFilter.getClass(), StrategyLogic.class);

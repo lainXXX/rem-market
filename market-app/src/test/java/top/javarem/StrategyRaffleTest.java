@@ -11,8 +11,10 @@ import top.javarem.domain.strategy.model.entity.RaffleAwardEntity;
 import top.javarem.domain.strategy.model.entity.RaffleFactorEntity;
 import top.javarem.domain.strategy.service.IStrategyRaffle;
 import top.javarem.domain.strategy.service.armory.IStrategyArmory;
-import top.javarem.domain.strategy.service.rule.impl.RuleLockLogicFilter;
-import top.javarem.domain.strategy.service.rule.impl.RuleWeightLogicFilter;
+import top.javarem.domain.strategy.service.rule.chain.IStrategyLogicLogicChain;
+import top.javarem.domain.strategy.service.rule.chain.factory.DefaultChainFactory;
+import top.javarem.domain.strategy.service.rule.chain.impl.RuleWeightLogicNode;
+import top.javarem.domain.strategy.service.rule.filter.impl.RuleLockLogicFilter;
 
 import javax.annotation.Resource;
 
@@ -32,23 +34,25 @@ public class StrategyRaffleTest {
     private IStrategyArmory strategyArmory;
 
     @Resource
-    private RuleWeightLogicFilter ruleWeightLogicFilter;
+    private RuleWeightLogicNode ruleWeightLogicNode;
 
     @Resource
     private RuleLockLogicFilter lockLogicFilter;
 
+    @Resource
+    private DefaultChainFactory defaultChainFactory;
 
     @Test
     public void test_strategyArmory() {
         // 策略装配 100001、100002、100003
-        boolean success = strategyArmory.assembleLotteryStrategy(100001L);
+        boolean success = strategyArmory.assembleLotteryStrategy(100002L);
         log.info("策略装配测试结果：{}", success);
     }
 
     @BeforeEach
     public void setUp() {
         // 通过反射 mock 规则中的值
-        ReflectionTestUtils.setField(ruleWeightLogicFilter, "userScore", 4050L);
+        ReflectionTestUtils.setField(ruleWeightLogicNode, "userScore", 6100L);
         ReflectionTestUtils.setField(lockLogicFilter, "userRaffleCount", 0L);
     }
 
@@ -76,6 +80,13 @@ public class StrategyRaffleTest {
 
         log.info("请求参数：{}", JSON.toJSONString(raffleFactorEntity));
         log.info("测试结果：{}", JSON.toJSONString(raffleAwardEntity));
+    }
+
+    @Test
+    public void test_StrategyLogicChain() {
+        IStrategyLogicLogicChain logicChain = defaultChainFactory.openLogicChain(100002L);
+        Integer i = logicChain.executeStrategy("5", 100002L);
+        System.out.println(i);
     }
 
 }
