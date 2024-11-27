@@ -36,21 +36,21 @@ public class RuleLockLogicFilter implements ILogicFilter<RaffleExecutingEntity> 
         RuleEntity ruleEntity = repository.getRuleEntity(strategyId, ruleModel, awardId);
         if (ruleEntity == null) {
             return RuleActionEntity.<RaffleExecutingEntity>builder()
-                    .code(RuleLogicCheckTypeVO.FILTER_PASS.getCode())
-                    .info(RuleLogicCheckTypeVO.FILTER_PASS.getInfo())
+                    .code(RuleLogicCheckTypeVO.PASS.getCode())
+                    .info(RuleLogicCheckTypeVO.PASS.getInfo())
                     .build();
         }
         Long awardValue = Long.parseLong(ruleEntity.getRuleValue());
         if (userRaffleCount >= awardValue) {
             return RuleActionEntity.<RaffleExecutingEntity>builder()
-                    .code(RuleLogicCheckTypeVO.FILTER_PASS.getCode())
-                    .info(RuleLogicCheckTypeVO.FILTER_PASS.getInfo())
+                    .code(RuleLogicCheckTypeVO.PASS.getCode())
+                    .info(RuleLogicCheckTypeVO.PASS.getInfo())
                     .build();
         }
 
         return RuleActionEntity.<RaffleExecutingEntity>builder()
-                .code(RuleLogicCheckTypeVO.FILTER_BLOCK.getCode())
-                .info(RuleLogicCheckTypeVO.FILTER_BLOCK.getInfo())
+                .code(RuleLogicCheckTypeVO.BLOCK.getCode())
+                .info(RuleLogicCheckTypeVO.BLOCK.getInfo())
                 .build();
     }
 }

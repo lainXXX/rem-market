@@ -1,5 +1,7 @@
 package top.javarem.domain.strategy.service.rule.chain;
 
+import top.javarem.domain.strategy.service.rule.chain.factory.DefaultChainFactory;
+
 /**
  * @Author: rem
  * @Date: 2024/11/25/21:01
@@ -7,6 +9,6 @@ package top.javarem.domain.strategy.service.rule.chain;
  */
 public interface IStrategyLogicLogicChain extends IStrategyLogicChainArmory {
 
-    Integer executeStrategy(String userId, Long strategyId);
+    DefaultChainFactory.LogicAwardVO executeStrategy(String userId, Long strategyId);
 
 }

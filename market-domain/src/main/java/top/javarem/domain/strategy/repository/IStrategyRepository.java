@@ -4,6 +4,8 @@ package top.javarem.domain.strategy.repository;
 import top.javarem.domain.strategy.model.entity.StrategyAwardEntity;
 import top.javarem.domain.strategy.model.entity.RuleEntity;
 import top.javarem.domain.strategy.model.entity.StrategyEntity;
+import top.javarem.domain.strategy.model.vo.RuleTreeVO;
+import top.javarem.domain.strategy.model.vo.StrategyAwardRuleModelsVO;
 
 import java.util.List;
 import java.util.Map;
@@ -30,4 +32,7 @@ public interface IStrategyRepository {
 
     StrategyEntity getStrategyEntity(Long strategyId);
 
+    StrategyAwardRuleModelsVO getAwardRules(Long strategyId, Integer awardId);
+
+    RuleTreeVO getRuleTreeVO(String treeId);
 }

@@ -7,6 +7,7 @@ import top.javarem.domain.strategy.model.entity.RuleActionEntity;
 import top.javarem.domain.strategy.model.vo.RuleLogicCheckTypeVO;
 import top.javarem.domain.strategy.repository.IStrategyRepository;
 import top.javarem.domain.strategy.service.rule.chain.AbstractStrategyLogicChain;
+import top.javarem.domain.strategy.service.rule.chain.factory.DefaultChainFactory;
 import top.javarem.domain.strategy.service.rule.filter.factory.DefaultFilterLogicFactory;
 import top.javarem.types.common.constants.Constants;
 
@@ -23,13 +24,16 @@ public class BlacklistLogicNode extends AbstractStrategyLogicChain {
     private IStrategyRepository repository;
 
     @Override
-    public Integer executeStrategy(String userId, Long strategyId) {
+    public DefaultChainFactory.LogicAwardVO executeStrategy(String userId, Long strategyId) {
         String ruleModel = repository.getUserRuleModel(userId);
 //        如果用户规则模型为黑名单 则返回黑名单奖品
         if (DefaultFilterLogicFactory.LogicModel.RULE_BLACKLIST.getCode().equals(ruleModel)) {
             Integer awardId = Constants.BLACKLIST_AWARD_ID;
             log.info("抽奖责任链-黑名单规则接管执行");
-            return awardId;
+            return DefaultChainFactory.LogicAwardVO.builder()
+                    .awardId(awardId)
+                    .ruleModel(getRuleModel())
+                    .build();
         }
 
         log.info("黑名单规则放行");

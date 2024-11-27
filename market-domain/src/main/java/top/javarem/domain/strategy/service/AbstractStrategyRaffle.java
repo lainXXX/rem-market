@@ -4,16 +4,12 @@ import lombok.extern.slf4j.Slf4j;
 import top.javarem.domain.strategy.model.entity.RaffleAwardEntity;
 import top.javarem.domain.strategy.model.entity.RaffleFactorEntity;
 import top.javarem.domain.strategy.model.entity.RuleActionEntity;
-import top.javarem.domain.strategy.model.entity.RuleActionEntity.RaffleBeforeEntity;
 import top.javarem.domain.strategy.model.entity.RuleActionEntity.RaffleExecutingEntity;
 import top.javarem.domain.strategy.model.entity.StrategyEntity;
-import top.javarem.domain.strategy.model.vo.RuleLogicCheckTypeVO;
 import top.javarem.domain.strategy.repository.IStrategyRepository;
 import top.javarem.domain.strategy.service.armory.IStrategyArmoryDispatch;
-import top.javarem.domain.strategy.service.rule.chain.IStrategyLogicLogicChain;
 import top.javarem.domain.strategy.service.rule.chain.factory.DefaultChainFactory;
-import top.javarem.domain.strategy.service.rule.filter.factory.DefaultFilterLogicFactory;
-import top.javarem.types.common.constants.Constants;
+import top.javarem.domain.strategy.service.rule.tree.factory.DefaultTreeFactory;
 
 import java.util.List;
 
@@ -48,28 +44,29 @@ public abstract class AbstractStrategyRaffle implements IStrategyRaffle {
         }
 //        查询策略规则
         StrategyEntity strategyEntity = repository.getStrategyEntity(strategyId);
-//        开启抽奖策略责任链
-        IStrategyLogicLogicChain logicChain = chainFactory.openLogicChain(strategyId);
-//        通过责任链获取奖品ID
-        Integer randomAwardId = logicChain.executeStrategy(userId, strategyId);
-        log.info("责任链获取奖品ID awardId: {}", randomAwardId);
-//        抽奖时规则逻辑执行
-        RuleActionEntity<RaffleExecutingEntity> executingRule = this.doRaffleExecutingLogic(RaffleFactorEntity.builder().userId(userId).strategyId(strategyId).awardId(randomAwardId).build(),
-                strategyEntity.getRaffleExecutingModel());
-        if (executingRule.getCode().equals(RuleLogicCheckTypeVO.FILTER_BLOCK.getCode())) {
-            log.info("抽奖时规则被拦截 通过rule_luck_award规则走兜底奖励");
+//        抽奖策略责任链获取奖品
+        DefaultChainFactory.LogicAwardVO chainLogicAwardVO = this.doRaffleLogicChain(userId, strategyId);
+        log.info("责任链获取奖品ID awardId: {} ruleModel: {}", chainLogicAwardVO.getAwardId(), chainLogicAwardVO.getRuleModel());
+//        如果抽奖奖品执行规则不为默认规则 则直接返回奖品
+        if (!DefaultChainFactory.LogicModel.DEFAULT.getCode().equals(chainLogicAwardVO.getRuleModel())) {
             return RaffleAwardEntity.builder()
-                    .awardDesc("中奖中规则拦截，通过抽奖后规则 rule_luck_award 走兜底奖励。")
+                    .awardId(chainLogicAwardVO.getAwardId())
                     .build();
         }
+
+//        获取奖品后规则树逻辑执行
+        DefaultTreeFactory.LogicAwardVO treeLogicAwardVO = this.doRaffleLogicTree(strategyId, chainLogicAwardVO.getAwardId());
+        Integer awardId = treeLogicAwardVO.getAwardId();
+        log.info("规则树逻辑执行 奖品id {} ", awardId);
+
         return RaffleAwardEntity.builder()
-                .awardId(randomAwardId)
+                .awardId(awardId)
                 .build();
 
     }
 
-//    protected abstract RuleActionEntity<RaffleBeforeEntity> doRaffleBeforeLogic(RaffleFactorEntity factor, List<String> ruleModels);
+    protected abstract DefaultChainFactory.LogicAwardVO doRaffleLogicChain(String userId, Long strategyId);
 
-    protected abstract RuleActionEntity<RaffleExecutingEntity> doRaffleExecutingLogic(RaffleFactorEntity factor, List<String> ruleModels);
+    protected abstract DefaultTreeFactory.LogicAwardVO doRaffleLogicTree(Long strategyId, Integer awardId);
 
 }

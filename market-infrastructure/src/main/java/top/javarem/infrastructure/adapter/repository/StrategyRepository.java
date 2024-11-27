@@ -9,15 +9,14 @@ import org.springframework.util.CollectionUtils;
 import top.javarem.domain.strategy.model.entity.StrategyAwardEntity;
 import top.javarem.domain.strategy.model.entity.RuleEntity;
 import top.javarem.domain.strategy.model.entity.StrategyEntity;
+import top.javarem.domain.strategy.model.vo.*;
 import top.javarem.domain.strategy.repository.IStrategyRepository;
 import top.javarem.infrastructure.dao.Iservice.*;
-import top.javarem.infrastructure.dao.entity.User;
-import top.javarem.infrastructure.dao.entity.Rule;
-import top.javarem.infrastructure.dao.entity.Strategy;
-import top.javarem.infrastructure.dao.entity.StrategyAward;
+import top.javarem.infrastructure.dao.entity.*;
 import top.javarem.types.common.constants.Constants;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -36,12 +35,21 @@ public class StrategyRepository implements IStrategyRepository {
 
     private final IStrategyService strategyService;
 
-    public StrategyRepository(RedissonClient redissonClient, IStrategyAwardService strategyAwardService, IRuleService ruleService, IUserService userService, IStrategyService strategyService) {
+    private final IRuleTreeService ruleTreeService;
+
+    private final IRuleTreeNodeService ruleTreeNodeService;
+
+    private final IRuleTreeNodeLineService ruleTreeNodeLineService;
+
+    public StrategyRepository(RedissonClient redissonClient, IStrategyAwardService strategyAwardService, IRuleService ruleService, IUserService userService, IStrategyService strategyService, IRuleTreeService ruleTreeService, IRuleTreeNodeService ruleTreeNodeService, IRuleTreeNodeLineService ruleTreeNodeLineService) {
         this.redissonClient = redissonClient;
         this.strategyAwardService = strategyAwardService;
         this.ruleService = ruleService;
         this.userService = userService;
         this.strategyService = strategyService;
+        this.ruleTreeService = ruleTreeService;
+        this.ruleTreeNodeService = ruleTreeNodeService;
+        this.ruleTreeNodeLineService = ruleTreeNodeLineService;
     }
 
     /**
@@ -54,7 +62,7 @@ public class StrategyRepository implements IStrategyRepository {
     public List<StrategyAwardEntity> getStrategyAwardList(Long strategyId) {
 //        1.先在redis中查询是否存在awardEntities 存在则直接返回
         String cacheKey = Constants.RedisKey.STRATEGY_AWARD_KEY + strategyId;
-        List<StrategyAwardEntity> awardEntities = (List<StrategyAwardEntity>) redissonClient.getBucket(cacheKey).get();
+        List<StrategyAwardEntity> awardEntities =  redissonClient.<List<StrategyAwardEntity>>getBucket(cacheKey).get();
         if (!CollectionUtils.isEmpty(awardEntities)) return awardEntities;
 //        2.如果不存在缓存 从数据库中取出Award 再通过属性复制转为AwardEntity
         awardEntities = strategyAwardService.lambdaQuery().select(StrategyAward::getAwardId, StrategyAward::getStrategyId, StrategyAward::getAwardCount, StrategyAward::getAwardCountSurplus, StrategyAward::getRate)
@@ -205,6 +213,99 @@ public class StrategyRepository implements IStrategyRepository {
             log.info(e.getMessage());
             return null;
         }
+    }
+
+    @Override
+    public StrategyAwardRuleModelsVO getAwardRules(Long strategyId, Integer awardId) {
+        try {
+            String models = strategyAwardService.lambdaQuery()
+                .select(StrategyAward::getModels)
+                .eq(StrategyAward::getStrategyId, strategyId)
+                .eq(StrategyAward::getAwardId, awardId)
+                .one()
+                .getModels();
+            return StrategyAwardRuleModelsVO.builder()
+                    .ruleModels(models)
+                    .build();
+        } catch (NullPointerException e) {
+            return null;
+        }
+
+    }
+
+    /**
+     * 获取规则树值对象
+     * @param treeId 规则树id
+     * @return
+     */
+    @Override
+    public RuleTreeVO getRuleTreeVO(String treeId) {
+        String cacheKey = Constants.RedisKey.RULE_TREE_KEY + treeId;
+        RuleTreeVO tree = redissonClient.<RuleTreeVO>getBucket(cacheKey).get();
+        if (tree != null) return tree;
+//        先获取节点连接逻辑
+        List<RuleTreeNodeLine> treeNodeLines = getNodeLines(treeId);
+//        创建节点连接逻辑集合 格式： rule_lock {RuleTreeNodeLineVO1,RuleTreeNodeLineVO2...}
+        Map<String, List<RuleTreeNodeLineVO>> lineVOMap = new HashMap<>();
+        treeNodeLines.stream().forEach(line -> {
+//            创建一个节点连接对象
+            RuleTreeNodeLineVO nodeLineVO = RuleTreeNodeLineVO.builder()
+                    .treeId(line.getTreeId())
+                    .ruleNodeKey(line.getRuleNodeKey())
+                    .ruleChildNode(line.getRuleChildNode())
+                    .ruleLimitType(RuleLimitTypeVO.valueOf(line.getRuleLimitType()))
+                    .ruleLimitValue(RuleLogicCheckTypeVO.valueOf(line.getRuleLimitValue()))
+                    .build();
+//            如果节点连接逻辑集合中不存在某个父节点的名称 则在map存入一个元素 格式为 父节点名称 value 如果父节点存在 不在map中新增元素 仅在list 集合中新增一个元素
+            lineVOMap.computeIfAbsent(line.getRuleNodeKey(), k -> new ArrayList<>()).add(nodeLineVO);
+        });
+//        获取规则树节点集合
+        List<RuleTreeNode> nodes = getNodes(treeId);
+//        将lineVOMap对应的节点连接逻辑放入对应的节点
+        Map<String, RuleTreeNodeVO> nodeVOMap = nodes.stream().collect(Collectors.toMap(node -> node.getTreeNodeKey(), node ->
+                RuleTreeNodeVO.builder()
+                        .treeId(node.getTreeId())
+                        .treeNodeKey(node.getTreeNodeKey())
+                        .ruleDesc(node.getRuleDesc())
+                        .ruleValue(node.getRuleValue())
+                        .treeNodeLineVOList(lineVOMap.get(node.getTreeNodeKey()))
+                        .build()
+        ));
+//        创建规则树
+        RuleTree ruleTree = getRuleTree(treeId);
+//        将每个节点和节点逻辑存入规则树
+        tree = RuleTreeVO.builder()
+                .treeId(treeId)
+                .treeName(ruleTree.getTreeName())
+                .treeDesc(ruleTree.getTreeDesc())
+                .treeRootRuleNode(ruleTree.getTreeRootNodeKey())
+                .treeNodeMap(nodeVOMap)
+                .build();
+//        存入redis
+        redissonClient.<RuleTreeVO>getBucket(cacheKey).set(tree);
+        return tree;
+    }
+
+
+    private List<RuleTreeNode> getNodes(String treeId) {
+        return ruleTreeNodeService.lambdaQuery()
+                .select(RuleTreeNode::getTreeId, RuleTreeNode::getTreeNodeKey, RuleTreeNode::getRuleDesc, RuleTreeNode::getRuleValue)
+                .eq(RuleTreeNode::getTreeId, treeId)
+                .list();
+    }
+
+    private RuleTree getRuleTree(String treeId) {
+        return ruleTreeService.lambdaQuery()
+                .select(RuleTree::getTreeId, RuleTree::getTreeName, RuleTree::getTreeDesc, RuleTree::getTreeRootNodeKey)
+                .eq(RuleTree::getTreeId, treeId)
+                .one();
+    }
+
+    private List<RuleTreeNodeLine> getNodeLines(String treeId) {
+        return ruleTreeNodeLineService.lambdaQuery()
+                .select(RuleTreeNodeLine::getTreeId, RuleTreeNodeLine::getRuleNodeKey, RuleTreeNodeLine::getRuleChildNode, RuleTreeNodeLine::getRuleLimitType, RuleTreeNodeLine::getRuleLimitValue)
+                .eq(RuleTreeNodeLine::getTreeId, treeId)
+                .list();
     }
 
     private List<Long> getWeightKeys(String ruleValue) {

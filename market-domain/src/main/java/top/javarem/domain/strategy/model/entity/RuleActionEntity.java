@@ -12,8 +12,8 @@ import top.javarem.domain.strategy.model.vo.RuleLogicCheckTypeVO;
 @NoArgsConstructor
 public class RuleActionEntity<T extends RuleActionEntity.RaffleEntity> {
 
-    private String code = RuleLogicCheckTypeVO.FILTER_PASS.getCode();
-    private String info = RuleLogicCheckTypeVO.FILTER_PASS.getInfo();
+    private String code = RuleLogicCheckTypeVO.PASS.getCode();
+    private String info = RuleLogicCheckTypeVO.PASS.getInfo();
     private String ruleModel;
     private T data;
 

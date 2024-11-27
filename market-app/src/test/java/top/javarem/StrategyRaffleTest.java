@@ -85,8 +85,8 @@ public class StrategyRaffleTest {
     @Test
     public void test_StrategyLogicChain() {
         IStrategyLogicLogicChain logicChain = defaultChainFactory.openLogicChain(100002L);
-        Integer i = logicChain.executeStrategy("5", 100002L);
-        System.out.println(i);
+        DefaultChainFactory.LogicAwardVO logicAwardVO = logicChain.executeStrategy("5", 100002L);
+        System.out.println(logicAwardVO);
     }
 
 }
