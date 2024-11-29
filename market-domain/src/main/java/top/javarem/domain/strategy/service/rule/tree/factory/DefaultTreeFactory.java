@@ -38,8 +38,10 @@ public class DefaultTreeFactory {
     public static class LogicAwardVO {
 
         private Integer awardId;
+
         private String ruleModel;
 
+        private String value;
     }
 
 
@@ -52,6 +54,19 @@ public class DefaultTreeFactory {
         private RuleLogicCheckTypeVO ruleLogicCheckTypeVO;
 
         private LogicAwardVO logicAwardVO;
+
+    }
+
+    @Getter
+    @AllArgsConstructor
+    public enum LogicModel {
+
+        LOCK("rule_lock", "奖品锁规则"),
+        LUCK_AWARD("rule_luck_award", "兜底奖品规则"),
+        STOCK("rule_stock", "扣减库存规则");
+
+        private String code;
+        private String info;
 
     }
 

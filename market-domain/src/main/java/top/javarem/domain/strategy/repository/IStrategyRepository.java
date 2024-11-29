@@ -4,6 +4,7 @@ package top.javarem.domain.strategy.repository;
 import top.javarem.domain.strategy.model.entity.StrategyAwardEntity;
 import top.javarem.domain.strategy.model.entity.RuleEntity;
 import top.javarem.domain.strategy.model.entity.StrategyEntity;
+import top.javarem.domain.strategy.model.vo.AwardStockQueueKeyVO;
 import top.javarem.domain.strategy.model.vo.RuleTreeVO;
 import top.javarem.domain.strategy.model.vo.StrategyAwardRuleModelsVO;
 
@@ -18,7 +19,7 @@ public interface IStrategyRepository {
 
     int getAwardRange(Long strategyId);
 
-    int getAwardRange(String key);
+    Integer getAwardRange(String key);
 
     Integer getRandomAwardId(String key, int rangeKey);
 
@@ -35,4 +36,14 @@ public interface IStrategyRepository {
     StrategyAwardRuleModelsVO getAwardRules(Long strategyId, Integer awardId);
 
     RuleTreeVO getRuleTreeVO(String treeId);
+
+    void cacheAwardCount(Long strategyId, Integer awardId, Integer awardCount);
+
+    boolean decrAwardCount(String cacheKey);
+
+    void awardStockSendQueue(AwardStockQueueKeyVO queueKeyVO);
+
+    AwardStockQueueKeyVO handleQueueValue();
+
+    Boolean updateAwardStock(AwardStockQueueKeyVO queueKeyVO);
 }

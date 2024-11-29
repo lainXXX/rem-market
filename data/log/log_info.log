@@ -1,214 +1,552 @@
-24-11-19.00:58:19.304 [main            ] INFO  Application            - Starting Application using Java 1.8.0_151 on mile with PID 58804 (D:\Develop\project\rem-market\market-app\target\classes started by aaa in D:\Develop\project\rem-market)
-24-11-19.00:58:19.309 [main            ] INFO  Application            - The following 1 profile is active: "dev"
-24-11-19.00:58:20.467 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-19.00:58:20.470 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-19.00:58:20.498 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
-24-11-19.00:58:20.616 [main            ] WARN  ClassPathMapperScanner - No MyBatis mapper was found in '[top.javarem.app]' package. Please check your configuration.
-24-11-19.00:58:21.165 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8098 (http)
-24-11-19.00:58:21.293 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8098"]
-24-11-19.00:58:21.303 [main            ] INFO  StandardService        - Starting service [Tomcat]
-24-11-19.00:58:21.304 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
-24-11-19.00:58:21.618 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
-24-11-19.00:58:21.618 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2225 ms
-24-11-19.00:58:21.688 [main            ] ERROR TomcatStarter          - Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'webMvcMetricsFilter' defined in class path resource [org/springframework/boot/actuate/autoconfigure/metrics/web/servlet/WebMvcMetricsAutoConfiguration.class]: Unsatisfied dependency expressed through method 'webMvcMetricsFilter' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'simpleMeterRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/metrics/export/simple/SimpleMetricsExportAutoConfiguration.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourcePoolMetadataMeterBinder' defined in class path resource [org/springframework/boot/actuate/autoconfigure/metrics/jdbc/DataSourcePoolMetricsAutoConfiguration$DataSourcePoolMetadataMetricsConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourcePoolMetadataMeterBinder' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
-24-11-19.00:58:21.715 [main            ] INFO  StandardService        - Stopping service [Tomcat]
-24-11-19.00:58:21.725 [main            ] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
-24-11-19.00:58:21.741 [main            ] INFO  ConditionEvaluationReportLoggingListener - 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-24-11-19.00:58:21.768 [main            ] ERROR LoggingFailureAnalysisReporter - 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
-
-Reason: Failed to determine a suitable driver class
-
-
-Action:
-
-Consider the following:
-	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
-	If you have database settings to be loaded from a particular profile you may need to activate it (the profiles dev are currently active).
-
-24-11-19.01:03:18.973 [main            ] INFO  Application            - Starting Application using Java 1.8.0_151 on mile with PID 15132 (D:\Develop\project\rem-market\market-app\target\classes started by aaa in D:\Develop\project\rem-market)
-24-11-19.01:03:18.976 [main            ] INFO  Application            - The following 1 profile is active: "dev"
-24-11-19.01:03:19.877 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-19.01:03:19.879 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-19.01:03:19.905 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
-24-11-19.01:03:20.013 [main            ] WARN  ClassPathMapperScanner - No MyBatis mapper was found in '[top.javarem.app]' package. Please check your configuration.
-24-11-19.01:03:20.625 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8098 (http)
-24-11-19.01:03:20.753 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8098"]
-24-11-19.01:03:20.762 [main            ] INFO  StandardService        - Starting service [Tomcat]
-24-11-19.01:03:20.763 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
-24-11-19.01:03:21.062 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
-24-11-19.01:03:21.062 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2015 ms
-24-11-19.01:03:21.430 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-19.01:03:22.920 [redisson-netty-1-5] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-19.01:03:27.961 [redisson-netty-1-10] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-19.01:03:28.476 [redisson-netty-1-20] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-19.01:03:29.153 [main            ] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [D:\Develop\project\rem-market\market-app\target\classes\mapper\AwardMapper.xml]'
-24-11-19.01:03:31.242 [redisson-netty-1-19] ERROR rejectedExecution      - Failed to submit a listener notification task. Event loop shut down?
-java.util.concurrent.RejectedExecutionException: event executor terminated
-	at io.netty.util.concurrent.SingleThreadEventExecutor.reject(SingleThreadEventExecutor.java:934)
-	at io.netty.util.concurrent.SingleThreadEventExecutor.offerTask(SingleThreadEventExecutor.java:351)
-	at io.netty.util.concurrent.SingleThreadEventExecutor.addTask(SingleThreadEventExecutor.java:344)
-	at io.netty.util.concurrent.SingleThreadEventExecutor.execute(SingleThreadEventExecutor.java:836)
-	at io.netty.util.concurrent.SingleThreadEventExecutor.execute0(SingleThreadEventExecutor.java:827)
-	at io.netty.util.concurrent.SingleThreadEventExecutor.execute(SingleThreadEventExecutor.java:817)
-	at io.netty.util.concurrent.DefaultPromise.safeExecute(DefaultPromise.java:862)
-	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:500)
-	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:636)
-	at io.netty.util.concurrent.DefaultPromise.setSuccess0(DefaultPromise.java:625)
-	at io.netty.util.concurrent.DefaultPromise.setSuccess(DefaultPromise.java:97)
-	at io.netty.channel.group.DefaultChannelGroupFuture.setSuccess0(DefaultChannelGroupFuture.java:200)
-	at io.netty.channel.group.DefaultChannelGroupFuture.access$400(DefaultChannelGroupFuture.java:41)
-	at io.netty.channel.group.DefaultChannelGroupFuture$1.operationComplete(DefaultChannelGroupFuture.java:75)
-	at io.netty.channel.group.DefaultChannelGroupFuture$1.operationComplete(DefaultChannelGroupFuture.java:48)
-	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:590)
-	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:583)
-	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:559)
-	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:492)
-	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:636)
-	at io.netty.util.concurrent.DefaultPromise.setSuccess0(DefaultPromise.java:625)
-	at io.netty.util.concurrent.DefaultPromise.trySuccess(DefaultPromise.java:105)
-	at io.netty.channel.DefaultChannelPromise.trySuccess(DefaultChannelPromise.java:84)
-	at io.netty.channel.AbstractChannel$CloseFuture.setClosed(AbstractChannel.java:1164)
-	at io.netty.channel.AbstractChannel$AbstractUnsafe.doClose0(AbstractChannel.java:755)
-	at io.netty.channel.AbstractChannel$AbstractUnsafe.close(AbstractChannel.java:731)
-	at io.netty.channel.AbstractChannel$AbstractUnsafe.close(AbstractChannel.java:620)
-	at io.netty.channel.nio.NioEventLoop.closeAll(NioEventLoop.java:838)
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:595)
-	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
-	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
-	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
-	at java.lang.Thread.run(Thread.java:748)
-24-11-19.01:03:31.250 [main            ] INFO  StandardService        - Stopping service [Tomcat]
-24-11-19.01:03:31.271 [main            ] INFO  ConditionEvaluationReportLoggingListener - 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-24-11-19.01:03:31.339 [main            ] ERROR SpringApplication      - Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [D:\Develop\project\rem-market\market-app\target\classes\mapper\AwardMapper.xml]'
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:920)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
-	at top.javarem.Application.main(Application.java:14)
-Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.io.IOException: Failed to parse mapping resource: 'file [D:\Develop\project\rem-market\market-app\target\classes\mapper\AwardMapper.xml]'
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
-	... 19 common frames omitted
-Caused by: java.io.IOException: Failed to parse mapping resource: 'file [D:\Develop\project\rem-market\market-app\target\classes\mapper\AwardMapper.xml]'
-	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:680)
-	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.afterPropertiesSet(MybatisSqlSessionFactoryBean.java:553)
-	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.getObject(MybatisSqlSessionFactoryBean.java:711)
-	at com.baomidou.mybatisplus.autoconfigure.MybatisPlusAutoConfiguration.sqlSessionFactory(MybatisPlusAutoConfiguration.java:221)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
-	... 20 common frames omitted
-Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\Develop\project\rem-market\market-app\target\classes\mapper\AwardMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'javarem.top.infrastructure.mapper.entity.Award'.  Cause: java.lang.ClassNotFoundException: Cannot find class: javarem.top.infrastructure.mapper.entity.Award
-	at com.baomidou.mybatisplus.core.MybatisXMLMapperBuilder.configurationElement(MybatisXMLMapperBuilder.java:129)
-	at com.baomidou.mybatisplus.core.MybatisXMLMapperBuilder.parse(MybatisXMLMapperBuilder.java:102)
-	at com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean.buildSqlSessionFactory(MybatisSqlSessionFactoryBean.java:678)
-	... 28 common frames omitted
-Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'javarem.top.infrastructure.mapper.entity.Award'.  Cause: java.lang.ClassNotFoundException: Cannot find class: javarem.top.infrastructure.mapper.entity.Award
-	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:103)
-	at com.baomidou.mybatisplus.core.MybatisXMLMapperBuilder.resultMapElement(MybatisXMLMapperBuilder.java:226)
-	at com.baomidou.mybatisplus.core.MybatisXMLMapperBuilder.resultMapElement(MybatisXMLMapperBuilder.java:218)
-	at com.baomidou.mybatisplus.core.MybatisXMLMapperBuilder.resultMapElements(MybatisXMLMapperBuilder.java:210)
-	at com.baomidou.mybatisplus.core.MybatisXMLMapperBuilder.configurationElement(MybatisXMLMapperBuilder.java:125)
-	... 30 common frames omitted
-Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'javarem.top.infrastructure.mapper.entity.Award'.  Cause: java.lang.ClassNotFoundException: Cannot find class: javarem.top.infrastructure.mapper.entity.Award
-	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:128)
-	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:132)
-	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:101)
-	... 34 common frames omitted
-Caused by: java.lang.ClassNotFoundException: Cannot find class: javarem.top.infrastructure.mapper.entity.Award
-	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:226)
-	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:103)
-	at org.apache.ibatis.io.Resources.classForName(Resources.java:322)
-	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:124)
-	... 36 common frames omitted
-24-11-19.01:07:45.737 [main            ] INFO  Application            - Starting Application using Java 1.8.0_151 on mile with PID 57460 (D:\Develop\project\rem-market\market-app\target\classes started by aaa in D:\Develop\project\rem-market)
-24-11-19.01:07:45.740 [main            ] INFO  Application            - The following 1 profile is active: "dev"
-24-11-19.01:07:46.651 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-19.01:07:46.654 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-19.01:07:46.679 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
-24-11-19.01:07:46.784 [main            ] WARN  ClassPathMapperScanner - No MyBatis mapper was found in '[top.javarem.app]' package. Please check your configuration.
-24-11-19.01:07:47.406 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8098 (http)
-24-11-19.01:07:47.530 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8098"]
-24-11-19.01:07:47.540 [main            ] INFO  StandardService        - Starting service [Tomcat]
-24-11-19.01:07:47.541 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
-24-11-19.01:07:47.866 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
-24-11-19.01:07:47.867 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2060 ms
-24-11-19.01:07:48.203 [main            ] INFO  Version                - Redisson 3.26.0
-24-11-19.01:07:49.724 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-19.01:07:50.221 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-11-19.01:07:54.263 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-11-19.01:07:54.293 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8098"]
-24-11-19.01:07:54.308 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8098 (http) with context path ''
-24-11-19.01:07:54.327 [main            ] INFO  Application            - Started Application in 9.272 seconds (JVM running for 11.624)
-24-11-19.01:07:54.700 [RMI TCP Connection(1)-192.168.8.1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
-24-11-19.01:07:54.700 [RMI TCP Connection(1)-192.168.8.1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
-24-11-19.01:07:54.702 [RMI TCP Connection(1)-192.168.8.1] INFO  DispatcherServlet      - Completed initialization in 2 ms
-24-11-19.01:07:56.563 [RMI TCP Connection(3)-192.168.8.1] INFO  HikariDataSource       - HikariPool-1 - Starting...
-24-11-19.01:07:58.804 [RMI TCP Connection(3)-192.168.8.1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-24-11-19.01:08:19.308 [redisson-netty-1-12] ERROR rejectedExecution      - Failed to submit a listener notification task. Event loop shut down?
-java.util.concurrent.RejectedExecutionException: event executor terminated
-	at io.netty.util.concurrent.SingleThreadEventExecutor.reject(SingleThreadEventExecutor.java:934)
-	at io.netty.util.concurrent.SingleThreadEventExecutor.offerTask(SingleThreadEventExecutor.java:351)
-	at io.netty.util.concurrent.SingleThreadEventExecutor.addTask(SingleThreadEventExecutor.java:344)
-	at io.netty.util.concurrent.SingleThreadEventExecutor.execute(SingleThreadEventExecutor.java:836)
-	at io.netty.util.concurrent.SingleThreadEventExecutor.execute0(SingleThreadEventExecutor.java:827)
-	at io.netty.util.concurrent.SingleThreadEventExecutor.execute(SingleThreadEventExecutor.java:817)
-	at io.netty.util.concurrent.DefaultPromise.safeExecute(DefaultPromise.java:862)
-	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:500)
-	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:636)
-	at io.netty.util.concurrent.DefaultPromise.setSuccess0(DefaultPromise.java:625)
-	at io.netty.util.concurrent.DefaultPromise.setSuccess(DefaultPromise.java:97)
-	at io.netty.channel.group.DefaultChannelGroupFuture.setSuccess0(DefaultChannelGroupFuture.java:200)
-	at io.netty.channel.group.DefaultChannelGroupFuture.access$400(DefaultChannelGroupFuture.java:41)
-	at io.netty.channel.group.DefaultChannelGroupFuture$1.operationComplete(DefaultChannelGroupFuture.java:75)
-	at io.netty.channel.group.DefaultChannelGroupFuture$1.operationComplete(DefaultChannelGroupFuture.java:48)
-	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:590)
-	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:583)
-	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:559)
-	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:492)
-	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:636)
-	at io.netty.util.concurrent.DefaultPromise.setSuccess0(DefaultPromise.java:625)
-	at io.netty.util.concurrent.DefaultPromise.trySuccess(DefaultPromise.java:105)
-	at io.netty.channel.DefaultChannelPromise.trySuccess(DefaultChannelPromise.java:84)
-	at io.netty.channel.AbstractChannel$CloseFuture.setClosed(AbstractChannel.java:1164)
-	at io.netty.channel.AbstractChannel$AbstractUnsafe.doClose0(AbstractChannel.java:755)
-	at io.netty.channel.AbstractChannel$AbstractUnsafe.close(AbstractChannel.java:731)
-	at io.netty.channel.AbstractChannel$AbstractUnsafe.close(AbstractChannel.java:620)
-	at io.netty.channel.nio.NioEventLoop.closeAll(NioEventLoop.java:838)
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:595)
-	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
-	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
-	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
-	at java.lang.Thread.run(Thread.java:748)
-24-11-19.01:08:19.327 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-24-11-19.01:08:19.340 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-11-29.12:55:18.280 [main            ] INFO  Application            - Starting Application using Java 1.8.0_151 on mile with PID 10508 (D:\Develop\project\rem-market\market-app\target\classes started by aaa in D:\Develop\project\rem-market)
+24-11-29.12:55:18.281 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+24-11-29.12:55:18.933 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-11-29.12:55:18.935 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-11-29.12:55:18.971 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 26 ms. Found 0 Redis repository interfaces.
+24-11-29.12:55:19.416 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8098 (http)
+24-11-29.12:55:19.492 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8098"]
+24-11-29.12:55:19.499 [main            ] INFO  StandardService        - Starting service [Tomcat]
+24-11-29.12:55:19.499 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+24-11-29.12:55:19.682 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+24-11-29.12:55:19.682 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1366 ms
+24-11-29.12:55:19.895 [main            ] INFO  Version                - Redisson 3.26.0
+24-11-29.12:55:20.714 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-11-29.12:55:21.318 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-11-29.12:55:23.718 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-11-29.12:55:23.741 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8098"]
+24-11-29.12:55:23.786 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8098 (http) with context path ''
+24-11-29.12:55:23.801 [main            ] INFO  Application            - Started Application in 5.908 seconds (JVM running for 7.212)
+24-11-29.12:55:24.089 [RMI TCP Connection(1)-192.168.137.1] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-11-29.12:55:25.162 [RMI TCP Connection(3)-192.168.137.1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+24-11-29.12:55:25.162 [RMI TCP Connection(3)-192.168.137.1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+24-11-29.12:55:25.163 [RMI TCP Connection(3)-192.168.137.1] INFO  DispatcherServlet      - Completed initialization in 1 ms
+24-11-29.12:55:25.835 [RMI TCP Connection(1)-192.168.137.1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-11-29.12:55:26.092 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.12:55:30.291 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.12:55:35.308 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.12:55:40.223 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.12:55:45.241 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.12:55:50.259 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.12:55:55.276 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.12:56:00.294 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.12:56:05.311 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.12:56:10.329 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.12:56:15.346 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.12:56:20.364 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.12:56:25.279 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.12:56:30.298 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.12:56:35.315 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.12:56:40.332 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.12:56:45.247 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.12:56:50.265 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.12:56:55.283 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.12:57:00.403 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.12:57:05.318 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.12:57:10.234 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.12:57:15.251 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.12:57:20.269 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.12:57:25.287 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.12:57:30.304 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.12:57:35.629 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.12:57:40.237 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.12:57:45.467 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.12:57:50.375 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.12:57:55.290 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.12:58:00.308 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.12:58:05.325 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.12:58:10.240 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.12:58:15.361 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.12:58:20.381 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.12:58:25.294 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.12:58:30.312 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.12:58:35.329 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.12:58:40.243 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.12:58:45.262 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.12:58:50.279 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.12:58:55.298 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.12:59:00.315 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.12:59:05.333 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.12:59:10.350 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.12:59:15.266 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.12:59:20.283 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.12:59:25.301 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.12:59:30.318 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.12:59:35.234 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.12:59:40.353 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.12:59:45.371 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.12:59:50.287 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.12:59:55.304 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.13:00:00.219 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.13:00:05.339 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.13:00:10.255 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.13:00:15.375 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.13:00:20.290 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.13:00:25.307 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.13:00:30.325 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.13:00:35.343 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.13:00:40.260 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.13:00:45.276 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.13:00:50.294 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.13:00:55.106 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:01:00.063 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:01:05.075 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:01:10.098 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:01:15.075 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:01:20.092 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:01:25.051 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:01:30.062 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:01:35.083 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:01:40.102 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:01:45.078 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:01:50.096 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:01:55.048 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:02:00.071 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:02:05.087 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:02:10.107 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:02:15.082 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:02:20.099 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:02:25.057 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:02:30.074 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:02:35.091 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:02:40.068 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:02:45.085 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:02:50.045 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:02:55.060 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:03:00.079 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:03:05.094 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:03:10.071 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:03:15.089 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:03:20.106 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:03:25.064 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:03:30.079 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:03:35.094 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:03:40.075 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:03:45.092 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:03:50.051 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:03:55.065 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:04:00.078 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:04:05.101 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:04:10.078 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:04:15.096 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:04:20.054 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:04:25.065 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:04:30.087 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:04:35.104 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:04:40.082 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:04:45.042 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:04:50.053 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:04:55.075 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:05:00.090 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:05:05.109 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:05:10.085 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:05:15.040 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:05:20.060 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:05:25.077 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:05:30.095 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:05:35.109 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:13:56.639 [scheduling-1    ] ERROR UpdateAwardStockJob    - 扣减库存失败
+24-11-29.13:14:00.094 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:14:05.109 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:14:10.067 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:14:12.067 [HikariPool-1 housekeeper] WARN  HikariPool             - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8m45s986ms468µs700ns).
+24-11-29.13:14:15.081 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:14:20.095 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:14:25.078 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:14:28.606 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-11-29.13:14:28.611 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-11-29.13:18:03.962 [main            ] INFO  Application            - Starting Application using Java 1.8.0_151 on mile with PID 9340 (D:\Develop\project\rem-market\market-app\target\classes started by aaa in D:\Develop\project\rem-market)
+24-11-29.13:18:03.964 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+24-11-29.13:18:04.578 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-11-29.13:18:04.580 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-11-29.13:18:04.614 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 24 ms. Found 0 Redis repository interfaces.
+24-11-29.13:18:05.005 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8098 (http)
+24-11-29.13:18:05.078 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8098"]
+24-11-29.13:18:05.088 [main            ] INFO  StandardService        - Starting service [Tomcat]
+24-11-29.13:18:05.089 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+24-11-29.13:18:05.278 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+24-11-29.13:18:05.278 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1275 ms
+24-11-29.13:18:05.506 [main            ] INFO  Version                - Redisson 3.26.0
+24-11-29.13:18:06.411 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-11-29.13:18:06.879 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-11-29.13:18:09.275 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-11-29.13:18:09.300 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8098"]
+24-11-29.13:18:09.309 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8098 (http) with context path ''
+24-11-29.13:18:09.325 [main            ] INFO  Application            - Started Application in 5.767 seconds (JVM running for 7.042)
+24-11-29.13:18:10.170 [scheduling-1    ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-11-29.13:18:10.927 [RMI TCP Connection(2)-192.168.137.1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+24-11-29.13:18:10.927 [RMI TCP Connection(2)-192.168.137.1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+24-11-29.13:18:10.929 [RMI TCP Connection(2)-192.168.137.1] INFO  DispatcherServlet      - Completed initialization in 2 ms
+24-11-29.13:18:12.050 [scheduling-1    ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-11-29.13:18:12.209 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.13:18:15.276 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.13:18:20.293 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.13:18:25.208 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.13:18:30.226 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.13:18:35.243 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.13:18:40.364 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.13:18:45.279 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.13:18:50.298 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.13:18:55.314 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.13:19:00.229 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.13:19:05.247 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.13:19:10.265 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.13:19:15.282 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.13:19:20.301 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.13:19:25.318 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.13:19:30.335 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.13:19:35.251 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.13:19:40.268 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.13:19:45.287 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.13:19:50.304 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.13:19:55.526 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.13:20:00.232 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.13:20:05.244 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.13:20:10.208 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.13:20:15.225 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.13:20:20.243 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.13:20:25.212 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.13:20:30.230 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.13:20:35.247 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.13:20:40.265 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.13:20:45.229 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.13:20:50.246 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.13:20:55.216 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.13:21:00.234 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.13:21:05.251 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.13:21:10.240 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.13:21:15.287 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.13:21:20.038 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:21:25.053 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:21:30.073 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:21:35.081 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:21:40.067 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:21:45.085 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:21:50.052 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:21:55.058 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:22:00.067 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:22:05.053 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:22:10.071 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:22:15.089 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:22:20.055 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:22:25.059 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:22:30.077 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:22:35.057 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:22:40.074 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:22:45.044 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:22:50.046 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:22:55.061 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:23:00.076 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:23:05.060 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:23:10.080 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:23:15.042 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:23:20.047 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:23:25.062 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:23:30.086 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:23:35.063 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:23:40.081 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:23:45.039 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:23:50.048 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:23:55.072 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:24:00.090 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:24:05.067 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:24:10.086 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:24:15.042 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:24:20.057 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:24:25.075 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:24:30.053 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:24:35.071 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:24:40.037 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:24:45.050 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:24:50.061 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:24:55.071 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:25:00.058 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:25:05.074 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:25:10.045 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:25:15.050 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:25:20.056 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:25:25.078 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:25:30.060 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:25:35.077 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:25:40.046 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:25:45.047 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:25:50.065 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:25:55.080 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:26:00.064 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:26:05.081 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:26:10.046 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:26:15.051 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:26:20.066 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:26:25.089 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:26:30.067 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:26:35.084 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:26:40.052 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:26:45.052 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:26:50.075 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:26:55.094 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:27:00.071 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:27:05.037 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:27:10.038 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:27:15.061 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:27:20.079 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:27:25.057 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:27:30.074 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:27:35.046 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:27:40.051 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:27:45.063 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:27:50.075 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:27:55.096 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:28:00.078 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:28:05.042 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:28:10.056 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:28:15.069 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:28:20.082 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:37:53.639 [scheduling-1    ] ERROR UpdateAwardStockJob    - 扣减库存失败
+24-11-29.13:37:55.118 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:38:00.125 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:38:05.058 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:38:09.286 [HikariPool-1 housekeeper] WARN  HikariPool             - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9m56s995ms281µs200ns).
+24-11-29.13:38:10.154 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:38:15.062 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:38:20.080 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:38:25.097 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:38:30.044 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:38:35.065 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.13:38:35.486 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-11-29.13:38:35.491 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-11-29.13:59:04.782 [main            ] INFO  Application            - Starting Application using Java 1.8.0_151 on mile with PID 25612 (D:\Develop\project\rem-market\market-app\target\classes started by aaa in D:\Develop\project\rem-market)
+24-11-29.13:59:04.784 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+24-11-29.13:59:05.391 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-11-29.13:59:05.392 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-11-29.13:59:05.425 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23 ms. Found 0 Redis repository interfaces.
+24-11-29.13:59:05.798 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8098 (http)
+24-11-29.13:59:05.872 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8098"]
+24-11-29.13:59:05.879 [main            ] INFO  StandardService        - Starting service [Tomcat]
+24-11-29.13:59:05.879 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+24-11-29.13:59:06.053 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+24-11-29.13:59:06.054 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1231 ms
+24-11-29.13:59:06.277 [main            ] INFO  Version                - Redisson 3.26.0
+24-11-29.13:59:07.104 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-11-29.13:59:07.671 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-11-29.13:59:10.127 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-11-29.13:59:10.150 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8098"]
+24-11-29.13:59:10.159 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8098 (http) with context path ''
+24-11-29.13:59:10.173 [main            ] INFO  Application            - Started Application in 5.797 seconds (JVM running for 7.186)
+24-11-29.13:59:10.527 [RMI TCP Connection(1)-192.168.137.1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+24-11-29.13:59:10.528 [RMI TCP Connection(1)-192.168.137.1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+24-11-29.13:59:10.528 [RMI TCP Connection(1)-192.168.137.1] INFO  DispatcherServlet      - Completed initialization in 0 ms
+24-11-29.13:59:11.538 [RMI TCP Connection(3)-192.168.137.1] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-11-29.13:59:13.143 [RMI TCP Connection(3)-192.168.137.1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-11-29.13:59:15.349 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.13:59:20.265 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.13:59:22.933 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-11-29.13:59:22.939 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-11-29.14:22:54.223 [main            ] INFO  Application            - Starting Application using Java 1.8.0_151 on mile with PID 27508 (D:\Develop\project\rem-market\market-app\target\classes started by aaa in D:\Develop\project\rem-market)
+24-11-29.14:22:54.225 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+24-11-29.14:22:54.853 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-11-29.14:22:54.854 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-11-29.14:22:54.888 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 25 ms. Found 0 Redis repository interfaces.
+24-11-29.14:22:55.287 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8098 (http)
+24-11-29.14:22:55.357 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8098"]
+24-11-29.14:22:55.363 [main            ] INFO  StandardService        - Starting service [Tomcat]
+24-11-29.14:22:55.363 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+24-11-29.14:22:55.547 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+24-11-29.14:22:55.547 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1282 ms
+24-11-29.14:22:55.760 [main            ] INFO  Version                - Redisson 3.26.0
+24-11-29.14:22:56.577 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-11-29.14:22:57.144 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-11-29.14:22:59.647 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-11-29.14:22:59.671 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8098"]
+24-11-29.14:22:59.680 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8098 (http) with context path ''
+24-11-29.14:22:59.695 [main            ] INFO  Application            - Started Application in 5.858 seconds (JVM running for 7.115)
+24-11-29.14:23:00.134 [scheduling-1    ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-11-29.14:23:00.479 [RMI TCP Connection(2)-192.168.137.1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+24-11-29.14:23:00.479 [RMI TCP Connection(2)-192.168.137.1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+24-11-29.14:23:00.482 [RMI TCP Connection(2)-192.168.137.1] INFO  DispatcherServlet      - Completed initialization in 1 ms
+24-11-29.14:23:01.858 [scheduling-1    ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-11-29.14:23:02.063 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.14:23:05.232 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.14:23:10.353 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.14:23:15.268 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.14:23:20.286 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.14:23:25.303 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.14:23:30.218 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.14:23:35.339 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.14:23:40.259 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.14:23:45.271 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.14:23:50.289 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.14:23:55.307 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.14:24:00.267 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.14:24:05.240 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.14:24:10.257 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.14:24:15.275 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.14:24:20.292 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.14:24:25.310 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.14:24:30.328 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.14:24:35.289 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.14:24:40.261 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.14:24:45.280 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.14:24:50.296 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.14:24:55.315 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.14:25:00.229 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.14:25:05.249 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.14:25:10.265 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.14:25:15.408 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.14:25:20.300 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.14:25:25.214 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.14:25:30.233 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.14:25:35.251 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.14:25:40.269 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.14:25:45.286 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.14:25:50.304 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.14:25:55.219 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.14:26:00.236 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.14:26:05.254 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.14:26:10.272 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.14:26:15.084 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:26:20.043 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:26:25.053 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:26:30.077 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:26:35.089 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:26:40.070 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:26:45.088 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:26:50.045 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:26:55.069 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:27:00.076 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:27:05.096 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:27:10.077 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:27:15.093 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:27:20.109 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:27:25.059 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:27:30.080 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:27:35.101 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:27:40.077 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:27:45.097 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:27:50.052 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:27:55.065 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:28:00.080 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:28:05.098 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:28:10.081 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:28:15.039 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:28:20.052 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:28:25.065 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:28:30.086 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:28:35.107 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:28:40.086 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:28:45.102 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:28:50.053 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:28:55.072 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:29:00.094 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:29:05.107 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:29:10.090 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:29:15.040 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:29:20.058 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:29:25.081 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:29:30.091 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:29:35.075 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:29:40.092 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:29:45.044 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:29:50.068 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:29:55.076 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:30:00.097 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:30:05.078 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:30:10.096 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:30:15.051 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:30:20.067 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:30:25.082 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:30:30.102 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:30:35.081 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:30:40.099 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:30:45.048 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:30:50.072 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:30:55.085 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:31:00.102 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:31:05.085 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:31:10.042 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:31:15.056 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:31:20.069 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:31:25.088 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:31:30.071 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:31:35.088 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.14:31:36.878 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-11-29.14:31:36.884 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-11-29.15:26:37.624 [main            ] INFO  Application            - Starting Application using Java 1.8.0_151 on mile with PID 10756 (D:\Develop\project\rem-market\market-app\target\classes started by aaa in D:\Develop\project\rem-market)
+24-11-29.15:26:37.626 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+24-11-29.15:26:38.224 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-11-29.15:26:38.225 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-11-29.15:26:38.257 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23 ms. Found 0 Redis repository interfaces.
+24-11-29.15:26:38.633 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8098 (http)
+24-11-29.15:26:38.707 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8098"]
+24-11-29.15:26:38.714 [main            ] INFO  StandardService        - Starting service [Tomcat]
+24-11-29.15:26:38.715 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+24-11-29.15:26:38.908 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+24-11-29.15:26:38.908 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1247 ms
+24-11-29.15:26:39.122 [main            ] INFO  Version                - Redisson 3.26.0
+24-11-29.15:26:40.122 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-11-29.15:26:40.489 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-11-29.15:26:42.829 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-11-29.15:26:42.852 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8098"]
+24-11-29.15:26:42.861 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8098 (http) with context path ''
+24-11-29.15:26:42.875 [main            ] INFO  Application            - Started Application in 5.612 seconds (JVM running for 6.921)
+24-11-29.15:26:43.975 [RMI TCP Connection(2)-192.168.137.1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+24-11-29.15:26:43.975 [RMI TCP Connection(2)-192.168.137.1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+24-11-29.15:26:43.976 [RMI TCP Connection(2)-192.168.137.1] INFO  DispatcherServlet      - Completed initialization in 1 ms
+24-11-29.15:26:43.978 [RMI TCP Connection(1)-192.168.137.1] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-11-29.15:26:45.547 [RMI TCP Connection(1)-192.168.137.1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-11-29.15:26:45.713 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.15:26:50.216 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.15:26:55.232 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.15:27:00.251 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.15:27:05.205 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.15:27:10.224 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.15:27:15.202 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.15:27:20.220 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.15:27:25.237 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.15:27:30.255 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.15:27:35.209 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.15:27:40.230 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.15:27:45.205 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.15:27:50.224 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.15:27:55.241 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.15:28:00.259 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.15:28:05.212 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.15:28:10.233 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.15:28:15.209 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.15:28:20.227 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.15:28:25.244 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.15:28:30.200 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.15:28:35.215 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.15:28:40.234 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.15:28:45.212 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.15:28:50.230 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.15:28:55.247 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.15:29:00.206 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.15:29:05.221 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.15:29:10.236 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.15:29:15.216 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.15:29:20.234 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.15:29:25.251 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.15:29:30.206 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.15:29:35.214 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.15:29:40.190 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.15:29:45.208 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.15:29:50.227 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.15:29:55.261 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.15:30:00.210 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.15:30:05.230 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.15:30:10.205 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.15:30:15.219 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.15:30:20.237 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.15:30:25.253 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.15:30:30.215 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.15:30:35.225 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 102
+24-11-29.15:30:40.209 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.15:30:45.226 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.15:30:50.244 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 true strategyId 100003 awardId 101
+24-11-29.15:30:55.090 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.15:31:00.075 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.15:31:05.041 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.15:31:10.050 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.15:31:15.067 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.15:31:20.074 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-11-29.15:31:22.143 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-11-29.15:31:22.150 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.

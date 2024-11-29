@@ -29,7 +29,6 @@ public class StrategyAwardEntity implements Serializable {
      */
     private Integer awardId;
 
-
     /**
      * 奖品库存总量
      */

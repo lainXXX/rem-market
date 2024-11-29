@@ -1,5 +1,6 @@
 package top.javarem.domain.strategy.service.rule.tree.factory.engine.impl;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.util.CollectionUtils;
 import top.javarem.domain.strategy.model.vo.RuleTreeNodeLineVO;
 import top.javarem.domain.strategy.model.vo.RuleTreeNodeVO;
@@ -36,7 +37,7 @@ public class DecisionTreeEngine implements IDecisionTreeEngine {
         Map<String, RuleTreeNodeVO> treeNodeMap = ruleTree.getTreeNodeMap();
 //        定义当前节点key 循环前把根节点当作第一个当前节点 开始循环
         String currentNodeKey = rootNodeKey;
-        while (currentNodeKey != null) {
+        while (StringUtils.isNotBlank(currentNodeKey)) {
 //            通过key获取当前节点信息
             RuleTreeNodeVO currentNode = treeNodeMap.get(currentNodeKey);
             ILogicTreeNode logicTreeNode = logicTreeNodeMap.get(currentNode.getTreeNodeKey());

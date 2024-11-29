@@ -3,30 +3,28 @@ package top.javarem.domain.strategy.service;
 import lombok.extern.slf4j.Slf4j;
 import top.javarem.domain.strategy.model.entity.RaffleAwardEntity;
 import top.javarem.domain.strategy.model.entity.RaffleFactorEntity;
-import top.javarem.domain.strategy.model.entity.RuleActionEntity;
-import top.javarem.domain.strategy.model.entity.RuleActionEntity.RaffleExecutingEntity;
 import top.javarem.domain.strategy.model.entity.StrategyEntity;
 import top.javarem.domain.strategy.repository.IStrategyRepository;
 import top.javarem.domain.strategy.service.armory.IStrategyArmoryDispatch;
 import top.javarem.domain.strategy.service.rule.chain.factory.DefaultChainFactory;
 import top.javarem.domain.strategy.service.rule.tree.factory.DefaultTreeFactory;
 
-import java.util.List;
+import static top.javarem.domain.strategy.service.rule.chain.factory.DefaultChainFactory.*;
 
 /**
  * @Author: rem
  * @Date: 2024/11/21/17:59
- * @Description:
+ * @Description: 抽奖流程逻辑
  */
 
 @Slf4j
-public abstract class AbstractStrategyRaffle implements IStrategyRaffle {
+public abstract class AbstractRaffleLogic implements IRaffleStrategy, IRaffleStock {
 
     protected IStrategyRepository repository;
     protected IStrategyArmoryDispatch dispatch;
     protected DefaultChainFactory chainFactory;
 
-    public AbstractStrategyRaffle(IStrategyRepository repository, IStrategyArmoryDispatch dispatch, DefaultChainFactory chainFactory) {
+    public AbstractRaffleLogic(IStrategyRepository repository, IStrategyArmoryDispatch dispatch, DefaultChainFactory chainFactory) {
         this.repository = repository;
         this.dispatch = dispatch;
         this.chainFactory = chainFactory;
@@ -45,10 +43,10 @@ public abstract class AbstractStrategyRaffle implements IStrategyRaffle {
 //        查询策略规则
         StrategyEntity strategyEntity = repository.getStrategyEntity(strategyId);
 //        抽奖策略责任链获取奖品
-        DefaultChainFactory.LogicAwardVO chainLogicAwardVO = this.doRaffleLogicChain(userId, strategyId);
+        LogicAwardVO chainLogicAwardVO = this.doRaffleLogicChain(userId, strategyId);
         log.info("责任链获取奖品ID awardId: {} ruleModel: {}", chainLogicAwardVO.getAwardId(), chainLogicAwardVO.getRuleModel());
 //        如果抽奖奖品执行规则不为默认规则 则直接返回奖品
-        if (!DefaultChainFactory.LogicModel.DEFAULT.getCode().equals(chainLogicAwardVO.getRuleModel())) {
+        if (!LogicModel.DEFAULT.getCode().equals(chainLogicAwardVO.getRuleModel())) {
             return RaffleAwardEntity.builder()
                     .awardId(chainLogicAwardVO.getAwardId())
                     .build();
@@ -65,7 +63,7 @@ public abstract class AbstractStrategyRaffle implements IStrategyRaffle {
 
     }
 
-    protected abstract DefaultChainFactory.LogicAwardVO doRaffleLogicChain(String userId, Long strategyId);
+    protected abstract LogicAwardVO doRaffleLogicChain(String userId, Long strategyId);
 
     protected abstract DefaultTreeFactory.LogicAwardVO doRaffleLogicTree(Long strategyId, Integer awardId);
 

@@ -98,8 +98,13 @@ public class RuleTreeLogicTest {
         }});
 
         IDecisionTreeEngine engine = treeFactory.openLogicTree(ruleTreeVO);
-        DefaultTreeFactory.LogicAwardVO award = engine.process("rem", 100000001L, 100);
+        DefaultTreeFactory.LogicAwardVO award = engine.process(100001L, 100);
         log.info("award {}", award);
+    }
+
+
+    @Test
+    public void test_openTreeLogic02() {
     }
 
 }

@@ -8,6 +8,7 @@ import top.javarem.domain.strategy.repository.IStrategyRepository;
 import top.javarem.domain.strategy.service.rule.chain.IStrategyLogicLogicChain;
 
 import java.util.Map;
+import java.util.Set;
 
 /**
  * @Author: rem
@@ -45,7 +46,9 @@ public class DefaultChainFactory {
         IStrategyLogicLogicChain current = root;
         for (int i = 1; i < ruleModels.length; i++) {
             IStrategyLogicLogicChain next = logicChainMap.get(ruleModels[i]);
-            current = current.appendNode(next);
+            if (next != null) {
+                current = current.appendNode(next);
+            }
         }
 //        最后执行默认规则
         current.appendNode(logicChainMap.get("default"));
@@ -71,7 +74,6 @@ public class DefaultChainFactory {
         BLACKLIST("rule_blacklist", "黑名单规则"),
         WEIGHT("rule_weight", "权重规则"),
         DEFAULT("default", "默认规则");
-
 
         private String code;
         private String info;

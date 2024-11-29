@@ -1,12 +1,8 @@
 package top.javarem.domain.strategy.model.entity;
 
 import lombok.Data;
-import top.javarem.domain.strategy.service.rule.filter.factory.DefaultFilterLogicFactory;
 import top.javarem.types.common.constants.Constants;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * @Author: rem
@@ -31,22 +27,5 @@ public class StrategyEntity {
         return ruleModels.split(Constants.COMMA);
     }
 
-    public List<String> getRaffleBeforeModel() {
-        return Arrays.stream(ruleModels.split(","))
-                .filter(model -> DefaultFilterLogicFactory.LogicModel.isBefore(model))
-                .collect(Collectors.toList());
-    }
-
-    public List<String> getRaffleExecutingModel() {
-        return Arrays.stream(ruleModels.split(Constants.COMMA))
-                .filter(model -> DefaultFilterLogicFactory.LogicModel.isExecuting(model))
-                .collect(Collectors.toList());
-    }
-
-    public List<String> getRaffleAfterModel() {
-        return Arrays.stream(ruleModels.split(Constants.COMMA))
-                .filter(model -> DefaultFilterLogicFactory.LogicModel.isAfter(model))
-                .collect(Collectors.toList());
-    }
 
 }

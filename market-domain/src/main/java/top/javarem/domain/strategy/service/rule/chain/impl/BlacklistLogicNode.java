@@ -3,12 +3,9 @@ package top.javarem.domain.strategy.service.rule.chain.impl;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import top.javarem.domain.strategy.model.entity.RuleActionEntity;
-import top.javarem.domain.strategy.model.vo.RuleLogicCheckTypeVO;
 import top.javarem.domain.strategy.repository.IStrategyRepository;
 import top.javarem.domain.strategy.service.rule.chain.AbstractStrategyLogicChain;
 import top.javarem.domain.strategy.service.rule.chain.factory.DefaultChainFactory;
-import top.javarem.domain.strategy.service.rule.filter.factory.DefaultFilterLogicFactory;
 import top.javarem.types.common.constants.Constants;
 
 /**
@@ -27,7 +24,7 @@ public class BlacklistLogicNode extends AbstractStrategyLogicChain {
     public DefaultChainFactory.LogicAwardVO executeStrategy(String userId, Long strategyId) {
         String ruleModel = repository.getUserRuleModel(userId);
 //        如果用户规则模型为黑名单 则返回黑名单奖品
-        if (DefaultFilterLogicFactory.LogicModel.RULE_BLACKLIST.getCode().equals(ruleModel)) {
+        if (Constants.LogicModel.RULE_BLACKLIST.getCode().equals(ruleModel)) {
             Integer awardId = Constants.BLACKLIST_AWARD_ID;
             log.info("抽奖责任链-黑名单规则接管执行");
             return DefaultChainFactory.LogicAwardVO.builder()

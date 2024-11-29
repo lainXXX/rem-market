@@ -1,6 +1,8 @@
 package top.javarem.infrastructure.adapter.repository;
 
 import lombok.extern.slf4j.Slf4j;
+import org.redisson.api.RBlockingQueue;
+import org.redisson.api.RDelayedQueue;
 import org.redisson.api.RScoredSortedSet;
 import org.redisson.api.RedissonClient;
 import org.springframework.beans.BeanUtils;
@@ -19,6 +21,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 @Repository
@@ -62,7 +65,7 @@ public class StrategyRepository implements IStrategyRepository {
     public List<StrategyAwardEntity> getStrategyAwardList(Long strategyId) {
 //        1.先在redis中查询是否存在awardEntities 存在则直接返回
         String cacheKey = Constants.RedisKey.STRATEGY_AWARD_KEY + strategyId;
-        List<StrategyAwardEntity> awardEntities =  redissonClient.<List<StrategyAwardEntity>>getBucket(cacheKey).get();
+        List<StrategyAwardEntity> awardEntities = redissonClient.<List<StrategyAwardEntity>>getBucket(cacheKey).get();
         if (!CollectionUtils.isEmpty(awardEntities)) return awardEntities;
 //        2.如果不存在缓存 从数据库中取出Award 再通过属性复制转为AwardEntity
         awardEntities = strategyAwardService.lambdaQuery().select(StrategyAward::getAwardId, StrategyAward::getStrategyId, StrategyAward::getAwardCount, StrategyAward::getAwardCountSurplus, StrategyAward::getRate)
@@ -104,8 +107,9 @@ public class StrategyRepository implements IStrategyRepository {
     }
 
     @Override
-    public int getAwardRange(String key) {
-        return redissonClient.<Integer>getBucket(Constants.RedisKey.AWARD_RANGE_KEY + key).get();
+    public Integer getAwardRange(String key) {
+        Integer awardRange = redissonClient.<Integer>getBucket(Constants.RedisKey.AWARD_RANGE_KEY + key).get();
+        return awardRange == null ? 0 : awardRange;
     }
 
     @Override
@@ -203,6 +207,7 @@ public class StrategyRepository implements IStrategyRepository {
         if (strategyEntity != null) return strategyEntity;
         try {
             Strategy strategy = strategyService.lambdaQuery()
+                    .select(Strategy::getStrategyId, Strategy::getRuleModels)
                     .eq(Strategy::getStrategyId, strategyId)
                     .one();
             strategyEntity = new StrategyEntity();
@@ -219,11 +224,11 @@ public class StrategyRepository implements IStrategyRepository {
     public StrategyAwardRuleModelsVO getAwardRules(Long strategyId, Integer awardId) {
         try {
             String models = strategyAwardService.lambdaQuery()
-                .select(StrategyAward::getModels)
-                .eq(StrategyAward::getStrategyId, strategyId)
-                .eq(StrategyAward::getAwardId, awardId)
-                .one()
-                .getModels();
+                    .select(StrategyAward::getModels)
+                    .eq(StrategyAward::getStrategyId, strategyId)
+                    .eq(StrategyAward::getAwardId, awardId)
+                    .one()
+                    .getModels();
             return StrategyAwardRuleModelsVO.builder()
                     .ruleModels(models)
                     .build();
@@ -235,6 +240,7 @@ public class StrategyRepository implements IStrategyRepository {
 
     /**
      * 获取规则树值对象
+     *
      * @param treeId 规则树id
      * @return
      */
@@ -286,6 +292,61 @@ public class StrategyRepository implements IStrategyRepository {
         return tree;
     }
 
+    @Override
+    public void cacheAwardCount(Long strategyId, Integer awardId, Integer awardCount) {
+//        拼接策略奖品初始总量缓存的key
+        String awardCountKey = Constants.RedisKey.STRATEGY_AWARD_COUNT_KEY + strategyId + Constants.UNDERLINE + awardId;
+//        如果缓存存在 则直接返回
+        if (redissonClient.getBucket(awardCountKey).isExists()) return;
+        redissonClient.getAtomicLong(awardCountKey).set(awardCount);
+    }
+
+    @Override
+    public boolean decrAwardCount(String cacheKey) {
+//        获取缓存
+        long surplus = redissonClient.getAtomicLong(cacheKey).get();
+//        判断库存是否足够
+        if (surplus <= 0) {
+            redissonClient.getAtomicLong(cacheKey).set(0);
+            log.info("该奖品库存已耗尽");
+            return false;
+        }
+        surplus = redissonClient.getAtomicLong(cacheKey).decrementAndGet();
+        String lockKey = cacheKey + Constants.UNDERLINE + surplus;
+        boolean lock = redissonClient.getBucket(lockKey).trySet(Constants.AWARD_COUNT_LOCK);
+        if (!lock) {
+            log.info("策略奖品库存加锁失败 {}", lockKey);
+        }
+        return lock;
+    }
+
+    @Override
+    public void awardStockSendQueue(AwardStockQueueKeyVO queueKeyVO) {
+        String queueKey = Constants.RedisKey.AWARD_BLOCK_QUEUE_KEY;
+//        RBlockingQueue是线程安全的 每一次不同线程使用同一个queueKey的调用返回的都是同一个RBlockingQueue
+        RBlockingQueue<AwardStockQueueKeyVO> blockingQueue = redissonClient.getBlockingQueue(queueKey);
+//        将阻塞队列加入延迟队列
+        RDelayedQueue<AwardStockQueueKeyVO> delayedQueue = redissonClient.getDelayedQueue(blockingQueue);
+//        3秒后自动将queueKeyVO添加到blockingQueue
+        delayedQueue.offer(queueKeyVO, 3, TimeUnit.SECONDS);
+    }
+
+    @Override
+    public AwardStockQueueKeyVO handleQueueValue() {
+        String queueKey = Constants.RedisKey.AWARD_BLOCK_QUEUE_KEY;
+        RBlockingQueue<AwardStockQueueKeyVO> blockingQueue = redissonClient.getBlockingQueue(queueKey);
+        return blockingQueue.poll();
+    }
+
+    @Override
+    public Boolean updateAwardStock(AwardStockQueueKeyVO queueKeyVO) {
+        return strategyAwardService.lambdaUpdate()
+                .setSql("award_count_surplus = award_count_surplus - 1")
+                .eq(StrategyAward::getStrategyId, queueKeyVO.getStrategyId())
+                .eq(StrategyAward::getAwardId, queueKeyVO.getAwardId())
+                .update();
+
+    }
 
     private List<RuleTreeNode> getNodes(String treeId) {
         return ruleTreeNodeService.lambdaQuery()
