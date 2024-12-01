@@ -5,13 +5,9 @@ import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import top.javarem.infrastructure.adapter.repository.StrategyRepository;
-import top.javarem.infrastructure.dao.Iservice.IAwardService;
-import top.javarem.infrastructure.dao.Iservice.IStrategyAwardService;
-import top.javarem.infrastructure.dao.entity.Award;
+import top.javarem.infrastructure.dao.iService.IStrategyAwardService;
 import top.javarem.infrastructure.dao.entity.StrategyAward;
 import top.javarem.types.common.constants.Constants;
-
-import java.util.List;
 
 /**
  * @Author: rem

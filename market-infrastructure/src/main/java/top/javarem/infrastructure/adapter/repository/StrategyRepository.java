@@ -13,9 +13,10 @@ import top.javarem.domain.strategy.model.entity.RuleEntity;
 import top.javarem.domain.strategy.model.entity.StrategyEntity;
 import top.javarem.domain.strategy.model.vo.*;
 import top.javarem.domain.strategy.repository.IStrategyRepository;
-import top.javarem.infrastructure.dao.Iservice.*;
+import top.javarem.infrastructure.dao.iService.*;
 import top.javarem.infrastructure.dao.entity.*;
 import top.javarem.types.common.constants.Constants;
+import top.javarem.types.exception.AppException;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -23,6 +24,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
+
+import static top.javarem.types.enums.ResponseCode.UN_ASSEMBLED_STRATEGY_ARMORY;
 
 @Repository
 @Slf4j
@@ -108,7 +111,10 @@ public class StrategyRepository implements IStrategyRepository {
 
     @Override
     public Integer getAwardRange(String key) {
-        Integer awardRange = redissonClient.<Integer>getBucket(Constants.RedisKey.AWARD_RANGE_KEY + key).get();
+        String cacheKey = Constants.RedisKey.AWARD_RANGE_KEY + key;
+        if (!redissonClient.<Integer>getBucket(cacheKey).isExists())
+            throw new AppException(UN_ASSEMBLED_STRATEGY_ARMORY.getCode(), cacheKey + Constants.COLON + UN_ASSEMBLED_STRATEGY_ARMORY.getInfo());
+        Integer awardRange = redissonClient.<Integer>getBucket(cacheKey).get();
         return awardRange == null ? 0 : awardRange;
     }
 

@@ -1,5 +1,5 @@
 server:
-  port: 8098
+  port: 8091
   tomcat:
     mbeanregistry:
       enabled: true

@@ -47,7 +47,7 @@ public class StrategyRaffleTest {
     @Test
     public void test_strategyArmory() {
         // 策略装配 100001、100002、100003
-        boolean success = strategyArmory.assembleLotteryStrategy(100003L);
+        boolean success = strategyArmory.assembleRaffleStrategy(100003L);
         log.info("策略装配测试结果：{}", success);
     }
 

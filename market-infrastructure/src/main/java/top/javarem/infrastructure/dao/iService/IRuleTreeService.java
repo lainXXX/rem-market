@@ -1,4 +1,4 @@
-package top.javarem.infrastructure.dao.Iservice;
+package top.javarem.infrastructure.dao.iService;
 
 
 import com.baomidou.mybatisplus.extension.service.IService;

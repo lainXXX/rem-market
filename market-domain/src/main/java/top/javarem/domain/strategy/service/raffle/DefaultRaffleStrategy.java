@@ -3,30 +3,37 @@ package top.javarem.domain.strategy.service.raffle;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import top.javarem.domain.strategy.model.entity.StrategyAwardEntity;
 import top.javarem.domain.strategy.model.vo.AwardStockQueueKeyVO;
 import top.javarem.domain.strategy.model.vo.RuleTreeVO;
 import top.javarem.domain.strategy.model.vo.StrategyAwardRuleModelsVO;
 import top.javarem.domain.strategy.repository.IStrategyRepository;
 import top.javarem.domain.strategy.service.AbstractRaffleLogic;
+import top.javarem.domain.strategy.service.IRaffleAward;
+import top.javarem.domain.strategy.service.IRaffleStock;
+import top.javarem.domain.strategy.service.IRaffleStrategy;
 import top.javarem.domain.strategy.service.armory.IStrategyArmoryDispatch;
 import top.javarem.domain.strategy.service.rule.chain.IStrategyLogicLogicChain;
 import top.javarem.domain.strategy.service.rule.chain.factory.DefaultChainFactory;
 import top.javarem.domain.strategy.service.rule.tree.factory.DefaultTreeFactory;
 import top.javarem.domain.strategy.service.rule.tree.factory.engine.IDecisionTreeEngine;
 
+import java.util.Collections;
+import java.util.List;
+
 /**
  * @Author: rem
  * @Date: 2024/11/22/09:30
- * @Description:
+ * @Description: 默认抽奖策略实现
  */
 @Slf4j
 @Service
-public class DefaultRaffleLogic extends AbstractRaffleLogic{
+public class DefaultRaffleStrategy extends AbstractRaffleLogic implements IRaffleStock, IRaffleAward {
 
     private final DefaultTreeFactory treeFactory;
 
     @Autowired
-    public DefaultRaffleLogic(IStrategyRepository repository, IStrategyArmoryDispatch dispatch, DefaultChainFactory chainFactory, DefaultTreeFactory treeFactory) {
+    public DefaultRaffleStrategy(IStrategyRepository repository, IStrategyArmoryDispatch dispatch, DefaultChainFactory chainFactory, DefaultTreeFactory treeFactory) {
         super(repository, dispatch, chainFactory);
         this.treeFactory = treeFactory;
     }
@@ -60,4 +67,8 @@ public class DefaultRaffleLogic extends AbstractRaffleLogic{
         return repository.updateAwardStock(queueKeyVO);
     }
 
+    @Override
+    public List<StrategyAwardEntity> displayAward(Long strategyId) {
+        return repository.getStrategyAwardList(strategyId);
+    }
 }

@@ -6,7 +6,7 @@ import top.javarem.domain.strategy.model.entity.RaffleFactorEntity;
 /**
  * @Author: rem
  * @Date: 2024/11/21/17:52
- * @Description: 策略抽奖接口
+ * @Description: 抽奖策略接口
  */
 public interface IRaffleStrategy {
 

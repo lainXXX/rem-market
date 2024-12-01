@@ -9,7 +9,7 @@ import lombok.Data;
  */
 
 @Data
-public class BlacklistEntity {
+public class RaffleUserEntity {
 
     private String userId;
 

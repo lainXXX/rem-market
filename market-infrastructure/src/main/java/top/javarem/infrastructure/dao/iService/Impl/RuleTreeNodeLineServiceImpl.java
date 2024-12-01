@@ -1,8 +1,8 @@
-package top.javarem.infrastructure.dao.Iservice.Impl;
+package top.javarem.infrastructure.dao.iService.Impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
-import top.javarem.infrastructure.dao.Iservice.IRuleTreeNodeLineService;
+import top.javarem.infrastructure.dao.iService.IRuleTreeNodeLineService;
 import top.javarem.infrastructure.dao.entity.RuleTreeNodeLine;
 import top.javarem.infrastructure.dao.mapper.RuleTreeNodeLineMapper;
 

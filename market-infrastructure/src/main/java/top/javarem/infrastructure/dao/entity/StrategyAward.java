@@ -1,8 +1,6 @@
 package top.javarem.infrastructure.dao.entity;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -13,8 +11,6 @@ import java.util.Date;
  * @TableName award
  */
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class StrategyAward implements Serializable {
     /**
      * 自增id

@@ -11,6 +11,7 @@ public enum ResponseCode {
 
     RULE_WEIGHT_NULL("WEIGHT_001", "rule weight 为null"),
     RULE_WEIGHT_ERROR("WEIGHT_002", "数据库中rule weight配置错误"),
+    UN_ASSEMBLED_STRATEGY_ARMORY("ERR_BIZ_002", "抽奖策略配置未装配，请通过IStrategyArmory完成装配"),
     ;
 
     private String code;

@@ -19,7 +19,7 @@ public class UpdateAwardStockJob {
     @Autowired
     private IRaffleStock raffleStock;
 
-    @Scheduled(cron = "0/5 * * * * ?")
+    @Scheduled(cron = "0 0/30 * * * ?")
     public void executeAwardStockJob() {
         try {
             AwardStockQueueKeyVO awardStockQueueKeyVO = raffleStock.handleQueueValue();

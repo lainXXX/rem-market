@@ -28,6 +28,10 @@
             <groupId>top.javarem</groupId>
             <artifactId>market-domain</artifactId>
         </dependency>
+        <dependency>
+            <groupId>top.javarem</groupId>
+            <artifactId>market-api</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

@@ -30,7 +30,7 @@ public class StrategyArmoryImpl implements IStrategyArmory, IStrategyArmoryDispa
      * @return
      */
     @Override
-    public boolean assembleLotteryStrategy(Long strategyId) {
+    public boolean assembleRaffleStrategy(Long strategyId) {
 
 //        1.查询策略配置 该策略包含的奖品信息集合
         List<StrategyAwardEntity> awardEntities = repository.getStrategyAwardList(strategyId);

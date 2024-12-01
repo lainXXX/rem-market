@@ -1,4 +1,4 @@
-24-11-27.15:17:51.385 [main            ] WARN  GenericWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'strategyRepository' defined in file [D:\Develop\project\rem-market\market-infrastructure\target\classes\top\javarem\infrastructure\adapter\repository\StrategyRepository.class]: Unsatisfied dependency expressed through constructor parameter 6; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'top.javarem.infrastructure.dao.Iservice.IRuleTreeNodeService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+24-11-27.15:17:51.385 [main            ] WARN  GenericWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'strategyRepository' defined in file [D:\Develop\project\rem-market\market-infrastructure\target\classes\top\javarem\infrastructure\adapter\repository\StrategyRepository.class]: Unsatisfied dependency expressed through constructor parameter 6; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'top.javarem.infrastructure.dao.iService.IRuleTreeNodeService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
 24-11-27.15:17:51.500 [main            ] ERROR LoggingFailureAnalysisReporter - 
 
 ***************************
@@ -7,12 +7,12 @@ APPLICATION FAILED TO START
 
 Description:
 
-Parameter 6 of constructor in top.javarem.infrastructure.adapter.repository.StrategyRepository required a bean of type 'top.javarem.infrastructure.dao.Iservice.IRuleTreeNodeService' that could not be found.
+Parameter 6 of constructor in top.javarem.infrastructure.adapter.repository.StrategyRepository required a bean of type 'top.javarem.infrastructure.dao.iService.IRuleTreeNodeService' that could not be found.
 
 
 Action:
 
-Consider defining a bean of type 'top.javarem.infrastructure.dao.Iservice.IRuleTreeNodeService' in your configuration.
+Consider defining a bean of type 'top.javarem.infrastructure.dao.iService.IRuleTreeNodeService' in your configuration.
 
 24-11-27.15:17:51.503 [main            ] ERROR TestContextManager     - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@2892d68] to prepare test instance [top.javarem.RuleTreeLogicTest@3b6c2be6]
 java.lang.IllegalStateException: Failed to load ApplicationContext
@@ -88,7 +88,7 @@ java.lang.IllegalStateException: Failed to load ApplicationContext
 	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
 	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
 	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'strategyRepository' defined in file [D:\Develop\project\rem-market\market-infrastructure\target\classes\top\javarem\infrastructure\adapter\repository\StrategyRepository.class]: Unsatisfied dependency expressed through constructor parameter 6; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'top.javarem.infrastructure.dao.Iservice.IRuleTreeNodeService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'strategyRepository' defined in file [D:\Develop\project\rem-market\market-infrastructure\target\classes\top\javarem\infrastructure\adapter\repository\StrategyRepository.class]: Unsatisfied dependency expressed through constructor parameter 6; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'top.javarem.infrastructure.dao.iService.IRuleTreeNodeService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
 	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
@@ -109,14 +109,14 @@ Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Err
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:141)
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:90)
 	... 71 common frames omitted
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'top.javarem.infrastructure.dao.Iservice.IRuleTreeNodeService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'top.javarem.infrastructure.dao.iService.IRuleTreeNodeService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1801)
 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1357)
 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
 	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
 	... 89 common frames omitted
-24-11-27.15:19:16.006 [main            ] WARN  GenericWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'strategyRepository' defined in file [D:\Develop\project\rem-market\market-infrastructure\target\classes\top\javarem\infrastructure\adapter\repository\StrategyRepository.class]: Unsatisfied dependency expressed through constructor parameter 6; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'top.javarem.infrastructure.dao.Iservice.IRuleTreeNodeService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+24-11-27.15:19:16.006 [main            ] WARN  GenericWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'strategyRepository' defined in file [D:\Develop\project\rem-market\market-infrastructure\target\classes\top\javarem\infrastructure\adapter\repository\StrategyRepository.class]: Unsatisfied dependency expressed through constructor parameter 6; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'top.javarem.infrastructure.dao.iService.IRuleTreeNodeService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
 24-11-27.15:19:16.170 [main            ] ERROR LoggingFailureAnalysisReporter - 
 
 ***************************
@@ -125,12 +125,12 @@ APPLICATION FAILED TO START
 
 Description:
 
-Parameter 6 of constructor in top.javarem.infrastructure.adapter.repository.StrategyRepository required a bean of type 'top.javarem.infrastructure.dao.Iservice.IRuleTreeNodeService' that could not be found.
+Parameter 6 of constructor in top.javarem.infrastructure.adapter.repository.StrategyRepository required a bean of type 'top.javarem.infrastructure.dao.iService.IRuleTreeNodeService' that could not be found.
 
 
 Action:
 
-Consider defining a bean of type 'top.javarem.infrastructure.dao.Iservice.IRuleTreeNodeService' in your configuration.
+Consider defining a bean of type 'top.javarem.infrastructure.dao.iService.IRuleTreeNodeService' in your configuration.
 
 24-11-27.15:19:16.173 [main            ] ERROR TestContextManager     - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@710636b0] to prepare test instance [top.javarem.RuleTreeLogicTest@64440065]
 java.lang.IllegalStateException: Failed to load ApplicationContext
@@ -206,7 +206,7 @@ java.lang.IllegalStateException: Failed to load ApplicationContext
 	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
 	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
 	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'strategyRepository' defined in file [D:\Develop\project\rem-market\market-infrastructure\target\classes\top\javarem\infrastructure\adapter\repository\StrategyRepository.class]: Unsatisfied dependency expressed through constructor parameter 6; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'top.javarem.infrastructure.dao.Iservice.IRuleTreeNodeService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'strategyRepository' defined in file [D:\Develop\project\rem-market\market-infrastructure\target\classes\top\javarem\infrastructure\adapter\repository\StrategyRepository.class]: Unsatisfied dependency expressed through constructor parameter 6; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'top.javarem.infrastructure.dao.iService.IRuleTreeNodeService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
 	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
 	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
@@ -227,7 +227,7 @@ Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Err
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:141)
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:90)
 	... 71 common frames omitted
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'top.javarem.infrastructure.dao.Iservice.IRuleTreeNodeService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'top.javarem.infrastructure.dao.iService.IRuleTreeNodeService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1801)
 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1357)
 	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)

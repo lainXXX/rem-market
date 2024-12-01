@@ -63,9 +63,7 @@ public class DecisionTreeEngine implements IDecisionTreeEngine {
                 .filter(nodeLine -> matchNextNode(code, nodeLine))
                 .map(RuleTreeNodeLineVO::getRuleChildNode)
                 .findFirst()
-                .orElseGet(() -> {
-                    throw new RuntimeException("决策树引擎，nextNode 计算失败，未找到可执行节点！");
-                });
+                 .orElse(null);
     }
 
     private boolean matchNextNode(String matchCode, RuleTreeNodeLineVO line) {
