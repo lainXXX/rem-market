@@ -5,7 +5,7 @@
       <TemplateContext>
         <option name="generateConfig">
           <GenerateConfig>
-            <option name="annotationType" value="NONE" />
+            <option name="annotationType" value="MYBATIS_PLUS2" />
             <option name="basePackage" value="generator" />
             <option name="basePath" value="src/main/java" />
             <option name="classNameStrategy" value="camel" />
@@ -39,6 +39,26 @@
                   <option name="modulePath" value="$PROJECT_DIR$" />
                   <option name="packageName" value="mapper" />
                 </ModuleInfoGo>
+                <ModuleInfoGo>
+                  <option name="basePath" value="${domain.basePath}" />
+                  <option name="configFileName" value="serviceImpl.ftl" />
+                  <option name="configName" value="serviceImpl" />
+                  <option name="encoding" value="${domain.encoding}" />
+                  <option name="fileName" value="${domain.fileName}ServiceImpl" />
+                  <option name="fileNameWithSuffix" value="${domain.fileName}ServiceImpl.java" />
+                  <option name="modulePath" value="$PROJECT_DIR$" />
+                  <option name="packageName" value="${domain.basePackage}.service.impl" />
+                </ModuleInfoGo>
+                <ModuleInfoGo>
+                  <option name="basePath" value="${domain.basePath}" />
+                  <option name="configFileName" value="serviceInterface.ftl" />
+                  <option name="configName" value="serviceInterface" />
+                  <option name="encoding" value="${domain.encoding}" />
+                  <option name="fileName" value="${domain.fileName}Service" />
+                  <option name="fileNameWithSuffix" value="${domain.fileName}Service.java" />
+                  <option name="modulePath" value="$PROJECT_DIR$" />
+                  <option name="packageName" value="${domain.basePackage}.service" />
+                </ModuleInfoGo>
               </list>
             </option>
             <option name="needsComment" value="true" />
@@ -48,18 +68,18 @@
             <option name="tableUIInfoList">
               <list>
                 <TableUIInfo>
-                  <option name="className" value="RuleTreeNodeLine" />
-                  <option name="tableName" value="rule_tree_node_line" />
+                  <option name="className" value="RaffleActivityOrder" />
+                  <option name="tableName" value="raffle_activity_order" />
                 </TableUIInfo>
               </list>
             </option>
-            <option name="templatesName" value="default-empty" />
+            <option name="templatesName" value="mybatis-plus2" />
             <option name="useLombokPlugin" value="true" />
           </GenerateConfig>
         </option>
         <option name="moduleName" value="market-infrastructure" />
         <option name="projectPath" value="$PROJECT_DIR$" />
-        <option name="templateName" value="default-empty" />
+        <option name="templateName" value="mybatis-plus2" />
       </TemplateContext>
     </option>
   </component>
