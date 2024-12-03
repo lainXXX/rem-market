@@ -14,5 +14,6 @@ import top.javarem.infrastructure.dao.entity.RaffleActivityAccount;
 @Mapper
 public interface RaffleActivityAccountMapper extends BaseMapper<RaffleActivityAccount> {
 
+    int updateAccount(RaffleActivityAccount raffleActivityAccount);
 
 }

@@ -1,24 +1,31 @@
 package top.javarem.infrastructure.dao.entity;
 
+
+import java.io.Serializable;
+import java.util.Date;
+
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import java.io.Serializable;
-import java.util.Date;
 import lombok.Data;
 
 /**
  * 
- * @TableName raffle_activity
+ * @TableName raffle_activity_sku
  */
-@TableName(value ="raffle_activity")
+@TableName(value ="raffle_activity_sku")
 @Data
-public class RaffleActivity implements Serializable {
+public class RaffleActivitySku implements Serializable {
     /**
      * 自增id
      */
     @TableId
-    private Long id;
+    private Integer id;
+
+    /**
+     * 商品sku - 把每一个组合当作一个商品
+     */
+    private Long sku;
 
     /**
      * 活动id
@@ -26,34 +33,19 @@ public class RaffleActivity implements Serializable {
     private Long activityId;
 
     /**
-     * 活动名称
+     * 活动个人参与次数id
      */
-    private String activityName;
+    private Long activityCountId;
 
     /**
-     * 活动描述
+     * 商品库存
      */
-    private String activityDesc;
+    private Integer stockCount;
 
     /**
-     * 活动开始时间
+     * 剩余库存
      */
-    private Date beginTime;
-
-    /**
-     * 活动结束时间
-     */
-    private Date endTime;
-
-    /**
-     * 活动抽奖策略id
-     */
-    private Long strategyId;
-
-    /**
-     * 活动状态
-     */
-    private String status;
+    private Integer stockCountSurplus;
 
     /**
      * 创建时间

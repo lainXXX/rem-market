@@ -11,14 +11,12 @@ import top.javarem.domain.strategy.repository.IStrategyRepository;
 import top.javarem.domain.strategy.service.AbstractRaffleLogic;
 import top.javarem.domain.strategy.service.IRaffleAward;
 import top.javarem.domain.strategy.service.IRaffleStock;
-import top.javarem.domain.strategy.service.IRaffleStrategy;
 import top.javarem.domain.strategy.service.armory.IStrategyArmoryDispatch;
-import top.javarem.domain.strategy.service.rule.chain.IStrategyLogicLogicChain;
+import top.javarem.domain.strategy.service.rule.chain.IStrategyLogicChain;
 import top.javarem.domain.strategy.service.rule.chain.factory.DefaultChainFactory;
 import top.javarem.domain.strategy.service.rule.tree.factory.DefaultTreeFactory;
 import top.javarem.domain.strategy.service.rule.tree.factory.engine.IDecisionTreeEngine;
 
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -41,7 +39,7 @@ public class DefaultRaffleStrategy extends AbstractRaffleLogic implements IRaffl
     @Override
     protected DefaultChainFactory.LogicAwardVO doRaffleLogicChain(String userId, Long strategyId) {
         //        开启抽奖策略责任链
-        IStrategyLogicLogicChain logicChain = chainFactory.openLogicChain(strategyId);
+        IStrategyLogicChain logicChain = chainFactory.openLogicChain(strategyId);
 //        通过责任链获取奖品ID
         return logicChain.executeStrategy(userId, strategyId);
     }

@@ -7,14 +7,14 @@ import lombok.NoArgsConstructor;
 @Getter
 public class Constants {
 
-    public final static String COMMA = ",";
-    public final static String COLON = ":";
-    public final static String SPACE = " ";
-    public final static String UNDERLINE = "_";
-    public final static Integer AWARD_MIN_RANGE = 100;
-    public final static String RULE_WEIGHT_KEY = "ruleWeightKey";
-    public final static Integer BLACKLIST_AWARD_ID = 100;
-    public final static String AWARD_COUNT_LOCK = "lock";
+    public static final String COMMA = ",";
+    public static final String COLON = ":";
+    public static final String SPACE = " ";
+    public static final String UNDERLINE = "_";
+    public static final Integer AWARD_MIN_RANGE = 100;
+    public static final String RULE_WEIGHT_KEY = "ruleWeightKey";
+    public static final Integer BLACKLIST_AWARD_ID = 100;
+    public static final String AWARD_COUNT_LOCK = "lock";
 
     @AllArgsConstructor
     @NoArgsConstructor
@@ -32,14 +32,15 @@ public class Constants {
     }
 
     public static class RedisKey {
+        public static final String ACTIVITY_KEY = "rem_market_activity_key_";
         public static final String RULE_TREE_KEY = "rem_market_rule_tree_key_";
-        public static String STRATEGY_KEY = "rem_market_strategy_key_";
-        public static String STRATEGY_AWARD_COUNT_KEY = "rem_market_strategy_award_count_key_";
-        public static String STRATEGY_AWARD_KEY = "rem_market_strategy_award_key_";
-        public static String AWARD_TABLE_KEY = "rem_market_award_table_key_";
-        public static String AWARD_RANGE_KEY = "rem_market_award_range_key_";
-        public final static String AWARD_BLOCK_QUEUE_KEY = "award_block_queue_key_";
-
+        public static final String STRATEGY_KEY = "rem_market_strategy_key_";
+        public static final String STRATEGY_AWARD_COUNT_KEY = "rem_market_strategy_award_count_key_";
+        public static final String STRATEGY_AWARD_KEY = "rem_market_strategy_award_key_";
+        public static final String AWARD_TABLE_KEY = "rem_market_award_table_key_";
+        public static final String AWARD_RANGE_KEY = "rem_market_award_range_key_";
+        public static final String AWARD_BLOCK_QUEUE_KEY = "rem_market_award_block_queue_key_";
+        public static final String ACTIVITY_COUNT_KEY = "rem_market_activity_count_key_";
     }
 
     @Getter

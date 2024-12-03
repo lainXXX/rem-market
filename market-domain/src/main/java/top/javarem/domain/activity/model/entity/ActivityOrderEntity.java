@@ -1,25 +1,23 @@
-package top.javarem.infrastructure.dao.entity;
+package top.javarem.domain.activity.model.entity;
 
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
-import java.io.Serializable;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import top.javarem.domain.activity.model.vo.OrderStateVO;
+
 import java.time.LocalDateTime;
 import java.util.Date;
-import lombok.Data;
 
 /**
  * 
  * @TableName raffle_activity_order
  */
-@TableName(value ="raffle_activity_order")
 @Data
-public class RaffleActivityOrder implements Serializable {
-    /**
-     * 自增id
-     */
-    @TableId
-    private Long id;
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class ActivityOrderEntity {
 
     /**
      * 用户id
@@ -35,8 +33,6 @@ public class RaffleActivityOrder implements Serializable {
      * 活动id
      */
     private Long activityId;
-
-    private String activityName;
 
     /**
      * 抽奖策略id
@@ -54,7 +50,7 @@ public class RaffleActivityOrder implements Serializable {
     private LocalDateTime orderTime;
 
     /**
-     * 总次数
+     * 库存总量
      */
     private Integer totalCount;
 
@@ -78,16 +74,4 @@ public class RaffleActivityOrder implements Serializable {
      */
     private String outBusinessNo;
 
-    /**
-     * 创建时间
-     */
-    private LocalDateTime createTime;
-
-    /**
-     * 更新时间
-     */
-    private LocalDateTime updateTime;
-
-    @TableField(exist = false)
-    private static final long serialVersionUID = 1L;
 }

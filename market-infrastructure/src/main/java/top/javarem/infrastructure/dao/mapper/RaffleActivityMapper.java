@@ -13,5 +13,4 @@ import top.javarem.infrastructure.dao.entity.RaffleActivity;
 @Mapper
 public interface RaffleActivityMapper extends BaseMapper<RaffleActivity> {
 
-
 }

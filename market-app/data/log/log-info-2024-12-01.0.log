@@ -1,0 +1,70 @@
+24-12-01.15:27:50.152 [main            ] INFO  StrategyRaffleTest     - Starting StrategyRaffleTest using Java 1.8.0_151 on mile with PID 15844 (started by aaa in D:\Develop\project\rem-market\market-app)
+24-12-01.15:27:50.154 [main            ] INFO  StrategyRaffleTest     - The following 1 profile is active: "dev"
+24-12-01.15:27:50.963 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-12-01.15:27:50.965 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-12-01.15:27:51.038 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 28 ms. Found 0 Redis repository interfaces.
+24-12-01.15:27:52.664 [main            ] INFO  Version                - Redisson 3.26.0
+24-12-01.15:27:53.639 [redisson-netty-1-7] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-12-01.15:27:53.946 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-12-01.15:27:57.567 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-12-01.15:27:57.619 [main            ] INFO  StrategyRaffleTest     - Started StrategyRaffleTest in 7.892 seconds (JVM running for 9.17)
+24-12-01.15:27:58.030 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-12-01.15:27:59.683 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-12-01.15:27:59.954 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-12-01.15:28:00.398 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-12-01.15:29:13.190 [main            ] INFO  StrategyRaffleTest     - Starting StrategyRaffleTest using Java 1.8.0_151 on mile with PID 7316 (started by aaa in D:\Develop\project\rem-market\market-app)
+24-12-01.15:29:13.191 [main            ] INFO  StrategyRaffleTest     - The following 1 profile is active: "dev"
+24-12-01.15:29:13.938 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-12-01.15:29:13.940 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-12-01.15:29:13.978 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27 ms. Found 0 Redis repository interfaces.
+24-12-01.15:29:15.481 [main            ] INFO  Version                - Redisson 3.26.0
+24-12-01.15:29:16.428 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-12-01.15:29:16.790 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-12-01.15:29:20.581 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-12-01.15:29:20.643 [main            ] INFO  StrategyRaffleTest     - Started StrategyRaffleTest in 7.879 seconds (JVM running for 9.61)
+24-12-01.15:35:34.791 [scheduling-1    ] ERROR UpdateAwardStockJob    - 扣减库存失败
+24-12-01.15:35:59.688 [main            ] INFO  StrategyRaffleTest     - Starting StrategyRaffleTest using Java 1.8.0_151 on mile with PID 17468 (started by aaa in D:\Develop\project\rem-market\market-app)
+24-12-01.15:35:59.689 [main            ] INFO  StrategyRaffleTest     - The following 1 profile is active: "dev"
+24-12-01.15:36:00.377 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-12-01.15:36:00.379 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-12-01.15:36:00.415 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27 ms. Found 0 Redis repository interfaces.
+24-12-01.15:36:01.814 [main            ] INFO  Version                - Redisson 3.26.0
+24-12-01.15:36:02.750 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-12-01.15:36:03.115 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-12-01.15:36:06.569 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-12-01.15:36:06.618 [main            ] INFO  StrategyRaffleTest     - Started StrategyRaffleTest in 7.334 seconds (JVM running for 8.379)
+24-12-01.15:36:53.935 [main            ] INFO  StrategyRaffleTest     - Starting StrategyRaffleTest using Java 1.8.0_151 on mile with PID 3272 (started by aaa in D:\Develop\project\rem-market\market-app)
+24-12-01.15:36:53.936 [main            ] INFO  StrategyRaffleTest     - The following 1 profile is active: "dev"
+24-12-01.15:36:54.720 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-12-01.15:36:54.722 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-12-01.15:36:54.761 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 28 ms. Found 0 Redis repository interfaces.
+24-12-01.15:36:56.263 [main            ] INFO  Version                - Redisson 3.26.0
+24-12-01.15:36:57.227 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-12-01.15:36:57.594 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-12-01.15:37:01.270 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-12-01.15:37:01.330 [main            ] INFO  StrategyRaffleTest     - Started StrategyRaffleTest in 7.879 seconds (JVM running for 9.288)
+24-12-01.15:40:39.527 [main            ] INFO  StrategyRaffleTest     - Starting StrategyRaffleTest using Java 1.8.0_151 on mile with PID 17676 (started by aaa in D:\Develop\project\rem-market\market-app)
+24-12-01.15:40:39.528 [main            ] INFO  StrategyRaffleTest     - The following 1 profile is active: "dev"
+24-12-01.15:40:40.267 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-12-01.15:40:40.269 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-12-01.15:40:40.306 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 26 ms. Found 0 Redis repository interfaces.
+24-12-01.15:40:41.763 [main            ] INFO  Version                - Redisson 3.26.0
+24-12-01.15:40:42.713 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-12-01.15:40:43.081 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-12-01.15:40:46.725 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-12-01.15:40:46.781 [main            ] INFO  StrategyRaffleTest     - Started StrategyRaffleTest in 7.689 seconds (JVM running for 9.011)
+24-12-01.15:41:36.963 [main            ] INFO  StrategyRaffleTest     - Starting StrategyRaffleTest using Java 1.8.0_151 on mile with PID 19640 (started by aaa in D:\Develop\project\rem-market\market-app)
+24-12-01.15:41:36.964 [main            ] INFO  StrategyRaffleTest     - The following 1 profile is active: "dev"
+24-12-01.15:41:37.669 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-12-01.15:41:37.671 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-12-01.15:41:37.707 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 26 ms. Found 0 Redis repository interfaces.
+24-12-01.15:41:39.083 [main            ] INFO  Version                - Redisson 3.26.0
+24-12-01.15:41:40.018 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-12-01.15:41:40.426 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-12-01.15:41:43.820 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-12-01.15:41:43.870 [main            ] INFO  StrategyRaffleTest     - Started StrategyRaffleTest in 7.309 seconds (JVM running for 8.407)
+24-12-01.15:41:44.247 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-12-01.15:41:45.800 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-12-01.15:41:46.465 [main            ] INFO  StrategyRaffleTest     - 策略装配测试结果：true
+24-12-01.15:41:46.482 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-12-01.15:41:47.016 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.

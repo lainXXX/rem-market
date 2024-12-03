@@ -7,8 +7,8 @@ package top.javarem.domain.strategy.service.rule.chain;
  */
 public interface IStrategyLogicChainArmory {
 
-    IStrategyLogicLogicChain next();
+    IStrategyLogicChain next();
 
-    IStrategyLogicLogicChain appendNode(IStrategyLogicLogicChain next);
+    IStrategyLogicChain appendNode(IStrategyLogicChain next);
 
 }

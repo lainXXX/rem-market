@@ -11,4 +11,6 @@ import top.javarem.infrastructure.dao.entity.RaffleActivityAccount;
 */
 public interface RaffleActivityAccountService extends IService<RaffleActivityAccount> {
 
+
+    int updateAccount(RaffleActivityAccount raffleActivityAccount);
 }

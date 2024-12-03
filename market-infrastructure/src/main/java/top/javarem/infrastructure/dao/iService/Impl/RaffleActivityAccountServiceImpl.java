@@ -1,6 +1,7 @@
 package top.javarem.infrastructure.dao.iService.Impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import top.javarem.infrastructure.dao.entity.RaffleActivityAccount;
 import top.javarem.infrastructure.dao.iService.RaffleActivityAccountService;
@@ -12,7 +13,18 @@ import top.javarem.infrastructure.dao.mapper.RaffleActivityAccountMapper;
 * @createDate 2024-12-01 17:15:06
 */
 @Service
-public class RaffleActivityAccountServiceImpl extends ServiceImpl<RaffleActivityAccountMapper, RaffleActivityAccount>
-implements RaffleActivityAccountService {
+public class RaffleActivityAccountServiceImpl extends ServiceImpl<RaffleActivityAccountMapper, RaffleActivityAccount> implements RaffleActivityAccountService {
 
+    @Autowired
+    protected RaffleActivityAccountMapper mapper;
+
+    @Override
+    public RaffleActivityAccountMapper getBaseMapper() {
+        return super.getBaseMapper();
+    }
+
+    @Override
+    public int updateAccount(RaffleActivityAccount raffleActivityAccount) {
+        return mapper.updateAccount(raffleActivityAccount);
+    }
 }

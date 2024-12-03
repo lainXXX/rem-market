@@ -11,7 +11,7 @@ import top.javarem.domain.strategy.model.entity.RaffleAwardEntity;
 import top.javarem.domain.strategy.model.entity.RaffleFactorEntity;
 import top.javarem.domain.strategy.service.IRaffleStrategy;
 import top.javarem.domain.strategy.service.armory.IStrategyArmory;
-import top.javarem.domain.strategy.service.rule.chain.IStrategyLogicLogicChain;
+import top.javarem.domain.strategy.service.rule.chain.IStrategyLogicChain;
 import top.javarem.domain.strategy.service.rule.chain.factory.DefaultChainFactory;
 import top.javarem.domain.strategy.service.rule.chain.impl.RuleWeightLogicNode;
 import top.javarem.domain.strategy.service.rule.tree.impl.LockLogicTreeNode;
@@ -86,7 +86,7 @@ public class StrategyRaffleTest {
 
     @Test
     public void test_StrategyLogicChain() {
-        IStrategyLogicLogicChain logicChain = defaultChainFactory.openLogicChain(100002L);
+        IStrategyLogicChain logicChain = defaultChainFactory.openLogicChain(100002L);
         DefaultChainFactory.LogicAwardVO logicAwardVO = logicChain.executeStrategy("5", 100002L);
         System.out.println(logicAwardVO);
     }

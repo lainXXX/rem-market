@@ -20,9 +20,7 @@ public class RaffleActivityCount implements Serializable {
     @TableId
     private Long id;
 
-    /**
-     * 活动次数编号
-     */
+//  活动次数编号
     private Long activityCountId;
 
     /**

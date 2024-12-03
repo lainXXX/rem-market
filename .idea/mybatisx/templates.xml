@@ -68,8 +68,8 @@
             <option name="tableUIInfoList">
               <list>
                 <TableUIInfo>
-                  <option name="className" value="RaffleActivityOrder" />
-                  <option name="tableName" value="raffle_activity_order" />
+                  <option name="className" value="RaffleActivitySku" />
+                  <option name="tableName" value="raffle_activity_sku" />
                 </TableUIInfo>
               </list>
             </option>
