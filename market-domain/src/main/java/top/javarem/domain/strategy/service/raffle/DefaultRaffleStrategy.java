@@ -4,7 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import top.javarem.domain.strategy.model.entity.StrategyAwardEntity;
-import top.javarem.domain.strategy.model.vo.AwardStockQueueKeyVO;
+import top.javarem.domain.strategy.model.vo.AwardStockDecrQueueVO;
 import top.javarem.domain.strategy.model.vo.RuleTreeVO;
 import top.javarem.domain.strategy.model.vo.StrategyAwardRuleModelsVO;
 import top.javarem.domain.strategy.repository.IStrategyRepository;
@@ -56,13 +56,18 @@ public class DefaultRaffleStrategy extends AbstractRaffleLogic implements IRaffl
     }
 
     @Override
-    public AwardStockQueueKeyVO handleQueueValue() {
+    public AwardStockDecrQueueVO handleQueueValue() {
         return repository.handleQueueValue();
     }
 
     @Override
-    public Boolean updateAwardStock(AwardStockQueueKeyVO queueKeyVO) {
+    public Boolean updateAwardStock(AwardStockDecrQueueVO queueKeyVO) {
         return repository.updateAwardStock(queueKeyVO);
+    }
+
+    @Override
+    public Boolean isEmptyStockDecrQueue() {
+        return repository.isEmptyStockDecrQueue();
     }
 
     @Override

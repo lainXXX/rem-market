@@ -1,6 +1,6 @@
 package top.javarem.domain.strategy.service;
 
-import top.javarem.domain.strategy.model.vo.AwardStockQueueKeyVO;
+import top.javarem.domain.strategy.model.vo.AwardStockDecrQueueVO;
 
 /**
  * @Author: rem
@@ -9,7 +9,9 @@ import top.javarem.domain.strategy.model.vo.AwardStockQueueKeyVO;
  */
 public interface IRaffleStock {
 
-    AwardStockQueueKeyVO handleQueueValue();
+    AwardStockDecrQueueVO handleQueueValue();
 
-    Boolean updateAwardStock(AwardStockQueueKeyVO queueKeyVO);
+    Boolean updateAwardStock(AwardStockDecrQueueVO queueKeyVO);
+
+    Boolean isEmptyStockDecrQueue();
 }

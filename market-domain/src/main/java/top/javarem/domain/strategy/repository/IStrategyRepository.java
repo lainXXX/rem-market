@@ -4,7 +4,7 @@ package top.javarem.domain.strategy.repository;
 import top.javarem.domain.strategy.model.entity.StrategyAwardEntity;
 import top.javarem.domain.strategy.model.entity.RuleEntity;
 import top.javarem.domain.strategy.model.entity.StrategyEntity;
-import top.javarem.domain.strategy.model.vo.AwardStockQueueKeyVO;
+import top.javarem.domain.strategy.model.vo.AwardStockDecrQueueVO;
 import top.javarem.domain.strategy.model.vo.RuleTreeVO;
 import top.javarem.domain.strategy.model.vo.StrategyAwardRuleModelsVO;
 
@@ -41,9 +41,12 @@ public interface IStrategyRepository {
 
     boolean decrAwardCount(String cacheKey);
 
-    void awardStockSendQueue(AwardStockQueueKeyVO queueKeyVO);
+    void sendAwardStockDecrQueue(AwardStockDecrQueueVO queueKeyVO);
 
-    AwardStockQueueKeyVO handleQueueValue();
+    AwardStockDecrQueueVO handleQueueValue();
 
-    Boolean updateAwardStock(AwardStockQueueKeyVO queueKeyVO);
+    Boolean updateAwardStock(AwardStockDecrQueueVO queueKeyVO);
+
+    Boolean isEmptyStockDecrQueue();
+
 }

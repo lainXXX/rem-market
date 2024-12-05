@@ -4,7 +4,6 @@ import lombok.Data;
 
 
 /**
- * 
  * @TableName raffle_activity_sku
  */
 @Data

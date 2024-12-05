@@ -1,5 +1,7 @@
 package top.javarem.domain.activity.service.rule;
 
+import top.javarem.domain.activity.service.rule.factory.DefaultActivityChainFactory;
+
 /**
  * @Author: rem
  * @Date: 2024/12/02/14:23
@@ -7,6 +9,6 @@ package top.javarem.domain.activity.service.rule;
  */
 public interface IActivityChain extends IActivityChainArmory {
 
-    void execute();
+    Boolean execute(DefaultActivityChainFactory.ActivityChainFilterVO chainFilterVO);
 
 }

@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class AwardStockQueueKeyVO {
+public class AwardStockDecrQueueVO {
 
     private Long strategyId;
 

@@ -4,6 +4,10 @@ import top.javarem.domain.activity.model.aggregate.ActivityOrderAggregate;
 import top.javarem.domain.activity.model.entity.ActivityCountEntity;
 import top.javarem.domain.activity.model.entity.ActivityEntity;
 import top.javarem.domain.activity.model.entity.ActivitySkuEntity;
+import top.javarem.domain.activity.model.vo.ActivityStockDecrQueueVO;
+
+import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * @Author: rem
@@ -20,4 +24,20 @@ public interface IActivityRepository {
     ActivityCountEntity getActivityCount(Long activityCountId);
 
     void saveOrder(ActivityOrderAggregate activityOrderAggregate);
+
+    void cacheActivityStock(String key, Integer stockCount);
+
+    Boolean deductActivityStock(Long sku, Date endTime);
+
+    void sendActivityStockDecrQueue(ActivityStockDecrQueueVO activityStockDecrQueueVO);
+
+    ActivityStockDecrQueueVO handleSkuStockDecrQueue();
+
+    Boolean updateSkuStock(ActivityStockDecrQueueVO activityStockDecrQueueVO);
+
+    Boolean isEmptySkuStockDecrQueue();
+
+    void clearActivitySkuStock(Long sku);
+
+    void clearSkuStockDecrQueue();
 }

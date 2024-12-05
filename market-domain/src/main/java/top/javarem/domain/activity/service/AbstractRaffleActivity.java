@@ -16,7 +16,7 @@ import top.javarem.types.exception.AppException;
  * @Description:
  */
 @Slf4j
-public abstract class AbstractRaffleActivity implements IRaffleOrder{
+public abstract class AbstractRaffleActivity implements IRaffleOrder {
 
     protected IActivityRepository repository;
 
@@ -29,7 +29,7 @@ public abstract class AbstractRaffleActivity implements IRaffleOrder{
 
     @Override
     public String createActivityOrder(SkuRechargeEntity skuRechargeEntity) {
-// 1. 参数校验
+//        1. 参数校验
         String userId = skuRechargeEntity.getUserId();
         Long sku = skuRechargeEntity.getSku();
         String outBusinessNo = skuRechargeEntity.getOutBusinessNo();
@@ -46,15 +46,21 @@ public abstract class AbstractRaffleActivity implements IRaffleOrder{
 
 //        3.开启活动规则过滤责任链
         IActivityChain chain = factory.openActivityChain();
-        chain.execute();
+        Boolean executeResult = chain.execute(DefaultActivityChainFactory.ActivityChainFilterVO.builder()
+                .sku(skuEntity.getSku())
+                .activityId(skuEntity.getActivityId())
+                .skuSurplusStock(skuEntity.getStockCountSurplus())
+                .status(activityEntity.getStatus())
+                .beginTime(activityEntity.getBeginTime())
+                .endTime(activityEntity.getEndTime())
+                .build());
 
 //        4.构建活动下单聚合对象
         ActivityOrderAggregate activityOrderAggregate = buildOrderAggregate(skuRechargeEntity, skuEntity, activityEntity, countEntity);
-
+        log.info("{}", activityOrderAggregate);
 //        5.保存订单
         saveOrder(activityOrderAggregate);
-
-        return null;
+        return activityOrderAggregate.getActivityOrder().getOrderId();
     }
 
     protected abstract ActivityOrderAggregate buildOrderAggregate(SkuRechargeEntity skuRechargeEntity, ActivitySkuEntity skuEntity, ActivityEntity activityEntity, ActivityCountEntity countEntity);
