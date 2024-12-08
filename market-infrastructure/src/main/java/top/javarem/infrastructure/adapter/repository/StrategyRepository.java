@@ -319,7 +319,7 @@ public class StrategyRepository implements IStrategyRepository {
         }
         surplus = redissonClient.getAtomicLong(cacheKey).decrementAndGet();
         String lockKey = cacheKey + Constants.UNDERLINE + surplus;
-        boolean lock = redissonClient.getBucket(lockKey).trySet(Constants.AWARD_COUNT_LOCK);
+        boolean lock = redissonClient.getBucket(lockKey).trySet(Constants.AWARD_SURPLUS_LOCK);
         if (!lock) {
             log.info("策略奖品库存加锁失败 {}", lockKey);
         }
@@ -327,31 +327,38 @@ public class StrategyRepository implements IStrategyRepository {
     }
 
     @Override
-    public void awardStockSendQueue(AwardStockQueueKeyVO queueKeyVO) {
+    public void sendAwardStockDecrQueue(AwardStockDecrQueueVO queueKeyVO) {
         String queueKey = Constants.RedisKey.AWARD_BLOCK_QUEUE_KEY;
 //        RBlockingQueue是线程安全的 每一次不同线程使用同一个queueKey的调用返回的都是同一个RBlockingQueue
-        RBlockingQueue<AwardStockQueueKeyVO> blockingQueue = redissonClient.getBlockingQueue(queueKey);
+        RBlockingQueue<AwardStockDecrQueueVO> blockingQueue = redissonClient.getBlockingQueue(queueKey);
 //        将阻塞队列加入延迟队列
-        RDelayedQueue<AwardStockQueueKeyVO> delayedQueue = redissonClient.getDelayedQueue(blockingQueue);
+        RDelayedQueue<AwardStockDecrQueueVO> delayedQueue = redissonClient.getDelayedQueue(blockingQueue);
 //        3秒后自动将queueKeyVO添加到blockingQueue
         delayedQueue.offer(queueKeyVO, 3, TimeUnit.SECONDS);
     }
 
     @Override
-    public AwardStockQueueKeyVO handleQueueValue() {
+    public AwardStockDecrQueueVO handleQueueValue() {
         String queueKey = Constants.RedisKey.AWARD_BLOCK_QUEUE_KEY;
-        RBlockingQueue<AwardStockQueueKeyVO> blockingQueue = redissonClient.getBlockingQueue(queueKey);
+        RBlockingQueue<AwardStockDecrQueueVO> blockingQueue = redissonClient.getBlockingQueue(queueKey);
         return blockingQueue.poll();
     }
 
     @Override
-    public Boolean updateAwardStock(AwardStockQueueKeyVO queueKeyVO) {
+    public Boolean updateAwardStock(AwardStockDecrQueueVO queueKeyVO) {
         return strategyAwardService.lambdaUpdate()
                 .setSql("award_count_surplus = award_count_surplus - 1")
                 .eq(StrategyAward::getStrategyId, queueKeyVO.getStrategyId())
                 .eq(StrategyAward::getAwardId, queueKeyVO.getAwardId())
                 .update();
 
+    }
+
+    @Override
+    public Boolean isEmptyStockDecrQueue() {
+        String queueKey = Constants.RedisKey.AWARD_BLOCK_QUEUE_KEY;
+        RBlockingQueue<AwardStockDecrQueueVO> blockingQueue = redissonClient.getBlockingQueue(queueKey);
+        return CollectionUtils.isEmpty(blockingQueue);
     }
 
     private List<RuleTreeNode> getNodes(String treeId) {

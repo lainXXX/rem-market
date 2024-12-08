@@ -7,7 +7,6 @@
     <resultMap id="BaseResultMap" type="top.javarem.infrastructure.dao.entity.User">
             <id property="id" column="id" jdbcType="BIGINT"/>
             <result property="userId" column="user_id" jdbcType="BIGINT"/>
-            <result property="awardId" column="award_id" jdbcType="INTEGER"/>
             <result property="strategyId" column="strategy_id" jdbcType="BIGINT"/>
             <result property="ruleModel" column="rule_model" jdbcType="VARCHAR"/>
             <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
@@ -16,7 +15,7 @@
 
     <sql id="Base_Column_List">
         id
-        ,user_id,award_id
+        ,user_id
         ,strategy_id,rule_model
         ,create_time,update_time
     </sql>

@@ -27,4 +27,9 @@ public class RaffleActivityAccountServiceImpl extends ServiceImpl<RaffleActivity
     public int updateAccount(RaffleActivityAccount raffleActivityAccount) {
         return mapper.updateAccount(raffleActivityAccount);
     }
+
+    @Override
+    public int updateAccountDeductQuota(RaffleActivityAccount build) {
+        return mapper.updateAccountDeductQuota(build);
+    }
 }

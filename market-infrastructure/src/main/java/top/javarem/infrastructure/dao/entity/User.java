@@ -24,10 +24,10 @@ public class User implements Serializable {
      */
     private String userId;
 
-    /**
-     * 奖品id
-     */
-    private Integer awardId;
+//    /**
+//     * 奖品id
+//     */
+//    private Integer awardId;
 
     /**
      * 策略id

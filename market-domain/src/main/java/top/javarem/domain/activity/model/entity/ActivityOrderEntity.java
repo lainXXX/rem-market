@@ -34,6 +34,8 @@ public class ActivityOrderEntity {
      */
     private Long activityId;
 
+    private String activityName;
+
     /**
      * 抽奖策略id
      */

@@ -50,6 +50,11 @@
             <artifactId>commons-lang3</artifactId>
             <version>3.9</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-amqp -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
 
         <!--            自定义模块-->
         <dependency>
@@ -74,13 +79,18 @@
     </dependencies>
 
     <build>
+
         <finalName>market</finalName> <!-- 指定生成的jar包名称 -->
+
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+
         </plugins>
+
+
     </build>
 
 </project>

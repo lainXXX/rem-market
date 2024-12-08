@@ -16,4 +16,5 @@ public interface RaffleActivityAccountMapper extends BaseMapper<RaffleActivityAc
 
     int updateAccount(RaffleActivityAccount raffleActivityAccount);
 
+    int updateAccountDeductQuota(RaffleActivityAccount build);
 }

@@ -1,12 +1,10 @@
 package top.javarem.domain.activity.repository;
 
-import top.javarem.domain.activity.model.aggregate.ActivityOrderAggregate;
-import top.javarem.domain.activity.model.entity.ActivityCountEntity;
-import top.javarem.domain.activity.model.entity.ActivityEntity;
-import top.javarem.domain.activity.model.entity.ActivitySkuEntity;
+import top.javarem.domain.activity.model.aggregate.CreatePartakeOrderAggregate;
+import top.javarem.domain.activity.model.aggregate.CreateQuotaOrderAggregate;
+import top.javarem.domain.activity.model.entity.*;
 import top.javarem.domain.activity.model.vo.ActivityStockDecrQueueVO;
 
-import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -23,7 +21,7 @@ public interface IActivityRepository {
 
     ActivityCountEntity getActivityCount(Long activityCountId);
 
-    void saveOrder(ActivityOrderAggregate activityOrderAggregate);
+    void saveOrder(CreateQuotaOrderAggregate createQuotaOrderAggregate);
 
     void cacheActivityStock(String key, Integer stockCount);
 
@@ -40,4 +38,14 @@ public interface IActivityRepository {
     void clearActivitySkuStock(Long sku);
 
     void clearSkuStockDecrQueue();
+
+    UserConsumeOrderEntity getUserUnconsumedOrder(String userId, Long activityId);
+
+    ActivityAccountCountEntity getActivityAccountCount(String userId, Long activityId);
+
+    ActivityAccountMonthCountEntity getActivityAccountMonthCount(String userId, Long activityId, String month);
+
+    ActivityAccountDayCountEntity getActivityAccountDayCount(String userId, Long activityId, String day);
+
+    void saveCreatePartakeOrderAggregate(CreatePartakeOrderAggregate createPartakeOrderAggregate);
 }

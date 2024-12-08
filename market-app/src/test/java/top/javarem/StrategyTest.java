@@ -24,7 +24,7 @@ public class StrategyTest {
 
     @Test
     public void test_strategyArmory() {
-        boolean success = strategyArmory.assembleRaffleStrategy(100001L);
+        boolean success = strategyArmory.assembleRaffleStrategy(100006L);
         log.info("测试结果：{}", success);
     }
 

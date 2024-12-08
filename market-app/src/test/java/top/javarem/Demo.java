@@ -66,4 +66,9 @@ public class Demo {
 //        redissonClient.getBucket();
     }
 
+    @Test
+    public void test_redis() {
+        redissonClient.getAtomicLong("123456").set(1L);
+    }
+
 }

@@ -4,7 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
-import top.javarem.domain.strategy.model.vo.AwardStockQueueKeyVO;
+import top.javarem.domain.strategy.model.vo.AwardStockDecrQueueVO;
 import top.javarem.domain.strategy.service.IRaffleStock;
 
 /**
@@ -22,15 +22,11 @@ public class UpdateAwardStockJob {
     @Scheduled(cron = "0 0/30 * * * ?")
     public void executeAwardStockJob() {
         try {
-            AwardStockQueueKeyVO awardStockQueueKeyVO = raffleStock.handleQueueValue();
-            if (awardStockQueueKeyVO == null) {
-                log.info("执行库存扣减任务 - 没有需要处理的业务");
-                return;
-            }
-            while (awardStockQueueKeyVO != null) {
-                Boolean result = raffleStock.updateAwardStock(awardStockQueueKeyVO);
-                log.info("批量扣减库存任务:{} strategyId:{} awardId:{}", result, awardStockQueueKeyVO.getStrategyId(), awardStockQueueKeyVO.getAwardId());
-                awardStockQueueKeyVO = raffleStock.handleQueueValue();
+            log.info("更新奖品库存任务");
+            while (!raffleStock.isEmptyStockDecrQueue()) {
+                AwardStockDecrQueueVO awardStockDecrQueueVO = raffleStock.handleQueueValue();
+                Boolean result = raffleStock.updateAwardStock(awardStockDecrQueueVO);
+                log.info("{} strategyId:{} awardId:{}", result, awardStockDecrQueueVO.getStrategyId(), awardStockDecrQueueVO.getAwardId());
             }
 
         } catch (Exception e) {

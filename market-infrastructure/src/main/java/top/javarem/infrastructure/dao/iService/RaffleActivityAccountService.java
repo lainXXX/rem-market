@@ -13,4 +13,6 @@ public interface RaffleActivityAccountService extends IService<RaffleActivityAcc
 
 
     int updateAccount(RaffleActivityAccount raffleActivityAccount);
+
+    int updateAccountDeductQuota(RaffleActivityAccount build);
 }
