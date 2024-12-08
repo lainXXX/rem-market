@@ -1,6 +1,7 @@
 package top.javarem;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -10,8 +11,14 @@ import top.javarem.domain.activity.model.entity.UserConsumeOrderEntity;
 import top.javarem.domain.activity.service.IRaffleActivityAccountQuotaService;
 import top.javarem.domain.activity.service.IRaffleActivityPartakeService;
 import top.javarem.domain.activity.service.armory.IActivityArmory;
+import top.javarem.domain.award.model.entity.UserAwardRecordEntity;
+import top.javarem.domain.award.model.vo.AwardStateVO;
+import top.javarem.domain.award.service.IAwardService;
 import top.javarem.infrastructure.dao.entity.RaffleActivity;
 import top.javarem.infrastructure.dao.iService.RaffleActivityService;
+
+import java.util.Date;
+import java.util.concurrent.CountDownLatch;
 
 
 /**
@@ -34,6 +41,9 @@ public class RaffleActivityTest {
 
     @Autowired
     private IRaffleActivityPartakeService partakeService;
+
+    @Autowired
+    private IAwardService awardService;
 
     @Test
     public void test_createOrder() {
@@ -80,6 +90,21 @@ public class RaffleActivityTest {
         String activityOrder = raffleOrder.createOrder(skuRechargeEntity);
         log.info("orderId : {}", activityOrder);
         Thread.sleep(5000);
+    }
+
+    @Test
+    public void test_saveUserAwardRecord() throws InterruptedException {
+            UserAwardRecordEntity userAwardRecordEntity = new UserAwardRecordEntity();
+            userAwardRecordEntity.setUserId("rem");
+            userAwardRecordEntity.setActivityId(100301L);
+            userAwardRecordEntity.setStrategyId(100006L);
+            userAwardRecordEntity.setOrderId(RandomStringUtils.randomNumeric(12));
+            userAwardRecordEntity.setAwardId(101);
+            userAwardRecordEntity.setAwardTitle("OpenAI 增加使用次数");
+            userAwardRecordEntity.setAwardTime(new Date());
+            userAwardRecordEntity.setStatus(AwardStateVO.create.getCode());
+            awardService.saveUserAwardRecord(userAwardRecordEntity);
+            Thread.sleep(5000);
     }
 
 

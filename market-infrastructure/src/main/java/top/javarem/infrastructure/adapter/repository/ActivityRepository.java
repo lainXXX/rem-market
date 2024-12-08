@@ -186,7 +186,7 @@ public class ActivityRepository implements IActivityRepository {
         long surplus = redissonClient.getAtomicLong(cacheKey).decrementAndGet();
 //        2.如果库存扣减为0 则发送mq消息使数据库更新
         if (surplus == 0) {
-            eventPublisher.publish(activitySkuStockZeroEventMessage.topic(), activitySkuStockZeroEventMessage.buildEEventMessage(sku));
+            eventPublisher.publish(activitySkuStockZeroEventMessage.topic(), activitySkuStockZeroEventMessage.buildEventMessage(sku));
             return false;
         }
 //        3.库存<0 则把库存设置为0 返回false
@@ -337,6 +337,7 @@ public class ActivityRepository implements IActivityRepository {
         String userId = createPartakeOrderAggregate.getUserId();
         Long activityId = createPartakeOrderAggregate.getActivityId();
 
+//        TODO 需要路由
         transactionTemplate.execute(status -> {
             try {
                 ActivityAccountCountEntity activityAccountCountEntity = createPartakeOrderAggregate.getActivityAccountCountEntity();

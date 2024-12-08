@@ -22,10 +22,14 @@ public class Task implements Serializable {
     @TableId
     private Long id;
 
+    private String userId;
+
     /**
      * 消息主题
      */
     private String topic;
+
+    private String messageId;
 
     /**
      * 消息内容

@@ -20,7 +20,7 @@ public abstract class BaseEvent<T> {
      * @param data
      * @return
      */
-    public abstract EventMessage<T> buildEEventMessage(T data);
+    public abstract EventMessage<T> buildEventMessage(T data);
 
     /**
      * 消息的通道 key

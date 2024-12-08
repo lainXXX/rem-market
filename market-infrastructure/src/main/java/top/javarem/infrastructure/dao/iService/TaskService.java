@@ -4,6 +4,8 @@ package top.javarem.infrastructure.dao.iService;
 import com.baomidou.mybatisplus.extension.service.IService;
 import top.javarem.infrastructure.dao.entity.Task;
 
+import java.util.List;
+
 /**
 * @author aaa
 * @description 针对表【task】的数据库操作Service
@@ -11,4 +13,5 @@ import top.javarem.infrastructure.dao.entity.Task;
 */
 public interface TaskService extends IService<Task> {
 
+    List<Task> queryNoSendMessageTaskList();
 }

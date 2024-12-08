@@ -13,7 +13,7 @@ import lombok.Data;
  * 用户中奖记录表
  * @TableName user_award_record
  */
-@TableName(value ="user_raffle_order")
+@TableName(value ="user_award_record")
 @Data
 public class UserAwardRecord implements Serializable {
     /**

@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 import top.javarem.infrastructure.dao.entity.Task;
 
+import java.util.List;
+
 /**
 * @author aaa
 * @description 针对表【task】的数据库操作Mapper
@@ -15,4 +17,5 @@ import top.javarem.infrastructure.dao.entity.Task;
 public interface TaskMapper extends BaseMapper<Task> {
 
 
+    List<Task> queryNoSendMessageTaskList();
 }

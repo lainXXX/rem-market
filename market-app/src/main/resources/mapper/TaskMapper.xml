@@ -7,14 +7,19 @@
     <resultMap id="BaseResultMap" type="top.javarem.infrastructure.dao.entity.Task">
             <id property="id" column="id" jdbcType="BIGINT"/>
             <result property="topic" column="topic" jdbcType="VARCHAR"/>
+            <result property="userId" column="user_id" jdbcType="VARCHAR"/>
+            <result property="messageId" column="message_id" jdbcType="VARCHAR"/>
             <result property="message" column="message" jdbcType="VARCHAR"/>
             <result property="status" column="status" jdbcType="VARCHAR"/>
             <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
             <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
     </resultMap>
+    <select id="queryNoSendMessageTaskList" resultType="top.javarem.infrastructure.dao.entity.Task">
+        select user_id, topic, message_id, message
+        from task
+        where status = 'fail' or (status = 'create' and now() - update_time > 6)
+            limit 10
+    </select>
 
-    <sql id="Base_Column_List">
-        id,topic,message,
-        status,create_time,update_time
-    </sql>
+
 </mapper>
