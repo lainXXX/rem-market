@@ -68,6 +68,13 @@ public class StrategyArmoryImpl implements IStrategyArmory, IStrategyArmoryDispa
         return true;
     }
 
+    @Override
+    public boolean assembleRaffleStrategyByActivityId(Long activityId) {
+
+        Long strategyId = repository.getStrategyId(activityId);
+        return assembleRaffleStrategy(strategyId);
+    }
+
     /**
      * 随机获取奖品id
      *

@@ -22,7 +22,7 @@ public class DefaultLogicNode extends AbstractStrategyLogicChain {
     @Override
     public DefaultChainFactory.LogicAwardVO executeStrategy(String userId, Long strategyId) {
         Integer randomAwardId = dispatch.getRandomAwardId(strategyId);
-        log.info("默认规则接管执行");
+        log.info("抽奖责任链-默认规则接管执行");
         if (next() != null) return next().executeStrategy(userId, strategyId);
         return DefaultChainFactory.LogicAwardVO.builder()
                 .awardId(randomAwardId)

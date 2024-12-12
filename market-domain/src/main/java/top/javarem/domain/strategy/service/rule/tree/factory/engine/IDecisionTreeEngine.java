@@ -9,6 +9,6 @@ import top.javarem.domain.strategy.service.rule.tree.factory.DefaultTreeFactory;
  */
 public interface IDecisionTreeEngine {
 
-    DefaultTreeFactory.LogicAwardVO process(Long strategyId, Integer awardId);
+    DefaultTreeFactory.LogicAwardVO process(String userId, Long strategyId, Integer awardId);
 
 }

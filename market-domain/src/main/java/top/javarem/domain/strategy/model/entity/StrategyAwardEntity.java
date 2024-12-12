@@ -54,5 +54,7 @@ public class StrategyAwardEntity implements Serializable {
      */
     private BigDecimal rate;
 
+    private Integer sort;
+
     private static final long serialVersionUID = 1L;
 }

@@ -23,6 +23,7 @@ public class SendAwardCustomer {
     public void listener(String message) {
 
         try {
+//            TODO 更新用户订单状态
             log.info("监听用户奖品发送消息 topic: {} message: {}", topic, message);
         } catch (Exception e) {
             log.error("监听用户奖品发送消息，消费失败 topic: {} message: {}", topic, message);

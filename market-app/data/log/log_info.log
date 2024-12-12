@@ -1,114 +1,162 @@
-24-12-09.00:00:00.009 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
-24-12-09.00:00:00.130 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
-24-12-09.00:00:00.181 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
-24-12-09.00:00:05.012 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
-24-12-09.00:00:05.069 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
-24-12-09.00:00:10.016 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
-24-12-09.00:00:10.134 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
-24-12-09.00:00:15.005 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
-24-12-09.00:00:15.088 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
-24-12-09.00:00:20.005 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
-24-12-09.00:00:20.089 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
-24-12-09.00:00:25.006 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
-24-12-09.00:00:25.055 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
-24-12-09.00:00:30.011 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
-24-12-09.00:00:30.129 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
-24-12-09.00:00:35.003 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
-24-12-09.00:00:35.164 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
-24-12-09.00:00:40.004 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
-24-12-09.00:00:40.126 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
-24-12-09.00:00:45.018 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
-24-12-09.00:00:45.163 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
-24-12-09.00:00:50.009 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
-24-12-09.00:00:50.123 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
-24-12-09.00:00:55.016 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
-24-12-09.00:00:55.087 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
-24-12-09.00:01:00.014 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
-24-12-09.00:01:00.158 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
-24-12-09.00:01:05.020 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
-24-12-09.00:01:05.213 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
-24-12-09.00:01:10.025 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
-24-12-09.00:01:10.092 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
-24-12-09.00:01:15.006 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
-24-12-09.00:01:15.094 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
-24-12-09.00:01:20.013 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
-24-12-09.00:01:20.085 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
-24-12-09.00:01:25.007 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
-24-12-09.00:01:25.159 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
-24-12-09.00:01:30.005 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
-24-12-09.00:01:30.077 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
-24-12-09.00:01:35.008 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
-24-12-09.00:01:35.138 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
-24-12-09.00:01:40.016 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
-24-12-09.00:01:40.150 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
-24-12-09.00:01:45.016 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
-24-12-09.00:01:45.096 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
-24-12-09.00:01:50.007 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
-24-12-09.00:01:50.168 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
-24-12-09.00:01:55.005 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
-24-12-09.00:01:55.158 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
-24-12-09.00:02:00.006 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
-24-12-09.00:02:00.159 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
-24-12-09.00:02:05.004 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
-24-12-09.00:02:05.154 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
-24-12-09.00:02:10.011 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
-24-12-09.00:02:10.165 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
-24-12-09.00:02:15.006 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
-24-12-09.00:02:15.167 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
-24-12-09.00:02:20.009 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
-24-12-09.00:02:20.160 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
-24-12-09.00:02:25.001 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
-24-12-09.00:02:25.092 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
-24-12-09.00:02:30.006 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
-24-12-09.00:02:30.066 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
-24-12-09.00:02:35.009 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
-24-12-09.00:02:35.327 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
-24-12-09.00:02:40.005 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
-24-12-09.00:02:40.122 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
-24-12-09.00:02:45.003 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
-24-12-09.00:02:45.163 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
-24-12-09.00:02:50.005 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
-24-12-09.00:02:50.105 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
-24-12-09.00:02:55.012 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
-24-12-09.00:02:55.128 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
-24-12-09.00:03:00.003 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
-24-12-09.00:03:00.089 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
-24-12-09.00:03:04.872 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
-24-12-09.00:03:04.933 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
-24-12-09.00:03:05.012 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
-24-12-09.00:03:05.186 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
-24-12-09.00:03:05.191 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
-24-12-09.00:03:05.855 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
-24-12-09.00:03:05.860 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
-24-12-09.00:03:05.861 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
-24-12-09.00:03:06.021 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-24-12-09.00:03:06.028 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-24-12-09.00:03:31.446 [main            ] INFO  RaffleActivityTest     - Starting RaffleActivityTest using Java 1.8.0_151 on mile with PID 21460 (started by aaa in D:\Develop\project\rem-market\market-app)
-24-12-09.00:03:31.448 [main            ] INFO  RaffleActivityTest     - The following 1 profile is active: "dev"
-24-12-09.00:03:32.774 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-12-09.00:03:32.778 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-12-09.00:03:32.870 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 76 ms. Found 0 Redis repository interfaces.
-24-12-09.00:03:34.906 [main            ] INFO  Version                - Redisson 3.26.0
-24-12-09.00:03:36.315 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-12-09.00:03:36.766 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
-24-12-09.00:03:43.412 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
-24-12-09.00:03:43.522 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [110.41.180.185:5672]
-24-12-09.00:03:43.895 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#4afdfc0f:0/SimpleConnection@3bda1f0 [delegate=amqp://lain@110.41.180.185:5672/, localPort= 63900]
-24-12-09.00:03:44.715 [main            ] INFO  RaffleActivityTest     - Started RaffleActivityTest in 13.882 seconds (JVM running for 15.22)
-24-12-09.00:03:44.940 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
-24-12-09.00:03:45.004 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
-24-12-09.00:03:45.953 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-24-12-09.00:03:46.604 [main            ] INFO  EventPublisher         - 发送MQ消息 topic: send_award message: {"eventId":"si0gH8g95BZ","timestamp":"Dec 9, 2024 12:03:44 AM","data":{"awardId":101,"userId":"rem","awardTitle":"OpenAI 增加使用次数"}}
-24-12-09.00:03:46.618 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
-24-12-09.00:03:46.657 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SendAwardCustomer      - 监听用户奖品发送消息 topic: send_award message: {"eventId":"si0gH8g95BZ","timestamp":"Dec 9, 2024 12:03:44 AM","data":{"awardId":101,"userId":"rem","awardTitle":"OpenAI 增加使用次数"}}
-24-12-09.00:03:46.778 [main            ] INFO  AwardRepository        - 写入中奖记录，发送MQ消息完成 userId: rem orderId:680141314920 topic: send_award
-24-12-09.00:03:50.012 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
-24-12-09.00:03:50.139 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
-24-12-09.00:03:51.891 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
-24-12-09.00:03:51.963 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
-24-12-09.00:03:52.535 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
-24-12-09.00:03:52.814 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
-24-12-09.00:03:52.817 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
-24-12-09.00:03:52.818 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
-24-12-09.00:03:52.935 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-24-12-09.00:03:53.095 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-12-11.19:40:02.560 [main            ] INFO  RaffleActivityTest     - Starting RaffleActivityTest using Java 1.8.0_151 on mile with PID 10176 (started by aaa in D:\Develop\project\rem-market\market-app)
+24-12-11.19:40:02.561 [main            ] INFO  RaffleActivityTest     - The following 1 profile is active: "dev"
+24-12-11.19:40:03.582 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-12-11.19:40:03.585 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-12-11.19:40:03.647 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 48 ms. Found 0 Redis repository interfaces.
+24-12-11.19:40:05.389 [main            ] INFO  Version                - Redisson 3.26.0
+24-12-11.19:40:06.427 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-12-11.19:40:06.799 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-12-11.19:40:12.195 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-12-11.19:40:12.296 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [110.41.180.185:5672]
+24-12-11.19:40:12.577 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#38b0e2a7:0/SimpleConnection@5ee76cf2 [delegate=amqp://lain@110.41.180.185:5672/, localPort= 51572]
+24-12-11.19:40:13.355 [main            ] INFO  RaffleActivityTest     - Started RaffleActivityTest in 11.257 seconds (JVM running for 13.264)
+24-12-11.19:40:14.013 [main            ] INFO  RaffleActivityTest     - true
+24-12-11.19:40:14.106 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+24-12-11.19:40:14.170 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+24-12-11.19:40:14.172 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+24-12-11.19:40:14.375 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+24-12-11.19:40:14.378 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+24-12-11.19:40:14.379 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+24-12-11.19:40:22.220 [main            ] INFO  RaffleActivityTest     - Starting RaffleActivityTest using Java 1.8.0_151 on mile with PID 2380 (started by aaa in D:\Develop\project\rem-market\market-app)
+24-12-11.19:40:22.222 [main            ] INFO  RaffleActivityTest     - The following 1 profile is active: "dev"
+24-12-11.19:40:23.321 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-12-11.19:40:23.324 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-12-11.19:40:23.394 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 57 ms. Found 0 Redis repository interfaces.
+24-12-11.19:40:24.991 [main            ] INFO  Version                - Redisson 3.26.0
+24-12-11.19:40:25.950 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-12-11.19:40:26.358 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-12-11.19:40:31.434 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-12-11.19:40:31.513 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [110.41.180.185:5672]
+24-12-11.19:40:31.787 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#2987b699:0/SimpleConnection@45e68fac [delegate=amqp://lain@110.41.180.185:5672/, localPort= 51651]
+24-12-11.19:40:32.520 [main            ] INFO  RaffleActivityTest     - Started RaffleActivityTest in 10.774 seconds (JVM running for 12.236)
+24-12-11.19:40:33.117 [main            ] INFO  RaffleActivityTest     - true
+24-12-11.19:40:33.220 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+24-12-11.19:40:33.264 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+24-12-11.19:40:33.322 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+24-12-11.19:40:33.567 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+24-12-11.19:40:33.570 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+24-12-11.19:40:33.571 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+24-12-11.19:40:58.902 [main            ] INFO  Demo                   - Starting Demo using Java 1.8.0_151 on mile with PID 3964 (started by aaa in D:\Develop\project\rem-market\market-app)
+24-12-11.19:40:58.903 [main            ] INFO  Demo                   - The following 1 profile is active: "dev"
+24-12-11.19:40:59.783 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-12-11.19:40:59.785 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-12-11.19:40:59.848 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 50 ms. Found 0 Redis repository interfaces.
+24-12-11.19:41:01.585 [main            ] INFO  Version                - Redisson 3.26.0
+24-12-11.19:41:02.546 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-12-11.19:41:02.914 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-12-11.19:41:08.273 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-12-11.19:41:08.350 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [110.41.180.185:5672]
+24-12-11.19:41:08.700 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#17063c32:0/SimpleConnection@25b87e1b [delegate=amqp://lain@110.41.180.185:5672/, localPort= 51729]
+24-12-11.19:41:09.486 [main            ] INFO  Demo                   - Started Demo in 11.057 seconds (JVM running for 12.498)
+24-12-11.19:41:16.646 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+24-12-11.19:41:16.686 [scheduling-1    ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-12-11.19:42:24.166 [scheduling-1    ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-12-11.19:42:24.299 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+24-12-11.19:43:18.739 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+24-12-11.19:43:18.740 [HikariPool-1 housekeeper] WARN  HikariPool             - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=54s463ms632µs500ns).
+24-12-11.19:43:18.800 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+24-12-11.19:43:18.801 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+24-12-11.19:43:18.848 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+24-12-11.19:43:19.825 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+24-12-11.19:43:19.825 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+24-12-11.19:43:19.827 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+24-12-11.19:43:19.828 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+24-12-11.19:43:19.881 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-12-11.19:43:20.067 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-12-11.19:43:23.797 [main            ] INFO  Demo                   - Starting Demo using Java 1.8.0_151 on mile with PID 2936 (started by aaa in D:\Develop\project\rem-market\market-app)
+24-12-11.19:43:23.798 [main            ] INFO  Demo                   - The following 1 profile is active: "dev"
+24-12-11.19:43:24.610 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-12-11.19:43:24.612 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-12-11.19:43:24.665 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 42 ms. Found 0 Redis repository interfaces.
+24-12-11.19:43:26.114 [main            ] INFO  Version                - Redisson 3.26.0
+24-12-11.19:43:27.042 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-12-11.19:43:27.403 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-12-11.19:43:32.034 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-12-11.19:43:32.106 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [110.41.180.185:5672]
+24-12-11.19:43:32.358 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#63cf578f:0/SimpleConnection@3dd66ff5 [delegate=amqp://lain@110.41.180.185:5672/, localPort= 51822]
+24-12-11.19:43:32.988 [main            ] INFO  Demo                   - Started Demo in 9.61 seconds (JVM running for 10.725)
+24-12-11.19:43:33.229 [main            ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-12-11.19:43:34.163 [main            ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-12-11.19:43:34.366 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+24-12-11.19:43:34.403 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+24-12-11.19:43:34.812 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+24-12-11.19:43:35.011 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+24-12-11.19:43:35.032 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+24-12-11.19:43:35.034 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+24-12-11.19:43:35.034 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+24-12-11.19:43:35.122 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-12-11.19:43:35.392 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-12-11.19:44:55.560 [main            ] INFO  Demo                   - Starting Demo using Java 1.8.0_151 on mile with PID 4944 (started by aaa in D:\Develop\project\rem-market\market-app)
+24-12-11.19:44:55.561 [main            ] INFO  Demo                   - The following 1 profile is active: "dev"
+24-12-11.19:44:56.368 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-12-11.19:44:56.370 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-12-11.19:44:56.422 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 42 ms. Found 0 Redis repository interfaces.
+24-12-11.19:44:57.880 [main            ] INFO  Version                - Redisson 3.26.0
+24-12-11.19:44:58.847 [redisson-netty-1-7] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-12-11.19:44:59.155 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-12-11.19:45:03.861 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-12-11.19:45:03.931 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [110.41.180.185:5672]
+24-12-11.19:45:04.212 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#4afdfc0f:0/SimpleConnection@3bda1f0 [delegate=amqp://lain@110.41.180.185:5672/, localPort= 51910]
+24-12-11.19:45:04.906 [main            ] INFO  Demo                   - Started Demo in 9.773 seconds (JVM running for 10.847)
+24-12-11.19:45:05.007 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+24-12-11.19:45:05.035 [scheduling-1    ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-12-11.19:45:06.066 [scheduling-1    ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-12-11.19:45:06.188 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+24-12-11.19:45:06.269 [main            ] INFO  Demo                   - StrategyAward(id=1, strategyId=100001, awardId=101, awardTitle=随机积分, awardSubtitle=null, awardCount=80000, awardCountSurplus=79998, rate=0.3000, models=tree_luck_award, sort=1, createTime=Sat Dec 09 09:38:31 CST 2023, updateTime=Sun Feb 25 22:40:50 CST 2024)
+24-12-11.19:45:06.357 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+24-12-11.19:45:06.425 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+24-12-11.19:45:06.676 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+24-12-11.19:45:06.970 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+24-12-11.19:45:06.973 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+24-12-11.19:45:06.974 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+24-12-11.19:45:07.044 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-12-11.19:45:07.181 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-12-11.19:45:20.925 [main            ] INFO  Demo                   - Starting Demo using Java 1.8.0_151 on mile with PID 11388 (started by aaa in D:\Develop\project\rem-market\market-app)
+24-12-11.19:45:20.926 [main            ] INFO  Demo                   - The following 1 profile is active: "dev"
+24-12-11.19:45:21.789 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-12-11.19:45:21.791 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-12-11.19:45:21.845 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 44 ms. Found 0 Redis repository interfaces.
+24-12-11.19:45:23.401 [main            ] INFO  Version                - Redisson 3.26.0
+24-12-11.19:45:24.346 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-12-11.19:45:24.754 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-12-11.19:45:29.757 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-12-11.19:45:29.833 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [110.41.180.185:5672]
+24-12-11.19:45:30.186 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#2d36add1:0/SimpleConnection@396f3bf2 [delegate=amqp://lain@110.41.180.185:5672/, localPort= 51990]
+24-12-11.19:45:30.853 [main            ] INFO  Demo                   - Started Demo in 10.382 seconds (JVM running for 11.745)
+24-12-11.19:47:19.603 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+24-12-11.19:47:19.642 [scheduling-1    ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-12-11.19:50:41.181 [scheduling-1    ] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-12-11.19:50:41.306 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+24-12-11.19:50:46.083 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+24-12-11.19:50:54.841 [main            ] INFO  Demo                   - StrategyAward(id=1, strategyId=100001, awardId=101, awardTitle=随机积分, awardSubtitle=null, awardCount=80000, awardCountSurplus=79998, rate=0.3000, models=tree_luck_award, sort=1, createTime=Sat Dec 09 09:38:31 CST 2023, updateTime=Sun Feb 25 22:40:50 CST 2024)
+24-12-11.19:50:54.933 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+24-12-11.19:50:54.935 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+24-12-11.19:50:54.999 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+24-12-11.19:50:55.007 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+24-12-11.19:50:55.050 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+24-12-11.19:50:55.922 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+24-12-11.19:50:55.923 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+24-12-11.19:50:55.926 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+24-12-11.19:50:55.926 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+24-12-11.19:50:55.976 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-12-11.19:50:56.274 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-12-11.19:50:59.843 [main            ] INFO  Demo                   - Starting Demo using Java 1.8.0_151 on mile with PID 9376 (started by aaa in D:\Develop\project\rem-market\market-app)
+24-12-11.19:50:59.844 [main            ] INFO  Demo                   - The following 1 profile is active: "dev"
+24-12-11.19:51:00.710 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-12-11.19:51:00.712 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-12-11.19:51:00.768 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 45 ms. Found 0 Redis repository interfaces.
+24-12-11.19:51:02.334 [main            ] INFO  Version                - Redisson 3.26.0
+24-12-11.19:51:03.297 [redisson-netty-1-4] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-12-11.19:51:03.702 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-12-11.19:51:08.669 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-12-11.19:51:08.753 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [110.41.180.185:5672]
+24-12-11.19:51:09.030 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#4693d24f:0/SimpleConnection@32029cd [delegate=amqp://lain@110.41.180.185:5672/, localPort= 65391]
+24-12-11.19:51:09.763 [main            ] INFO  Demo                   - Started Demo in 10.411 seconds (JVM running for 11.808)
+24-12-11.19:51:15.274 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+24-12-11.19:51:15.315 [scheduling-1    ] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-12-11.19:54:23.631 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+24-12-11.19:54:23.688 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+24-12-11.19:54:24.538 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+24-12-11.19:54:24.538 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+24-12-11.19:54:24.546 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+24-12-11.19:54:24.546 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped

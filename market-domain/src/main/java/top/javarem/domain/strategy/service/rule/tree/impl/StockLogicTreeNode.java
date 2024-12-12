@@ -27,13 +27,13 @@ public class StockLogicTreeNode implements ILogicTreeNode {
     private IStrategyRepository repository;
 
     @Override
-    public TreeActionEntity execute(Long strategyId, Integer awardId, String ruleValue) {
+    public TreeActionEntity execute(String userId, Long strategyId, Integer awardId, String ruleValue) {
 
         Boolean isDeduct = dispatch.deductAwardCount(strategyId, awardId);
         if (!isDeduct) {
-            log.info("扣减库存失败");
+            log.error("规则树过滤-扣减库存失败");
             return TreeActionEntity.builder()
-                    .ruleLogicCheckTypeVO(RuleLogicCheckTypeVO.PASS)
+                    .ruleLogicCheckTypeVO(RuleLogicCheckTypeVO.BLOCK)
                     .build();
         }
 //        将奖品信息交给延迟队列 之后可在job中统一处理数据库中扣减库存操作

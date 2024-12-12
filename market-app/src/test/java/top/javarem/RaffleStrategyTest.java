@@ -27,7 +27,7 @@ import java.util.Map;
  */
 @SpringBootTest
 @Slf4j
-public class StrategyRaffleTest {
+public class RaffleStrategyTest {
 
     @Autowired
     private IRaffleStrategy strategyRaffle;

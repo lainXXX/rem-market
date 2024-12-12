@@ -9,6 +9,6 @@ import top.javarem.domain.strategy.service.rule.tree.factory.DefaultTreeFactory;
  */
 public interface ILogicTreeNode {
 
-    DefaultTreeFactory.TreeActionEntity execute(Long strategyId, Integer awardId, String ruleValue);
+    DefaultTreeFactory.TreeActionEntity execute(String userId, Long strategyId, Integer awardId, String ruleValue);
 
 }

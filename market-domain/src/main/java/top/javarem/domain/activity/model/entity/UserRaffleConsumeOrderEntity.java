@@ -11,13 +11,13 @@ import java.util.Date;
 /**
  * @Author: rem
  * @Date: 2024/12/05/15:20
- * @Description:用户抽奖消费订单实体类【用于抽奖时校验配置】
+ * @Description:用户抽奖消费单
  */
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserConsumeOrderEntity {
+public class UserRaffleConsumeOrderEntity {
 
     private String userId;
 

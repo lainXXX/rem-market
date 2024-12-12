@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import top.javarem.domain.activity.model.entity.ActivityPartakeEntity;
 import top.javarem.domain.activity.model.entity.SkuRechargeEntity;
-import top.javarem.domain.activity.model.entity.UserConsumeOrderEntity;
+import top.javarem.domain.activity.model.entity.UserRaffleConsumeOrderEntity;
 import top.javarem.domain.activity.service.IRaffleActivityAccountQuotaService;
 import top.javarem.domain.activity.service.IRaffleActivityPartakeService;
 import top.javarem.domain.activity.service.armory.IActivityArmory;
@@ -18,7 +18,6 @@ import top.javarem.infrastructure.dao.entity.RaffleActivity;
 import top.javarem.infrastructure.dao.iService.RaffleActivityService;
 
 import java.util.Date;
-import java.util.concurrent.CountDownLatch;
 
 
 /**
@@ -50,7 +49,7 @@ public class RaffleActivityTest {
         ActivityPartakeEntity activityPartakeEntity = new ActivityPartakeEntity();
         activityPartakeEntity.setActivityId(100301L);
         activityPartakeEntity.setUserId("rem");
-        UserConsumeOrderEntity order = partakeService.createOrder(activityPartakeEntity);
+        UserRaffleConsumeOrderEntity order = partakeService.createOrder(activityPartakeEntity);
         log.info(order.toString());
 
     }

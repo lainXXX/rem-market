@@ -49,4 +49,9 @@ public interface IStrategyRepository {
 
     Boolean isEmptyStockDecrQueue();
 
+    Long getStrategyId(Long activityId);
+
+    StrategyAwardEntity getStrategyAwardEntity(Long strategyId, Integer awardId);
+
+    Integer queryUserTodayRaffleCount(String userId, Long strategyId, String today);
 }

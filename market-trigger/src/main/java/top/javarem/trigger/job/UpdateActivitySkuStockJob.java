@@ -19,7 +19,7 @@ public class UpdateActivitySkuStockJob {
     @Autowired
     private IRaffleActivitySkuStockService skuStock;
 
-    @Scheduled(cron = "0/5 * * * * ?")
+    @Scheduled(cron = "0/30 * * * * ?")
     public void executeActivitySkuStockJob() {
         try {
             log.info("活动库存扣减定时任务");

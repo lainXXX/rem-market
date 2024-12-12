@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import top.javarem.domain.activity.model.entity.ActivityAccountDayCountEntity;
 import top.javarem.domain.activity.model.entity.ActivityAccountCountEntity;
 import top.javarem.domain.activity.model.entity.ActivityAccountMonthCountEntity;
-import top.javarem.domain.activity.model.entity.UserConsumeOrderEntity;
+import top.javarem.domain.activity.model.entity.UserRaffleConsumeOrderEntity;
 
 /**
  * @Author: rem
@@ -40,6 +40,6 @@ public class CreatePartakeOrderAggregate {
 
     private ActivityAccountMonthCountEntity activityAccountMonthCountEntity;
 
-    private UserConsumeOrderEntity userConsumeOrderEntity;
+    private UserRaffleConsumeOrderEntity userRaffleConsumeOrderEntity;
 
 }

@@ -8,6 +8,7 @@ import top.javarem.types.common.constants.Constants;
 
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @Author: rem
@@ -21,9 +22,24 @@ public class ActivityArmoryDispatch implements IActivityArmory, IActivityDispatc
     private IActivityRepository activityRepository;
 
     @Override
+    public Boolean assembleRaffleActivityByActivityId(Long activityId) {
+//        查询活动sku sku为活动的最小配置单元 一般有多个
+        List<ActivitySkuEntity> activitySkuEntityList = activityRepository.getActivitySkuEntityList(activityId);
+        for (ActivitySkuEntity skuEntity : activitySkuEntityList) {
+//            缓存活动sku库存
+            cacheActivitySku(skuEntity.getSku(), skuEntity.getStockCount());
+//            预热活动参与次数
+            activityRepository.getActivityCount(skuEntity.getActivityCountId());
+        }
+//        查询并预热活动
+        activityRepository.getActivityById(activityId);
+        return true;
+    }
+
+    @Override
     public Boolean assembleRaffleActivity(Long sku) {
 
-//        1.查询活动sku
+//        1.查询活动sku 并预热
         ActivitySkuEntity activitySkuEntity = activityRepository.getActivitySku(sku);
         cacheActivitySku(sku, activitySkuEntity.getStockCount());
 //        2.预热活动

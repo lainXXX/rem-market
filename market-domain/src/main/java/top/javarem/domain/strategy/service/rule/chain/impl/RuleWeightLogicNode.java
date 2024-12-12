@@ -31,14 +31,14 @@ public class RuleWeightLogicNode extends AbstractStrategyLogicChain {
         String minMatchWeightKey = repository.getMinMatchScore(strategyId, this.getRuleModel(), userScore);
         if (minMatchWeightKey != null) {
             Integer randomAwardId = dispatch.getRandomAwardId(strategyId, minMatchWeightKey);
-            log.info("权重规则接管执行");
+            log.info("抽奖责任链-权重规则接管执行");
             return DefaultChainFactory.LogicAwardVO.builder()
                     .awardId(randomAwardId)
                     .ruleModel(getRuleModel())
                     .build();
         }
 
-        log.info("权重规则放行");
+        log.info("抽奖责任链-权重规则放行");
         return this.next().executeStrategy(userId, strategyId);
     }
 

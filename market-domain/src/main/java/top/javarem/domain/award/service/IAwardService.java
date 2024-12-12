@@ -10,7 +10,7 @@ import top.javarem.domain.award.model.entity.UserAwardRecordEntity;
 public interface IAwardService {
 
     /**
-     * 插入抽奖记录
+     * 写入抽奖之后的中奖记录
      * @param userAwardRecordEntity
      */
     void saveUserAwardRecord(UserAwardRecordEntity userAwardRecordEntity);

@@ -4,10 +4,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import top.javarem.api.IRaffleService;
+import top.javarem.api.IRaffleStrategyService;
 import top.javarem.api.dto.DisplayAwardDTO;
 import top.javarem.api.dto.RaffleAwardDTO;
-import top.javarem.api.dto.RaffleRequestDTO;
+import top.javarem.api.dto.RaffleStrategyRequestDTO;
 import top.javarem.api.response.Response;
 import top.javarem.domain.strategy.model.entity.RaffleAwardEntity;
 import top.javarem.domain.strategy.model.entity.RaffleFactorEntity;
@@ -22,13 +22,13 @@ import java.util.stream.Collectors;
 /**
  * @Author: rem
  * @Date: 2024/12/01/13:40
- * @Description:
+ * @Description:抽奖策略服务 controller
  */
 @RestController
-@RequestMapping("/raffle")
+@RequestMapping("/${app.config.api-version}/raffle/strategy")
 @Slf4j
 @CrossOrigin("*")
-public class RaffleController implements IRaffleService {
+public class RaffleStrategyController implements IRaffleStrategyService {
 
     @Autowired
     private IRaffleStrategy raffleStrategy;
@@ -39,7 +39,7 @@ public class RaffleController implements IRaffleService {
     @Autowired
     private IRaffleAward raffleAward;
 
-    @GetMapping("/assemble_strategy")
+    @GetMapping("/assemble")
     @Override
     public Response<Boolean> assembleStrategy(@RequestParam Long strategyId) {
         log.info("执行抽奖策略装配");
@@ -62,11 +62,11 @@ public class RaffleController implements IRaffleService {
 
     @PostMapping("/random_raffle")
     @Override
-    public Response<RaffleAwardDTO> executeRaffle(@RequestBody RaffleRequestDTO raffleRequestDTO) {
-        log.info("执行随机抽奖 策略ID: {} 用户ID: {}", raffleRequestDTO.getStrategyId(), raffleRequestDTO.getUserId());
+    public Response<RaffleAwardDTO> executeRaffle(@RequestBody RaffleStrategyRequestDTO raffleStrategyRequestDTO) {
+        log.info("执行随机抽奖 策略ID: {} 用户ID: {}", raffleStrategyRequestDTO.getStrategyId(), raffleStrategyRequestDTO.getUserId());
         RaffleAwardEntity raffleAwardEntity = raffleStrategy.performRaffle(RaffleFactorEntity.builder()
-                .userId(raffleRequestDTO.getUserId())
-                .strategyId(raffleRequestDTO.getStrategyId())
+                .userId(raffleStrategyRequestDTO.getUserId())
+                .strategyId(raffleStrategyRequestDTO.getStrategyId())
                 .build());
         log.info("抽中的奖品ID: {}", raffleAwardEntity.getAwardId());
         return Response.success(RaffleAwardDTO.builder()

@@ -6,6 +6,7 @@ import top.javarem.domain.activity.model.entity.*;
 import top.javarem.domain.activity.model.vo.ActivityStockDecrQueueVO;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * @Author: rem
@@ -39,7 +40,7 @@ public interface IActivityRepository {
 
     void clearSkuStockDecrQueue();
 
-    UserConsumeOrderEntity getUserUnconsumedOrder(String userId, Long activityId);
+    UserRaffleConsumeOrderEntity getUserUnconsumedOrder(String userId, Long activityId);
 
     ActivityAccountCountEntity getActivityAccountCount(String userId, Long activityId);
 
@@ -48,4 +49,6 @@ public interface IActivityRepository {
     ActivityAccountDayCountEntity getActivityAccountDayCount(String userId, Long activityId, String day);
 
     void saveCreatePartakeOrderAggregate(CreatePartakeOrderAggregate createPartakeOrderAggregate);
+
+    List<ActivitySkuEntity> getActivitySkuEntityList(Long activityId);
 }

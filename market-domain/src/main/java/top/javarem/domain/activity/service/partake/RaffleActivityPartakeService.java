@@ -7,7 +7,7 @@ import top.javarem.domain.activity.model.aggregate.CreatePartakeOrderAggregate;
 import top.javarem.domain.activity.model.entity.ActivityAccountCountEntity;
 import top.javarem.domain.activity.model.entity.ActivityAccountDayCountEntity;
 import top.javarem.domain.activity.model.entity.ActivityAccountMonthCountEntity;
-import top.javarem.domain.activity.model.entity.UserConsumeOrderEntity;
+import top.javarem.domain.activity.model.entity.UserRaffleConsumeOrderEntity;
 import top.javarem.domain.activity.model.vo.UserRaffleStatus;
 import top.javarem.domain.activity.repository.IActivityRepository;
 import top.javarem.types.enums.ResponseCode;
@@ -31,8 +31,8 @@ public class RaffleActivityPartakeService extends AbstractRaffleActivityPartake 
     private IActivityRepository activityRepository;
 
     @Override
-    protected UserConsumeOrderEntity buildUserConsumeOrder(String userId, Long activityId, Long strategyId, String activityName) {
-        return UserConsumeOrderEntity.builder()
+    protected UserRaffleConsumeOrderEntity buildUserConsumeOrder(String userId, Long activityId, Long strategyId, String activityName) {
+        return UserRaffleConsumeOrderEntity.builder()
                 .userId(userId)
                 .activityId(activityId)
                 .strategyId(strategyId)

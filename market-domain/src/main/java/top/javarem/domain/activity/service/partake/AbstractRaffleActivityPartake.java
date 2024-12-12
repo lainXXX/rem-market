@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import top.javarem.domain.activity.model.aggregate.CreatePartakeOrderAggregate;
 import top.javarem.domain.activity.model.entity.ActivityEntity;
 import top.javarem.domain.activity.model.entity.ActivityPartakeEntity;
-import top.javarem.domain.activity.model.entity.UserConsumeOrderEntity;
+import top.javarem.domain.activity.model.entity.UserRaffleConsumeOrderEntity;
 import top.javarem.domain.activity.model.vo.ActivityStatusVO;
 import top.javarem.domain.activity.repository.IActivityRepository;
 import top.javarem.domain.activity.service.IRaffleActivityPartakeService;
@@ -27,7 +27,7 @@ public abstract class AbstractRaffleActivityPartake implements IRaffleActivityPa
     private IActivityRepository activityRepository;
 
     @Override
-    public UserConsumeOrderEntity createOrder(ActivityPartakeEntity activityPartakeEntity) {
+    public UserRaffleConsumeOrderEntity createOrder(ActivityPartakeEntity activityPartakeEntity) {
         String userId = activityPartakeEntity.getUserId();
         Long activityId = activityPartakeEntity.getActivityId();
         Date currentDate = new Date();
@@ -45,7 +45,7 @@ public abstract class AbstractRaffleActivityPartake implements IRaffleActivityPa
 
         }
 //        3.查询是否存在未消费的抽奖订单
-        UserConsumeOrderEntity userUnconsumedOrder = activityRepository.getUserUnconsumedOrder(userId, activityId);
+        UserRaffleConsumeOrderEntity userUnconsumedOrder = activityRepository.getUserUnconsumedOrder(userId, activityId);
         if (userUnconsumedOrder != null) {
             log.info("创建参与活动订单 userId:{} activityId: {} UserConsumeOrderEntity{}", userId, activityId, userUnconsumedOrder);
             return userUnconsumedOrder;
@@ -55,19 +55,19 @@ public abstract class AbstractRaffleActivityPartake implements IRaffleActivityPa
         CreatePartakeOrderAggregate createPartakeOrderAggregate = this.doFilterAccount(userId, activityId, currentDate);
 
 //        5.构建用户参与活动消费单
-        UserConsumeOrderEntity userConsumeOrderEntity = buildUserConsumeOrder(userId, activityId, activityEntity.getStrategyId(), activityEntity.getActivityName());
+        UserRaffleConsumeOrderEntity userRaffleConsumeOrderEntity = buildUserConsumeOrder(userId, activityId, activityEntity.getStrategyId(), activityEntity.getActivityName());
 
 //        6.用户参与活动消费单放入聚合
-        createPartakeOrderAggregate.setUserConsumeOrderEntity(userConsumeOrderEntity);
+        createPartakeOrderAggregate.setUserRaffleConsumeOrderEntity(userRaffleConsumeOrderEntity);
 
 //        7.存入事务
         activityRepository.saveCreatePartakeOrderAggregate(createPartakeOrderAggregate);
 
-        return userConsumeOrderEntity;
+        return userRaffleConsumeOrderEntity;
     }
 
 
-    protected abstract UserConsumeOrderEntity buildUserConsumeOrder(String userId, Long activityId, Long strategyId, String activityName);
+    protected abstract UserRaffleConsumeOrderEntity buildUserConsumeOrder(String userId, Long activityId, Long strategyId, String activityName);
 
     protected abstract CreatePartakeOrderAggregate doFilterAccount(String userId, Long activityId, Date currentDate);
 

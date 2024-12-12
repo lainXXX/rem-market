@@ -1,5 +1,6 @@
 package top.javarem;
 
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import top.javarem.types.common.constants.Constants;
  * @Description:
  */
 @SpringBootTest
+@Slf4j
 public class Demo {
 
     @Autowired
@@ -25,6 +27,15 @@ public class Demo {
 
     @Autowired
     private IStrategyAwardService strategyAwardService;
+
+    @Test
+    public void test02() {
+        StrategyAward one = strategyAwardService.lambdaQuery()
+                .eq(StrategyAward::getAwardId, 101)
+                .eq(StrategyAward::getStrategyId, 100001L)
+                .list().get(0);
+        log.info(one.toString());
+    }
 
     @Test
     public void test() {

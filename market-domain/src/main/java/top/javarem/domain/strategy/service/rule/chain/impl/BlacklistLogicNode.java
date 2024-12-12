@@ -33,7 +33,7 @@ public class BlacklistLogicNode extends AbstractStrategyLogicChain {
                     .build();
         }
 
-        log.info("黑名单规则放行");
+        log.info("抽奖责任链-黑名单规则放行");
         return this.next().executeStrategy(userId, strategyId);
     }
 

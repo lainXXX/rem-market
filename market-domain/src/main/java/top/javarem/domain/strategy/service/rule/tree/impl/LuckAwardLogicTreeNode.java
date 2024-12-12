@@ -18,15 +18,15 @@ public class LuckAwardLogicTreeNode implements ILogicTreeNode {
 
 
     @Override
-    public DefaultTreeFactory.TreeActionEntity execute(Long strategyId, Integer awardId, String ruleValue) {
+    public DefaultTreeFactory.TreeActionEntity execute(String userId, Long strategyId, Integer awardId, String ruleValue) {
 
-        String[] split = ruleValue.split(Constants.COMMA);
+        String[] split = ruleValue.split(Constants.COLON);
         if (split.length != 2) {
-            throw new RuntimeException("rule_luck_award rulValue 配置错误");
+            throw new RuntimeException("规则树过滤- 兜底奖品 rule_luck_award rulValue 配置错误");
         }
         Integer luckAwardId = Integer.parseInt(split[0]);
         String scoreRange = split[1];
-        log.info("规则过滤-兜底奖品 luckAwardId : {} scoreRange : {} ", luckAwardId, scoreRange);
+        log.info("规则树过滤-兜底奖品 luckAwardId : {} scoreRange : {} ", luckAwardId, scoreRange);
         return DefaultTreeFactory.TreeActionEntity.builder()
                 .ruleLogicCheckTypeVO(RuleLogicCheckTypeVO.BLOCK)
                 .logicAwardVO(DefaultTreeFactory.LogicAwardVO.builder()

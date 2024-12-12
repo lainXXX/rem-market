@@ -1,0 +1,37 @@
+24-12-11.20:51:15.228 [main            ] INFO  Application            - Starting Application using Java 1.8.0_151 on mile with PID 15044 (D:\Develop\project\rem-market\market-app\target\classes started by aaa in D:\Develop\project\rem-market)
+24-12-11.20:51:15.230 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+24-12-11.20:51:16.076 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-12-11.20:51:16.078 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-12-11.20:51:16.131 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 44 ms. Found 0 Redis repository interfaces.
+24-12-11.20:51:16.590 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+24-12-11.20:51:16.665 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+24-12-11.20:51:16.671 [main            ] INFO  StandardService        - Starting service [Tomcat]
+24-12-11.20:51:16.671 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+24-12-11.20:51:16.862 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+24-12-11.20:51:16.862 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1595 ms
+24-12-11.20:51:17.086 [main            ] INFO  Version                - Redisson 3.26.0
+24-12-11.20:51:18.001 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-12-11.20:51:18.374 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-12-11.20:51:21.343 [main            ] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sendMessageTaskJob': Unsatisfied dependency expressed through field 'executor'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'java.util.concurrent.ThreadPoolExecutor' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+24-12-11.20:51:21.398 [main            ] INFO  StandardService        - Stopping service [Tomcat]
+24-12-11.20:51:21.411 [main            ] INFO  ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+24-12-11.20:51:21.430 [main            ] ERROR LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field executor in top.javarem.trigger.job.SendMessageTaskJob required a bean of type 'java.util.concurrent.ThreadPoolExecutor' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'java.util.concurrent.ThreadPoolExecutor' in your configuration.
+

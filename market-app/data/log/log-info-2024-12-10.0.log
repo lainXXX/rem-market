@@ -1,0 +1,19 @@
+24-12-10.23:50:23.965 [main            ] INFO  RaffleActivityTest     - Starting RaffleActivityTest using Java 1.8.0_151 on mile with PID 7672 (started by aaa in D:\Develop\project\rem-market\market-app)
+24-12-10.23:50:23.966 [main            ] INFO  RaffleActivityTest     - The following 1 profile is active: "dev"
+24-12-10.23:50:25.781 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-12-10.23:50:25.784 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-12-10.23:50:25.863 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 62 ms. Found 0 Redis repository interfaces.
+24-12-10.23:50:27.636 [main            ] INFO  Version                - Redisson 3.26.0
+24-12-10.23:50:29.328 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-12-10.23:50:29.896 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-12-10.23:50:38.985 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-12-10.23:50:39.072 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [110.41.180.185:5672]
+24-12-10.23:50:39.686 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#63cf578f:0/SimpleConnection@3dd66ff5 [delegate=amqp://lain@110.41.180.185:5672/, localPort= 50772]
+24-12-10.23:50:40.559 [main            ] INFO  RaffleActivityTest     - Started RaffleActivityTest in 17.281 seconds (JVM running for 19.345)
+24-12-10.23:50:41.694 [main            ] INFO  RaffleActivityTest     - true
+24-12-10.23:50:41.835 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+24-12-10.23:50:41.894 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+24-12-10.23:50:42.276 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+24-12-10.23:50:42.553 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+24-12-10.23:50:42.558 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+24-12-10.23:50:42.559 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped

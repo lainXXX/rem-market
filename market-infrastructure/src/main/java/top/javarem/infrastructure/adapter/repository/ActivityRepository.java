@@ -25,7 +25,9 @@ import top.javarem.types.exception.AppException;
 
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
 /**
  * @Author: rem
@@ -75,7 +77,11 @@ public class ActivityRepository implements IActivityRepository {
     @Autowired
     private ActivitySkuStockZeroEventMessage activitySkuStockZeroEventMessage;
 
-
+    /**
+     * 查询活动sku并存入redis
+     * @param sku
+     * @return
+     */
     @Override
     public ActivitySkuEntity getActivitySku(Long sku) {
         String skuKey = Constants.RedisKey.ACTIVITY_SKU_KEY + sku;
@@ -253,23 +259,24 @@ public class ActivityRepository implements IActivityRepository {
     }
 
     @Override
-    public UserConsumeOrderEntity getUserUnconsumedOrder(String userId, Long activityId) {
-
-        UserAwardRecord userAwardRecord = userAwardRecordService.lambdaQuery()
-                .select(UserAwardRecord::getUserId, UserAwardRecord::getStrategyId, UserAwardRecord::getActivityId, UserAwardRecord::getOrderId, UserAwardRecord::getCreateTime, UserAwardRecord::getStatus)
-                .eq(UserAwardRecord::getUserId, userId)
-                .eq(UserAwardRecord::getActivityId, activityId)
+    public UserRaffleConsumeOrderEntity getUserUnconsumedOrder(String userId, Long activityId) {
+//        查询未消费的用户消费单
+        UserRaffleOrder userRaffleOrder = userRaffleOrderService.lambdaQuery()
+                .select(UserRaffleOrder::getUserId, UserRaffleOrder::getStrategyId, UserRaffleOrder::getActivityId, UserRaffleOrder::getOrderId, UserRaffleOrder::getCreateTime, UserRaffleOrder::getStatus)
+                .eq(UserRaffleOrder::getUserId, userId)
+                .eq(UserRaffleOrder::getActivityId, activityId)
+                .eq(UserRaffleOrder::getStatus, UserRaffleStatus.CREATE.getCode())
                 .one();
-        if (userAwardRecord == null) {
+        if (userRaffleOrder == null) {
             return null;
         }
-        return UserConsumeOrderEntity.builder()
-                .orderId(userAwardRecord.getOrderId())
+        return UserRaffleConsumeOrderEntity.builder()
+                .orderId(userRaffleOrder.getOrderId())
                 .userId(userId)
                 .activityId(activityId)
-                .strategyId(userAwardRecord.getStrategyId())
-                .status(UserRaffleStatus.valueOf(userAwardRecord.getStatus()))
-                .orderTime(userAwardRecord.getCreateTime())
+                .strategyId(userRaffleOrder.getStrategyId())
+                .status(UserRaffleStatus.valueOf(userRaffleOrder.getStatus().toUpperCase()))
+                .orderTime(userRaffleOrder.getCreateTime())
                 .build();
     }
 
@@ -357,7 +364,7 @@ public class ActivityRepository implements IActivityRepository {
 
                 if (createPartakeOrderAggregate.getIsExistMonthCount()) {
                     boolean updateMonth = accountMonthCountService.lambdaUpdate()
-                            .setSql("month_count_surplus = month_count_surplus - 1, , update_time = now()")
+                            .setSql("month_count_surplus = month_count_surplus - 1, update_time = now()")
                             .eq(RaffleActivityAccountMonthCount::getUserId, userId)
                             .eq(RaffleActivityAccountMonthCount::getActivityId, activityId)
                             .eq(RaffleActivityAccountMonthCount::getMonth, activityAccountMonthCountEntity.getMonth())
@@ -379,10 +386,10 @@ public class ActivityRepository implements IActivityRepository {
                             .build());
                 }
                 ActivityAccountDayCountEntity activityAccountDayCountEntity = createPartakeOrderAggregate.getActivityAccountDayCountEntity();
-
+//            如果账户日额定存在则更新数据 不存在则插入
                 if (createPartakeOrderAggregate.getIsExistDayCount()) {
                     boolean updateDay = accountDayCountService.lambdaUpdate()
-                            .setSql("day_count_surplus = month_count_surplus - 1, , update_time = now()")
+                            .setSql("day_count_surplus = day_count_surplus - 1, update_time = now()")
                             .eq(RaffleActivityAccountDayCount::getUserId, userId)
                             .eq(RaffleActivityAccountDayCount::getActivityId, activityId)
                             .eq(RaffleActivityAccountDayCount::getDay, activityAccountDayCountEntity.getDay())
@@ -406,15 +413,15 @@ public class ActivityRepository implements IActivityRepository {
                 }
 
 //                写入抽奖消费记录单
-                UserConsumeOrderEntity userConsumeOrderEntity = createPartakeOrderAggregate.getUserConsumeOrderEntity();
+                UserRaffleConsumeOrderEntity userRaffleConsumeOrderEntity = createPartakeOrderAggregate.getUserRaffleConsumeOrderEntity();
                 userRaffleOrderService.save(UserRaffleOrder.builder()
                                 .userId(userId)
                                 .activityId(activityId)
-                                .activityName(userConsumeOrderEntity.getActivityName())
-                                .strategyId(userConsumeOrderEntity.getStrategyId())
-                                .orderId(userConsumeOrderEntity.getOrderId())
-                                .orderTime(userConsumeOrderEntity.getOrderTime())
-                                .status(userConsumeOrderEntity.getStatus().getCode())
+                                .activityName(userRaffleConsumeOrderEntity.getActivityName())
+                                .strategyId(userRaffleConsumeOrderEntity.getStrategyId())
+                                .orderId(userRaffleConsumeOrderEntity.getOrderId())
+                                .orderTime(userRaffleConsumeOrderEntity.getOrderTime())
+                                .status(userRaffleConsumeOrderEntity.getStatus().getCode())
                                 .createTime(new Date())
                                 .updateTime(new Date())
                         .build());
@@ -427,6 +434,21 @@ public class ActivityRepository implements IActivityRepository {
             }
         });
 
+    }
+
+    @Override
+    public List<ActivitySkuEntity> getActivitySkuEntityList(Long activityId) {
+        List<RaffleActivitySku> activitySkuList = skuService.lambdaQuery()
+                .select(RaffleActivitySku::getSku, RaffleActivitySku::getActivityId, RaffleActivitySku::getActivityCountId, RaffleActivitySku::getStockCount, RaffleActivitySku::getStockCountSurplus)
+                .eq(RaffleActivitySku::getActivityId, activityId)
+                .list();
+        return activitySkuList.stream()
+                .map(sku -> {
+                    ActivitySkuEntity activitySkuEntity = new ActivitySkuEntity();
+                    BeanUtils.copyProperties(sku, activitySkuEntity);
+                    return activitySkuEntity;
+                })
+                .collect(Collectors.toList());
     }
 
 }

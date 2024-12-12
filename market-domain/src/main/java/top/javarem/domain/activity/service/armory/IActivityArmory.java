@@ -7,6 +7,8 @@ package top.javarem.domain.activity.service.armory;
  */
 public interface IActivityArmory {
 
+    Boolean assembleRaffleActivityByActivityId(Long activityId);
+
     /**
      * 装配活动信息
      * @param sku 活动sku

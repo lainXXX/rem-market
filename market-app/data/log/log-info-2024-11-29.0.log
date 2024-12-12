@@ -3666,7 +3666,7 @@ Caused by: java.util.concurrent.CompletionException: org.redisson.client.RedisAu
 	... 4 common frames omitted
 Caused by: org.redisson.client.RedisAuthRequiredException: NOAUTH Authentication required.. channel: [id: 0x7eb647b2, L:/192.168.5.22:61292 - R:110.41.180.185/110.41.180.185:6379] data: CommandData [promise=java.util.concurrent.CompletableFuture@1abb4787[Not completed, 2 dependents], command=(PING), params=[], codec=null]
 	... 23 common frames omitted
-24-11-29.15:20:20.883 [main            ] ERROR TestContextManager     - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@7bd7d6d6] to prepare test instance [top.javarem.StrategyRaffleTest@5d194314]
+24-11-29.15:20:20.883 [main            ] ERROR TestContextManager     - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@7bd7d6d6] to prepare test instance [top.javarem.RaffleStrategyTest@5d194314]
 java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:98)
 	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124)

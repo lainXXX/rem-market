@@ -1,0 +1,385 @@
+24-12-01.15:09:31.759 [main            ] INFO  Application            - Starting Application using Java 1.8.0_151 on mile with PID 3512 (D:\Develop\project\rem-market\market-app\target\classes started by aaa in D:\Develop\project\rem-market)
+24-12-01.15:09:31.761 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+24-12-01.15:09:32.578 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-12-01.15:09:32.579 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-12-01.15:09:32.621 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 29 ms. Found 0 Redis repository interfaces.
+24-12-01.15:09:33.091 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+24-12-01.15:09:33.167 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+24-12-01.15:09:33.174 [main            ] INFO  StandardService        - Starting service [Tomcat]
+24-12-01.15:09:33.174 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+24-12-01.15:09:33.373 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+24-12-01.15:09:33.373 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1574 ms
+24-12-01.15:09:33.622 [main            ] INFO  Version                - Redisson 3.26.0
+24-12-01.15:09:34.607 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-12-01.15:09:34.981 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-12-01.15:09:37.558 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-12-01.15:09:37.584 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+24-12-01.15:09:37.593 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
+24-12-01.15:09:37.608 [main            ] INFO  Application            - Started Application in 6.301 seconds (JVM running for 7.684)
+24-12-01.15:09:37.760 [RMI TCP Connection(1)-192.168.137.1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+24-12-01.15:09:37.761 [RMI TCP Connection(1)-192.168.137.1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+24-12-01.15:09:37.762 [RMI TCP Connection(1)-192.168.137.1] INFO  DispatcherServlet      - Completed initialization in 1 ms
+24-12-01.15:09:38.953 [RMI TCP Connection(3)-192.168.137.1] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-12-01.15:09:40.098 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:09:40.552 [RMI TCP Connection(3)-192.168.137.1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-12-01.15:09:45.046 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:09:50.071 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:09:55.089 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:10:00.067 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:10:05.084 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:10:10.050 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:10:15.057 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:10:20.074 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:10:25.094 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:10:30.070 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:10:35.089 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:10:40.048 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:10:45.062 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:10:50.081 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:10:55.087 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:11:00.073 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:11:05.091 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:11:10.046 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:11:15.066 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:11:20.073 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:11:25.092 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:11:30.077 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:11:35.094 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:11:40.052 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:11:45.130 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:11:50.078 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:11:55.062 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:12:00.080 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:12:05.045 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:12:10.046 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:12:15.065 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:12:20.088 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:12:25.066 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:12:30.084 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:12:35.042 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:12:40.051 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:12:45.072 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:12:50.092 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:12:55.065 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:13:00.087 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:13:05.054 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:13:10.053 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:13:15.072 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:13:20.097 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:13:25.072 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:13:30.039 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:13:35.046 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:13:40.056 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:13:45.076 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:13:50.091 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:13:55.066 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:14:00.087 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:14:05.051 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:14:10.069 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:14:15.076 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:14:20.062 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:14:25.080 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:14:30.041 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:14:35.053 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:14:40.055 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:14:45.075 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:14:50.065 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:14:55.081 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:15:00.048 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:15:05.041 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:15:10.060 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:15:15.085 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:15:20.061 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:15:25.080 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:15:30.041 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:15:35.044 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:15:40.070 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:15:45.048 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:15:50.068 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:15:55.036 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:16:00.043 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:16:05.061 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:16:10.082 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:16:15.096 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:16:20.074 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:16:25.040 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:16:30.052 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:16:35.065 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:16:40.084 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:16:45.060 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:16:50.079 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:16:55.044 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:17:00.051 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:17:05.071 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:17:10.078 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:17:15.063 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:17:20.081 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:17:25.044 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:17:30.058 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:17:35.063 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:17:40.050 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:17:45.067 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:17:50.085 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:17:55.045 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:18:00.048 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:18:05.063 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:18:10.090 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:18:15.066 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:18:20.085 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:18:25.037 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:18:30.056 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:18:35.081 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:18:40.099 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:18:45.076 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:18:50.041 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:18:55.050 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:19:00.067 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:19:05.077 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:19:10.055 [scheduling-1    ] INFO  UpdateAwardStockJob    - 执行库存扣减任务 - 没有需要处理的业务
+24-12-01.15:19:14.518 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-12-01.15:19:14.524 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-12-01.15:19:23.121 [main            ] INFO  Application            - Starting Application using Java 1.8.0_151 on mile with PID 2736 (D:\Develop\project\rem-market\market-app\target\classes started by aaa in D:\Develop\project\rem-market)
+24-12-01.15:19:23.123 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+24-12-01.15:19:23.750 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-12-01.15:19:23.752 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-12-01.15:19:23.788 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 25 ms. Found 0 Redis repository interfaces.
+24-12-01.15:19:24.177 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+24-12-01.15:19:24.250 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+24-12-01.15:19:24.257 [main            ] INFO  StandardService        - Starting service [Tomcat]
+24-12-01.15:19:24.257 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+24-12-01.15:19:24.445 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+24-12-01.15:19:24.445 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1288 ms
+24-12-01.15:19:24.670 [main            ] INFO  Version                - Redisson 3.26.0
+24-12-01.15:19:25.564 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-12-01.15:19:25.935 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-12-01.15:19:28.367 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-12-01.15:19:28.390 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+24-12-01.15:19:28.399 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
+24-12-01.15:19:28.415 [main            ] INFO  Application            - Started Application in 5.669 seconds (JVM running for 6.936)
+24-12-01.15:19:29.318 [RMI TCP Connection(1)-192.168.137.1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+24-12-01.15:19:29.319 [RMI TCP Connection(1)-192.168.137.1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+24-12-01.15:19:29.320 [RMI TCP Connection(1)-192.168.137.1] INFO  DispatcherServlet      - Completed initialization in 1 ms
+24-12-01.15:19:29.327 [RMI TCP Connection(2)-192.168.137.1] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-12-01.15:19:30.958 [RMI TCP Connection(2)-192.168.137.1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-12-01.15:21:23.649 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-12-01.15:21:23.655 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-12-01.15:21:26.853 [main            ] INFO  Application            - Starting Application using Java 1.8.0_151 on mile with PID 17932 (D:\Develop\project\rem-market\market-app\target\classes started by aaa in D:\Develop\project\rem-market)
+24-12-01.15:21:26.855 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+24-12-01.15:21:27.474 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-12-01.15:21:27.476 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-12-01.15:21:27.509 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 24 ms. Found 0 Redis repository interfaces.
+24-12-01.15:21:27.899 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8080 (http)
+24-12-01.15:21:27.973 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8080"]
+24-12-01.15:21:27.980 [main            ] INFO  StandardService        - Starting service [Tomcat]
+24-12-01.15:21:27.980 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+24-12-01.15:21:28.160 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+24-12-01.15:21:28.161 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1272 ms
+24-12-01.15:21:28.380 [main            ] INFO  Version                - Redisson 3.26.0
+24-12-01.15:21:29.262 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-12-01.15:21:29.636 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-12-01.15:21:31.978 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-12-01.15:21:32.001 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8080"]
+24-12-01.15:21:32.010 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8080 (http) with context path ''
+24-12-01.15:21:32.025 [main            ] INFO  Application            - Started Application in 5.567 seconds (JVM running for 6.879)
+24-12-01.15:21:33.028 [RMI TCP Connection(2)-192.168.137.1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+24-12-01.15:21:33.028 [RMI TCP Connection(2)-192.168.137.1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+24-12-01.15:21:33.029 [RMI TCP Connection(2)-192.168.137.1] INFO  DispatcherServlet      - Completed initialization in 1 ms
+24-12-01.15:21:33.031 [RMI TCP Connection(1)-192.168.137.1] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-12-01.15:21:34.595 [RMI TCP Connection(1)-192.168.137.1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-12-01.15:21:41.667 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-12-01.15:21:41.676 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-12-01.15:21:44.785 [main            ] INFO  Application            - Starting Application using Java 1.8.0_151 on mile with PID 20952 (D:\Develop\project\rem-market\market-app\target\classes started by aaa in D:\Develop\project\rem-market)
+24-12-01.15:21:44.787 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+24-12-01.15:21:45.387 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-12-01.15:21:45.389 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-12-01.15:21:45.423 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 24 ms. Found 0 Redis repository interfaces.
+24-12-01.15:21:45.793 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+24-12-01.15:21:45.864 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+24-12-01.15:21:45.870 [main            ] INFO  StandardService        - Starting service [Tomcat]
+24-12-01.15:21:45.870 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+24-12-01.15:21:46.045 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+24-12-01.15:21:46.045 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1222 ms
+24-12-01.15:21:46.254 [main            ] INFO  Version                - Redisson 3.26.0
+24-12-01.15:21:47.086 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-12-01.15:21:47.454 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-12-01.15:21:49.807 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-12-01.15:21:49.829 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+24-12-01.15:21:49.837 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
+24-12-01.15:21:49.852 [main            ] INFO  Application            - Started Application in 5.434 seconds (JVM running for 6.706)
+24-12-01.15:21:50.977 [RMI TCP Connection(3)-192.168.137.1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+24-12-01.15:21:50.977 [RMI TCP Connection(3)-192.168.137.1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+24-12-01.15:21:50.978 [RMI TCP Connection(3)-192.168.137.1] INFO  DispatcherServlet      - Completed initialization in 1 ms
+24-12-01.15:21:50.980 [RMI TCP Connection(2)-192.168.137.1] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-12-01.15:21:52.477 [RMI TCP Connection(2)-192.168.137.1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-12-01.15:22:12.936 [http-nio-8091-exec-1] INFO  RaffleController       - 执行抽奖策略装配
+24-12-01.15:24:29.413 [http-nio-8091-exec-5] INFO  RaffleController       - 执行抽奖策略装配
+24-12-01.15:24:29.801 [http-nio-8091-exec-5] ERROR [dispatcherServlet]    - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at top.javarem.infrastructure.adapter.repository.StrategyRepository.cacheAwardCount(StrategyRepository.java:307)
+	at top.javarem.infrastructure.adapter.repository.StrategyRepository$$FastClassBySpringCGLIB$$67d448e6.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at top.javarem.infrastructure.adapter.repository.StrategyRepository$$EnhancerBySpringCGLIB$$ab4f4049.cacheAwardCount(<generated>)
+	at top.javarem.domain.strategy.service.armory.StrategyArmoryImpl.lambda$assembleRaffleStrategy$0(StrategyArmoryImpl.java:42)
+	at java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1380)
+	at java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:580)
+	at top.javarem.domain.strategy.service.armory.StrategyArmoryImpl.assembleRaffleStrategy(StrategyArmoryImpl.java:41)
+	at top.javarem.trigger.http.RaffleStrategyController.assembleStrategy(RaffleController.java:46)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:529)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+24-12-01.15:26:44.363 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-12-01.15:26:44.370 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-12-01.15:42:30.677 [main            ] INFO  Application            - Starting Application using Java 1.8.0_151 on mile with PID 12340 (D:\Develop\project\rem-market\market-app\target\classes started by aaa in D:\Develop\project\rem-market)
+24-12-01.15:42:30.679 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+24-12-01.15:42:31.307 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-12-01.15:42:31.308 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-12-01.15:42:31.342 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 25 ms. Found 0 Redis repository interfaces.
+24-12-01.15:42:31.733 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+24-12-01.15:42:31.803 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+24-12-01.15:42:31.809 [main            ] INFO  StandardService        - Starting service [Tomcat]
+24-12-01.15:42:31.809 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+24-12-01.15:42:31.984 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+24-12-01.15:42:31.984 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1269 ms
+24-12-01.15:42:32.198 [main            ] INFO  Version                - Redisson 3.26.0
+24-12-01.15:42:33.099 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-12-01.15:42:33.468 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+24-12-01.15:42:36.047 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+24-12-01.15:42:36.073 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+24-12-01.15:42:36.083 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
+24-12-01.15:42:36.100 [main            ] INFO  Application            - Started Application in 5.828 seconds (JVM running for 7.118)
+24-12-01.15:42:36.935 [RMI TCP Connection(1)-192.168.137.1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+24-12-01.15:42:36.935 [RMI TCP Connection(1)-192.168.137.1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+24-12-01.15:42:36.936 [RMI TCP Connection(1)-192.168.137.1] INFO  DispatcherServlet      - Completed initialization in 1 ms
+24-12-01.15:42:36.939 [RMI TCP Connection(2)-192.168.137.1] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-12-01.15:42:38.594 [RMI TCP Connection(2)-192.168.137.1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-12-01.15:42:50.162 [http-nio-8091-exec-2] INFO  RaffleController       - 执行抽奖策略装配
+24-12-01.15:44:10.599 [http-nio-8091-exec-5] INFO  RaffleController       - 执行展示奖品操作 策略ID: 100003
+24-12-01.15:46:13.241 [http-nio-8091-exec-8] INFO  RaffleController       - 执行随机抽奖 策略ID: null 用户ID: 3
+24-12-01.15:46:13.241 [http-nio-8091-exec-8] INFO  AbstractRaffleLogic    - 开始执行抽奖流程 用户id : 3, 策略id : null
+24-12-01.15:46:13.247 [http-nio-8091-exec-8] ERROR [dispatcherServlet]    - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalArgumentException: Strategy id or userId is null] with root cause
+java.lang.IllegalArgumentException: Strategy id or userId is null
+	at top.javarem.domain.strategy.service.AbstractRaffleLogic.performRaffle(AbstractRaffleLogic.java:41)
+	at top.javarem.trigger.http.RaffleStrategyController.executeRaffle(RaffleController.java:67)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1072)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:965)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:555)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:623)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:209)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:178)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:153)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:481)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:130)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:926)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1791)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+24-12-01.15:46:48.946 [http-nio-8091-exec-10] INFO  RaffleController       - 执行随机抽奖 策略ID: 100003 用户ID: 3
+24-12-01.15:46:48.946 [http-nio-8091-exec-10] INFO  AbstractRaffleLogic    - 开始执行抽奖流程 用户id : 3, 策略id : 100003
+24-12-01.15:46:49.311 [http-nio-8091-exec-10] INFO  BlacklistLogicNode     - 黑名单规则放行
+24-12-01.15:46:49.469 [http-nio-8091-exec-10] INFO  DefaultLogicNode       - 默认规则接管执行
+24-12-01.15:46:49.470 [http-nio-8091-exec-10] INFO  AbstractRaffleLogic    - 责任链获取奖品ID awardId: 101 ruleModel: default
+24-12-01.15:46:49.783 [http-nio-8091-exec-10] INFO  LockLogicTreeNode      - 规则过滤-奖品锁 用户积分未达到奖品解锁标准
+24-12-01.15:46:49.785 [http-nio-8091-exec-10] INFO  LuckAwardLogicTreeNode - 规则过滤-兜底奖品 luckAwardId : 1 scoreRange : 100 
+24-12-01.15:46:49.786 [http-nio-8091-exec-10] INFO  AbstractRaffleLogic    - 规则树逻辑执行 奖品id 1 
+24-12-01.15:46:49.786 [http-nio-8091-exec-10] INFO  RaffleController       - 抽中的奖品ID: 1
+24-12-01.15:47:26.897 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-12-01.15:47:26.902 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.

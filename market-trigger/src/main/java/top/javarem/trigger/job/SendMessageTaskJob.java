@@ -23,10 +23,10 @@ public class SendMessageTaskJob {
     @Autowired
     private ITaskService taskService;
 
-/*    @Autowired
-    private ThreadPoolExecutor executor;*/
+    @Autowired
+    private ThreadPoolExecutor executor;
 
-    @Scheduled(cron = "0/5 * * * * ?")
+    @Scheduled(cron = "0/30 * * * * ?")
     public void execute() {
         log.info("发送MQ消息任务开始执行");
         try {
@@ -35,6 +35,7 @@ public class SendMessageTaskJob {
                 return;
             }
             for (TaskEntity taskEntity : taskEntityList) {
+                executor.execute(() -> {
                     try {
                         taskService.sendMessage(taskEntity.getTopic(), taskEntity.getMessage());
                         taskService.updateTaskCompleted(taskEntity.getMessageId());
@@ -42,7 +43,8 @@ public class SendMessageTaskJob {
                         log.error("定时任务，发送MQ消息失败 userId: {} topic: {}", taskEntity.getUserId(), taskEntity.getTopic());
                         taskService.updateTaskFailed(taskEntity.getMessageId());
                     }
-                }
+                });
+            }
         } catch (Exception e) {
             log.error("定时任务，扫描MQ任务表发送消息失败。", e);
         }

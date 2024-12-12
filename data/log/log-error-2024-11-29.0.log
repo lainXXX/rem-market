@@ -1,4 +1,0 @@
-24-11-29.13:13:56.639 [scheduling-1    ] ERROR UpdateAwardStockJob    - 扣减库存失败
-24-11-29.13:14:12.067 [HikariPool-1 housekeeper] WARN  HikariPool             - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8m45s986ms468µs700ns).
-24-11-29.13:37:53.639 [scheduling-1    ] ERROR UpdateAwardStockJob    - 扣减库存失败
-24-11-29.13:38:09.286 [HikariPool-1 housekeeper] WARN  HikariPool             - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9m56s995ms281µs200ns).

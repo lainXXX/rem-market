@@ -29,7 +29,7 @@ public class DecisionTreeEngine implements IDecisionTreeEngine {
     }
 
     @Override
-    public DefaultTreeFactory.LogicAwardVO process(Long strategyId, Integer awardId) {
+    public DefaultTreeFactory.LogicAwardVO process(String userId, Long strategyId, Integer awardId) {
         DefaultTreeFactory.LogicAwardVO award = null;
 //        获取根节点的键
         String rootNodeKey = ruleTree.getTreeRootRuleNode();
@@ -41,7 +41,7 @@ public class DecisionTreeEngine implements IDecisionTreeEngine {
 //            通过key获取当前节点信息
             RuleTreeNodeVO currentNode = treeNodeMap.get(currentNodeKey);
             ILogicTreeNode logicTreeNode = logicTreeNodeMap.get(currentNode.getTreeNodeKey());
-            DefaultTreeFactory.TreeActionEntity actionEntity = logicTreeNode.execute(strategyId, awardId, currentNode.getRuleValue());
+            DefaultTreeFactory.TreeActionEntity actionEntity = logicTreeNode.execute(userId, strategyId, awardId, currentNode.getRuleValue());
             award = actionEntity.getLogicAwardVO();
             String code = actionEntity.getRuleLogicCheckTypeVO().getCode();
             currentNodeKey = nextNodeKey(code, treeNodeMap.get(currentNodeKey).getTreeNodeLineVOList());

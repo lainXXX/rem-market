@@ -45,14 +45,14 @@ public class DefaultRaffleStrategy extends AbstractRaffleLogic implements IRaffl
     }
 
     @Override
-    protected DefaultTreeFactory.LogicAwardVO  doRaffleLogicTree(Long strategyId, Integer awardId) {
+    protected DefaultTreeFactory.LogicAwardVO  doRaffleLogicTree(String userId, Long strategyId, Integer awardId) {
         StrategyAwardRuleModelsVO ruleModelsVO = repository.getAwardRules(strategyId, awardId);
         if (ruleModelsVO == null) return DefaultTreeFactory.LogicAwardVO.builder()
                 .awardId(awardId)
                 .build();
         RuleTreeVO ruleTreeVO = repository.getRuleTreeVO(ruleModelsVO.getRuleModels());
         IDecisionTreeEngine engine = treeFactory.openLogicTree(ruleTreeVO);
-        return engine.process(strategyId, awardId);
+        return engine.process(userId, strategyId, awardId);
     }
 
     @Override

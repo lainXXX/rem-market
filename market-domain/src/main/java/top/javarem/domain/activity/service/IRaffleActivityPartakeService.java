@@ -1,7 +1,7 @@
 package top.javarem.domain.activity.service;
 
 import top.javarem.domain.activity.model.entity.ActivityPartakeEntity;
-import top.javarem.domain.activity.model.entity.UserConsumeOrderEntity;
+import top.javarem.domain.activity.model.entity.UserRaffleConsumeOrderEntity;
 
 /**
  * @Author: rem
@@ -15,7 +15,7 @@ public interface IRaffleActivityPartakeService {
      *
      * @return用于抽奖的配置
      */
-    UserConsumeOrderEntity createOrder(ActivityPartakeEntity activityPartakeEntity);
+    UserRaffleConsumeOrderEntity createOrder(ActivityPartakeEntity activityPartakeEntity);
 
 
 }

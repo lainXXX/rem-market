@@ -47,7 +47,11 @@ public class StrategyRepository implements IStrategyRepository {
 
     private final IRuleTreeNodeLineService ruleTreeNodeLineService;
 
-    public StrategyRepository(RedissonClient redissonClient, IStrategyAwardService strategyAwardService, IRuleService ruleService, IUserService userService, IStrategyService strategyService, IRuleTreeService ruleTreeService, IRuleTreeNodeService ruleTreeNodeService, IRuleTreeNodeLineService ruleTreeNodeLineService) {
+    private final RaffleActivityService raffleActivityService;
+
+    private final RaffleActivityAccountDayCountService raffleActivityAccountDayCountService;
+
+    public StrategyRepository(RedissonClient redissonClient, IStrategyAwardService strategyAwardService, IRuleService ruleService, IUserService userService, IStrategyService strategyService, IRuleTreeService ruleTreeService, IRuleTreeNodeService ruleTreeNodeService, IRuleTreeNodeLineService ruleTreeNodeLineService, RaffleActivityService raffleActivityService, RaffleActivityAccountDayCountService raffleActivityAccountDayCountService) {
         this.redissonClient = redissonClient;
         this.strategyAwardService = strategyAwardService;
         this.ruleService = ruleService;
@@ -56,6 +60,8 @@ public class StrategyRepository implements IStrategyRepository {
         this.ruleTreeService = ruleTreeService;
         this.ruleTreeNodeService = ruleTreeNodeService;
         this.ruleTreeNodeLineService = ruleTreeNodeLineService;
+        this.raffleActivityService = raffleActivityService;
+        this.raffleActivityAccountDayCountService = raffleActivityAccountDayCountService;
     }
 
     /**
@@ -359,6 +365,55 @@ public class StrategyRepository implements IStrategyRepository {
         String queueKey = Constants.RedisKey.AWARD_BLOCK_QUEUE_KEY;
         RBlockingQueue<AwardStockDecrQueueVO> blockingQueue = redissonClient.getBlockingQueue(queueKey);
         return CollectionUtils.isEmpty(blockingQueue);
+    }
+
+    /**
+     * 通过活动id获取策略id
+     * @param activityId
+     * @return
+     */
+    @Override
+    public Long getStrategyId(Long activityId) {
+        return raffleActivityService.lambdaQuery()
+                .select(RaffleActivity::getStrategyId)
+                .eq(RaffleActivity::getActivityId, activityId)
+                .one()
+                .getStrategyId();
+    }
+
+    @Override
+    public StrategyAwardEntity getStrategyAwardEntity(Long strategyId, Integer awardId) {
+        String cacheKey = Constants.RedisKey.STRATEGY_AWARD_KEY + strategyId + Constants.UNDERLINE + awardId;
+        StrategyAwardEntity strategyAwardEntity = redissonClient.<StrategyAwardEntity>getBucket(cacheKey).get();
+        if (strategyAwardEntity != null) {
+            return strategyAwardEntity;
+        }
+        StrategyAward strategyAward = strategyAwardService.lambdaQuery()
+                .select(StrategyAward::getStrategyId, StrategyAward::getAwardId, StrategyAward::getAwardTitle, StrategyAward::getAwardSubtitle, StrategyAward::getAwardCount, StrategyAward::getAwardCountSurplus, StrategyAward::getSort, StrategyAward::getRate, StrategyAward::getModels)
+                .eq(StrategyAward::getStrategyId, strategyId)
+                .eq(StrategyAward::getAwardId, awardId)
+                .one();
+        strategyAwardEntity = new StrategyAwardEntity();
+        BeanUtils.copyProperties(strategyAward, strategyAwardEntity);
+        redissonClient.<StrategyAwardEntity>getBucket(cacheKey).set(strategyAwardEntity);
+        return strategyAwardEntity;
+    }
+
+    @Override
+    public Integer queryUserTodayRaffleCount(String userId, Long strategyId, String today) {
+        Long activityId = raffleActivityService.lambdaQuery()
+                .select(RaffleActivity::getActivityId)
+                .eq(RaffleActivity::getStrategyId, strategyId)
+                .one().getActivityId();
+        RaffleActivityAccountDayCount todayCount = raffleActivityAccountDayCountService.lambdaQuery()
+                .select(RaffleActivityAccountDayCount::getDay, RaffleActivityAccountDayCount::getDayCount, RaffleActivityAccountDayCount::getDayCountSurplus)
+                .eq(RaffleActivityAccountDayCount::getActivityId, activityId)
+                .eq(RaffleActivityAccountDayCount::getDay, today)
+                .one();
+        if (todayCount == null) return 0;
+        // 总次数 - 剩余的，等于今日参与的
+        return todayCount.getDayCount() - todayCount.getDayCountSurplus();
+
     }
 
     private List<RuleTreeNode> getNodes(String treeId) {

@@ -488,7 +488,7 @@ Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionExcep
 	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:206)
 	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:174)
 	... 83 common frames omitted
-24-12-02.21:32:38.310 [main            ] ERROR TestContextManager     - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@65f8f5ae] to prepare test instance [top.javarem.StrategyRaffleTest@3caa4757]
+24-12-02.21:32:38.310 [main            ] ERROR TestContextManager     - Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@65f8f5ae] to prepare test instance [top.javarem.RaffleStrategyTest@3caa4757]
 java.lang.IllegalStateException: Failed to load ApplicationContext
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:98)
 	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:124)
