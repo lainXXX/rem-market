@@ -17,4 +17,11 @@ public interface IRaffleActivityAccountQuotaService {
      */
     String createOrder(SkuRechargeEntity cart);
 
+    /**
+     * 获取用户当日参与活动次数
+     * @param userId 用户id
+     * @param activityId 活动id
+     * @return
+     */
+    Integer getActivityTodayPartakeCount(String userId, Long activityId);
 }

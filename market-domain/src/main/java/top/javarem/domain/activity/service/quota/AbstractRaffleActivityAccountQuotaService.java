@@ -17,13 +17,13 @@ import top.javarem.types.exception.AppException;
  * @Description: 抽奖活动抽象类 定义活动流程的标准
  */
 @Slf4j
-public abstract class AbstractRaffleActivityActivityService implements IRaffleActivityAccountQuotaService {
+public abstract class AbstractRaffleActivityAccountQuotaService implements IRaffleActivityAccountQuotaService {
 
     protected IActivityRepository repository;
 
     protected DefaultActivityChainFactory factory;
 
-    public AbstractRaffleActivityActivityService(IActivityRepository repository, DefaultActivityChainFactory factory) {
+    public AbstractRaffleActivityAccountQuotaService(IActivityRepository repository, DefaultActivityChainFactory factory) {
         this.repository = repository;
         this.factory = factory;
     }

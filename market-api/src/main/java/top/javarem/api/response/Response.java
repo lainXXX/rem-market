@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import top.javarem.types.common.constants.Constants;
+import top.javarem.types.enums.ResponseCode;
 
 import java.io.Serializable;
 
@@ -22,23 +23,23 @@ public class Response<T> implements Serializable {
 
     public static <T> Response<T> success(T data) {
         return Response.<T>builder()
-                .code(Constants.ResponseCode.SUCCESS.getCode())
-                .info(Constants.ResponseCode.SUCCESS.getInfo())
+                .code(ResponseCode.SUCCESS.getCode())
+                .info(ResponseCode.SUCCESS.getInfo())
                 .data(data)
                 .build();
     }
 
     public static <T> Response<T> success() {
         return Response.<T>builder()
-                .code(Constants.ResponseCode.SUCCESS.getCode())
-                .info(Constants.ResponseCode.SUCCESS.getInfo())
+                .code(ResponseCode.SUCCESS.getCode())
+                .info(ResponseCode.SUCCESS.getInfo())
                 .build();
     }
 
     public static <T> Response<T> error() {
         return Response.<T>builder()
-                .code(Constants.ResponseCode.UN_ERROR.getCode())
-                .info(Constants.ResponseCode.UN_ERROR.getInfo())
+                .code(ResponseCode.UN_ERROR.getCode())
+                .info(ResponseCode.UN_ERROR.getInfo())
                 .build();
     }
 

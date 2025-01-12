@@ -8,6 +8,7 @@ import top.javarem.domain.strategy.model.vo.AwardStockDecrQueueVO;
 import top.javarem.domain.strategy.model.vo.RuleTreeVO;
 import top.javarem.domain.strategy.model.vo.StrategyAwardRuleModelsVO;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -39,7 +40,7 @@ public interface IStrategyRepository {
 
     void cacheAwardCount(Long strategyId, Integer awardId, Integer awardCount);
 
-    boolean decrAwardCount(String cacheKey);
+    boolean decrAwardCount(String cacheKey, Date endTime);
 
     void sendAwardStockDecrQueue(AwardStockDecrQueueVO queueKeyVO);
 
@@ -54,4 +55,6 @@ public interface IStrategyRepository {
     StrategyAwardEntity getStrategyAwardEntity(Long strategyId, Integer awardId);
 
     Integer queryUserTodayRaffleCount(String userId, Long strategyId, String today);
+
+    Map<String, Integer> getAwardUnlockCountMap(String[] treeIds);
 }

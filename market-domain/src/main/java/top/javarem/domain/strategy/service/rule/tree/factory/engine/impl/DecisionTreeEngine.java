@@ -9,6 +9,7 @@ import top.javarem.domain.strategy.service.rule.tree.ILogicTreeNode;
 import top.javarem.domain.strategy.service.rule.tree.factory.DefaultTreeFactory;
 import top.javarem.domain.strategy.service.rule.tree.factory.engine.IDecisionTreeEngine;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -29,7 +30,7 @@ public class DecisionTreeEngine implements IDecisionTreeEngine {
     }
 
     @Override
-    public DefaultTreeFactory.LogicAwardVO process(String userId, Long strategyId, Integer awardId) {
+    public DefaultTreeFactory.LogicAwardVO process(String userId, Long strategyId, Integer awardId, Date endTime) {
         DefaultTreeFactory.LogicAwardVO award = null;
 //        获取根节点的键
         String rootNodeKey = ruleTree.getTreeRootRuleNode();
@@ -41,7 +42,7 @@ public class DecisionTreeEngine implements IDecisionTreeEngine {
 //            通过key获取当前节点信息
             RuleTreeNodeVO currentNode = treeNodeMap.get(currentNodeKey);
             ILogicTreeNode logicTreeNode = logicTreeNodeMap.get(currentNode.getTreeNodeKey());
-            DefaultTreeFactory.TreeActionEntity actionEntity = logicTreeNode.execute(userId, strategyId, awardId, currentNode.getRuleValue());
+            DefaultTreeFactory.TreeActionEntity actionEntity = logicTreeNode.execute(userId, strategyId, awardId, currentNode.getRuleValue(), endTime);
             award = actionEntity.getLogicAwardVO();
             String code = actionEntity.getRuleLogicCheckTypeVO().getCode();
             currentNodeKey = nextNodeKey(code, treeNodeMap.get(currentNodeKey).getTreeNodeLineVOList());

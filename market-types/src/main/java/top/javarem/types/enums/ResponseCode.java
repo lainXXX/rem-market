@@ -8,7 +8,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Getter
 public enum ResponseCode {
-
+    SUCCESS("0000", "调用成功"),
+    UN_ERROR("0001", "调用失败"),
+    ILLEGAL_PARAMETER("0002", "非法参数"),
+    NO_LOGIN("0003", "未登录"),
     RULE_WEIGHT_NULL("WEIGHT_001", "rule weight 为null"),
     RULE_WEIGHT_ERROR("WEIGHT_002", "数据库中rule weight配置错误"),
     INDEX_DUP("0003", "唯一索引冲突"),

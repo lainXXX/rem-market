@@ -33,4 +33,6 @@ public class UserRaffleConsumeOrderEntity {
 
     private UserRaffleStatus status;
 
+    private Date endTime;
+
 }

@@ -10,6 +10,11 @@ import top.javarem.infrastructure.dao.iService.IStrategyAwardService;
 import top.javarem.infrastructure.dao.entity.StrategyAward;
 import top.javarem.types.common.constants.Constants;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Date;
+
 /**
  * @Author: rem
  * @Date: 2024/11/24/22:01
@@ -27,6 +32,21 @@ public class Demo {
 
     @Autowired
     private IStrategyAwardService strategyAwardService;
+
+    public void test00() {
+        // 使用try-with-resources语句
+        try (BufferedReader reader = new BufferedReader(new FileReader("example.txt"))) {
+            String line;
+            // 循环读取文件中的每一行
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            // 如果在读取文件过程中发生IOException，则捕获异常
+            e.printStackTrace();
+        }
+        // 资源自动关闭，不需要显式调用close()
+    }
 
     @Test
     public void test02() {
@@ -50,7 +70,7 @@ public class Demo {
     @Test
     public void testAtomicLong() {
         String key = Constants.RedisKey.STRATEGY_AWARD_COUNT_KEY + 100001 + Constants.UNDERLINE + 101;
-        boolean b = repository.decrAwardCount(key);
+        boolean b = repository.decrAwardCount(key, new Date());
         System.out.println(b);
     }
 

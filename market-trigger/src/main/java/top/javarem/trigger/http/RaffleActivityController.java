@@ -20,6 +20,7 @@ import top.javarem.domain.strategy.model.entity.RaffleFactorEntity;
 import top.javarem.domain.strategy.service.IRaffleStrategy;
 import top.javarem.domain.strategy.service.armory.IStrategyArmory;
 import top.javarem.types.common.constants.Constants;
+import top.javarem.types.enums.ResponseCode;
 import top.javarem.types.exception.AppException;
 
 import java.util.Date;
@@ -51,6 +52,9 @@ public class RaffleActivityController implements IRaffleActivityService {
     public Response<Boolean> armory(Long activityId) {
         try {
             log.info("活动数据装配 activityId:{}", activityId);
+            if (activityId == null) {
+                throw new AppException(ResponseCode.ILLEGAL_PARAMETER.getCode(), ResponseCode.ILLEGAL_PARAMETER.getInfo());
+            }
 //            装配活动
             activityArmory.assembleRaffleActivityByActivityId(activityId);
 //            顺便装配策略
@@ -81,6 +85,7 @@ public class RaffleActivityController implements IRaffleActivityService {
             RaffleAwardEntity raffleAwardEntity = strategy.performRaffle(RaffleFactorEntity.builder()
                     .strategyId(order.getStrategyId())
                     .userId(order.getUserId())
+                    .endTime(order.getEndTime())
                     .build());
 //        4.存放结果- 写入中奖记录
             UserAwardRecordEntity userAwardRecordEntity = UserAwardRecordEntity.builder()

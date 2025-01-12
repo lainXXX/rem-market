@@ -10,6 +10,7 @@ import top.javarem.domain.strategy.model.vo.StrategyAwardRuleModelsVO;
 import top.javarem.domain.strategy.repository.IStrategyRepository;
 import top.javarem.domain.strategy.service.AbstractRaffleLogic;
 import top.javarem.domain.strategy.service.IRaffleAward;
+import top.javarem.domain.strategy.service.IRaffleRule;
 import top.javarem.domain.strategy.service.IRaffleStock;
 import top.javarem.domain.strategy.service.armory.IStrategyArmoryDispatch;
 import top.javarem.domain.strategy.service.rule.chain.IStrategyLogicChain;
@@ -17,7 +18,10 @@ import top.javarem.domain.strategy.service.rule.chain.factory.DefaultChainFactor
 import top.javarem.domain.strategy.service.rule.tree.factory.DefaultTreeFactory;
 import top.javarem.domain.strategy.service.rule.tree.factory.engine.IDecisionTreeEngine;
 
+import java.util.Collections;
+import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Author: rem
@@ -26,7 +30,7 @@ import java.util.List;
  */
 @Slf4j
 @Service
-public class DefaultRaffleStrategy extends AbstractRaffleLogic implements IRaffleStock, IRaffleAward {
+public class DefaultRaffleStrategy extends AbstractRaffleLogic implements IRaffleStock, IRaffleAward, IRaffleRule {
 
     private final DefaultTreeFactory treeFactory;
 
@@ -45,14 +49,19 @@ public class DefaultRaffleStrategy extends AbstractRaffleLogic implements IRaffl
     }
 
     @Override
-    protected DefaultTreeFactory.LogicAwardVO  doRaffleLogicTree(String userId, Long strategyId, Integer awardId) {
+    protected DefaultTreeFactory.LogicAwardVO doRaffleLogicTree(String userId, Long strategyId, Integer awardId, Date endTime) {
+
         StrategyAwardRuleModelsVO ruleModelsVO = repository.getAwardRules(strategyId, awardId);
         if (ruleModelsVO == null) return DefaultTreeFactory.LogicAwardVO.builder()
                 .awardId(awardId)
                 .build();
         RuleTreeVO ruleTreeVO = repository.getRuleTreeVO(ruleModelsVO.getRuleModels());
+        if (null == ruleTreeVO) {
+            throw new RuntimeException("存在抽奖策略配置的规则模型 Key，未在库表 rule_tree、rule_tree_node、rule_tree_line 配置对应的规则树信息 " + ruleModelsVO.getRuleModels());
+        }
         IDecisionTreeEngine engine = treeFactory.openLogicTree(ruleTreeVO);
-        return engine.process(userId, strategyId, awardId);
+        return engine.process(userId, strategyId, awardId, endTime);
+
     }
 
     @Override
@@ -74,4 +83,18 @@ public class DefaultRaffleStrategy extends AbstractRaffleLogic implements IRaffl
     public List<StrategyAwardEntity> displayAward(Long strategyId) {
         return repository.getStrategyAwardList(strategyId);
     }
+
+    @Override
+    public List<StrategyAwardEntity> displayAwardByActivityId(Long activityId) {
+
+        Long strategyId = repository.getStrategyId(activityId);
+        return this.displayAward(strategyId);
+
+    }
+
+    @Override
+    public Map<String, Integer> getAwardUnlockCountMap(String[] treeIds) {
+        return repository.getAwardUnlockCountMap(treeIds);
+    }
+
 }

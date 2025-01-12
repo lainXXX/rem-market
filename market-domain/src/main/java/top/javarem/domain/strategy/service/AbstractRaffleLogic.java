@@ -10,6 +10,8 @@ import top.javarem.domain.strategy.service.armory.IStrategyArmoryDispatch;
 import top.javarem.domain.strategy.service.rule.chain.factory.DefaultChainFactory;
 import top.javarem.domain.strategy.service.rule.tree.factory.DefaultTreeFactory;
 
+import java.util.Date;
+
 import static top.javarem.domain.strategy.service.rule.chain.factory.DefaultChainFactory.LogicAwardVO;
 import static top.javarem.domain.strategy.service.rule.chain.factory.DefaultChainFactory.LogicModel;
 
@@ -42,8 +44,8 @@ public abstract class AbstractRaffleLogic implements IRaffleStrategy, IRaffleSto
         if (strategyId == null || userId == null) {
             throw new IllegalArgumentException("Strategy id or userId is null");
         }
-//        查询策略规则
-        StrategyEntity strategyEntity = repository.getStrategyEntity(strategyId);
+////        查询策略规则
+//        StrategyEntity strategyEntity = repository.getStrategyEntity(strategyId);
 //        抽奖策略责任链获取奖品
         LogicAwardVO chainLogicAwardVO = this.doRaffleLogicChain(userId, strategyId);
         log.info("责任链执行完毕- 结果为 awardId: {} ruleModel: {}", chainLogicAwardVO.getAwardId(), chainLogicAwardVO.getRuleModel());
@@ -53,7 +55,7 @@ public abstract class AbstractRaffleLogic implements IRaffleStrategy, IRaffleSto
         }
 
 //        获取奖品后规则树逻辑执行
-        DefaultTreeFactory.LogicAwardVO treeLogicAwardVO = this.doRaffleLogicTree(userId, strategyId, chainLogicAwardVO.getAwardId());
+        DefaultTreeFactory.LogicAwardVO treeLogicAwardVO = this.doRaffleLogicTree(userId, strategyId, chainLogicAwardVO.getAwardId(), factor.getEndTime());
         Integer awardId = treeLogicAwardVO.getAwardId();
         log.info("规则树逻辑执行完毕执行- 结果为 奖品id {} ", awardId);
 
@@ -72,6 +74,6 @@ public abstract class AbstractRaffleLogic implements IRaffleStrategy, IRaffleSto
 
     protected abstract LogicAwardVO doRaffleLogicChain(String userId, Long strategyId);
 
-    protected abstract DefaultTreeFactory.LogicAwardVO doRaffleLogicTree(String userId, Long strategyId, Integer awardId);
+    protected abstract DefaultTreeFactory.LogicAwardVO doRaffleLogicTree(String userId, Long strategyId, Integer awardId, Date endTime);
 
 }

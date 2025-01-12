@@ -51,4 +51,6 @@ public interface IActivityRepository {
     void saveCreatePartakeOrderAggregate(CreatePartakeOrderAggregate createPartakeOrderAggregate);
 
     List<ActivitySkuEntity> getActivitySkuEntityList(Long activityId);
+
+    Integer getActivityTodayPartakeCount(String userId, Long activityId);
 }

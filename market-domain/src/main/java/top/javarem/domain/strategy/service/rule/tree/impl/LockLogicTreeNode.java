@@ -33,10 +33,11 @@ public class LockLogicTreeNode implements ILogicTreeNode {
      * @param strategyId  策略id
      * @param awardId 奖品id
      * @param ruleValue 奖品解锁次数值
+     * @param endTime
      * @return
      */
     @Override
-    public TreeActionEntity execute(String userId, Long strategyId, Integer awardId, String ruleValue) {
+    public TreeActionEntity execute(String userId, Long strategyId, Integer awardId, String ruleValue, Date endTime) {
 
 //        定义解锁奖品次数变量
         Integer unlockAwardCount;
@@ -57,4 +58,5 @@ public class LockLogicTreeNode implements ILogicTreeNode {
                 .ruleLogicCheckTypeVO(RuleLogicCheckTypeVO.BLOCK)
                 .build();
     }
+
 }

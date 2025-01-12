@@ -18,10 +18,7 @@ import top.javarem.infrastructure.dao.entity.*;
 import top.javarem.types.common.constants.Constants;
 import top.javarem.types.exception.AppException;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
@@ -77,7 +74,7 @@ public class StrategyRepository implements IStrategyRepository {
         List<StrategyAwardEntity> awardEntities = redissonClient.<List<StrategyAwardEntity>>getBucket(cacheKey).get();
         if (!CollectionUtils.isEmpty(awardEntities)) return awardEntities;
 //        2.如果不存在缓存 从数据库中取出Award 再通过属性复制转为AwardEntity
-        awardEntities = strategyAwardService.lambdaQuery().select(StrategyAward::getAwardId, StrategyAward::getStrategyId, StrategyAward::getAwardCount, StrategyAward::getAwardCountSurplus, StrategyAward::getRate)
+        awardEntities = strategyAwardService.lambdaQuery().select(StrategyAward::getAwardId, StrategyAward::getStrategyId, StrategyAward::getAwardTitle, StrategyAward::getAwardSubtitle, StrategyAward::getAwardCount, StrategyAward::getAwardCountSurplus, StrategyAward::getRate, StrategyAward::getModels, StrategyAward::getSort)
                 .eq(StrategyAward::getStrategyId, strategyId)
                 .list()
                 .stream()
@@ -314,7 +311,7 @@ public class StrategyRepository implements IStrategyRepository {
     }
 
     @Override
-    public boolean decrAwardCount(String cacheKey) {
+    public boolean decrAwardCount(String cacheKey, Date endTime) {
 //        获取缓存
         long surplus = redissonClient.getAtomicLong(cacheKey).get();
 //        判断库存是否足够
@@ -325,7 +322,13 @@ public class StrategyRepository implements IStrategyRepository {
         }
         surplus = redissonClient.getAtomicLong(cacheKey).decrementAndGet();
         String lockKey = cacheKey + Constants.UNDERLINE + surplus;
-        boolean lock = redissonClient.getBucket(lockKey).trySet(Constants.AWARD_SURPLUS_LOCK);
+        boolean lock = false;
+        if (endTime != null) {
+            long expireMillis = endTime.getTime() - System.currentTimeMillis();
+             lock = redissonClient.getBucket(lockKey).trySet(Constants.AWARD_SURPLUS_LOCK, expireMillis, TimeUnit.MILLISECONDS);
+        } else  {
+            lock = redissonClient.getBucket(lockKey).trySet(Constants.AWARD_SURPLUS_LOCK);
+        }
         if (!lock) {
             log.info("策略奖品库存加锁失败 {}", lockKey);
         }
@@ -416,6 +419,24 @@ public class StrategyRepository implements IStrategyRepository {
 
     }
 
+    @Override
+    public Map<String, Integer> getAwardUnlockCountMap(String[] treeIds) {
+
+        if (treeIds == null || treeIds.length == 0) return null;
+        List<RuleTreeNode> ruleTreeNodes = ruleTreeNodeService.lambdaQuery()
+                .select(RuleTreeNode::getTreeId, RuleTreeNode::getRuleValue)
+                .eq(RuleTreeNode::getTreeNodeKey, "rule_lock")
+                .in(RuleTreeNode::getTreeId, treeIds)
+                .list();
+        Map<String, Integer> map = new HashMap<>();
+        for (RuleTreeNode node : ruleTreeNodes) {
+            String treeId = node.getTreeId();
+            Integer unlockCount = Integer.valueOf(node.getRuleValue());
+            map.put(treeId, unlockCount);
+        }
+        return map;
+    }
+
     private List<RuleTreeNode> getNodes(String treeId) {
         return ruleTreeNodeService.lambdaQuery()
                 .select(RuleTreeNode::getTreeId, RuleTreeNode::getTreeNodeKey, RuleTreeNode::getRuleDesc, RuleTreeNode::getRuleValue)
@@ -439,8 +460,8 @@ public class StrategyRepository implements IStrategyRepository {
 
     private List<Long> getWeightKeys(String ruleValue) {
         List<Long> weightKeys = new ArrayList<>();
-        for (String ruleWeights : ruleValue.split(" ")) {
-            weightKeys.add(Long.parseLong(ruleWeights.split(":")[0]));
+        for (String ruleWeights : ruleValue.split(Constants.SPACE )) {
+            weightKeys.add(Long.parseLong(ruleWeights.split(Constants.COLON)[0]));
         }
         return weightKeys;
     }

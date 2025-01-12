@@ -11,6 +11,17 @@ import java.util.List;
  */
 public interface IRaffleAward {
 
+    /**
+     * 展示奖品接口
+     * @param strategyId 策略id
+     * @return 策略奖品集合
+     */
     List<StrategyAwardEntity> displayAward(Long strategyId);
 
+    /**
+     * 展示奖品接口 通过活动id
+     * @param activityId 活动id
+     * @return 策略奖品集合
+     */
+    List<StrategyAwardEntity> displayAwardByActivityId(Long activityId);
 }

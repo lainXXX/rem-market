@@ -55,7 +55,7 @@ public abstract class AbstractRaffleActivityPartake implements IRaffleActivityPa
         CreatePartakeOrderAggregate createPartakeOrderAggregate = this.doFilterAccount(userId, activityId, currentDate);
 
 //        5.构建用户参与活动消费单
-        UserRaffleConsumeOrderEntity userRaffleConsumeOrderEntity = buildUserConsumeOrder(userId, activityId, activityEntity.getStrategyId(), activityEntity.getActivityName());
+        UserRaffleConsumeOrderEntity userRaffleConsumeOrderEntity = buildUserConsumeOrder(userId, activityId, currentDate);
 
 //        6.用户参与活动消费单放入聚合
         createPartakeOrderAggregate.setUserRaffleConsumeOrderEntity(userRaffleConsumeOrderEntity);
@@ -67,7 +67,7 @@ public abstract class AbstractRaffleActivityPartake implements IRaffleActivityPa
     }
 
 
-    protected abstract UserRaffleConsumeOrderEntity buildUserConsumeOrder(String userId, Long activityId, Long strategyId, String activityName);
+    protected abstract UserRaffleConsumeOrderEntity buildUserConsumeOrder(String userId, Long activityId, Date currentDate);
 
     protected abstract CreatePartakeOrderAggregate doFilterAccount(String userId, Long activityId, Date currentDate);
 

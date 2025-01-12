@@ -4,10 +4,7 @@ import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import top.javarem.domain.activity.model.aggregate.CreatePartakeOrderAggregate;
-import top.javarem.domain.activity.model.entity.ActivityAccountCountEntity;
-import top.javarem.domain.activity.model.entity.ActivityAccountDayCountEntity;
-import top.javarem.domain.activity.model.entity.ActivityAccountMonthCountEntity;
-import top.javarem.domain.activity.model.entity.UserRaffleConsumeOrderEntity;
+import top.javarem.domain.activity.model.entity.*;
 import top.javarem.domain.activity.model.vo.UserRaffleStatus;
 import top.javarem.domain.activity.repository.IActivityRepository;
 import top.javarem.types.enums.ResponseCode;
@@ -31,15 +28,17 @@ public class RaffleActivityPartakeService extends AbstractRaffleActivityPartake 
     private IActivityRepository activityRepository;
 
     @Override
-    protected UserRaffleConsumeOrderEntity buildUserConsumeOrder(String userId, Long activityId, Long strategyId, String activityName) {
+    protected UserRaffleConsumeOrderEntity buildUserConsumeOrder(String userId, Long activityId, Date currentDate) {
+        ActivityEntity activityEntity = activityRepository.getActivityById(activityId);
         return UserRaffleConsumeOrderEntity.builder()
                 .userId(userId)
                 .activityId(activityId)
-                .strategyId(strategyId)
-                .activityName(activityName)
+                .strategyId(activityEntity.getStrategyId())
+                .activityName(activityEntity.getActivityName())
                 .orderId(RandomStringUtils.randomNumeric(12))
-                .orderTime(new Date())
+                .orderTime(currentDate)
                 .status(UserRaffleStatus.CREATE)
+                .endTime(activityEntity.getEndTime())
                 .build();
     }
 

@@ -10,13 +10,13 @@ import java.math.BigDecimal;
 
 /**
  * 
- * @TableName award
+ * @TableName strategy_award
  */
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class StrategyAwardEntity implements Serializable {
+public class StrategyAwardEntity {
 
 
     /**
@@ -53,8 +53,11 @@ public class StrategyAwardEntity implements Serializable {
      * 中奖概率
      */
     private BigDecimal rate;
-
+    /**
+     * 排序
+     */
     private Integer sort;
+    /** 规则模型，rule配置的模型同步到此表，便于使用 */
+    private String models;
 
-    private static final long serialVersionUID = 1L;
 }

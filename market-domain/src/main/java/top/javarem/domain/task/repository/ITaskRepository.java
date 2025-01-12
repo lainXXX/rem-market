@@ -1,6 +1,7 @@
 package top.javarem.domain.task.repository;
 
 import top.javarem.domain.task.model.entity.TaskEntity;
+import top.javarem.types.event.BaseEvent;
 
 import java.util.List;
 
@@ -14,6 +15,8 @@ public interface ITaskRepository {
     List<TaskEntity> queryNoSendMessageTaskList();
 
     void sendMessage(String topic, String message);
+
+    void sendMessage(String topic, BaseEvent.EventMessage<?> message);
 
     void updateTaskCompleted(String messageId);
 

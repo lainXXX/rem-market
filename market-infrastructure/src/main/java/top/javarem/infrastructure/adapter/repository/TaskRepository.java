@@ -8,6 +8,7 @@ import top.javarem.domain.task.repository.ITaskRepository;
 import top.javarem.infrastructure.dao.entity.Task;
 import top.javarem.infrastructure.dao.iService.TaskService;
 import top.javarem.infrastructure.event.EventPublisher;
+import top.javarem.types.event.BaseEvent;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -43,6 +44,10 @@ public class TaskRepository implements ITaskRepository {
         eventPublisher.publish(topic, message);
     }
 
+    public void sendMessage(String topic, BaseEvent.EventMessage<?> message) {
+        eventPublisher.publish(topic, message);
+    }
+
     @Override
     public void updateTaskCompleted(String messageId) {
         taskService.lambdaUpdate()
@@ -57,5 +62,9 @@ public class TaskRepository implements ITaskRepository {
                 .set(Task::getStatus, "failed")
                 .eq(Task::getMessageId, messageId)
                 .update();
+    }
+
+    public void saveTask(Task task) {
+        this.taskService.save(task);
     }
 }

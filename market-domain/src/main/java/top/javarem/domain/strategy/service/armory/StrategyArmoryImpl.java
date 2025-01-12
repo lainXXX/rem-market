@@ -101,10 +101,11 @@ public class StrategyArmoryImpl implements IStrategyArmory, IStrategyArmoryDispa
     }
 
     @Override
-    public Boolean deductAwardCount(Long strategyId, Integer awardId) {
+    public Boolean deductAwardCount(Long strategyId, Integer awardId, Date endTime) {
+
 //        扣减库存
         String key = Constants.RedisKey.STRATEGY_AWARD_COUNT_KEY + strategyId + Constants.UNDERLINE + awardId;
-        return repository.decrAwardCount(key);
+        return repository.decrAwardCount(key, endTime);
     }
 
     private boolean assembleLotteryStrategy(String key, List<StrategyAwardEntity> awardEntities) {

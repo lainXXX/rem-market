@@ -9,6 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.util.ReflectionTestUtils;
 import top.javarem.domain.strategy.model.entity.RaffleAwardEntity;
 import top.javarem.domain.strategy.model.entity.RaffleFactorEntity;
+import top.javarem.domain.strategy.repository.IStrategyRepository;
 import top.javarem.domain.strategy.service.IRaffleStrategy;
 import top.javarem.domain.strategy.service.armory.IStrategyArmory;
 import top.javarem.domain.strategy.service.rule.chain.IStrategyLogicChain;
@@ -39,6 +40,9 @@ public class RaffleStrategyTest {
     private RuleWeightLogicNode ruleWeightLogicNode;
 
     @Resource
+    private IStrategyRepository strategyRepository;
+
+    @Resource
     private DefaultChainFactory defaultChainFactory;
 
     @Resource
@@ -51,7 +55,13 @@ public class RaffleStrategyTest {
         log.info("策略装配测试结果：{}", success);
     }
 
-    @BeforeEach
+    @Test
+    public void test_getAwardUnlockCountMap() {
+        String[] treeIds = {"tree_lock_1", "tree_lock_2", "tree_lock_1", "tree_lock_2", "rule_luck_award", "rule_luck_award"};
+        strategyRepository.getAwardUnlockCountMap(treeIds);
+    }
+
+//    @BeforeEach
     public void setUp() {
         // 通过反射 mock 规则中的值
         ReflectionTestUtils.setField(ruleWeightLogicNode, "userScore", 6100L);

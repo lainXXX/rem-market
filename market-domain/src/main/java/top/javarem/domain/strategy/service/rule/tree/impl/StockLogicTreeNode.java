@@ -9,6 +9,8 @@ import top.javarem.domain.strategy.repository.IStrategyRepository;
 import top.javarem.domain.strategy.service.armory.IStrategyArmoryDispatch;
 import top.javarem.domain.strategy.service.rule.tree.ILogicTreeNode;
 
+import java.util.Date;
+
 import static top.javarem.domain.strategy.service.rule.tree.factory.DefaultTreeFactory.*;
 
 /**
@@ -27,9 +29,9 @@ public class StockLogicTreeNode implements ILogicTreeNode {
     private IStrategyRepository repository;
 
     @Override
-    public TreeActionEntity execute(String userId, Long strategyId, Integer awardId, String ruleValue) {
+    public TreeActionEntity execute(String userId, Long strategyId, Integer awardId, String ruleValue, Date endTime ) {
 
-        Boolean isDeduct = dispatch.deductAwardCount(strategyId, awardId);
+        Boolean isDeduct = dispatch.deductAwardCount(strategyId, awardId, endTime);
         if (!isDeduct) {
             log.error("规则树过滤-扣减库存失败");
             return TreeActionEntity.builder()

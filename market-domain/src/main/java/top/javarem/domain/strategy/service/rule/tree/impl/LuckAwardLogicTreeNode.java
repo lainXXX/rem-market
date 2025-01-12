@@ -7,6 +7,8 @@ import top.javarem.domain.strategy.service.rule.tree.ILogicTreeNode;
 import top.javarem.domain.strategy.service.rule.tree.factory.DefaultTreeFactory;
 import top.javarem.types.common.constants.Constants;
 
+import java.util.Date;
+
 /**
  * @Author: rem
  * @Date: 2024/11/26/14:44
@@ -18,7 +20,7 @@ public class LuckAwardLogicTreeNode implements ILogicTreeNode {
 
 
     @Override
-    public DefaultTreeFactory.TreeActionEntity execute(String userId, Long strategyId, Integer awardId, String ruleValue) {
+    public DefaultTreeFactory.TreeActionEntity execute(String userId, Long strategyId, Integer awardId, String ruleValue, Date endTime) {
 
         String[] split = ruleValue.split(Constants.COLON);
         if (split.length != 2) {

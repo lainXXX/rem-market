@@ -10,6 +10,7 @@ import top.javarem.domain.strategy.service.rule.tree.factory.DefaultTreeFactory;
 import top.javarem.domain.strategy.service.rule.tree.factory.engine.IDecisionTreeEngine;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 
 /**
@@ -98,7 +99,7 @@ public class RuleTreeLogicTest {
         }});
 
         IDecisionTreeEngine engine = treeFactory.openLogicTree(ruleTreeVO);
-        DefaultTreeFactory.LogicAwardVO award = engine.process(100001L, 100);
+        DefaultTreeFactory.LogicAwardVO award = engine.process("rem", 100001L, 100, new Date());
         log.info("award {}", award);
     }
 

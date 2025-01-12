@@ -23,6 +23,7 @@ import top.javarem.types.common.constants.Constants;
 import top.javarem.types.enums.ResponseCode;
 import top.javarem.types.exception.AppException;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
@@ -449,6 +450,27 @@ public class ActivityRepository implements IActivityRepository {
                     return activitySkuEntity;
                 })
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public Integer getActivityTodayPartakeCount(String userId, Long activityId) {
+
+        if (userId == null || activityId == null) {
+            return 0;
+        }
+
+        String today = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+        RaffleActivityAccountDayCount dayCount = accountDayCountService.lambdaQuery()
+                .select(RaffleActivityAccountDayCount::getDayCount, RaffleActivityAccountDayCount::getDayCountSurplus)
+                .eq(RaffleActivityAccountDayCount::getUserId, userId)
+                .eq(RaffleActivityAccountDayCount::getActivityId, activityId)
+                .eq(RaffleActivityAccountDayCount::getDay, today)
+                .one();
+        if (dayCount.getDayCount() == null || dayCount.getDayCountSurplus() == null) {
+            return 0;
+        }
+//        今天参与活动的次数 = 今日总次数 - 今日剩余次数
+        return dayCount.getDayCount() - dayCount.getDayCountSurplus();
     }
 
 }

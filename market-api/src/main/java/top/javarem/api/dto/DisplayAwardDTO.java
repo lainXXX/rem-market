@@ -13,18 +13,40 @@ import java.math.BigDecimal;
 public class DisplayAwardDTO {
 
     private Integer awardId;
-
-    private String Title;
-
+    /**
+     * 奖品标题
+     */
+    private String awardTitle;
+    /**
+     * 奖品副标题
+     */
     private String awardSubtitle;
-
+    /**
+     * 奖品数量
+     */
     private Integer awardCount;
-
+    /**
+     * 奖品剩余数量
+     */
     private Integer awardCountSurplus;
 
     private BigDecimal rate;
 
     private Integer sort;
 
+    /**
+     * 奖品次数规则 - 抽奖N次后解锁，未配置则为空
+     */
+    private Integer unlockCount;
+
+    /**
+     * 奖品是否解锁 - true 已解锁、false 未解锁
+     */
+    private Boolean isUnLocked;
+
+    /**
+     * 等待解锁次数 - 规定的抽奖N次解锁减去用户已经抽奖次数
+     */
+    private Integer waitUnlockCount;
 
 }

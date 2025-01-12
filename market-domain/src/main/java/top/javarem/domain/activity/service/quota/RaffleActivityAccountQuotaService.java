@@ -18,9 +18,9 @@ import java.time.LocalDateTime;
  * @Description:抽奖活动服务
  */
 @Service
-public class RaffleActivityActivityService extends AbstractRaffleActivityActivityService implements IRaffleActivitySkuStockService {
+public class RaffleActivityAccountQuotaService extends AbstractRaffleActivityAccountQuotaService implements IRaffleActivitySkuStockService {
 
-    public RaffleActivityActivityService(IActivityRepository repository, DefaultActivityChainFactory factory) {
+    public RaffleActivityAccountQuotaService(IActivityRepository repository, DefaultActivityChainFactory factory) {
         super(repository, factory);
     }
 
@@ -80,5 +80,12 @@ public class RaffleActivityActivityService extends AbstractRaffleActivityActivit
     @Override
     public void clearSkuStockDecrQueue() {
         repository.clearSkuStockDecrQueue();
+    }
+
+    @Override
+    public Integer getActivityTodayPartakeCount(String userId, Long activityId) {
+
+        return repository.getActivityTodayPartakeCount(userId, activityId);
+
     }
 }
