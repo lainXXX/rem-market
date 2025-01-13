@@ -148,7 +148,7 @@ public class ActivityRepository implements IActivityRepository {
         raffleActivityOrder.setCreateTime(LocalDateTime.now());
         raffleActivityOrder.setUpdateTime(LocalDateTime.now());
 
-//        创建账户对象
+//        创建账户对象 - 总额度
         RaffleActivityAccount raffleActivityAccount = new RaffleActivityAccount();
         raffleActivityAccount.setUserId(createQuotaOrderAggregate.getUserId());
         raffleActivityAccount.setActivityId(createQuotaOrderAggregate.getActivityId());
@@ -158,17 +158,39 @@ public class ActivityRepository implements IActivityRepository {
         raffleActivityAccount.setDayCountSurplus(createQuotaOrderAggregate.getDayCount());
         raffleActivityAccount.setMonthCount(createQuotaOrderAggregate.getMonthCount());
         raffleActivityAccount.setMonthCountSurplus(createQuotaOrderAggregate.getMonthCount());
-        raffleActivityAccount.setCreateTime(new Date());
         raffleActivityAccount.setUpdateTime(new Date());
 
+//        创建账户对象 - 月额度
+        RaffleActivityAccountMonthCount raffleActivityAccountMonthCount = new RaffleActivityAccountMonthCount();
+        raffleActivityAccountMonthCount.setUserId(createQuotaOrderAggregate.getUserId());
+        raffleActivityAccountMonthCount.setActivityId(createQuotaOrderAggregate.getActivityId());
+        raffleActivityAccountMonthCount.setMonth(raffleActivityAccountMonthCount.currentMonth());
+        raffleActivityAccountMonthCount.setMonthCount(createQuotaOrderAggregate.getMonthCount());
+        raffleActivityAccountMonthCount.setMonthCountSurplus(createQuotaOrderAggregate.getMonthCount());
+        raffleActivityAccountMonthCount.setUpdateTime(new Date());
+
+//        创建账户对象 - 日额度
+        RaffleActivityAccountDayCount raffleActivityAccountDayCount = new RaffleActivityAccountDayCount();
+        raffleActivityAccountDayCount.setUserId(createQuotaOrderAggregate.getUserId());
+        raffleActivityAccountDayCount.setActivityId(createQuotaOrderAggregate.getActivityId());
+        raffleActivityAccountDayCount.setDay(raffleActivityAccountDayCount.today());
+        raffleActivityAccountDayCount.setDayCount(createQuotaOrderAggregate.getDayCount());
+        raffleActivityAccountDayCount.setDayCountSurplus(createQuotaOrderAggregate.getDayCount());
+        raffleActivityAccountDayCount.setUpdateTime(new Date());
 //        将订单写入
         transactionTemplate.execute(status -> {
             try {
+//                存入订单
                 activityOrderService.save(raffleActivityOrder);
+//                更新总账户 如果账户不存在则创建账户
                 int result = activityAccountService.updateAccount(raffleActivityAccount);
                 if (result == 0) {
                     activityAccountService.save(raffleActivityAccount);
                 }
+//                更新月账户
+                accountMonthCountService.addAccountQuota(raffleActivityAccountMonthCount);
+//                更新日账户
+                accountDayCountService.addAccountQuota(raffleActivityAccountDayCount);
                 return 1;
             } catch (DuplicateKeyException e) {
                 status.setRollbackOnly();

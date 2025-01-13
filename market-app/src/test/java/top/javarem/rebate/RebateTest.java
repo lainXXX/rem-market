@@ -10,6 +10,7 @@ import top.javarem.domain.rebate.service.IBehaviorRebateService;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.concurrent.CountDownLatch;
 
 /**
  * @Author: rem
@@ -23,16 +24,18 @@ public class RebateTest {
     private IBehaviorRebateService behaviorRebateService;
 
     @Test
-    public void test_createOrder() {
+    public void test_createOrder() throws InterruptedException {
         BehaviorEntity behaviorEntity = new BehaviorEntity();
         behaviorEntity.setUserId("rem");
         behaviorEntity.setBehaviorType(BehaviorTypeVO.SIGN);
         // 重复的 OutBusinessNo 会报错唯一索引冲突，这也是保证幂等的手段，确保不会多记账
-        behaviorEntity.setOutBusinessNo("20250112");
+        behaviorEntity.setOutBusinessNo("20250109");
 
         List<String> orderIds = behaviorRebateService.createOrder(behaviorEntity);
         log.info("请求参数：{}", JSON.toJSONString(behaviorEntity));
         log.info("测试结果：{}", JSON.toJSONString(orderIds));
+
     }
+
 
 }

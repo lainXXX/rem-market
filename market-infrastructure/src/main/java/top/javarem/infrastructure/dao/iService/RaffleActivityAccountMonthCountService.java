@@ -11,4 +11,6 @@ import top.javarem.infrastructure.dao.entity.RaffleActivityAccountMonthCount;
 */
 public interface RaffleActivityAccountMonthCountService extends IService<RaffleActivityAccountMonthCount> {
 
+    void addAccountQuota(RaffleActivityAccountMonthCount raffleActivityAccountMonthCount);
+
 }

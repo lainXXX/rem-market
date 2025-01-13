@@ -1,6 +1,7 @@
 package top.javarem.infrastructure.dao.entity;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import com.baomidou.mybatisplus.annotation.TableField;
@@ -21,6 +22,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class RaffleActivityAccountDayCount implements Serializable {
+
+    private final SimpleDateFormat dayFormat = new SimpleDateFormat("yyyy-MM-dd");
+
     /**
      * 自增id
      */
@@ -64,4 +68,9 @@ public class RaffleActivityAccountDayCount implements Serializable {
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
+
+    public String today() {
+        return dayFormat.format(new Date());
+    }
+
 }

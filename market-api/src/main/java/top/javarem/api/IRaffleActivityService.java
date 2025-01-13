@@ -20,4 +20,11 @@ public interface IRaffleActivityService {
 
     Response<ActivityDrawResponseDTO> draw(ActivityDrawRequestDTO request);
 
+    /**
+     * 日历签到返利接口
+     * @param userId 用户ID
+     * @return
+     */
+    Response<Boolean> calenderSignRebate(String userId);
+
 }

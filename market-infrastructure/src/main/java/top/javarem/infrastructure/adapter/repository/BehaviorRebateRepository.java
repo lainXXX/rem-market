@@ -96,6 +96,21 @@ public class BehaviorRebateRepository implements IBehaviorRebateRepository {
                         task.setStatus(taskEntity.getStatus().getCode());
                         taskRepository.saveTask(task);
                     }
+
+                //        同步消息到MQ
+                for (BehaviorRebateAggregate behaviorRebateAggregate : behaviorRebateAggregates) {
+                    TaskEntity taskEntity = behaviorRebateAggregate.getTaskEntity();
+                    try {
+                        // 发送消息【在事务外执行，如果失败还有任务补偿】
+                        taskRepository.sendMessage(taskEntity.getTopic(), taskEntity.getMessage());
+                        // 更新数据库记录，task 任务表
+                        taskRepository.updateTaskCompleted(taskEntity.getMessageId());
+                    } catch (Exception e) {
+                        log.error("写入返利记录，发送MQ消息失败 userId: {} topic: {}", userId, taskEntity.getTopic());
+                        taskRepository.updateTaskFailed(taskEntity.getMessageId());
+                    }
+                }
+
                 return 1;
             } catch (DuplicateKeyException e) {
                 status.setRollbackOnly();
@@ -103,20 +118,6 @@ public class BehaviorRebateRepository implements IBehaviorRebateRepository {
                 throw new AppException(ResponseCode.INDEX_DUP.getCode(), e);
             }
         });
-
-//        同步消息到MQ
-        for (BehaviorRebateAggregate behaviorRebateAggregate : behaviorRebateAggregates) {
-            TaskEntity taskEntity = behaviorRebateAggregate.getTaskEntity();
-            try {
-                // 发送消息【在事务外执行，如果失败还有任务补偿】
-                taskRepository.sendMessage(taskEntity.getTopic(), taskEntity.getMessage());
-                // 更新数据库记录，task 任务表
-                taskRepository.updateTaskCompleted(taskEntity.getMessageId());
-            } catch (Exception e) {
-                log.error("写入返利记录，发送MQ消息失败 userId: {} topic: {}", userId, taskEntity.getTopic());
-                taskRepository.updateTaskFailed(taskEntity.getMessageId());
-            }
-        }
 
     }
 

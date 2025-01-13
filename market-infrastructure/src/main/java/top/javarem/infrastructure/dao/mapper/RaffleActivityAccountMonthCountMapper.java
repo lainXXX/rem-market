@@ -15,4 +15,5 @@ import top.javarem.infrastructure.dao.entity.RaffleActivityAccountMonthCount;
 public interface RaffleActivityAccountMonthCountMapper extends BaseMapper<RaffleActivityAccountMonthCount> {
 
 
+    void addAccountQuota(RaffleActivityAccountMonthCount raffleActivityAccountMonthCount);
 }

@@ -15,6 +15,9 @@ import top.javarem.domain.activity.service.armory.IActivityArmory;
 import top.javarem.domain.award.model.entity.UserAwardRecordEntity;
 import top.javarem.domain.award.model.vo.AwardStateVO;
 import top.javarem.domain.award.service.IAwardService;
+import top.javarem.domain.rebate.model.entity.BehaviorEntity;
+import top.javarem.domain.rebate.model.vo.BehaviorTypeVO;
+import top.javarem.domain.rebate.service.IBehaviorRebateService;
 import top.javarem.domain.strategy.model.entity.RaffleAwardEntity;
 import top.javarem.domain.strategy.model.entity.RaffleFactorEntity;
 import top.javarem.domain.strategy.service.IRaffleStrategy;
@@ -23,7 +26,9 @@ import top.javarem.types.common.constants.Constants;
 import top.javarem.types.enums.ResponseCode;
 import top.javarem.types.exception.AppException;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @Author: rem
@@ -36,6 +41,8 @@ import java.util.Date;
 @CrossOrigin("*")
 public class RaffleActivityController implements IRaffleActivityService {
 
+    private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
+
     @Autowired
     private IRaffleActivityPartakeService partakeService;
     @Autowired
@@ -46,6 +53,8 @@ public class RaffleActivityController implements IRaffleActivityService {
     private IRaffleStrategy strategy;
     @Autowired
     private IAwardService awardService;
+    @Autowired
+    private IBehaviorRebateService rebateService;
 
     @GetMapping("/armory")
     @Override
@@ -115,6 +124,36 @@ public class RaffleActivityController implements IRaffleActivityService {
             log.error("活动抽奖失败 userId:{} activityId:{}", request.getUserId(), request.getActivityId(), e);
             return Response.error();
         }
+    }
+
+    @PostMapping("/calendar_sign_rebate")
+    @Override
+    public Response<Boolean> calenderSignRebate(String userId) {
+
+        try {
+            log.info("日历签到返利 用户ID: {}", userId);
+            BehaviorEntity behaviorEntity = new BehaviorEntity();
+            behaviorEntity.setUserId(userId);
+            behaviorEntity.setBehaviorType(BehaviorTypeVO.SIGN);
+            behaviorEntity.setOutBusinessNo(dateFormat.format(new Date()));
+            List<String> orderIds = rebateService.createOrder(behaviorEntity);
+            log.info("签到返利完成 userId:{} orderIds:{}", userId, orderIds);
+            return Response.success(true);
+        } catch (AppException e) {
+            log.error("日历签到返利异常 userId:{} ", userId, e);
+            return Response.<Boolean>builder()
+                    .code(e.getCode())
+                    .info(e.getInfo())
+                    .build();
+        } catch (Exception e) {
+            log.error("日历签到返利失败 userId:{}", userId);
+            return Response.<Boolean>builder()
+                    .code(ResponseCode.UN_ERROR.getCode())
+                    .info(ResponseCode.UN_ERROR.getInfo())
+                    .data(false)
+                    .build();
+        }
+
     }
 
 }

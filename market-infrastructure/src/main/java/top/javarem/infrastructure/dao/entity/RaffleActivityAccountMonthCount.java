@@ -2,6 +2,7 @@ package top.javarem.infrastructure.dao.entity;
 
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import com.baomidou.mybatisplus.annotation.TableField;
@@ -22,6 +23,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class RaffleActivityAccountMonthCount implements Serializable {
+
+    private final SimpleDateFormat dateFormatMonth = new SimpleDateFormat("yyyy-MM");
+
     /**
      * 自增id
      */
@@ -65,4 +69,9 @@ public class RaffleActivityAccountMonthCount implements Serializable {
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
+
+    public String currentMonth() {
+        return dateFormatMonth.format(new Date());
+    }
+
 }

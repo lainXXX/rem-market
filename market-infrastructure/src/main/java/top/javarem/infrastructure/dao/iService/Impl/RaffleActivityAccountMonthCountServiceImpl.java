@@ -2,6 +2,7 @@ package top.javarem.infrastructure.dao.iService.Impl;
 
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import top.javarem.infrastructure.dao.entity.RaffleActivityAccountMonthCount;
 import top.javarem.infrastructure.dao.iService.RaffleActivityAccountMonthCountService;
@@ -16,4 +17,11 @@ import top.javarem.infrastructure.dao.mapper.RaffleActivityAccountMonthCountMapp
 public class RaffleActivityAccountMonthCountServiceImpl extends ServiceImpl<RaffleActivityAccountMonthCountMapper, RaffleActivityAccountMonthCount>
 implements RaffleActivityAccountMonthCountService {
 
+    @Autowired
+    private RaffleActivityAccountMonthCountMapper mapper;
+
+    @Override
+    public void addAccountQuota(RaffleActivityAccountMonthCount raffleActivityAccountMonthCount) {
+        mapper.addAccountQuota(raffleActivityAccountMonthCount);
+    }
 }

@@ -15,4 +15,5 @@ import top.javarem.infrastructure.dao.entity.RaffleActivityAccountDayCount;
 public interface RaffleActivityAccountDayCountMapper extends BaseMapper<RaffleActivityAccountDayCount> {
 
 
+    void addAccountQuota(RaffleActivityAccountDayCount raffleActivityAccountDayCount);
 }
