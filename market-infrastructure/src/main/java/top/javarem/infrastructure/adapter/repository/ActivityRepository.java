@@ -495,4 +495,25 @@ public class ActivityRepository implements IActivityRepository {
         return dayCount.getDayCount() - dayCount.getDayCountSurplus();
     }
 
+    @Override
+    public Long getActivityIdByStrategyId(Long strategyId) {
+        return activityService.lambdaQuery()
+                .select(RaffleActivity::getActivityId)
+                .eq(RaffleActivity::getStrategyId, strategyId)
+                .one()
+                .getActivityId();
+    }
+
+    @Override
+    public Integer queryRaffleActivityAccountDayPartakeCount(Long activityId, String userId) {
+
+        RaffleActivityAccount raffleActivityAccount = activityAccountService.lambdaQuery()
+                .select(RaffleActivityAccount::getTotalCount, RaffleActivityAccount::getTotalCountSurplus)
+                .eq(RaffleActivityAccount::getActivityId, activityId)
+                .eq(RaffleActivityAccount::getUserId, userId)
+                .one();
+        return raffleActivityAccount.getTotalCount() - raffleActivityAccount.getTotalCountSurplus();
+
+    }
+
 }

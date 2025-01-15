@@ -1,6 +1,7 @@
 package top.javarem.infrastructure.adapter.repository;
 
 import com.google.gson.Gson;
+import io.jsonwebtoken.lang.Collections;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DuplicateKeyException;
@@ -25,7 +26,6 @@ import top.javarem.types.enums.ResponseCode;
 import top.javarem.types.exception.AppException;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -83,6 +83,7 @@ public class BehaviorRebateRepository implements IBehaviorRebateRepository {
                         userBehaviorRebateOrder.setRebateDesc(behaviorRebateOrderEntity.getRebateDesc());
                         userBehaviorRebateOrder.setRebateType(behaviorRebateOrderEntity.getRebateType());
                         userBehaviorRebateOrder.setRebateConfig(behaviorRebateOrderEntity.getRebateConfig());
+                        userBehaviorRebateOrder.setOutBusinessNo(behaviorRebateOrderEntity.getOutBusinessNo());
                         userBehaviorRebateOrder.setBizId(behaviorRebateOrderEntity.getBizId());
                         userBehaviorRebateOrderService.save(userBehaviorRebateOrder);
 
@@ -119,6 +120,20 @@ public class BehaviorRebateRepository implements IBehaviorRebateRepository {
             }
         });
 
+    }
+
+    @Override
+    public Boolean isCalenderSignRebate(String userId, String outBusinessNo) {
+
+        List<UserBehaviorRebateOrder> userBehaviorRebateOrders = userBehaviorRebateOrderService.lambdaQuery()
+                .eq(UserBehaviorRebateOrder::getUserId, userId)
+                .eq(UserBehaviorRebateOrder::getOutBusinessNo, outBusinessNo)
+                .list();
+        if (Collections.isEmpty(userBehaviorRebateOrders)) {
+            return false;
+        }
+
+        return true;
     }
 
 }

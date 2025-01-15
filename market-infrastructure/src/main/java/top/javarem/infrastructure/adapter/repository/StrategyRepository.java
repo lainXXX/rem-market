@@ -1,18 +1,18 @@
 package top.javarem.infrastructure.adapter.repository;
 
 import lombok.extern.slf4j.Slf4j;
-import org.redisson.api.RBlockingQueue;
-import org.redisson.api.RDelayedQueue;
-import org.redisson.api.RScoredSortedSet;
-import org.redisson.api.RedissonClient;
+import org.redisson.api.*;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.CollectionUtils;
+import top.javarem.domain.activity.repository.IActivityRepository;
+import top.javarem.domain.activity.service.IRaffleActivityAccountQuotaService;
 import top.javarem.domain.strategy.model.entity.StrategyAwardEntity;
 import top.javarem.domain.strategy.model.entity.RuleEntity;
 import top.javarem.domain.strategy.model.entity.StrategyEntity;
 import top.javarem.domain.strategy.model.vo.*;
 import top.javarem.domain.strategy.repository.IStrategyRepository;
+import top.javarem.domain.strategy.service.rule.chain.factory.DefaultChainFactory;
 import top.javarem.infrastructure.dao.iService.*;
 import top.javarem.infrastructure.dao.entity.*;
 import top.javarem.types.common.constants.Constants;
@@ -32,6 +32,10 @@ public class StrategyRepository implements IStrategyRepository {
 
     private final IStrategyAwardService strategyAwardService;
 
+    private final IActivityRepository activityRepository;
+
+    private final RaffleActivityAccountService raffleActivityAccountService;
+
     private final IRuleService ruleService;
 
     private final IUserService userService;
@@ -48,9 +52,11 @@ public class StrategyRepository implements IStrategyRepository {
 
     private final RaffleActivityAccountDayCountService raffleActivityAccountDayCountService;
 
-    public StrategyRepository(RedissonClient redissonClient, IStrategyAwardService strategyAwardService, IRuleService ruleService, IUserService userService, IStrategyService strategyService, IRuleTreeService ruleTreeService, IRuleTreeNodeService ruleTreeNodeService, IRuleTreeNodeLineService ruleTreeNodeLineService, RaffleActivityService raffleActivityService, RaffleActivityAccountDayCountService raffleActivityAccountDayCountService) {
+    public StrategyRepository(RedissonClient redissonClient, IStrategyAwardService strategyAwardService, IActivityRepository activityRepository, IRaffleActivityAccountQuotaService affleActivityAccountQuotaService, IRaffleActivityAccountQuotaService raffleActivityAccountQuotaService, RaffleActivityAccountService raffleActivityAccountService, IRuleService ruleService, IUserService userService, IStrategyService strategyService, IRuleTreeService ruleTreeService, IRuleTreeNodeService ruleTreeNodeService, IRuleTreeNodeLineService ruleTreeNodeLineService, RaffleActivityService raffleActivityService, RaffleActivityAccountDayCountService raffleActivityAccountDayCountService) {
         this.redissonClient = redissonClient;
         this.strategyAwardService = strategyAwardService;
+        this.activityRepository = activityRepository;
+        this.raffleActivityAccountService = raffleActivityAccountService;
         this.ruleService = ruleService;
         this.userService = userService;
         this.strategyService = strategyService;
@@ -325,8 +331,8 @@ public class StrategyRepository implements IStrategyRepository {
         boolean lock = false;
         if (endTime != null) {
             long expireMillis = endTime.getTime() - System.currentTimeMillis();
-             lock = redissonClient.getBucket(lockKey).trySet(Constants.AWARD_SURPLUS_LOCK, expireMillis, TimeUnit.MILLISECONDS);
-        } else  {
+            lock = redissonClient.getBucket(lockKey).trySet(Constants.AWARD_SURPLUS_LOCK, expireMillis, TimeUnit.MILLISECONDS);
+        } else {
             lock = redissonClient.getBucket(lockKey).trySet(Constants.AWARD_SURPLUS_LOCK);
         }
         if (!lock) {
@@ -372,6 +378,7 @@ public class StrategyRepository implements IStrategyRepository {
 
     /**
      * 通过活动id获取策略id
+     *
      * @param activityId
      * @return
      */
@@ -437,6 +444,70 @@ public class StrategyRepository implements IStrategyRepository {
         return map;
     }
 
+    @Override
+    public Integer getUserScore(String userId, Long strategyId) {
+        Long activityId = activityRepository.getActivityIdByStrategyId(strategyId);
+        RaffleActivityAccount raffleActivityAccount = raffleActivityAccountService.lambdaQuery()
+                .select(RaffleActivityAccount::getTotalCount, RaffleActivityAccount::getTotalCountSurplus)
+                .eq(RaffleActivityAccount::getActivityId, activityId)
+                .eq(RaffleActivityAccount::getUserId, userId)
+                .one();
+        return (raffleActivityAccount.getTotalCount() - raffleActivityAccount.getTotalCountSurplus());
+
+    }
+
+    @Override
+    public List<RuleWeightVO> queryRuleWeight(Long strategyId) {
+
+//        优先从缓存获取
+        String cacheKey = Constants.RedisKey.STRATEGY_RULE_WEIGHT_KEY + strategyId;
+        RBucket<List<RuleWeightVO>> bucket = redissonClient.<List<RuleWeightVO>>getBucket(cacheKey);
+        List<RuleWeightVO> ruleWeightVOS = bucket.get();
+        if (!CollectionUtils.isEmpty(ruleWeightVOS)) return ruleWeightVOS;
+        ruleWeightVOS = new ArrayList<>();
+//        1.查询权重规则配置
+        String ruleValue = ruleService.lambdaQuery()
+                .select(Rule::getRuleValue)
+                .eq(Rule::getStrategyId, strategyId)
+                .eq(Rule::getRuleModel, DefaultChainFactory.LogicModel.WEIGHT.getCode())
+                .one().getRuleValue();
+//        2.借助实体对象转换规则
+        RuleEntity ruleEntity = new RuleEntity();
+        ruleEntity.setRuleValue(ruleValue);
+        Map<String, List<Integer>> ruleWeightValues = ruleEntity.getRuleWeightValues();
+//        3.查询出策略的全部奖品 再分别装入对应的权重规则中
+        List<StrategyAward> strategyAwards = strategyAwardService.getAwardListByStrategyId(strategyId);
+//        转化为Map集合
+        Map<Integer, StrategyAward> strategyAwardMap = strategyAwards
+                .stream()
+                .collect(Collectors.toMap(StrategyAward::getAwardId, award -> award));
+//        便利valueKey 每个权重对应的奖品集合分别装入
+        Set<String> ruleValueKeys = ruleWeightValues.keySet();
+        for (String weight : ruleValueKeys) {
+            List<Integer> ruleValues = ruleWeightValues.get(weight);
+//            每个权重都对应多个奖品 所以需要把多个奖品装入权重
+            List<RuleWeightVO.Award> awards = new ArrayList<>();
+            for (Integer key : ruleValues) {
+                StrategyAward strategyAward = strategyAwardMap.get(key);
+                RuleWeightVO.Award award = RuleWeightVO.Award.builder()
+                        .awardTitle(strategyAward.getAwardTitle())
+                        .awardId(strategyAward.getAwardId())
+                        .build();
+                awards.add(award);
+            }
+            ruleWeightVOS.add(RuleWeightVO.builder()
+                    .ruleValue(ruleValue)
+                    .weight(Integer.valueOf(weight))
+                    .awardIds(ruleValues)
+                    .awardList(awards)
+                    .build()
+                    );
+        }
+        // 设置缓存 - 实际场景中，这类数据，可以在活动下架的时候统一清空缓存。
+        bucket.set(ruleWeightVOS);
+        return ruleWeightVOS;
+    }
+
     private List<RuleTreeNode> getNodes(String treeId) {
         return ruleTreeNodeService.lambdaQuery()
                 .select(RuleTreeNode::getTreeId, RuleTreeNode::getTreeNodeKey, RuleTreeNode::getRuleDesc, RuleTreeNode::getRuleValue)
@@ -460,7 +531,7 @@ public class StrategyRepository implements IStrategyRepository {
 
     private List<Long> getWeightKeys(String ruleValue) {
         List<Long> weightKeys = new ArrayList<>();
-        for (String ruleWeights : ruleValue.split(Constants.SPACE )) {
+        for (String ruleWeights : ruleValue.split(Constants.SPACE)) {
             weightKeys.add(Long.parseLong(ruleWeights.split(Constants.COLON)[0]));
         }
         return weightKeys;

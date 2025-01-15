@@ -1,31 +1,20 @@
-package top.javarem.domain.activity.model.entity;
-
+package top.javarem.api.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 /**
- * 
- * @TableName raffle_activity_account
+ * @Author: rem
+ * @Date: 2025/01/14/18:35
+ * @Description:
  */
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ActivityAccountCountEntity {
-
-    /**
-     * 用户id
-     */
-    private String userId;
-
-    /**
-     * 活动id
-     */
-    private Long activityId;
+public class UserActivityAccountResponseDTO {
 
     /**
      * 总次数
@@ -33,7 +22,7 @@ public class ActivityAccountCountEntity {
     private Integer totalCount;
 
     /**
-     * 总剩余次数
+     * 总次数-剩余
      */
     private Integer totalCountSurplus;
 
@@ -43,10 +32,9 @@ public class ActivityAccountCountEntity {
     private Integer dayCount;
 
     /**
-     * 日剩余次数
+     * 日次数-剩余
      */
     private Integer dayCountSurplus;
-
 
     /**
      * 月次数
@@ -54,7 +42,7 @@ public class ActivityAccountCountEntity {
     private Integer monthCount;
 
     /**
-     * 月剩余次数
+     * 月次数-剩余
      */
     private Integer monthCountSurplus;
 

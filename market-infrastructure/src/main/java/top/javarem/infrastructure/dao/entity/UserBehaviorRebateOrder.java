@@ -53,6 +53,11 @@ public class UserBehaviorRebateOrder implements Serializable {
     private String rebateConfig;
 
     /**
+     * 业务防重ID-外部透传
+     */
+    private String outBusinessNo;
+
+    /**
      * 业务ID-  拼接的唯一值
      */
     private String bizId;

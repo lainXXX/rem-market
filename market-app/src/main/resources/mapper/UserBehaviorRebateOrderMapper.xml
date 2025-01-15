@@ -12,15 +12,10 @@
             <result property="rebateDesc" column="rebate_desc" jdbcType="VARCHAR"/>
             <result property="rebateType" column="rebate_type" jdbcType="VARCHAR"/>
             <result property="rebateConfig" column="rebate_config" jdbcType="VARCHAR"/>
+            <result property="outBusinessNo" column="out_business_no" jdbcType="VARCHAR"/>
             <result property="bizId" column="biz_id" jdbcType="VARCHAR"/>
             <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
             <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
     </resultMap>
 
-    <sql id="Base_Column_List">
-        id,user_id,order_id,
-        behavior_type,rebate_desc,rebate_type,
-        rebate_config,biz_id,create_time,
-        update_time
-    </sql>
 </mapper>

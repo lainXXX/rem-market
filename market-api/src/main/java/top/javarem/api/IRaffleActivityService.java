@@ -2,6 +2,8 @@ package top.javarem.api;
 
 import top.javarem.api.dto.ActivityDrawRequestDTO;
 import top.javarem.api.dto.ActivityDrawResponseDTO;
+import top.javarem.api.dto.UserActivityAccountRequestDTO;
+import top.javarem.api.dto.UserActivityAccountResponseDTO;
 import top.javarem.api.response.Response;
 
 /**
@@ -26,5 +28,19 @@ public interface IRaffleActivityService {
      * @return
      */
     Response<Boolean> calenderSignRebate(String userId);
+
+    /**
+     * 查询用户是否签到
+     * @param userId 用户Id
+     * @return true or false
+     */
+    Response<Boolean> isCalenderSignRebate(String userId);
+
+    /**
+     * 查询用户账户某活动的参与次数
+     * @param request
+     * @return
+     */
+    Response<UserActivityAccountResponseDTO> queryUserActivityAccount(UserActivityAccountRequestDTO request);
 
 }

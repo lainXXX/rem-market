@@ -1,5 +1,6 @@
 package top.javarem.domain.activity.service;
 
+import top.javarem.domain.activity.model.entity.ActivityAccountCountEntity;
 import top.javarem.domain.activity.model.entity.SkuRechargeEntity;
 
 /**
@@ -24,4 +25,6 @@ public interface IRaffleActivityAccountQuotaService {
      * @return
      */
     Integer getActivityTodayPartakeCount(String userId, Long activityId);
+
+    ActivityAccountCountEntity getActivityAccountCount(String userId, Long activityId);
 }

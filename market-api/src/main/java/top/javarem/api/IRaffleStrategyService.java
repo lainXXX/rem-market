@@ -1,10 +1,7 @@
 package top.javarem.api;
 
 import org.springframework.web.bind.annotation.RequestBody;
-import top.javarem.api.dto.DisplayAwardDTO;
-import top.javarem.api.dto.DisplayAwardRequestDTO;
-import top.javarem.api.dto.RaffleAwardDTO;
-import top.javarem.api.dto.RaffleStrategyRequestDTO;
+import top.javarem.api.dto.*;
 import top.javarem.api.response.Response;
 
 import java.util.List;
@@ -24,11 +21,21 @@ public interface IRaffleStrategyService {
     Response<Boolean> assembleStrategy(Long strategyId);
 
     /**
+     * 查询抽奖策略权重规则配置（抽奖次数）
+     *
+     * @param request
+     * @return
+     */
+    Response<List<RaffleStrategyRuleWeightResponseDTO>> queryRaffleStrategyRuleWeight(RaffleStrategyRuleWeightRequestDTO request);
+
+    /**
      * 展示奖品
      * @param request
      * @return
      */
     Response<List<DisplayAwardDTO>> displayAwardList(DisplayAwardRequestDTO request);
+
+    
 
     /**
      * 执行抽奖

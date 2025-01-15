@@ -23,12 +23,12 @@ public class RuleWeightLogicNode extends AbstractStrategyLogicChain {
     @Autowired
     private IStrategyArmoryDispatch dispatch;
 
-    public Long userScore = 4500L;
+//    public Long userScore = 4500L;
 
     @Override
     public DefaultChainFactory.LogicAwardVO executeStrategy(String userId, Long strategyId) {
-
-        String minMatchWeightKey = repository.getMinMatchScore(strategyId, this.getRuleModel(), userScore);
+        Integer userScore = repository.getUserScore(userId, strategyId);
+        String minMatchWeightKey = repository.getMinMatchScore(strategyId, this.getRuleModel(), Long.valueOf(userScore));
         if (minMatchWeightKey != null) {
             Integer randomAwardId = dispatch.getRandomAwardId(strategyId, minMatchWeightKey);
             log.info("抽奖责任链-权重规则接管执行");

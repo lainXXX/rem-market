@@ -53,6 +53,7 @@ public class BehaviorRebateService implements IBehaviorRebateService {
                     .rebateDesc(dailyBehaviorRebateVO.getRebateDesc())
                     .rebateType(dailyBehaviorRebateVO.getRebateType())
                     .rebateConfig(dailyBehaviorRebateVO.getRebateConfig())
+                    .outBusinessNo(behavior.getOutBusinessNo())
                     .bizId(bizId)
                     .build();
             orderIds.add(bizId);
@@ -84,6 +85,12 @@ public class BehaviorRebateService implements IBehaviorRebateService {
 
         rebateRepository.saveUserRebateRecord(behavior.getUserId(), behaviorRebateAggregates);
         return orderIds;
+    }
+
+    @Override
+    public Boolean isCalenderSignRebate(String userId, String outBusinessNo) {
+
+        return rebateRepository.isCalenderSignRebate(userId, outBusinessNo);
     }
 
 }

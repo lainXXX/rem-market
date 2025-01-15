@@ -46,6 +46,7 @@ public class Constants {
         public static final String ACTIVITY_SKU_STOCK_KEY = "rem_market_activity_sku_stock_key_";
         public static final String ACTIVITY_SKU_STOCK_DECR_QUEUE_KEY = "rem_market_activity_sku_stock_decr_queue_key_";
         public static final String ACTIVITY_ACCOUNT_KEY = "rem_market_activity_account_key_";
+        public static final String STRATEGY_RULE_WEIGHT_KEY = "rem_market_strategy_rule_weight_key_";
     }
 
     @Getter

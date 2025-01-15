@@ -6,6 +6,7 @@ import top.javarem.domain.strategy.model.entity.RuleEntity;
 import top.javarem.domain.strategy.model.entity.StrategyEntity;
 import top.javarem.domain.strategy.model.vo.AwardStockDecrQueueVO;
 import top.javarem.domain.strategy.model.vo.RuleTreeVO;
+import top.javarem.domain.strategy.model.vo.RuleWeightVO;
 import top.javarem.domain.strategy.model.vo.StrategyAwardRuleModelsVO;
 
 import java.util.Date;
@@ -57,4 +58,8 @@ public interface IStrategyRepository {
     Integer queryUserTodayRaffleCount(String userId, Long strategyId, String today);
 
     Map<String, Integer> getAwardUnlockCountMap(String[] treeIds);
+
+    Integer getUserScore(String userId, Long strategyId);
+
+    List<RuleWeightVO> queryRuleWeight(Long strategyId);
 }

@@ -1,5 +1,6 @@
 package top.javarem.trigger.http;
 
+import com.google.gson.Gson;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,11 +8,15 @@ import org.springframework.web.bind.annotation.*;
 import top.javarem.api.IRaffleActivityService;
 import top.javarem.api.dto.ActivityDrawRequestDTO;
 import top.javarem.api.dto.ActivityDrawResponseDTO;
+import top.javarem.api.dto.UserActivityAccountRequestDTO;
+import top.javarem.api.dto.UserActivityAccountResponseDTO;
 import top.javarem.api.response.Response;
+import top.javarem.domain.activity.model.entity.ActivityAccountCountEntity;
 import top.javarem.domain.activity.model.entity.ActivityPartakeEntity;
 import top.javarem.domain.activity.model.entity.UserRaffleConsumeOrderEntity;
 import top.javarem.domain.activity.service.IRaffleActivityPartakeService;
 import top.javarem.domain.activity.service.armory.IActivityArmory;
+import top.javarem.domain.activity.service.quota.RaffleActivityAccountQuotaService;
 import top.javarem.domain.award.model.entity.UserAwardRecordEntity;
 import top.javarem.domain.award.model.vo.AwardStateVO;
 import top.javarem.domain.award.service.IAwardService;
@@ -55,6 +60,8 @@ public class RaffleActivityController implements IRaffleActivityService {
     private IAwardService awardService;
     @Autowired
     private IBehaviorRebateService rebateService;
+    @Autowired
+    private RaffleActivityAccountQuotaService raffleActivityAccountQuotaService;
 
     @GetMapping("/armory")
     @Override
@@ -154,6 +161,55 @@ public class RaffleActivityController implements IRaffleActivityService {
                     .build();
         }
 
+    }
+
+    @PostMapping("/is_calendar_sign_rebate")
+    @Override
+    public Response<Boolean> isCalenderSignRebate(String userId) {
+
+        try {
+            log.info("查询用户是否完成签到 用户Id: {}", userId);
+            String outBusinessNo = dateFormat.format(new Date());
+            Boolean isSign = rebateService.isCalenderSignRebate(userId, outBusinessNo);
+            return Response.success(isSign);
+        } catch (Exception e) {
+            log.error("查询用户是否完成日历签到返利失败 userId:{}", userId, e);
+            return Response.<Boolean>builder()
+                    .code(ResponseCode.UN_ERROR.getCode())
+                    .info(ResponseCode.UN_ERROR.getInfo())
+                    .data(false)
+                    .build();
+        }
+
+    }
+
+    @PostMapping("/query_user_activity_account")
+    @Override
+    public Response<UserActivityAccountResponseDTO> queryUserActivityAccount(@RequestBody UserActivityAccountRequestDTO request) {
+
+        try {
+            log.info("查询用户活动的参与次数 userId:{} activityId:{}", request.getUserId(), request.getActivityId());
+            if (StringUtils.isAnyBlank(request.getUserId(), request.getActivityId())) {
+                return Response.error();
+            }
+            ActivityAccountCountEntity activityAccountCount = raffleActivityAccountQuotaService.getActivityAccountCount(request.getUserId(), Long.valueOf(request.getActivityId()));
+            UserActivityAccountResponseDTO userActivityAccountResponseDTO = UserActivityAccountResponseDTO.builder()
+                    .totalCount(activityAccountCount.getTotalCount())
+                    .totalCountSurplus(activityAccountCount.getTotalCountSurplus())
+                    .dayCount(activityAccountCount.getDayCount())
+                    .dayCountSurplus(activityAccountCount.getDayCountSurplus())
+                    .monthCount(activityAccountCount.getMonthCount())
+                    .monthCountSurplus(activityAccountCount.getMonthCountSurplus())
+                    .build();
+            log.info("查询用户活动账户完成 userId:{} activityId:{} dto:{}", request.getUserId(), request.getActivityId(), new Gson().toJson(userActivityAccountResponseDTO));
+            return Response.success(userActivityAccountResponseDTO);
+        } catch (Exception e) {
+            log.error("查询用户活动账户失败 userId:{} activityId:{}", request.getUserId(), request.getActivityId(), e);
+            return Response.<UserActivityAccountResponseDTO>builder()
+                    .code(ResponseCode.UN_ERROR.getCode())
+                    .info(ResponseCode.UN_ERROR.getInfo())
+                    .build();
+        }
     }
 
 }

@@ -88,4 +88,36 @@ public class RaffleActivityAccountQuotaService extends AbstractRaffleActivityAcc
         return repository.getActivityTodayPartakeCount(userId, activityId);
 
     }
+
+    @Override
+    public ActivityAccountCountEntity getActivityAccountCount(String userId, Long activityId) {
+
+        ActivityAccountCountEntity activityAccountCount = repository.getActivityAccountCount(userId, activityId);
+        if (activityAccountCount != null) {
+            return activityAccountCount;
+        }
+        return ActivityAccountCountEntity.builder()
+                .activityId(activityId)
+                .userId(userId)
+                .totalCount(0)
+                .totalCountSurplus(0)
+                .monthCount(0)
+                .monthCountSurplus(0)
+                .dayCount(0)
+                .dayCountSurplus(0)
+                .build();
+    }
+
+    /**
+     * 查询活动账户 - 总，参与次数
+     *
+     * @param activityId 活动ID
+     * @param userId     用户ID
+     * @return 参与次数
+     */
+    public Integer queryRaffleActivityAccountPartakeCount(Long activityId, String userId) {
+
+        return repository.queryRaffleActivityAccountDayPartakeCount(activityId, userId);
+
+    }
 }

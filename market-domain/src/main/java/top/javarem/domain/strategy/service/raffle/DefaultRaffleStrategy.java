@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import top.javarem.domain.strategy.model.entity.StrategyAwardEntity;
 import top.javarem.domain.strategy.model.vo.AwardStockDecrQueueVO;
 import top.javarem.domain.strategy.model.vo.RuleTreeVO;
+import top.javarem.domain.strategy.model.vo.RuleWeightVO;
 import top.javarem.domain.strategy.model.vo.StrategyAwardRuleModelsVO;
 import top.javarem.domain.strategy.repository.IStrategyRepository;
 import top.javarem.domain.strategy.service.AbstractRaffleLogic;
@@ -95,6 +96,22 @@ public class DefaultRaffleStrategy extends AbstractRaffleLogic implements IRaffl
     @Override
     public Map<String, Integer> getAwardUnlockCountMap(String[] treeIds) {
         return repository.getAwardUnlockCountMap(treeIds);
+    }
+
+    @Override
+    public List<RuleWeightVO> queryRuleWeightByActivityId(Long activityId) {
+
+        Long strategyId = repository.getStrategyId(activityId);
+        return queryRuleWeight(strategyId);
+
+    }
+
+    @Override
+    public List<RuleWeightVO> queryRuleWeight(Long strategyId) {
+
+        return repository.queryRuleWeight(strategyId);
+
+
     }
 
 }

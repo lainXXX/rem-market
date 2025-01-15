@@ -17,4 +17,5 @@ public interface IBehaviorRebateRepository {
 
     void saveUserRebateRecord(String userId, List<BehaviorRebateAggregate> behaviorRebateAggregates);
 
+    Boolean isCalenderSignRebate(String userId, String outBusinessNo);
 }
