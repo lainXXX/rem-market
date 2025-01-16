@@ -112,6 +112,7 @@ public class RaffleActivityController implements IRaffleActivityService {
                     .orderId(order.getOrderId())
                     .status(AwardStateVO.create.getCode())
                     .awardTitle(raffleAwardEntity.getAwardTitle())
+                    .awardConfig(raffleAwardEntity.getAwardConfig())
                     .awardTime(new Date())
                     .build();
 

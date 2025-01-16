@@ -23,6 +23,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class RaffleActivityAccountDayCount implements Serializable {
 
+    @TableField(exist = false)
     private final SimpleDateFormat dayFormat = new SimpleDateFormat("yyyy-MM-dd");
 
     /**

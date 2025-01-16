@@ -30,6 +30,8 @@ public class BlacklistLogicNode extends AbstractStrategyLogicChain {
             return DefaultChainFactory.LogicAwardVO.builder()
                     .awardId(awardId)
                     .ruleModel(getRuleModel())
+                    // 写入默认配置黑名单奖品值 0.01 ~ 1 积分，也可以配置到数据库表中
+                    .awardRuleValue("0.01,1")
                     .build();
         }
 

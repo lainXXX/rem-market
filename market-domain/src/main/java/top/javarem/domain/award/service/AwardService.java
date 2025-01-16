@@ -1,28 +1,39 @@
 package top.javarem.domain.award.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import top.javarem.domain.award.event.SendAwardMessageEvent;
 import top.javarem.domain.award.model.aggregate.UserAwardRecodeAggregate;
+import top.javarem.domain.award.model.entity.DistributeAwardEntity;
 import top.javarem.domain.award.model.entity.TaskEntity;
 import top.javarem.domain.award.model.entity.UserAwardRecordEntity;
 import top.javarem.domain.award.model.vo.TaskStateVO;
 import top.javarem.domain.award.repository.IAwardRepository;
+import top.javarem.domain.award.service.distribute.IDistributeAward;
 import top.javarem.types.event.BaseEvent;
+
+import java.util.Map;
 
 /**
  * @Author: rem
  * @Date: 2024/12/08/18:16
  * @Description:
  */
+@Slf4j
 @Service
 public class AwardService implements IAwardService{
 
-    @Autowired
-    private IAwardRepository awardRepository;
+    private final IAwardRepository awardRepository;
 
-    @Autowired
-    private SendAwardMessageEvent sendAwardMessageEvent;
+    private final SendAwardMessageEvent sendAwardMessageEvent;
+
+    private final Map<String, IDistributeAward> distributeAwardMap;
+
+    public AwardService(IAwardRepository awardRepository, SendAwardMessageEvent sendAwardMessageEvent, Map<String, IDistributeAward> distributeAwardMap) {
+        this.awardRepository = awardRepository;
+        this.sendAwardMessageEvent = sendAwardMessageEvent;
+        this.distributeAwardMap = distributeAwardMap;
+    }
 
 
     @Override
@@ -31,7 +42,9 @@ public class AwardService implements IAwardService{
         SendAwardMessageEvent.SendAwardMessage sendAwardMessage = SendAwardMessageEvent.SendAwardMessage.builder()
                 .userId(userAwardRecordEntity.getUserId())
                 .awardId(userAwardRecordEntity.getAwardId())
+                .orderId(userAwardRecordEntity.getOrderId())
                 .awardTitle(userAwardRecordEntity.getAwardTitle())
+                .awardConfig(userAwardRecordEntity.getAwardConfig())
                 .build();
 
         BaseEvent.EventMessage<SendAwardMessageEvent.SendAwardMessage> sendAwardEventMessage = sendAwardMessageEvent.buildEventMessage(sendAwardMessage);
@@ -51,5 +64,25 @@ public class AwardService implements IAwardService{
                 .build();
         awardRepository.saveAwardRecord(userAwardRecodeAggregate);
 
+    }
+
+    @Override
+    public void distributeAward(DistributeAwardEntity distributeAwardEntity) {
+        String awardKey = awardRepository.getAwardKey(distributeAwardEntity.getAwardId());
+        if (null == awardKey) {
+            log.error("分发奖品，奖品ID不存在。awardKey:{}", awardKey);
+            return;
+        }
+
+        // 奖品服务
+        IDistributeAward distributeAward = distributeAwardMap.get(awardKey);
+
+        if (null == distributeAward) {
+            log.error("分发奖品，对应的服务不存在。awardKey:{}", awardKey);
+            throw new RuntimeException("分发奖品，奖品" + awardKey + "对应的服务不存在");
+        }
+
+        // 发放奖品
+        distributeAward.giveOutPrizes(distributeAwardEntity);
     }
 }

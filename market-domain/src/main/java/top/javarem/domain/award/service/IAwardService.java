@@ -1,5 +1,6 @@
 package top.javarem.domain.award.service;
 
+import top.javarem.domain.award.model.entity.DistributeAwardEntity;
 import top.javarem.domain.award.model.entity.UserAwardRecordEntity;
 
 /**
@@ -14,5 +15,10 @@ public interface IAwardService {
      * @param userAwardRecordEntity
      */
     void saveUserAwardRecord(UserAwardRecordEntity userAwardRecordEntity);
+
+    /**
+     * 配送发货奖品
+     */
+    void distributeAward(DistributeAwardEntity distributeAwardEntity);
 
 }

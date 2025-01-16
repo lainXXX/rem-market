@@ -84,8 +84,8 @@ public class RaffleStrategyTest {
     @Test
     public void test_performRaffle_blacklist() {
         RaffleFactorEntity raffleFactorEntity = RaffleFactorEntity.builder()
-                .userId("3")  // 黑名单用户 user001,user002,user003
-                .strategyId(100001L)
+                .userId("user001")  // 黑名单用户 user001,user002,user003
+                .strategyId(100006L)
                 .build();
 
         RaffleAwardEntity raffleAwardEntity = strategyRaffle.performRaffle(raffleFactorEntity);

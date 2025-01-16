@@ -64,6 +64,11 @@ public class DefaultChainFactory {
 
         private String ruleModel;
 
+        /**
+         * 抽奖奖品规则
+         */
+        private String awardRuleValue;
+
     }
 
     @Getter

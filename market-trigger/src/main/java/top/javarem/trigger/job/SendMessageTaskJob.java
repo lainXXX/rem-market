@@ -34,6 +34,7 @@ public class SendMessageTaskJob {
             if (Collections.isEmpty(taskEntityList)) {
                 return;
             }
+            log.info("");
             for (TaskEntity taskEntity : taskEntityList) {
                 executor.execute(() -> {
                     try {

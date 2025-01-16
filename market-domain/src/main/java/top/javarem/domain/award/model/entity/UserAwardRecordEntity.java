@@ -54,12 +54,17 @@ public class UserAwardRecordEntity {
     private String awardSubtitle;
 
     /**
+     * 奖品配置
+     */
+    private String awardConfig;
+
+    /**
      * 中奖时间
      */
     private Date awardTime;
 
     /**
-     * 奖品状态【create、complete】
+     * 奖品状态【create、completed】
      */
     private String status;
 

@@ -24,6 +24,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class RaffleActivityAccountMonthCount implements Serializable {
 
+    @TableField(exist = false)
     private final SimpleDateFormat dateFormatMonth = new SimpleDateFormat("yyyy-MM");
 
     /**

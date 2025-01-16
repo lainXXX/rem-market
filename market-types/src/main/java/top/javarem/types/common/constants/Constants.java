@@ -13,7 +13,7 @@ public class Constants {
     public static final String UNDERLINE = "_";
     public static final Integer AWARD_MIN_RANGE = 100;
     public static final String RULE_WEIGHT_KEY = "ruleWeightKey";
-    public static final Integer BLACKLIST_AWARD_ID = 100;
+    public static final Integer BLACKLIST_AWARD_ID = 101;
     public static final String AWARD_SURPLUS_LOCK = "award_surplus_lock";
     public static final String ACTIVITY_SURPLUS_STOCK_LOCK = "activity_surplus_stock_lock";
 
@@ -47,6 +47,8 @@ public class Constants {
         public static final String ACTIVITY_SKU_STOCK_DECR_QUEUE_KEY = "rem_market_activity_sku_stock_decr_queue_key_";
         public static final String ACTIVITY_ACCOUNT_KEY = "rem_market_activity_account_key_";
         public static final String STRATEGY_RULE_WEIGHT_KEY = "rem_market_strategy_rule_weight_key_";
+        public static final String AWARD_CONFIG_KEY = "rem_market_award_config_key_";
+        public static final String AWARD_KEY = "rem_market_award_key_";
     }
 
     @Getter

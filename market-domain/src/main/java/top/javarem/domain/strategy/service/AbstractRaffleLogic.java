@@ -51,7 +51,7 @@ public abstract class AbstractRaffleLogic implements IRaffleStrategy, IRaffleSto
         log.info("责任链执行完毕- 结果为 awardId: {} ruleModel: {}", chainLogicAwardVO.getAwardId(), chainLogicAwardVO.getRuleModel());
 //        如果抽奖奖品执行规则不为默认规则 则直接返回奖品
         if (!LogicModel.DEFAULT.getCode().equals(chainLogicAwardVO.getRuleModel())) {
-            return getRaffleAwardEntity(strategyId, chainLogicAwardVO.getAwardId(), null);
+            return getRaffleAwardEntity(strategyId, chainLogicAwardVO.getAwardId(), chainLogicAwardVO.getAwardRuleValue());
         }
 
 //        获取奖品后规则树逻辑执行

@@ -2,6 +2,7 @@ package top.javarem.infrastructure.dao.iService;
 
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import top.javarem.domain.award.model.entity.UserCreditAwardEntity;
 import top.javarem.infrastructure.dao.entity.UserAwardRecord;
 
 /**
@@ -11,4 +12,6 @@ import top.javarem.infrastructure.dao.entity.UserAwardRecord;
 */
 public interface UserAwardRecordService extends IService<UserAwardRecord> {
 
+
+    boolean updateAwardRecordCompletedState(UserAwardRecord userAwardRecord);
 }
