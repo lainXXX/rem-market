@@ -2,6 +2,7 @@ package top.javarem.infrastructure.adapter.repository;
 
 import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.RBlockingQueue;
+import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -141,63 +142,73 @@ public class ActivityRepository implements IActivityRepository {
 
     @Override
     public void saveOrder(CreateQuotaOrderAggregate createQuotaOrderAggregate) {
-//        创建订单对象
-        ActivityOrderEntity activityOrderEntity = createQuotaOrderAggregate.getActivityOrder();
-        RaffleActivityOrder raffleActivityOrder = new RaffleActivityOrder();
-        BeanUtils.copyProperties(activityOrderEntity, raffleActivityOrder);
-        raffleActivityOrder.setCreateTime(LocalDateTime.now());
-        raffleActivityOrder.setUpdateTime(LocalDateTime.now());
+        String lockKey = Constants.RedisKey.ACTIVITY_ACCOUNT_LOCK + createQuotaOrderAggregate.getUserId() + Constants.UNDERLINE + createQuotaOrderAggregate.getActivityId();
+        RLock lock = redissonClient.getLock(lockKey);
+//        为每个活动的每个用户加一个分布式锁 在同一时刻只能有一个线程进入该方法
+        try {
+            lock.lock(3, TimeUnit.SECONDS);
+            //        创建订单对象
+            ActivityOrderEntity activityOrderEntity = createQuotaOrderAggregate.getActivityOrder();
+            RaffleActivityOrder raffleActivityOrder = new RaffleActivityOrder();
+            BeanUtils.copyProperties(activityOrderEntity, raffleActivityOrder);
+            raffleActivityOrder.setCreateTime(LocalDateTime.now());
+            raffleActivityOrder.setUpdateTime(LocalDateTime.now());
 
 //        创建账户对象 - 总额度
-        RaffleActivityAccount raffleActivityAccount = new RaffleActivityAccount();
-        raffleActivityAccount.setUserId(createQuotaOrderAggregate.getUserId());
-        raffleActivityAccount.setActivityId(createQuotaOrderAggregate.getActivityId());
-        raffleActivityAccount.setTotalCount(createQuotaOrderAggregate.getTotalCount());
-        raffleActivityAccount.setTotalCountSurplus(createQuotaOrderAggregate.getTotalCount());
-        raffleActivityAccount.setDayCount(createQuotaOrderAggregate.getDayCount());
-        raffleActivityAccount.setDayCountSurplus(createQuotaOrderAggregate.getDayCount());
-        raffleActivityAccount.setMonthCount(createQuotaOrderAggregate.getMonthCount());
-        raffleActivityAccount.setMonthCountSurplus(createQuotaOrderAggregate.getMonthCount());
-        raffleActivityAccount.setUpdateTime(new Date());
+            RaffleActivityAccount raffleActivityAccount = new RaffleActivityAccount();
+            raffleActivityAccount.setUserId(createQuotaOrderAggregate.getUserId());
+            raffleActivityAccount.setActivityId(createQuotaOrderAggregate.getActivityId());
+            raffleActivityAccount.setTotalCount(createQuotaOrderAggregate.getTotalCount());
+            raffleActivityAccount.setTotalCountSurplus(createQuotaOrderAggregate.getTotalCount());
+            raffleActivityAccount.setDayCount(createQuotaOrderAggregate.getDayCount());
+            raffleActivityAccount.setDayCountSurplus(createQuotaOrderAggregate.getDayCount());
+            raffleActivityAccount.setMonthCount(createQuotaOrderAggregate.getMonthCount());
+            raffleActivityAccount.setMonthCountSurplus(createQuotaOrderAggregate.getMonthCount());
+            raffleActivityAccount.setUpdateTime(new Date());
 
 //        创建账户对象 - 月额度
-        RaffleActivityAccountMonthCount raffleActivityAccountMonthCount = new RaffleActivityAccountMonthCount();
-        raffleActivityAccountMonthCount.setUserId(createQuotaOrderAggregate.getUserId());
-        raffleActivityAccountMonthCount.setActivityId(createQuotaOrderAggregate.getActivityId());
-        raffleActivityAccountMonthCount.setMonth(raffleActivityAccountMonthCount.currentMonth());
-        raffleActivityAccountMonthCount.setMonthCount(createQuotaOrderAggregate.getMonthCount());
-        raffleActivityAccountMonthCount.setMonthCountSurplus(createQuotaOrderAggregate.getMonthCount());
-        raffleActivityAccountMonthCount.setUpdateTime(new Date());
+            RaffleActivityAccountMonthCount raffleActivityAccountMonthCount = new RaffleActivityAccountMonthCount();
+            raffleActivityAccountMonthCount.setUserId(createQuotaOrderAggregate.getUserId());
+            raffleActivityAccountMonthCount.setActivityId(createQuotaOrderAggregate.getActivityId());
+            raffleActivityAccountMonthCount.setMonth(raffleActivityAccountMonthCount.currentMonth());
+            raffleActivityAccountMonthCount.setMonthCount(createQuotaOrderAggregate.getMonthCount());
+            raffleActivityAccountMonthCount.setMonthCountSurplus(createQuotaOrderAggregate.getMonthCount());
+            raffleActivityAccountMonthCount.setUpdateTime(new Date());
 
 //        创建账户对象 - 日额度
-        RaffleActivityAccountDayCount raffleActivityAccountDayCount = new RaffleActivityAccountDayCount();
-        raffleActivityAccountDayCount.setUserId(createQuotaOrderAggregate.getUserId());
-        raffleActivityAccountDayCount.setActivityId(createQuotaOrderAggregate.getActivityId());
-        raffleActivityAccountDayCount.setDay(raffleActivityAccountDayCount.today());
-        raffleActivityAccountDayCount.setDayCount(createQuotaOrderAggregate.getDayCount());
-        raffleActivityAccountDayCount.setDayCountSurplus(createQuotaOrderAggregate.getDayCount());
-        raffleActivityAccountDayCount.setUpdateTime(new Date());
+            RaffleActivityAccountDayCount raffleActivityAccountDayCount = new RaffleActivityAccountDayCount();
+            raffleActivityAccountDayCount.setUserId(createQuotaOrderAggregate.getUserId());
+            raffleActivityAccountDayCount.setActivityId(createQuotaOrderAggregate.getActivityId());
+            raffleActivityAccountDayCount.setDay(raffleActivityAccountDayCount.today());
+            raffleActivityAccountDayCount.setDayCount(createQuotaOrderAggregate.getDayCount());
+            raffleActivityAccountDayCount.setDayCountSurplus(createQuotaOrderAggregate.getDayCount());
+            raffleActivityAccountDayCount.setUpdateTime(new Date());
 //        将订单写入
-        transactionTemplate.execute(status -> {
-            try {
+            transactionTemplate.execute(status -> {
+                try {
 //                存入订单
-                activityOrderService.save(raffleActivityOrder);
-//                更新总账户 如果账户不存在则创建账户
-                int result = activityAccountService.updateAccount(raffleActivityAccount);
-                if (result == 0) {
-                    activityAccountService.save(raffleActivityAccount);
-                }
+                    activityOrderService.save(raffleActivityOrder);
+//                更新总账户 如果账户不存在则先创建账户
+                    RaffleActivityAccount raffleActivityAccountRes =  activityAccountService.getAcitivtyAccountByUserId(createQuotaOrderAggregate.getUserId());
+                    if (raffleActivityAccountRes == null) {
+                        activityAccountService.save(raffleActivityAccount);
+                    }
+                    activityAccountService.updateAccount(raffleActivityAccount);
 //                更新月账户
-                accountMonthCountService.addAccountQuota(raffleActivityAccountMonthCount);
+                    accountMonthCountService.addAccountQuota(raffleActivityAccountMonthCount);
 //                更新日账户
-                accountDayCountService.addAccountQuota(raffleActivityAccountDayCount);
-                return 1;
-            } catch (DuplicateKeyException e) {
-                status.setRollbackOnly();
-                log.error("写入订单记录，唯一索引冲突 userId: {} activityId: {} sku: {}", activityOrderEntity.getUserId(), activityOrderEntity.getActivityId(), activityOrderEntity.getSku(), e);
-                throw new AppException(ResponseCode.INDEX_DUP.getCode());
-            }
-        });
+                    accountDayCountService.addAccountQuota(raffleActivityAccountDayCount);
+                    return 1;
+                } catch (DuplicateKeyException e) {
+                    status.setRollbackOnly();
+                    log.error("写入订单记录，唯一索引冲突 userId: {} activityId: {} sku: {}", activityOrderEntity.getUserId(), activityOrderEntity.getActivityId(), activityOrderEntity.getSku(), e);
+                    throw new AppException(ResponseCode.INDEX_DUP.getCode());
+                }
+            });
+        } finally {
+            lock.unlock();
+        }
+
 
     }
 

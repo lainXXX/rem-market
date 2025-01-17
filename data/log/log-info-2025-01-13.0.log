@@ -1,0 +1,1202 @@
+25-01-13.16:58:32.245 [main            ] INFO  Application            - Starting Application using Java 1.8.0_151 on mile with PID 19608 (D:\Develop\project\rem-market\market-app\target\classes started by aaa in D:\Develop\project\rem-market)
+25-01-13.16:58:32.248 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-01-13.16:58:33.238 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-01-13.16:58:33.239 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-01-13.16:58:33.300 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 51 ms. Found 0 Redis repository interfaces.
+25-01-13.16:58:33.836 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+25-01-13.16:58:33.957 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+25-01-13.16:58:33.965 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-01-13.16:58:33.965 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+25-01-13.16:58:34.157 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-01-13.16:58:34.158 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1863 ms
+25-01-13.16:58:34.465 [main            ] INFO  Version                - Redisson 3.26.0
+25-01-13.16:58:35.305 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+25-01-13.16:58:35.478 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+25-01-13.16:58:38.925 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-01-13.16:58:39.015 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+25-01-13.16:58:39.060 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
+25-01-13.16:58:39.062 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [110.41.180.185:5672]
+25-01-13.16:58:39.189 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#5287ba5f:0/SimpleConnection@3d6778d5 [delegate=amqp://lain@110.41.180.185:5672/, localPort= 53345]
+25-01-13.16:58:39.548 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  RebateMessageCustomer  - 监听用户返利消息 topic:send_rebate message:{"eventId":"32547576031","timestamp":"Jan 13, 2025 4:39:31 PM","data":{"userId":"rem","rebateDesc":"签到返利-积分","rebateType":"integral","rebateConfig":"10","bizId":"rem_integral_20250109"}}
+25-01-13.16:58:39.555 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  RebateMessageCustomer  - 监听用户行为返利消息 - 非sku奖励暂时不处理 topic: send_rebate message: {"eventId":"32547576031","timestamp":"Jan 13, 2025 4:39:31 PM","data":{"userId":"rem","rebateDesc":"签到返利-积分","rebateType":"integral","rebateConfig":"10","bizId":"rem_integral_20250109"}}
+25-01-13.16:58:39.682 [main            ] INFO  Application            - Started Application in 7.889 seconds (JVM running for 9.177)
+25-01-13.16:58:40.135 [RMI TCP Connection(1)-192.168.137.1] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-01-13.16:58:40.602 [RMI TCP Connection(1)-192.168.137.1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-01-13.16:58:41.045 [RMI TCP Connection(3)-192.168.137.1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-01-13.16:58:41.045 [RMI TCP Connection(3)-192.168.137.1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-01-13.16:58:41.047 [RMI TCP Connection(3)-192.168.137.1] INFO  DispatcherServlet      - Completed initialization in 2 ms
+25-01-13.16:59:00.011 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.16:59:00.130 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.16:59:00.160 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.16:59:30.003 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.16:59:30.032 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:00:00.009 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:00:00.039 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:00:00.069 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:00:30.006 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:00:30.030 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:01:00.012 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:01:00.041 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:01:00.096 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:01:30.010 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:01:30.037 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:02:00.006 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:02:00.037 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:02:00.061 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:02:15.606 [http-nio-8091-exec-2] INFO  RaffleActivityController - 日历签到返利 用户ID: rem
+25-01-13.17:02:16.016 [http-nio-8091-exec-2] INFO  EventPublisher         - 发送MQ消息 topic: send_rebate message: BaseEvent.EventMessage(eventId=97209161991, timestamp=Mon Jan 13 17:02:15 CST 2025, data=SendRebateMessageEvent.RebateMessage(userId=rem, rebateDesc=签到返利-sku额度, rebateType=sku, rebateConfig=9011, bizId=rem_sku_20250113))
+25-01-13.17:02:16.043 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  RebateMessageCustomer  - 监听用户返利消息 topic:send_rebate message:{"eventId":"97209161991","timestamp":"Jan 13, 2025 5:02:15 PM","data":{"userId":"rem","rebateDesc":"签到返利-sku额度","rebateType":"sku","rebateConfig":"9011","bizId":"rem_sku_20250113"}}
+25-01-13.17:02:16.076 [http-nio-8091-exec-2] INFO  EventPublisher         - 发送MQ消息 topic: send_rebate message: BaseEvent.EventMessage(eventId=44543901898, timestamp=Mon Jan 13 17:02:15 CST 2025, data=SendRebateMessageEvent.RebateMessage(userId=rem, rebateDesc=签到返利-积分, rebateType=integral, rebateConfig=10, bizId=rem_integral_20250113))
+25-01-13.17:02:16.132 [http-nio-8091-exec-2] INFO  RaffleActivityController - 签到返利完成 userId:rem orderIds:[rem_sku_20250113, rem_integral_20250113]
+25-01-13.17:02:16.173 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  AbstractRaffleActivityAccountQuotaService - 查询结果：ActivitySkuEntity(sku=9011, activityId=100301, activityCountId=11101, stockCount=20, stockCountSurplus=15) ActivityEntity(activityId=100301, activityName=测试活动, activityDesc=测试活动, beginTime=Sat Mar 09 10:15:10 CST 2024, endTime=Thu Mar 09 10:15:10 CST 2034, strategyId=100006, status=open) ActivityCountEntity(activityCountId=11101, totalCount=1, dayCount=1, monthCount=1)
+25-01-13.17:02:16.174 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  BaseFilterChain        - 执行基础规则责任链
+25-01-13.17:02:16.175 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SkuStockFilterChain    - 执行活动sku库存扣减责任链
+25-01-13.17:02:16.221 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  ActivityRepository     - 活动剩余库存加锁失败 rem_market_activity_sku_stock_key_9011_14
+25-01-13.17:02:16.223 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  AbstractRaffleActivityAccountQuotaService - CreateQuotaOrderAggregate(userId=rem, activityId=100301, activityName=null, totalCount=1, monthCount=1, dayCount=1, activityOrder=ActivityOrderEntity(userId=rem, sku=9011, activityId=100301, activityName=测试活动, strategyId=100006, orderId=08295079327, orderTime=2025-01-13T17:02:16.222, totalCount=1, dayCount=1, monthCount=1, status=completed, outBusinessNo=rem_sku_20250113))
+25-01-13.17:02:16.348 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] ERROR ActivityRepository     - 写入订单记录，唯一索引冲突 userId: rem activityId: 100301 sku: 9011
+org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'rem_sku_20250113' for key 'raffle_activity_order.uq_out_business_no'
+### The error may exist in top/javarem/infrastructure/dao/mapper/RaffleActivityOrderMapper.java (best guess)
+### The error may involve top.javarem.infrastructure.dao.mapper.RaffleActivityOrderMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO raffle_activity_order  ( user_id, sku, activity_id, activity_name, strategy_id, order_id, order_time, total_count, day_count, month_count, status, out_business_no, create_time, update_time )  VALUES (  ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?  )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'rem_sku_20250113' for key 'raffle_activity_order.uq_out_business_no'
+; Duplicate entry 'rem_sku_20250113' for key 'raffle_activity_order.uq_out_business_no'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'rem_sku_20250113' for key 'raffle_activity_order.uq_out_business_no'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:439)
+	at com.sun.proxy.$Proxy94.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:272)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:59)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:152)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at com.sun.proxy.$Proxy98.insert(Unknown Source)
+	at com.baomidou.mybatisplus.extension.service.IService.save(IService.java:61)
+	at com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy.invokeMethod(CglibAopProxy.java:386)
+	at org.springframework.aop.framework.CglibAopProxy.access$000(CglibAopProxy.java:85)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:704)
+	at top.javarem.infrastructure.dao.iService.Impl.RaffleActivityOrderServiceImpl$$EnhancerBySpringCGLIB$$8e488b50.save(<generated>)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository.lambda$saveOrder$0(ActivityRepository.java:184)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository.saveOrder(ActivityRepository.java:181)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository$$FastClassBySpringCGLIB$$ae16c582.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository$$EnhancerBySpringCGLIB$$e259d85b.saveOrder(<generated>)
+	at top.javarem.domain.activity.service.quota.RaffleActivityAccountQuotaService.saveOrder(RaffleActivityAccountQuotaService.java:57)
+	at top.javarem.domain.activity.service.quota.AbstractRaffleActivityAccountQuotaService.createOrder(AbstractRaffleActivityAccountQuotaService.java:63)
+	at top.javarem.trigger.listener.RebateMessageCustomer.listener(RebateMessageCustomer.java:53)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
+	at org.springframework.amqp.rabbit.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:77)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:263)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.invokeHandlerAndProcessResult(MessagingMessageListenerAdapter.java:209)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:148)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:1674)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.actualInvokeListener(AbstractMessageListenerContainer.java:1593)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:1581)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:1572)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.executeListener(AbstractMessageListenerContainer.java:1516)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doReceiveAndExecute(SimpleMessageListenerContainer.java:1001)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.receiveAndExecute(SimpleMessageListenerContainer.java:948)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.access$1600(SimpleMessageListenerContainer.java:86)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.mainLoop(SimpleMessageListenerContainer.java:1326)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1232)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'rem_sku_20250113' for key 'raffle_activity_order.uq_out_business_no'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58)
+	at com.sun.proxy.$Proxy148.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:48)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:75)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	... 50 common frames omitted
+25-01-13.17:02:16.403 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] WARN  RebateMessageCustomer  - 监听用户行为返利消息，消费重复 topic: send_rebate message: {"eventId":"97209161991","timestamp":"Jan 13, 2025 5:02:15 PM","data":{"userId":"rem","rebateDesc":"签到返利-sku额度","rebateType":"sku","rebateConfig":"9011","bizId":"rem_sku_20250113"}}
+top.javarem.types.exception.AppException: null
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository.lambda$saveOrder$0(ActivityRepository.java:198)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository.saveOrder(ActivityRepository.java:181)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository$$FastClassBySpringCGLIB$$ae16c582.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository$$EnhancerBySpringCGLIB$$e259d85b.saveOrder(<generated>)
+	at top.javarem.domain.activity.service.quota.RaffleActivityAccountQuotaService.saveOrder(RaffleActivityAccountQuotaService.java:57)
+	at top.javarem.domain.activity.service.quota.AbstractRaffleActivityAccountQuotaService.createOrder(AbstractRaffleActivityAccountQuotaService.java:63)
+	at top.javarem.trigger.listener.RebateMessageCustomer.listener(RebateMessageCustomer.java:53)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
+	at org.springframework.amqp.rabbit.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:77)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:263)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.invokeHandlerAndProcessResult(MessagingMessageListenerAdapter.java:209)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:148)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:1674)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.actualInvokeListener(AbstractMessageListenerContainer.java:1593)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:1581)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:1572)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.executeListener(AbstractMessageListenerContainer.java:1516)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doReceiveAndExecute(SimpleMessageListenerContainer.java:1001)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.receiveAndExecute(SimpleMessageListenerContainer.java:948)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.access$1600(SimpleMessageListenerContainer.java:86)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.mainLoop(SimpleMessageListenerContainer.java:1326)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1232)
+	at java.lang.Thread.run(Thread.java:748)
+25-01-13.17:02:16.429 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  RebateMessageCustomer  - 监听用户返利消息 topic:send_rebate message:{"eventId":"44543901898","timestamp":"Jan 13, 2025 5:02:15 PM","data":{"userId":"rem","rebateDesc":"签到返利-积分","rebateType":"integral","rebateConfig":"10","bizId":"rem_integral_20250113"}}
+25-01-13.17:02:16.429 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  RebateMessageCustomer  - 监听用户行为返利消息 - 非sku奖励暂时不处理 topic: send_rebate message: {"eventId":"44543901898","timestamp":"Jan 13, 2025 5:02:15 PM","data":{"userId":"rem","rebateDesc":"签到返利-积分","rebateType":"integral","rebateConfig":"10","bizId":"rem_integral_20250113"}}
+25-01-13.17:02:30.002 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:02:30.048 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:03:00.013 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:03:00.041 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:03:00.069 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:03:30.008 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:03:30.065 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:04:00.004 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:04:00.027 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:04:00.056 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:04:23.772 [http-nio-8091-exec-5] INFO  RaffleActivityController - 日历签到返利 用户ID: rem
+25-01-13.17:04:24.126 [http-nio-8091-exec-5] INFO  EventPublisher         - 发送MQ消息 topic: send_rebate message: BaseEvent.EventMessage(eventId=38051148134, timestamp=Mon Jan 13 17:04:23 CST 2025, data=SendRebateMessageEvent.RebateMessage(userId=rem, rebateDesc=签到返利-sku额度, rebateType=sku, rebateConfig=9011, bizId=rem_sku_20250113))
+25-01-13.17:04:24.153 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  RebateMessageCustomer  - 监听用户返利消息 topic:send_rebate message:{"eventId":"38051148134","timestamp":"Jan 13, 2025 5:04:23 PM","data":{"userId":"rem","rebateDesc":"签到返利-sku额度","rebateType":"sku","rebateConfig":"9011","bizId":"rem_sku_20250113"}}
+25-01-13.17:04:24.183 [http-nio-8091-exec-5] INFO  EventPublisher         - 发送MQ消息 topic: send_rebate message: BaseEvent.EventMessage(eventId=04711125380, timestamp=Mon Jan 13 17:04:23 CST 2025, data=SendRebateMessageEvent.RebateMessage(userId=rem, rebateDesc=签到返利-积分, rebateType=integral, rebateConfig=10, bizId=rem_integral_20250113))
+25-01-13.17:04:24.241 [http-nio-8091-exec-5] INFO  RaffleActivityController - 签到返利完成 userId:rem orderIds:[rem_sku_20250113, rem_integral_20250113]
+25-01-13.17:04:24.257 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  AbstractRaffleActivityAccountQuotaService - 查询结果：ActivitySkuEntity(sku=9011, activityId=100301, activityCountId=11101, stockCount=20, stockCountSurplus=14) ActivityEntity(activityId=100301, activityName=测试活动, activityDesc=测试活动, beginTime=Sat Mar 09 10:15:10 CST 2024, endTime=Thu Mar 09 10:15:10 CST 2034, strategyId=100006, status=open) ActivityCountEntity(activityCountId=11101, totalCount=1, dayCount=1, monthCount=1)
+25-01-13.17:04:24.257 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  BaseFilterChain        - 执行基础规则责任链
+25-01-13.17:04:24.257 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SkuStockFilterChain    - 执行活动sku库存扣减责任链
+25-01-13.17:04:24.311 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  ActivityRepository     - 活动剩余库存加锁失败 rem_market_activity_sku_stock_key_9011_13
+25-01-13.17:04:24.311 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  AbstractRaffleActivityAccountQuotaService - CreateQuotaOrderAggregate(userId=rem, activityId=100301, activityName=null, totalCount=1, monthCount=1, dayCount=1, activityOrder=ActivityOrderEntity(userId=rem, sku=9011, activityId=100301, activityName=测试活动, strategyId=100006, orderId=68416916643, orderTime=2025-01-13T17:04:24.311, totalCount=1, dayCount=1, monthCount=1, status=completed, outBusinessNo=rem_sku_20250113))
+25-01-13.17:04:24.388 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] ERROR ActivityRepository     - 写入订单记录，唯一索引冲突 userId: rem activityId: 100301 sku: 9011
+org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'rem_sku_20250113' for key 'raffle_activity_order.uq_out_business_no'
+### The error may exist in top/javarem/infrastructure/dao/mapper/RaffleActivityOrderMapper.java (best guess)
+### The error may involve top.javarem.infrastructure.dao.mapper.RaffleActivityOrderMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO raffle_activity_order  ( user_id, sku, activity_id, activity_name, strategy_id, order_id, order_time, total_count, day_count, month_count, status, out_business_no, create_time, update_time )  VALUES (  ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?  )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'rem_sku_20250113' for key 'raffle_activity_order.uq_out_business_no'
+; Duplicate entry 'rem_sku_20250113' for key 'raffle_activity_order.uq_out_business_no'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'rem_sku_20250113' for key 'raffle_activity_order.uq_out_business_no'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:439)
+	at com.sun.proxy.$Proxy94.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:272)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:59)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:152)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at com.sun.proxy.$Proxy98.insert(Unknown Source)
+	at com.baomidou.mybatisplus.extension.service.IService.save(IService.java:61)
+	at com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy.invokeMethod(CglibAopProxy.java:386)
+	at org.springframework.aop.framework.CglibAopProxy.access$000(CglibAopProxy.java:85)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:704)
+	at top.javarem.infrastructure.dao.iService.Impl.RaffleActivityOrderServiceImpl$$EnhancerBySpringCGLIB$$8e488b50.save(<generated>)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository.lambda$saveOrder$0(ActivityRepository.java:184)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository.saveOrder(ActivityRepository.java:181)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository$$FastClassBySpringCGLIB$$ae16c582.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository$$EnhancerBySpringCGLIB$$e259d85b.saveOrder(<generated>)
+	at top.javarem.domain.activity.service.quota.RaffleActivityAccountQuotaService.saveOrder(RaffleActivityAccountQuotaService.java:57)
+	at top.javarem.domain.activity.service.quota.AbstractRaffleActivityAccountQuotaService.createOrder(AbstractRaffleActivityAccountQuotaService.java:63)
+	at top.javarem.trigger.listener.RebateMessageCustomer.listener(RebateMessageCustomer.java:53)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
+	at org.springframework.amqp.rabbit.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:77)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:263)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.invokeHandlerAndProcessResult(MessagingMessageListenerAdapter.java:209)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:148)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:1674)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.actualInvokeListener(AbstractMessageListenerContainer.java:1593)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:1581)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:1572)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.executeListener(AbstractMessageListenerContainer.java:1516)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doReceiveAndExecute(SimpleMessageListenerContainer.java:1001)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.receiveAndExecute(SimpleMessageListenerContainer.java:948)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.access$1600(SimpleMessageListenerContainer.java:86)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.mainLoop(SimpleMessageListenerContainer.java:1326)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1232)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'rem_sku_20250113' for key 'raffle_activity_order.uq_out_business_no'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at sun.reflect.GeneratedMethodAccessor45.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58)
+	at com.sun.proxy.$Proxy148.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:48)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:75)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	... 50 common frames omitted
+25-01-13.17:04:24.440 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] WARN  RebateMessageCustomer  - 监听用户行为返利消息，消费重复 topic: send_rebate message: {"eventId":"38051148134","timestamp":"Jan 13, 2025 5:04:23 PM","data":{"userId":"rem","rebateDesc":"签到返利-sku额度","rebateType":"sku","rebateConfig":"9011","bizId":"rem_sku_20250113"}}
+top.javarem.types.exception.AppException: null
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository.lambda$saveOrder$0(ActivityRepository.java:198)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository.saveOrder(ActivityRepository.java:181)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository$$FastClassBySpringCGLIB$$ae16c582.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository$$EnhancerBySpringCGLIB$$e259d85b.saveOrder(<generated>)
+	at top.javarem.domain.activity.service.quota.RaffleActivityAccountQuotaService.saveOrder(RaffleActivityAccountQuotaService.java:57)
+	at top.javarem.domain.activity.service.quota.AbstractRaffleActivityAccountQuotaService.createOrder(AbstractRaffleActivityAccountQuotaService.java:63)
+	at top.javarem.trigger.listener.RebateMessageCustomer.listener(RebateMessageCustomer.java:53)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
+	at org.springframework.amqp.rabbit.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:77)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:263)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.invokeHandlerAndProcessResult(MessagingMessageListenerAdapter.java:209)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:148)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:1674)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.actualInvokeListener(AbstractMessageListenerContainer.java:1593)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:1581)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:1572)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.executeListener(AbstractMessageListenerContainer.java:1516)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doReceiveAndExecute(SimpleMessageListenerContainer.java:1001)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.receiveAndExecute(SimpleMessageListenerContainer.java:948)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.access$1600(SimpleMessageListenerContainer.java:86)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.mainLoop(SimpleMessageListenerContainer.java:1326)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1232)
+	at java.lang.Thread.run(Thread.java:748)
+25-01-13.17:04:24.469 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  RebateMessageCustomer  - 监听用户返利消息 topic:send_rebate message:{"eventId":"04711125380","timestamp":"Jan 13, 2025 5:04:23 PM","data":{"userId":"rem","rebateDesc":"签到返利-积分","rebateType":"integral","rebateConfig":"10","bizId":"rem_integral_20250113"}}
+25-01-13.17:04:24.470 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  RebateMessageCustomer  - 监听用户行为返利消息 - 非sku奖励暂时不处理 topic: send_rebate message: {"eventId":"04711125380","timestamp":"Jan 13, 2025 5:04:23 PM","data":{"userId":"rem","rebateDesc":"签到返利-积分","rebateType":"integral","rebateConfig":"10","bizId":"rem_integral_20250113"}}
+25-01-13.17:04:30.007 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:04:30.039 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:05:00.001 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:05:00.023 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:05:00.045 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:05:30.002 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:05:30.030 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:05:37.267 [http-nio-8091-exec-8] WARN  DefaultHandlerExceptionResolver - Resolved [org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'strategyId' for method parameter type Long is present but converted to null]
+25-01-13.17:06:00.007 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:06:00.034 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:06:00.087 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:06:08.919 [http-nio-8091-exec-10] INFO  RaffleStrategyController - 预热抽奖策略 strategyId=100006
+25-01-13.17:06:08.919 [http-nio-8091-exec-10] INFO  RaffleStrategyController - 执行抽奖策略装配
+25-01-13.17:06:26.194 [http-nio-8091-exec-11] INFO  RaffleActivityController - 活动数据装配 activityId:100301
+25-01-13.17:06:30.006 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:06:30.035 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:06:52.515 [http-nio-8091-exec-12] INFO  RaffleActivityController - 日历签到返利 用户ID: rem
+25-01-13.17:06:52.862 [http-nio-8091-exec-12] INFO  EventPublisher         - 发送MQ消息 topic: send_rebate message: BaseEvent.EventMessage(eventId=38459594442, timestamp=Mon Jan 13 17:06:52 CST 2025, data=SendRebateMessageEvent.RebateMessage(userId=rem, rebateDesc=签到返利-sku额度, rebateType=sku, rebateConfig=9011, bizId=rem_sku_20250113))
+25-01-13.17:06:52.887 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  RebateMessageCustomer  - 监听用户返利消息 topic:send_rebate message:{"eventId":"38459594442","timestamp":"Jan 13, 2025 5:06:52 PM","data":{"userId":"rem","rebateDesc":"签到返利-sku额度","rebateType":"sku","rebateConfig":"9011","bizId":"rem_sku_20250113"}}
+25-01-13.17:06:52.916 [http-nio-8091-exec-12] INFO  EventPublisher         - 发送MQ消息 topic: send_rebate message: BaseEvent.EventMessage(eventId=42848059309, timestamp=Mon Jan 13 17:06:52 CST 2025, data=SendRebateMessageEvent.RebateMessage(userId=rem, rebateDesc=签到返利-积分, rebateType=integral, rebateConfig=10, bizId=rem_integral_20250113))
+25-01-13.17:06:52.971 [http-nio-8091-exec-12] INFO  RaffleActivityController - 签到返利完成 userId:rem orderIds:[rem_sku_20250113, rem_integral_20250113]
+25-01-13.17:06:57.949 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] WARN  PoolBase               - HikariPool-1 - Failed to validate connection com.mysql.cj.jdbc.ConnectionImpl@6eb6ad84 (No operations allowed after connection closed.). Possibly consider using a shorter maxLifetime value.
+25-01-13.17:06:58.074 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  AbstractRaffleActivityAccountQuotaService - 查询结果：ActivitySkuEntity(sku=9011, activityId=100301, activityCountId=11101, stockCount=20, stockCountSurplus=20) ActivityEntity(activityId=100301, activityName=测试活动, activityDesc=测试活动, beginTime=Sat Mar 09 10:15:10 CST 2024, endTime=Thu Mar 09 10:15:10 CST 2034, strategyId=100006, status=open) ActivityCountEntity(activityCountId=11101, totalCount=1, dayCount=1, monthCount=1)
+25-01-13.17:06:58.074 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  BaseFilterChain        - 执行基础规则责任链
+25-01-13.17:06:58.074 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SkuStockFilterChain    - 执行活动sku库存扣减责任链
+25-01-13.17:06:58.199 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  AbstractRaffleActivityAccountQuotaService - CreateQuotaOrderAggregate(userId=rem, activityId=100301, activityName=null, totalCount=1, monthCount=1, dayCount=1, activityOrder=ActivityOrderEntity(userId=rem, sku=9011, activityId=100301, activityName=测试活动, strategyId=100006, orderId=38019514687, orderTime=2025-01-13T17:06:58.199, totalCount=1, dayCount=1, monthCount=1, status=completed, outBusinessNo=rem_sku_20250113))
+25-01-13.17:06:58.291 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] ERROR ActivityRepository     - 写入订单记录，唯一索引冲突 userId: rem activityId: 100301 sku: 9011
+org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'rem_sku_20250113' for key 'raffle_activity_order.uq_out_business_no'
+### The error may exist in top/javarem/infrastructure/dao/mapper/RaffleActivityOrderMapper.java (best guess)
+### The error may involve top.javarem.infrastructure.dao.mapper.RaffleActivityOrderMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO raffle_activity_order  ( user_id, sku, activity_id, activity_name, strategy_id, order_id, order_time, total_count, day_count, month_count, status, out_business_no, create_time, update_time )  VALUES (  ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?  )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'rem_sku_20250113' for key 'raffle_activity_order.uq_out_business_no'
+; Duplicate entry 'rem_sku_20250113' for key 'raffle_activity_order.uq_out_business_no'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'rem_sku_20250113' for key 'raffle_activity_order.uq_out_business_no'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:439)
+	at com.sun.proxy.$Proxy94.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:272)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:59)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:152)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at com.sun.proxy.$Proxy98.insert(Unknown Source)
+	at com.baomidou.mybatisplus.extension.service.IService.save(IService.java:61)
+	at com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy.invokeMethod(CglibAopProxy.java:386)
+	at org.springframework.aop.framework.CglibAopProxy.access$000(CglibAopProxy.java:85)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:704)
+	at top.javarem.infrastructure.dao.iService.Impl.RaffleActivityOrderServiceImpl$$EnhancerBySpringCGLIB$$8e488b50.save(<generated>)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository.lambda$saveOrder$0(ActivityRepository.java:184)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository.saveOrder(ActivityRepository.java:181)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository$$FastClassBySpringCGLIB$$ae16c582.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository$$EnhancerBySpringCGLIB$$e259d85b.saveOrder(<generated>)
+	at top.javarem.domain.activity.service.quota.RaffleActivityAccountQuotaService.saveOrder(RaffleActivityAccountQuotaService.java:57)
+	at top.javarem.domain.activity.service.quota.AbstractRaffleActivityAccountQuotaService.createOrder(AbstractRaffleActivityAccountQuotaService.java:63)
+	at top.javarem.trigger.listener.RebateMessageCustomer.listener(RebateMessageCustomer.java:53)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
+	at org.springframework.amqp.rabbit.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:77)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:263)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.invokeHandlerAndProcessResult(MessagingMessageListenerAdapter.java:209)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:148)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:1674)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.actualInvokeListener(AbstractMessageListenerContainer.java:1593)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:1581)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:1572)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.executeListener(AbstractMessageListenerContainer.java:1516)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doReceiveAndExecute(SimpleMessageListenerContainer.java:1001)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.receiveAndExecute(SimpleMessageListenerContainer.java:948)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.access$1600(SimpleMessageListenerContainer.java:86)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.mainLoop(SimpleMessageListenerContainer.java:1326)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1232)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'rem_sku_20250113' for key 'raffle_activity_order.uq_out_business_no'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at sun.reflect.GeneratedMethodAccessor45.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58)
+	at com.sun.proxy.$Proxy148.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:48)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:75)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	... 50 common frames omitted
+25-01-13.17:06:58.341 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] WARN  RebateMessageCustomer  - 监听用户行为返利消息，消费重复 topic: send_rebate message: {"eventId":"38459594442","timestamp":"Jan 13, 2025 5:06:52 PM","data":{"userId":"rem","rebateDesc":"签到返利-sku额度","rebateType":"sku","rebateConfig":"9011","bizId":"rem_sku_20250113"}}
+top.javarem.types.exception.AppException: null
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository.lambda$saveOrder$0(ActivityRepository.java:198)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository.saveOrder(ActivityRepository.java:181)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository$$FastClassBySpringCGLIB$$ae16c582.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository$$EnhancerBySpringCGLIB$$e259d85b.saveOrder(<generated>)
+	at top.javarem.domain.activity.service.quota.RaffleActivityAccountQuotaService.saveOrder(RaffleActivityAccountQuotaService.java:57)
+	at top.javarem.domain.activity.service.quota.AbstractRaffleActivityAccountQuotaService.createOrder(AbstractRaffleActivityAccountQuotaService.java:63)
+	at top.javarem.trigger.listener.RebateMessageCustomer.listener(RebateMessageCustomer.java:53)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
+	at org.springframework.amqp.rabbit.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:77)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:263)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.invokeHandlerAndProcessResult(MessagingMessageListenerAdapter.java:209)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:148)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:1674)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.actualInvokeListener(AbstractMessageListenerContainer.java:1593)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:1581)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:1572)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.executeListener(AbstractMessageListenerContainer.java:1516)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doReceiveAndExecute(SimpleMessageListenerContainer.java:1001)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.receiveAndExecute(SimpleMessageListenerContainer.java:948)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.access$1600(SimpleMessageListenerContainer.java:86)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.mainLoop(SimpleMessageListenerContainer.java:1326)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1232)
+	at java.lang.Thread.run(Thread.java:748)
+25-01-13.17:06:58.356 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  RebateMessageCustomer  - 监听用户返利消息 topic:send_rebate message:{"eventId":"42848059309","timestamp":"Jan 13, 2025 5:06:52 PM","data":{"userId":"rem","rebateDesc":"签到返利-积分","rebateType":"integral","rebateConfig":"10","bizId":"rem_integral_20250113"}}
+25-01-13.17:06:58.372 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  RebateMessageCustomer  - 监听用户行为返利消息 - 非sku奖励暂时不处理 topic: send_rebate message: {"eventId":"42848059309","timestamp":"Jan 13, 2025 5:06:52 PM","data":{"userId":"rem","rebateDesc":"签到返利-积分","rebateType":"integral","rebateConfig":"10","bizId":"rem_integral_20250113"}}
+25-01-13.17:07:00.005 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:07:00.020 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:07:00.055 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:07:30.015 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:07:30.069 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:08:00.011 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:08:00.027 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:08:00.090 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:08:26.788 [http-nio-8091-exec-15] INFO  RaffleActivityController - 日历签到返利 用户ID: rem
+25-01-13.17:08:27.130 [http-nio-8091-exec-15] INFO  EventPublisher         - 发送MQ消息 topic: send_rebate message: BaseEvent.EventMessage(eventId=11505160464, timestamp=Mon Jan 13 17:08:26 CST 2025, data=SendRebateMessageEvent.RebateMessage(userId=rem, rebateDesc=签到返利-sku额度, rebateType=sku, rebateConfig=9011, bizId=rem_sku_20250113))
+25-01-13.17:08:27.156 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  RebateMessageCustomer  - 监听用户返利消息 topic:send_rebate message:{"eventId":"11505160464","timestamp":"Jan 13, 2025 5:08:26 PM","data":{"userId":"rem","rebateDesc":"签到返利-sku额度","rebateType":"sku","rebateConfig":"9011","bizId":"rem_sku_20250113"}}
+25-01-13.17:08:27.185 [http-nio-8091-exec-15] INFO  EventPublisher         - 发送MQ消息 topic: send_rebate message: BaseEvent.EventMessage(eventId=26239201577, timestamp=Mon Jan 13 17:08:26 CST 2025, data=SendRebateMessageEvent.RebateMessage(userId=rem, rebateDesc=签到返利-积分, rebateType=integral, rebateConfig=10, bizId=rem_integral_20250113))
+25-01-13.17:08:27.241 [http-nio-8091-exec-15] INFO  RaffleActivityController - 签到返利完成 userId:rem orderIds:[rem_sku_20250113, rem_integral_20250113]
+25-01-13.17:08:27.267 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  AbstractRaffleActivityAccountQuotaService - 查询结果：ActivitySkuEntity(sku=9011, activityId=100301, activityCountId=11101, stockCount=20, stockCountSurplus=19) ActivityEntity(activityId=100301, activityName=测试活动, activityDesc=测试活动, beginTime=Sat Mar 09 10:15:10 CST 2024, endTime=Thu Mar 09 10:15:10 CST 2034, strategyId=100006, status=open) ActivityCountEntity(activityCountId=11101, totalCount=1, dayCount=1, monthCount=1)
+25-01-13.17:08:27.267 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  BaseFilterChain        - 执行基础规则责任链
+25-01-13.17:08:27.267 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SkuStockFilterChain    - 执行活动sku库存扣减责任链
+25-01-13.17:08:27.342 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  AbstractRaffleActivityAccountQuotaService - CreateQuotaOrderAggregate(userId=rem, activityId=100301, activityName=null, totalCount=1, monthCount=1, dayCount=1, activityOrder=ActivityOrderEntity(userId=rem, sku=9011, activityId=100301, activityName=测试活动, strategyId=100006, orderId=69768640045, orderTime=2025-01-13T17:08:27.342, totalCount=1, dayCount=1, monthCount=1, status=completed, outBusinessNo=rem_sku_20250113))
+25-01-13.17:08:27.418 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] ERROR ActivityRepository     - 写入订单记录，唯一索引冲突 userId: rem activityId: 100301 sku: 9011
+org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'rem_sku_20250113' for key 'raffle_activity_order.uq_out_business_no'
+### The error may exist in top/javarem/infrastructure/dao/mapper/RaffleActivityOrderMapper.java (best guess)
+### The error may involve top.javarem.infrastructure.dao.mapper.RaffleActivityOrderMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO raffle_activity_order  ( user_id, sku, activity_id, activity_name, strategy_id, order_id, order_time, total_count, day_count, month_count, status, out_business_no, create_time, update_time )  VALUES (  ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?  )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'rem_sku_20250113' for key 'raffle_activity_order.uq_out_business_no'
+; Duplicate entry 'rem_sku_20250113' for key 'raffle_activity_order.uq_out_business_no'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'rem_sku_20250113' for key 'raffle_activity_order.uq_out_business_no'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:439)
+	at com.sun.proxy.$Proxy94.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:272)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:59)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:152)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at com.sun.proxy.$Proxy98.insert(Unknown Source)
+	at com.baomidou.mybatisplus.extension.service.IService.save(IService.java:61)
+	at com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy.invokeMethod(CglibAopProxy.java:386)
+	at org.springframework.aop.framework.CglibAopProxy.access$000(CglibAopProxy.java:85)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:704)
+	at top.javarem.infrastructure.dao.iService.Impl.RaffleActivityOrderServiceImpl$$EnhancerBySpringCGLIB$$8e488b50.save(<generated>)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository.lambda$saveOrder$0(ActivityRepository.java:184)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository.saveOrder(ActivityRepository.java:181)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository$$FastClassBySpringCGLIB$$ae16c582.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository$$EnhancerBySpringCGLIB$$e259d85b.saveOrder(<generated>)
+	at top.javarem.domain.activity.service.quota.RaffleActivityAccountQuotaService.saveOrder(RaffleActivityAccountQuotaService.java:57)
+	at top.javarem.domain.activity.service.quota.AbstractRaffleActivityAccountQuotaService.createOrder(AbstractRaffleActivityAccountQuotaService.java:63)
+	at top.javarem.trigger.listener.RebateMessageCustomer.listener(RebateMessageCustomer.java:53)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
+	at org.springframework.amqp.rabbit.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:77)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:263)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.invokeHandlerAndProcessResult(MessagingMessageListenerAdapter.java:209)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:148)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:1674)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.actualInvokeListener(AbstractMessageListenerContainer.java:1593)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:1581)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:1572)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.executeListener(AbstractMessageListenerContainer.java:1516)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doReceiveAndExecute(SimpleMessageListenerContainer.java:1001)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.receiveAndExecute(SimpleMessageListenerContainer.java:948)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.access$1600(SimpleMessageListenerContainer.java:86)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.mainLoop(SimpleMessageListenerContainer.java:1326)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1232)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'rem_sku_20250113' for key 'raffle_activity_order.uq_out_business_no'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at sun.reflect.GeneratedMethodAccessor45.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58)
+	at com.sun.proxy.$Proxy148.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:48)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:75)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at sun.reflect.GeneratedMethodAccessor83.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	... 50 common frames omitted
+25-01-13.17:08:27.470 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] WARN  RebateMessageCustomer  - 监听用户行为返利消息，消费重复 topic: send_rebate message: {"eventId":"11505160464","timestamp":"Jan 13, 2025 5:08:26 PM","data":{"userId":"rem","rebateDesc":"签到返利-sku额度","rebateType":"sku","rebateConfig":"9011","bizId":"rem_sku_20250113"}}
+top.javarem.types.exception.AppException: null
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository.lambda$saveOrder$0(ActivityRepository.java:198)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository.saveOrder(ActivityRepository.java:181)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository$$FastClassBySpringCGLIB$$ae16c582.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository$$EnhancerBySpringCGLIB$$e259d85b.saveOrder(<generated>)
+	at top.javarem.domain.activity.service.quota.RaffleActivityAccountQuotaService.saveOrder(RaffleActivityAccountQuotaService.java:57)
+	at top.javarem.domain.activity.service.quota.AbstractRaffleActivityAccountQuotaService.createOrder(AbstractRaffleActivityAccountQuotaService.java:63)
+	at top.javarem.trigger.listener.RebateMessageCustomer.listener(RebateMessageCustomer.java:53)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
+	at org.springframework.amqp.rabbit.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:77)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:263)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.invokeHandlerAndProcessResult(MessagingMessageListenerAdapter.java:209)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:148)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:1674)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.actualInvokeListener(AbstractMessageListenerContainer.java:1593)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:1581)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:1572)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.executeListener(AbstractMessageListenerContainer.java:1516)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doReceiveAndExecute(SimpleMessageListenerContainer.java:1001)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.receiveAndExecute(SimpleMessageListenerContainer.java:948)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.access$1600(SimpleMessageListenerContainer.java:86)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.mainLoop(SimpleMessageListenerContainer.java:1326)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1232)
+	at java.lang.Thread.run(Thread.java:748)
+25-01-13.17:08:27.495 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  RebateMessageCustomer  - 监听用户返利消息 topic:send_rebate message:{"eventId":"26239201577","timestamp":"Jan 13, 2025 5:08:26 PM","data":{"userId":"rem","rebateDesc":"签到返利-积分","rebateType":"integral","rebateConfig":"10","bizId":"rem_integral_20250113"}}
+25-01-13.17:08:27.496 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  RebateMessageCustomer  - 监听用户行为返利消息 - 非sku奖励暂时不处理 topic: send_rebate message: {"eventId":"26239201577","timestamp":"Jan 13, 2025 5:08:26 PM","data":{"userId":"rem","rebateDesc":"签到返利-积分","rebateType":"integral","rebateConfig":"10","bizId":"rem_integral_20250113"}}
+25-01-13.17:08:30.011 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:08:30.067 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:09:00.001 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:09:00.048 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:09:00.079 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:09:30.009 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:09:30.060 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:10:00.001 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:10:00.032 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:10:00.081 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:10:30.016 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:10:30.063 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:11:00.011 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:11:00.029 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:11:00.061 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:11:30.012 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:11:30.058 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:12:00.009 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:12:00.025 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:12:00.056 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:12:30.022 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:12:30.038 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:13:00.008 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:13:00.061 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:13:00.087 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:13:30.001 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:13:30.016 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:14:00.010 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:14:00.026 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:14:00.088 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:14:30.014 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:14:30.030 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:15:00.006 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:15:00.053 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:15:00.084 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:15:30.012 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:15:30.059 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:16:00.016 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:16:00.032 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:16:00.063 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:16:30.016 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:16:30.063 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:17:00.021 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:17:00.037 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:17:00.099 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:17:30.012 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:17:30.059 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:18:00.019 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:18:00.046 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:18:00.076 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:18:30.004 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:18:30.027 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:19:00.013 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:19:00.068 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:19:00.092 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:19:30.007 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:19:30.036 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:20:00.008 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:20:00.030 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:20:00.092 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:20:30.013 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:20:30.059 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:21:00.001 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:21:00.017 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:21:00.048 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:21:30.017 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:21:30.064 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:22:00.009 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:22:00.024 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:22:00.071 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:22:30.020 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:22:30.040 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:23:00.016 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:23:00.064 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:23:00.095 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:23:30.002 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:23:30.017 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:24:00.017 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:24:00.072 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:24:00.093 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:24:30.003 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:24:30.056 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:25:00.011 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:25:00.026 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:25:00.089 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:25:30.005 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:25:30.057 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:26:00.010 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:26:00.058 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:26:00.079 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:26:30.006 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:26:30.059 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:27:00.005 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:27:00.052 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:27:00.083 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:27:21.855 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+25-01-13.17:27:21.871 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+25-01-13.17:27:21.902 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+25-01-13.17:27:22.002 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+25-01-13.17:27:22.002 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+25-01-13.17:27:22.739 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+25-01-13.17:27:23.202 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+25-01-13.17:27:23.202 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+25-01-13.17:27:23.202 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+25-01-13.17:27:23.302 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-01-13.17:27:23.302 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-01-13.17:27:30.342 [main            ] INFO  Application            - Starting Application using Java 1.8.0_151 on mile with PID 14728 (D:\Develop\project\rem-market\market-app\target\classes started by aaa in D:\Develop\project\rem-market)
+25-01-13.17:27:30.345 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-01-13.17:27:31.129 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-01-13.17:27:31.131 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-01-13.17:27:31.188 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 47 ms. Found 0 Redis repository interfaces.
+25-01-13.17:27:31.608 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+25-01-13.17:27:31.713 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+25-01-13.17:27:31.719 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-01-13.17:27:31.719 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+25-01-13.17:27:31.871 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-01-13.17:27:31.871 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1490 ms
+25-01-13.17:27:32.093 [main            ] INFO  Version                - Redisson 3.26.0
+25-01-13.17:27:32.806 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+25-01-13.17:27:32.987 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+25-01-13.17:27:36.162 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-01-13.17:27:36.238 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+25-01-13.17:27:36.246 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
+25-01-13.17:27:36.248 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [110.41.180.185:5672]
+25-01-13.17:27:36.384 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#66f5b8fe:0/SimpleConnection@5ca22e19 [delegate=amqp://lain@110.41.180.185:5672/, localPort= 53708]
+25-01-13.17:27:36.874 [main            ] INFO  Application            - Started Application in 6.898 seconds (JVM running for 8.091)
+25-01-13.17:27:37.924 [RMI TCP Connection(3)-192.168.137.1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-01-13.17:27:37.924 [RMI TCP Connection(3)-192.168.137.1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-01-13.17:27:37.927 [RMI TCP Connection(3)-192.168.137.1] INFO  DispatcherServlet      - Completed initialization in 3 ms
+25-01-13.17:27:37.951 [RMI TCP Connection(2)-192.168.137.1] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-01-13.17:27:38.481 [RMI TCP Connection(2)-192.168.137.1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-01-13.17:28:00.007 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:28:00.135 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:28:00.169 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:28:30.011 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:28:30.072 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:29:00.011 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:29:00.038 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:29:00.066 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:29:30.000 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:29:30.061 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:30:00.004 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:30:00.031 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:30:00.093 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:30:25.334 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+25-01-13.17:30:25.360 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+25-01-13.17:30:25.389 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+25-01-13.17:30:25.982 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+25-01-13.17:30:26.147 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+25-01-13.17:30:26.367 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+25-01-13.17:30:26.831 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+25-01-13.17:30:26.831 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+25-01-13.17:30:26.831 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+25-01-13.17:30:26.928 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-01-13.17:30:26.933 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-01-13.17:30:30.762 [main            ] INFO  Application            - Starting Application using Java 1.8.0_151 on mile with PID 8064 (D:\Develop\project\rem-market\market-app\target\classes started by aaa in D:\Develop\project\rem-market)
+25-01-13.17:30:30.763 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-01-13.17:30:31.648 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-01-13.17:30:31.650 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-01-13.17:30:31.703 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 43 ms. Found 0 Redis repository interfaces.
+25-01-13.17:30:32.230 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+25-01-13.17:30:32.307 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+25-01-13.17:30:32.314 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-01-13.17:30:32.314 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+25-01-13.17:30:32.526 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-01-13.17:30:32.526 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1727 ms
+25-01-13.17:30:32.794 [main            ] INFO  Version                - Redisson 3.26.0
+25-01-13.17:30:33.551 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+25-01-13.17:30:33.735 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+25-01-13.17:30:37.191 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-01-13.17:30:37.279 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+25-01-13.17:30:37.290 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
+25-01-13.17:30:37.292 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [110.41.180.185:5672]
+25-01-13.17:30:37.414 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#77cc6a28:0/SimpleConnection@21d15932 [delegate=amqp://lain@110.41.180.185:5672/, localPort= 53821]
+25-01-13.17:30:37.878 [main            ] INFO  Application            - Started Application in 7.56 seconds (JVM running for 9.124)
+25-01-13.17:30:38.756 [RMI TCP Connection(1)-192.168.137.1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-01-13.17:30:38.756 [RMI TCP Connection(1)-192.168.137.1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-01-13.17:30:38.758 [RMI TCP Connection(1)-192.168.137.1] INFO  DispatcherServlet      - Completed initialization in 2 ms
+25-01-13.17:30:38.779 [RMI TCP Connection(2)-192.168.137.1] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-01-13.17:30:39.077 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+25-01-13.17:30:39.099 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+25-01-13.17:30:39.121 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+25-01-13.17:30:39.325 [RMI TCP Connection(2)-192.168.137.1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-01-13.17:30:39.676 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+25-01-13.17:30:39.793 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+25-01-13.17:30:39.902 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+25-01-13.17:30:40.341 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+25-01-13.17:30:40.341 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+25-01-13.17:30:40.341 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+25-01-13.17:30:40.441 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-01-13.17:30:40.573 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+25-01-13.17:30:43.737 [main            ] INFO  Application            - Starting Application using Java 1.8.0_151 on mile with PID 22632 (D:\Develop\project\rem-market\market-app\target\classes started by aaa in D:\Develop\project\rem-market)
+25-01-13.17:30:43.739 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+25-01-13.17:30:44.472 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+25-01-13.17:30:44.474 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+25-01-13.17:30:44.532 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 48 ms. Found 0 Redis repository interfaces.
+25-01-13.17:30:44.940 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+25-01-13.17:30:45.050 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+25-01-13.17:30:45.057 [main            ] INFO  StandardService        - Starting service [Tomcat]
+25-01-13.17:30:45.057 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+25-01-13.17:30:45.246 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+25-01-13.17:30:45.246 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1475 ms
+25-01-13.17:30:45.464 [main            ] INFO  Version                - Redisson 3.26.0
+25-01-13.17:30:46.143 [redisson-netty-1-6] INFO  ConnectionsHolder      - 1 connections initialized for 110.41.180.185/110.41.180.185:6379
+25-01-13.17:30:46.356 [redisson-netty-1-13] INFO  ConnectionsHolder      - 5 connections initialized for 110.41.180.185/110.41.180.185:6379
+25-01-13.17:30:49.535 [main            ] INFO  EndpointLinksResolver  - Exposing 1 endpoint(s) beneath base path '/actuator'
+25-01-13.17:30:49.610 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-8091"]
+25-01-13.17:30:49.619 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 8091 (http) with context path ''
+25-01-13.17:30:49.620 [main            ] INFO  CachingConnectionFactory - Attempting to connect to: [110.41.180.185:5672]
+25-01-13.17:30:49.750 [main            ] INFO  CachingConnectionFactory - Created new connection: rabbitConnectionFactory#5287ba5f:0/SimpleConnection@3d6778d5 [delegate=amqp://lain@110.41.180.185:5672/, localPort= 53909]
+25-01-13.17:30:50.269 [main            ] INFO  Application            - Started Application in 6.889 seconds (JVM running for 8.13)
+25-01-13.17:30:50.441 [RMI TCP Connection(1)-192.168.137.1] INFO  HikariDataSource       - HikariPool-1 - Starting...
+25-01-13.17:30:50.839 [RMI TCP Connection(1)-192.168.137.1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+25-01-13.17:30:51.323 [RMI TCP Connection(3)-192.168.137.1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25-01-13.17:30:51.323 [RMI TCP Connection(3)-192.168.137.1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+25-01-13.17:30:51.324 [RMI TCP Connection(3)-192.168.137.1] INFO  DispatcherServlet      - Completed initialization in 1 ms
+25-01-13.17:31:00.015 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:31:00.122 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:31:00.156 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:31:30.001 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:31:30.033 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:32:00.011 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:32:00.040 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:32:00.086 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:32:30.001 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:32:30.030 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:33:00.007 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:33:00.036 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:33:00.068 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:33:30.013 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:33:30.042 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:33:53.477 [http-nio-8091-exec-3] INFO  RaffleActivityController - 日历签到返利 用户ID: rem
+25-01-13.17:33:53.791 [http-nio-8091-exec-3] INFO  EventPublisher         - 发送MQ消息 topic: send_rebate message: BaseEvent.EventMessage(eventId=36469412783, timestamp=Mon Jan 13 17:33:53 CST 2025, data=SendRebateMessageEvent.RebateMessage(userId=rem, rebateDesc=签到返利-sku额度, rebateType=sku, rebateConfig=9011, bizId=rem_sku_20250113))
+25-01-13.17:33:53.822 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  RebateMessageCustomer  - 监听用户返利消息 topic:send_rebate message:{"eventId":"36469412783","timestamp":"Jan 13, 2025 5:33:53 PM","data":{"userId":"rem","rebateDesc":"签到返利-sku额度","rebateType":"sku","rebateConfig":"9011","bizId":"rem_sku_20250113"}}
+25-01-13.17:33:53.841 [http-nio-8091-exec-3] INFO  EventPublisher         - 发送MQ消息 topic: send_rebate message: BaseEvent.EventMessage(eventId=95868274140, timestamp=Mon Jan 13 17:33:53 CST 2025, data=SendRebateMessageEvent.RebateMessage(userId=rem, rebateDesc=签到返利-积分, rebateType=integral, rebateConfig=10, bizId=rem_integral_20250113))
+25-01-13.17:33:53.935 [http-nio-8091-exec-3] INFO  RaffleActivityController - 签到返利完成 userId:rem orderIds:[rem_sku_20250113, rem_integral_20250113]
+25-01-13.17:33:53.950 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  AbstractRaffleActivityAccountQuotaService - 查询结果：ActivitySkuEntity(sku=9011, activityId=100301, activityCountId=11101, stockCount=20, stockCountSurplus=18) ActivityEntity(activityId=100301, activityName=测试活动, activityDesc=测试活动, beginTime=Sat Mar 09 10:15:10 CST 2024, endTime=Thu Mar 09 10:15:10 CST 2034, strategyId=100006, status=open) ActivityCountEntity(activityCountId=11101, totalCount=1, dayCount=1, monthCount=1)
+25-01-13.17:33:53.951 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  BaseFilterChain        - 执行基础规则责任链
+25-01-13.17:33:53.952 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SkuStockFilterChain    - 执行活动sku库存扣减责任链
+25-01-13.17:33:54.072 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  AbstractRaffleActivityAccountQuotaService - CreateQuotaOrderAggregate(userId=rem, activityId=100301, activityName=null, totalCount=1, monthCount=1, dayCount=1, activityOrder=ActivityOrderEntity(userId=rem, sku=9011, activityId=100301, activityName=测试活动, strategyId=100006, orderId=45361917972, orderTime=2025-01-13T17:33:54.071, totalCount=1, dayCount=1, monthCount=1, status=completed, outBusinessNo=rem_sku_20250113))
+25-01-13.17:33:54.196 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] ERROR ActivityRepository     - 写入订单记录，唯一索引冲突 userId: rem activityId: 100301 sku: 9011
+org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'rem_sku_20250113' for key 'raffle_activity_order.uq_out_business_no'
+### The error may exist in top/javarem/infrastructure/dao/mapper/RaffleActivityOrderMapper.java (best guess)
+### The error may involve top.javarem.infrastructure.dao.mapper.RaffleActivityOrderMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO raffle_activity_order  ( user_id, sku, activity_id, activity_name, strategy_id, order_id, order_time, total_count, day_count, month_count, status, out_business_no, create_time, update_time )  VALUES (  ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?  )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'rem_sku_20250113' for key 'raffle_activity_order.uq_out_business_no'
+; Duplicate entry 'rem_sku_20250113' for key 'raffle_activity_order.uq_out_business_no'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'rem_sku_20250113' for key 'raffle_activity_order.uq_out_business_no'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:439)
+	at com.sun.proxy.$Proxy94.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:272)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:59)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:152)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at com.sun.proxy.$Proxy98.insert(Unknown Source)
+	at com.baomidou.mybatisplus.extension.service.IService.save(IService.java:61)
+	at com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy.invokeMethod(CglibAopProxy.java:386)
+	at org.springframework.aop.framework.CglibAopProxy.access$000(CglibAopProxy.java:85)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:704)
+	at top.javarem.infrastructure.dao.iService.Impl.RaffleActivityOrderServiceImpl$$EnhancerBySpringCGLIB$$8e488b50.save(<generated>)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository.lambda$saveOrder$0(ActivityRepository.java:184)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository.saveOrder(ActivityRepository.java:181)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository$$FastClassBySpringCGLIB$$ae16c582.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository$$EnhancerBySpringCGLIB$$e259d85b.saveOrder(<generated>)
+	at top.javarem.domain.activity.service.quota.RaffleActivityAccountQuotaService.saveOrder(RaffleActivityAccountQuotaService.java:57)
+	at top.javarem.domain.activity.service.quota.AbstractRaffleActivityAccountQuotaService.createOrder(AbstractRaffleActivityAccountQuotaService.java:63)
+	at top.javarem.trigger.listener.RebateMessageCustomer.listener(RebateMessageCustomer.java:53)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
+	at org.springframework.amqp.rabbit.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:77)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:263)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.invokeHandlerAndProcessResult(MessagingMessageListenerAdapter.java:209)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:148)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:1674)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.actualInvokeListener(AbstractMessageListenerContainer.java:1593)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:1581)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:1572)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.executeListener(AbstractMessageListenerContainer.java:1516)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doReceiveAndExecute(SimpleMessageListenerContainer.java:1001)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.receiveAndExecute(SimpleMessageListenerContainer.java:948)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.access$1600(SimpleMessageListenerContainer.java:86)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.mainLoop(SimpleMessageListenerContainer.java:1326)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1232)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'rem_sku_20250113' for key 'raffle_activity_order.uq_out_business_no'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58)
+	at com.sun.proxy.$Proxy148.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:48)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:75)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	... 50 common frames omitted
+25-01-13.17:33:54.244 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] WARN  RebateMessageCustomer  - 监听用户行为返利消息，消费重复 topic: send_rebate message: {"eventId":"36469412783","timestamp":"Jan 13, 2025 5:33:53 PM","data":{"userId":"rem","rebateDesc":"签到返利-sku额度","rebateType":"sku","rebateConfig":"9011","bizId":"rem_sku_20250113"}}
+top.javarem.types.exception.AppException: null
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository.lambda$saveOrder$0(ActivityRepository.java:198)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository.saveOrder(ActivityRepository.java:181)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository$$FastClassBySpringCGLIB$$ae16c582.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository$$EnhancerBySpringCGLIB$$e259d85b.saveOrder(<generated>)
+	at top.javarem.domain.activity.service.quota.RaffleActivityAccountQuotaService.saveOrder(RaffleActivityAccountQuotaService.java:57)
+	at top.javarem.domain.activity.service.quota.AbstractRaffleActivityAccountQuotaService.createOrder(AbstractRaffleActivityAccountQuotaService.java:63)
+	at top.javarem.trigger.listener.RebateMessageCustomer.listener(RebateMessageCustomer.java:53)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
+	at org.springframework.amqp.rabbit.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:77)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:263)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.invokeHandlerAndProcessResult(MessagingMessageListenerAdapter.java:209)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:148)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:1674)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.actualInvokeListener(AbstractMessageListenerContainer.java:1593)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:1581)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:1572)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.executeListener(AbstractMessageListenerContainer.java:1516)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doReceiveAndExecute(SimpleMessageListenerContainer.java:1001)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.receiveAndExecute(SimpleMessageListenerContainer.java:948)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.access$1600(SimpleMessageListenerContainer.java:86)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.mainLoop(SimpleMessageListenerContainer.java:1326)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1232)
+	at java.lang.Thread.run(Thread.java:748)
+25-01-13.17:33:54.269 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  RebateMessageCustomer  - 监听用户返利消息 topic:send_rebate message:{"eventId":"95868274140","timestamp":"Jan 13, 2025 5:33:53 PM","data":{"userId":"rem","rebateDesc":"签到返利-积分","rebateType":"integral","rebateConfig":"10","bizId":"rem_integral_20250113"}}
+25-01-13.17:33:54.270 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  RebateMessageCustomer  - 监听用户行为返利消息 - 非sku奖励暂时不处理 topic: send_rebate message: {"eventId":"95868274140","timestamp":"Jan 13, 2025 5:33:53 PM","data":{"userId":"rem","rebateDesc":"签到返利-积分","rebateType":"integral","rebateConfig":"10","bizId":"rem_integral_20250113"}}
+25-01-13.17:34:00.007 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:34:00.038 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:34:00.178 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:34:30.020 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:34:30.051 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:35:00.010 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:35:00.026 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:35:00.057 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:35:30.018 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:35:30.049 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:36:00.009 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:36:00.035 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:36:00.066 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:36:27.433 [http-nio-8091-exec-5] INFO  RaffleActivityController - 日历签到返利 用户ID: rem
+25-01-13.17:36:27.664 [http-nio-8091-exec-5] INFO  EventPublisher         - 发送MQ消息 topic: send_rebate message: BaseEvent.EventMessage(eventId=56028864422, timestamp=Mon Jan 13 17:36:27 CST 2025, data=SendRebateMessageEvent.RebateMessage(userId=rem, rebateDesc=签到返利-sku额度, rebateType=sku, rebateConfig=9011, bizId=rem_sku_20250113))
+25-01-13.17:36:27.700 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  RebateMessageCustomer  - 监听用户返利消息 topic:send_rebate message:{"eventId":"56028864422","timestamp":"Jan 13, 2025 5:36:27 PM","data":{"userId":"rem","rebateDesc":"签到返利-sku额度","rebateType":"sku","rebateConfig":"9011","bizId":"rem_sku_20250113"}}
+25-01-13.17:36:27.716 [http-nio-8091-exec-5] INFO  EventPublisher         - 发送MQ消息 topic: send_rebate message: BaseEvent.EventMessage(eventId=46548599835, timestamp=Mon Jan 13 17:36:27 CST 2025, data=SendRebateMessageEvent.RebateMessage(userId=rem, rebateDesc=签到返利-积分, rebateType=integral, rebateConfig=10, bizId=rem_integral_20250113))
+25-01-13.17:36:27.794 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  AbstractRaffleActivityAccountQuotaService - 查询结果：ActivitySkuEntity(sku=9011, activityId=100301, activityCountId=11101, stockCount=20, stockCountSurplus=17) ActivityEntity(activityId=100301, activityName=测试活动, activityDesc=测试活动, beginTime=Sat Mar 09 10:15:10 CST 2024, endTime=Thu Mar 09 10:15:10 CST 2034, strategyId=100006, status=open) ActivityCountEntity(activityCountId=11101, totalCount=1, dayCount=1, monthCount=1)
+25-01-13.17:36:27.794 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  BaseFilterChain        - 执行基础规则责任链
+25-01-13.17:36:27.794 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SkuStockFilterChain    - 执行活动sku库存扣减责任链
+25-01-13.17:36:27.794 [http-nio-8091-exec-5] INFO  RaffleActivityController - 签到返利完成 userId:rem orderIds:[rem_sku_20250113, rem_integral_20250113]
+25-01-13.17:36:27.873 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  AbstractRaffleActivityAccountQuotaService - CreateQuotaOrderAggregate(userId=rem, activityId=100301, activityName=null, totalCount=1, monthCount=1, dayCount=1, activityOrder=ActivityOrderEntity(userId=rem, sku=9011, activityId=100301, activityName=测试活动, strategyId=100006, orderId=24503161695, orderTime=2025-01-13T17:36:27.873, totalCount=1, dayCount=1, monthCount=1, status=completed, outBusinessNo=rem_sku_20250113))
+25-01-13.17:36:27.949 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] ERROR ActivityRepository     - 写入订单记录，唯一索引冲突 userId: rem activityId: 100301 sku: 9011
+org.springframework.dao.DuplicateKeyException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'rem_sku_20250113' for key 'raffle_activity_order.uq_out_business_no'
+### The error may exist in top/javarem/infrastructure/dao/mapper/RaffleActivityOrderMapper.java (best guess)
+### The error may involve top.javarem.infrastructure.dao.mapper.RaffleActivityOrderMapper.insert-Inline
+### The error occurred while setting parameters
+### SQL: INSERT INTO raffle_activity_order  ( user_id, sku, activity_id, activity_name, strategy_id, order_id, order_time, total_count, day_count, month_count, status, out_business_no, create_time, update_time )  VALUES (  ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?  )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'rem_sku_20250113' for key 'raffle_activity_order.uq_out_business_no'
+; Duplicate entry 'rem_sku_20250113' for key 'raffle_activity_order.uq_out_business_no'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'rem_sku_20250113' for key 'raffle_activity_order.uq_out_business_no'
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:247)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70)
+	at org.mybatis.spring.MyBatisExceptionTranslator.translateExceptionIfPossible(MyBatisExceptionTranslator.java:92)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:439)
+	at com.sun.proxy.$Proxy94.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:272)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperMethod.execute(MybatisMapperMethod.java:59)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy$PlainMethodInvoker.invoke(MybatisMapperProxy.java:152)
+	at com.baomidou.mybatisplus.core.override.MybatisMapperProxy.invoke(MybatisMapperProxy.java:89)
+	at com.sun.proxy.$Proxy98.insert(Unknown Source)
+	at com.baomidou.mybatisplus.extension.service.IService.save(IService.java:61)
+	at com.baomidou.mybatisplus.extension.service.IService$$FastClassBySpringCGLIB$$f8525d18.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy.invokeMethod(CglibAopProxy.java:386)
+	at org.springframework.aop.framework.CglibAopProxy.access$000(CglibAopProxy.java:85)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:704)
+	at top.javarem.infrastructure.dao.iService.Impl.RaffleActivityOrderServiceImpl$$EnhancerBySpringCGLIB$$8e488b50.save(<generated>)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository.lambda$saveOrder$0(ActivityRepository.java:184)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository.saveOrder(ActivityRepository.java:181)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository$$FastClassBySpringCGLIB$$ae16c582.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository$$EnhancerBySpringCGLIB$$e259d85b.saveOrder(<generated>)
+	at top.javarem.domain.activity.service.quota.RaffleActivityAccountQuotaService.saveOrder(RaffleActivityAccountQuotaService.java:57)
+	at top.javarem.domain.activity.service.quota.AbstractRaffleActivityAccountQuotaService.createOrder(AbstractRaffleActivityAccountQuotaService.java:63)
+	at top.javarem.trigger.listener.RebateMessageCustomer.listener(RebateMessageCustomer.java:53)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
+	at org.springframework.amqp.rabbit.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:77)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:263)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.invokeHandlerAndProcessResult(MessagingMessageListenerAdapter.java:209)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:148)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:1674)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.actualInvokeListener(AbstractMessageListenerContainer.java:1593)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:1581)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:1572)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.executeListener(AbstractMessageListenerContainer.java:1516)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doReceiveAndExecute(SimpleMessageListenerContainer.java:1001)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.receiveAndExecute(SimpleMessageListenerContainer.java:948)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.access$1600(SimpleMessageListenerContainer.java:86)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.mainLoop(SimpleMessageListenerContainer.java:1326)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1232)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'rem_sku_20250113' for key 'raffle_activity_order.uq_out_business_no'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.execute(ProxyPreparedStatement.java:44)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.execute(HikariProxyPreparedStatement.java)
+	at sun.reflect.GeneratedMethodAccessor44.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.ibatis.logging.jdbc.PreparedStatementLogger.invoke(PreparedStatementLogger.java:58)
+	at com.sun.proxy.$Proxy148.execute(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:48)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:75)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:197)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:184)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:425)
+	... 50 common frames omitted
+25-01-13.17:36:27.985 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] WARN  RebateMessageCustomer  - 监听用户行为返利消息，消费重复 topic: send_rebate message: {"eventId":"56028864422","timestamp":"Jan 13, 2025 5:36:27 PM","data":{"userId":"rem","rebateDesc":"签到返利-sku额度","rebateType":"sku","rebateConfig":"9011","bizId":"rem_sku_20250113"}}
+top.javarem.types.exception.AppException: null
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository.lambda$saveOrder$0(ActivityRepository.java:198)
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository.saveOrder(ActivityRepository.java:181)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository$$FastClassBySpringCGLIB$$ae16c582.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:793)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:763)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:708)
+	at top.javarem.infrastructure.adapter.repository.ActivityRepository$$EnhancerBySpringCGLIB$$e259d85b.saveOrder(<generated>)
+	at top.javarem.domain.activity.service.quota.RaffleActivityAccountQuotaService.saveOrder(RaffleActivityAccountQuotaService.java:57)
+	at top.javarem.domain.activity.service.quota.AbstractRaffleActivityAccountQuotaService.createOrder(AbstractRaffleActivityAccountQuotaService.java:63)
+	at top.javarem.trigger.listener.RebateMessageCustomer.listener(RebateMessageCustomer.java:53)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:169)
+	at org.springframework.messaging.handler.invocation.InvocableHandlerMethod.invoke(InvocableHandlerMethod.java:119)
+	at org.springframework.amqp.rabbit.listener.adapter.HandlerAdapter.invoke(HandlerAdapter.java:77)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.invokeHandler(MessagingMessageListenerAdapter.java:263)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.invokeHandlerAndProcessResult(MessagingMessageListenerAdapter.java:209)
+	at org.springframework.amqp.rabbit.listener.adapter.MessagingMessageListenerAdapter.onMessage(MessagingMessageListenerAdapter.java:148)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doInvokeListener(AbstractMessageListenerContainer.java:1674)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.actualInvokeListener(AbstractMessageListenerContainer.java:1593)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.invokeListener(AbstractMessageListenerContainer.java:1581)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.doExecuteListener(AbstractMessageListenerContainer.java:1572)
+	at org.springframework.amqp.rabbit.listener.AbstractMessageListenerContainer.executeListener(AbstractMessageListenerContainer.java:1516)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.doReceiveAndExecute(SimpleMessageListenerContainer.java:1001)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.receiveAndExecute(SimpleMessageListenerContainer.java:948)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer.access$1600(SimpleMessageListenerContainer.java:86)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.mainLoop(SimpleMessageListenerContainer.java:1326)
+	at org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer$AsyncMessageProcessingConsumer.run(SimpleMessageListenerContainer.java:1232)
+	at java.lang.Thread.run(Thread.java:748)
+25-01-13.17:36:28.017 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  RebateMessageCustomer  - 监听用户返利消息 topic:send_rebate message:{"eventId":"46548599835","timestamp":"Jan 13, 2025 5:36:27 PM","data":{"userId":"rem","rebateDesc":"签到返利-积分","rebateType":"integral","rebateConfig":"10","bizId":"rem_integral_20250113"}}
+25-01-13.17:36:28.017 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  RebateMessageCustomer  - 监听用户行为返利消息 - 非sku奖励暂时不处理 topic: send_rebate message: {"eventId":"46548599835","timestamp":"Jan 13, 2025 5:36:27 PM","data":{"userId":"rem","rebateDesc":"签到返利-积分","rebateType":"integral","rebateConfig":"10","bizId":"rem_integral_20250113"}}
+25-01-13.17:36:30.001 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:36:30.016 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:37:00.010 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:37:00.041 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:37:00.073 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:37:30.020 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:37:30.035 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:38:00.004 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:38:00.035 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:38:00.083 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:38:30.014 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:38:30.059 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:39:00.010 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:39:00.042 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:39:00.073 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:39:30.006 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:39:30.038 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:40:00.007 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:40:00.036 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:40:00.084 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:40:11.120 [http-nio-8091-exec-6] INFO  RaffleActivityController - 日历签到返利 用户ID: rem
+25-01-13.17:40:11.369 [http-nio-8091-exec-6] INFO  EventPublisher         - 发送MQ消息 topic: send_rebate message: BaseEvent.EventMessage(eventId=53079489895, timestamp=Mon Jan 13 17:40:11 CST 2025, data=SendRebateMessageEvent.RebateMessage(userId=rem, rebateDesc=签到返利-sku额度, rebateType=sku, rebateConfig=9011, bizId=rem_sku_20250113))
+25-01-13.17:40:11.396 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  RebateMessageCustomer  - 监听用户返利消息 topic:send_rebate message:{"eventId":"53079489895","timestamp":"Jan 13, 2025 5:40:11 PM","data":{"userId":"rem","rebateDesc":"签到返利-sku额度","rebateType":"sku","rebateConfig":"9011","bizId":"rem_sku_20250113"}}
+25-01-13.17:40:11.415 [http-nio-8091-exec-6] INFO  EventPublisher         - 发送MQ消息 topic: send_rebate message: BaseEvent.EventMessage(eventId=47735366441, timestamp=Mon Jan 13 17:40:11 CST 2025, data=SendRebateMessageEvent.RebateMessage(userId=rem, rebateDesc=签到返利-积分, rebateType=integral, rebateConfig=10, bizId=rem_integral_20250113))
+25-01-13.17:40:11.487 [http-nio-8091-exec-6] INFO  RaffleActivityController - 签到返利完成 userId:rem orderIds:[rem_sku_20250113, rem_integral_20250113]
+25-01-13.17:40:11.503 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  AbstractRaffleActivityAccountQuotaService - 查询结果：ActivitySkuEntity(sku=9011, activityId=100301, activityCountId=11101, stockCount=20, stockCountSurplus=16) ActivityEntity(activityId=100301, activityName=测试活动, activityDesc=测试活动, beginTime=Sat Mar 09 10:15:10 CST 2024, endTime=Thu Mar 09 10:15:10 CST 2034, strategyId=100006, status=open) ActivityCountEntity(activityCountId=11101, totalCount=1, dayCount=1, monthCount=1)
+25-01-13.17:40:11.503 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  BaseFilterChain        - 执行基础规则责任链
+25-01-13.17:40:11.503 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  SkuStockFilterChain    - 执行活动sku库存扣减责任链
+25-01-13.17:40:11.570 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  AbstractRaffleActivityAccountQuotaService - CreateQuotaOrderAggregate(userId=rem, activityId=100301, activityName=null, totalCount=1, monthCount=1, dayCount=1, activityOrder=ActivityOrderEntity(userId=rem, sku=9011, activityId=100301, activityName=测试活动, strategyId=100006, orderId=57672670618, orderTime=2025-01-13T17:40:11.570, totalCount=1, dayCount=1, monthCount=1, status=completed, outBusinessNo=rem_sku_20250113))
+25-01-13.17:40:11.863 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  RebateMessageCustomer  - 监听用户返利消息 topic:send_rebate message:{"eventId":"47735366441","timestamp":"Jan 13, 2025 5:40:11 PM","data":{"userId":"rem","rebateDesc":"签到返利-积分","rebateType":"integral","rebateConfig":"10","bizId":"rem_integral_20250113"}}
+25-01-13.17:40:11.864 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-1] INFO  RebateMessageCustomer  - 监听用户行为返利消息 - 非sku奖励暂时不处理 topic: send_rebate message: {"eventId":"47735366441","timestamp":"Jan 13, 2025 5:40:11 PM","data":{"userId":"rem","rebateDesc":"签到返利-积分","rebateType":"integral","rebateConfig":"10","bizId":"rem_integral_20250113"}}
+25-01-13.17:40:30.001 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:40:30.141 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:41:00.010 [scheduling-1    ] INFO  UpdateAwardStockJob    - 更新奖品库存任务
+25-01-13.17:41:00.026 [scheduling-1    ] INFO  SendMessageTaskJob     - 发送MQ消息任务开始执行
+25-01-13.17:41:00.071 [scheduling-1    ] INFO  UpdateActivitySkuStockJob - 活动库存扣减定时任务
+25-01-13.17:41:03.565 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+25-01-13.17:41:03.580 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+25-01-13.17:41:03.612 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2] INFO  SimpleMessageListenerContainer - Waiting for workers to finish.
+25-01-13.17:41:04.085 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+25-01-13.17:41:04.326 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+25-01-13.17:41:04.485 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2] INFO  SimpleMessageListenerContainer - Successfully waited for workers to finish.
+25-01-13.17:41:04.931 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+25-01-13.17:41:04.931 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+25-01-13.17:41:04.931 [SpringApplicationShutdownHook] INFO  SimpleMessageListenerContainer - Shutdown ignored - container is already stopped
+25-01-13.17:41:05.026 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+25-01-13.17:41:05.042 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.

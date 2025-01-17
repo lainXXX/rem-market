@@ -32,4 +32,10 @@ public class RaffleActivityAccountServiceImpl extends ServiceImpl<RaffleActivity
     public int updateAccountDeductQuota(RaffleActivityAccount build) {
         return mapper.updateAccountDeductQuota(build);
     }
+
+    @Override
+    public RaffleActivityAccount getAcitivtyAccountByUserId(String userId) {
+
+        return this.lambdaQuery().eq(RaffleActivityAccount::getUserId, userId).one();
+    }
 }
