@@ -1,11 +1,18 @@
 package top.javarem.domain.credit.model.aggregate;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.RandomStringUtils;
+import top.javarem.domain.award.model.vo.TaskStateVO;
+import top.javarem.domain.credit.event.CreditAdjustSuccessMessageEvent;
 import top.javarem.domain.credit.model.entity.CreditAccountEntity;
 import top.javarem.domain.credit.model.entity.CreditOrderEntity;
+import top.javarem.domain.credit.model.entity.TaskEntity;
 import top.javarem.domain.credit.model.vo.TradeNameVO;
 import top.javarem.domain.credit.model.vo.TradeTypeVO;
+import top.javarem.types.event.BaseEvent;
 
 import java.math.BigDecimal;
 
@@ -27,6 +34,8 @@ public class TradeAggregate {
      * 积分对象实体
      */
     private CreditOrderEntity creditOrderEntity;
+
+    private TaskEntity taskEntity;
 
     /**
      * 设置积分账户实体
@@ -61,6 +70,16 @@ public class TradeAggregate {
                 .outBusinessNo(outBusinessNo)
                 .build();
 
+    }
+
+    public void setTaskEntity(String userId, String topic, String messageId, BaseEvent.EventMessage<CreditAdjustSuccessMessageEvent.CreditAdjustSuccessMessage> message) {
+        this.taskEntity = TaskEntity.builder()
+                .userId(userId)
+                .topic(topic)
+                .messageId(messageId)
+                .message(message)
+                .status(TaskStateVO.create)
+                .build();
     }
 
 }

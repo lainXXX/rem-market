@@ -4,9 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import top.javarem.domain.award.event.SendAwardMessageEvent;
 import top.javarem.domain.award.model.vo.TaskStateVO;
-import top.javarem.types.event.BaseEvent;
 
 /**
  * @Author: rem

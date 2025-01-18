@@ -8,6 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import top.javarem.domain.activity.model.entity.ActivityPartakeEntity;
 import top.javarem.domain.activity.model.entity.SkuRechargeEntity;
 import top.javarem.domain.activity.model.entity.UserRaffleConsumeOrderEntity;
+import top.javarem.domain.activity.model.vo.OrderTradeTypeVO;
 import top.javarem.domain.activity.service.IRaffleActivityAccountQuotaService;
 import top.javarem.domain.activity.service.IRaffleActivityPartakeService;
 import top.javarem.domain.activity.service.armory.IActivityArmory;
@@ -40,6 +41,9 @@ public class RaffleActivityTest {
 
     @Autowired
     private IRaffleActivityPartakeService partakeService;
+
+    @Autowired
+    private IRaffleActivityAccountQuotaService accountQuotaService;
 
     @Autowired
     private IAwardService awardService;
@@ -104,6 +108,22 @@ public class RaffleActivityTest {
             userAwardRecordEntity.setStatus(AwardStateVO.create.getCode());
             awardService.saveUserAwardRecord(userAwardRecordEntity);
             Thread.sleep(5000);
+    }
+
+    @Test
+    public void test_credit_pay_trade() {
+        SkuRechargeEntity skuRechargeEntity = new SkuRechargeEntity();
+        skuRechargeEntity.setUserId("rem");
+        skuRechargeEntity.setSku(9011L);
+        skuRechargeEntity.setOutBusinessNo("700091009135");
+        skuRechargeEntity.setOrderTradeTypeVO(OrderTradeTypeVO.credit_pay_trade);
+        String orderId = accountQuotaService.createOrder(skuRechargeEntity);
+        log.info("orderId : {}", orderId);
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 

@@ -24,6 +24,10 @@ public interface IActivityRepository {
 
     void saveOrder(CreateQuotaOrderAggregate createQuotaOrderAggregate);
 
+    void saveCreditOrder(CreateQuotaOrderAggregate createQuotaOrderAggregate);
+
+    void saveRebateOrder(CreateQuotaOrderAggregate createQuotaOrderAggregate);
+
     void cacheActivityStock(String key, Integer stockCount);
 
     Boolean deductActivityStock(Long sku, Date endTime);
@@ -57,4 +61,6 @@ public interface IActivityRepository {
     Long getActivityIdByStrategyId(Long strategyId);
 
     Integer queryRaffleActivityAccountDayPartakeCount(Long activityId, String userId);
+
+    void updateOrder(DeliveryOrderEntity deliveryOrderEntity);
 }

@@ -50,4 +50,10 @@ public class CreateQuotaOrderAggregate {
      */
     private ActivityOrderEntity activityOrder;
 
+    public void setOrderStatus(String orderStatus) {
+
+        this.activityOrder.setStatus(orderStatus);
+
+    }
+
 }

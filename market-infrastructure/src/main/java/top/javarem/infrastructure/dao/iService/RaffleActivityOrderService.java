@@ -11,4 +11,7 @@ import top.javarem.infrastructure.dao.entity.RaffleActivityOrder;
 */
 public interface RaffleActivityOrderService extends IService<RaffleActivityOrder> {
 
+    RaffleActivityOrder getOrder(String userId, String outBusinessNo);
+
+    int updateOrderStatus(RaffleActivityOrder raffleActivityOrderRes);
 }

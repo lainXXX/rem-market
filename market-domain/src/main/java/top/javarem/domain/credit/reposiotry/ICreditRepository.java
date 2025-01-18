@@ -8,5 +8,7 @@ import top.javarem.domain.credit.model.aggregate.TradeAggregate;
  * @Description:积分服务仓储接口
  */
 public interface ICreditRepository {
+
     void saveUserCreditTradeOrder(TradeAggregate tradeAggregate);
+
 }

@@ -2,6 +2,8 @@ package top.javarem.domain.activity.model.entity;
 
 import lombok.Data;
 
+import java.math.BigDecimal;
+
 
 /**
  * @TableName raffle_activity_sku
@@ -33,5 +35,7 @@ public class ActivitySkuEntity {
      * 剩余库存
      */
     private Integer stockCountSurplus;
+    /** 商品金额【积分】 */
+    private BigDecimal productAmount;
 
 }

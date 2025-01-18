@@ -31,9 +31,14 @@ public class CreditAdjustTest {
         tradeEntity.setUserId("rem");
         tradeEntity.setTradeName(TradeNameVO.REBATE);
         tradeEntity.setTradeType(TradeTypeVO.FORWARD);
-        tradeEntity.setAmount(new BigDecimal("-1.11"));
-        tradeEntity.setOutBusinessNo("202501170322");
+        tradeEntity.setAmount(new BigDecimal("-1.68"));
+        tradeEntity.setOutBusinessNo("700091009135");
         creditService.createOrder(tradeEntity);
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }

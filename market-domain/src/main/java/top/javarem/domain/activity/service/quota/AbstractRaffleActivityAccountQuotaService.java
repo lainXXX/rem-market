@@ -6,10 +6,13 @@ import top.javarem.domain.activity.model.aggregate.CreateQuotaOrderAggregate;
 import top.javarem.domain.activity.model.entity.*;
 import top.javarem.domain.activity.repository.IActivityRepository;
 import top.javarem.domain.activity.service.IRaffleActivityAccountQuotaService;
+import top.javarem.domain.activity.service.quota.policy.ITradePolicy;
 import top.javarem.domain.activity.service.quota.rule.IActivityChain;
 import top.javarem.domain.activity.service.quota.rule.factory.DefaultActivityChainFactory;
 import top.javarem.types.common.constants.Constants;
 import top.javarem.types.exception.AppException;
+
+import java.util.Map;
 
 /**
  * @Author: rem
@@ -19,11 +22,14 @@ import top.javarem.types.exception.AppException;
 @Slf4j
 public abstract class AbstractRaffleActivityAccountQuotaService implements IRaffleActivityAccountQuotaService {
 
+    private final Map<String, ITradePolicy> tradePolicyGroup;
+
     protected IActivityRepository repository;
 
     protected DefaultActivityChainFactory factory;
 
-    public AbstractRaffleActivityAccountQuotaService(IActivityRepository repository, DefaultActivityChainFactory factory) {
+    public AbstractRaffleActivityAccountQuotaService(IActivityRepository repository, DefaultActivityChainFactory factory, Map<String, ITradePolicy> tradePolicyGroup) {
+        this.tradePolicyGroup = tradePolicyGroup;
         this.repository = repository;
         this.factory = factory;
     }
@@ -59,8 +65,9 @@ public abstract class AbstractRaffleActivityAccountQuotaService implements IRaff
 //        4.构建活动下单聚合对象
         CreateQuotaOrderAggregate createQuotaOrderAggregate = buildOrderAggregate(skuRechargeEntity, skuEntity, activityEntity, countEntity);
         log.info("{}", createQuotaOrderAggregate);
-//        5.保存订单
-        saveOrder(createQuotaOrderAggregate);
+//        5. 交易策略 - 【积分兑换，支付类订单】【返利无支付交易订单，直接充值到账】【订单状态变更交易类型策略】
+        ITradePolicy tradePolicy = tradePolicyGroup.get(skuRechargeEntity.getOrderTradeTypeVO().getCode());
+        tradePolicy.trade(createQuotaOrderAggregate);
         return createQuotaOrderAggregate.getActivityOrder().getOrderId();
     }
 

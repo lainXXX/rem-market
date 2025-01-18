@@ -8,9 +8,11 @@ import top.javarem.domain.activity.model.vo.ActivityStockDecrQueueVO;
 import top.javarem.domain.activity.model.vo.OrderStateVO;
 import top.javarem.domain.activity.repository.IActivityRepository;
 import top.javarem.domain.activity.service.IRaffleActivitySkuStockService;
+import top.javarem.domain.activity.service.quota.policy.ITradePolicy;
 import top.javarem.domain.activity.service.quota.rule.factory.DefaultActivityChainFactory;
 
 import java.time.LocalDateTime;
+import java.util.Map;
 
 /**
  * @Author: rem
@@ -20,8 +22,8 @@ import java.time.LocalDateTime;
 @Service
 public class RaffleActivityAccountQuotaService extends AbstractRaffleActivityAccountQuotaService implements IRaffleActivitySkuStockService {
 
-    public RaffleActivityAccountQuotaService(IActivityRepository repository, DefaultActivityChainFactory factory) {
-        super(repository, factory);
+    public RaffleActivityAccountQuotaService(IActivityRepository repository, DefaultActivityChainFactory factory, Map<String, ITradePolicy> tradePolicyGroup) {
+        super(repository, factory, tradePolicyGroup);
     }
 
     @Override
@@ -38,8 +40,8 @@ public class RaffleActivityAccountQuotaService extends AbstractRaffleActivityAcc
                 .totalCount(countEntity.getTotalCount())
                 .monthCount(countEntity.getMonthCount())
                 .dayCount(countEntity.getDayCount())
-                .status(OrderStateVO.completed.getCode())
                 .outBusinessNo(skuRechargeEntity.getOutBusinessNo())
+                .payAmount(skuEntity.getProductAmount())
                 .build();
 
         return CreateQuotaOrderAggregate.builder()
@@ -80,6 +82,11 @@ public class RaffleActivityAccountQuotaService extends AbstractRaffleActivityAcc
     @Override
     public void clearSkuStockDecrQueue() {
         repository.clearSkuStockDecrQueue();
+    }
+
+    @Override
+    public void updateOrder(DeliveryOrderEntity deliveryOrderEntity) {
+        repository.updateOrder(deliveryOrderEntity);
     }
 
     @Override

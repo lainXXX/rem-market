@@ -1,5 +1,6 @@
 package top.javarem.infrastructure.adapter.repository;
 
+import com.google.gson.Gson;
 import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
@@ -11,13 +12,17 @@ import top.javarem.domain.award.model.vo.AccountStatusVO;
 import top.javarem.domain.credit.model.aggregate.TradeAggregate;
 import top.javarem.domain.credit.model.entity.CreditAccountEntity;
 import top.javarem.domain.credit.model.entity.CreditOrderEntity;
+import top.javarem.domain.credit.model.entity.TaskEntity;
 import top.javarem.domain.credit.reposiotry.ICreditRepository;
+import top.javarem.infrastructure.dao.entity.Task;
 import top.javarem.infrastructure.dao.entity.UserCreditAccount;
 import top.javarem.infrastructure.dao.entity.UserCreditOrder;
+import top.javarem.infrastructure.dao.iService.TaskService;
 import top.javarem.infrastructure.dao.iService.UserCreditAccountService;
 import top.javarem.infrastructure.dao.iService.UserCreditOrderService;
 import top.javarem.types.common.constants.Constants;
 
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -33,12 +38,14 @@ public class CreditRepository implements ICreditRepository {
     private final UserCreditOrderService userCreditOrderService;
     private final UserCreditAccountService userCreditAccountService;
     private final TransactionTemplate transactionTemplate;
+    private final TaskRepository taskRepository;
 
-    public CreditRepository(RedissonClient redissonClient, UserCreditOrderService userCreditOrderService, UserCreditAccountService userCreditAccountService, TransactionTemplate transactionTemplate) {
+    public CreditRepository(RedissonClient redissonClient, UserCreditOrderService userCreditOrderService, UserCreditAccountService userCreditAccountService, TransactionTemplate transactionTemplate, TaskRepository taskRepository) {
         this.redissonClient = redissonClient;
         this.userCreditOrderService = userCreditOrderService;
         this.userCreditAccountService = userCreditAccountService;
         this.transactionTemplate = transactionTemplate;
+        this.taskRepository = taskRepository;
     }
 
 
@@ -48,6 +55,7 @@ public class CreditRepository implements ICreditRepository {
         String userId = tradeAggregate.getUserId();
         CreditAccountEntity creditAccountEntity = tradeAggregate.getCreditAccountEntity();
         CreditOrderEntity creditOrderEntity = tradeAggregate.getCreditOrderEntity();
+        TaskEntity taskEntity = tradeAggregate.getTaskEntity();
 
         // 积分账户
         UserCreditAccount userCreditAccountReq = new UserCreditAccount();
@@ -66,6 +74,16 @@ public class CreditRepository implements ICreditRepository {
         userCreditOrderReq.setTradeAmount(creditOrderEntity.getTradeAmount());
         userCreditOrderReq.setOutBusinessNo(creditOrderEntity.getOutBusinessNo());
 
+//        任务对象
+        Task task = new Task();
+        task.setUserId(taskEntity.getUserId());
+        task.setTopic(taskEntity.getTopic());
+        task.setMessageId(taskEntity.getMessageId());
+        task.setMessage(new Gson().toJson(taskEntity.getMessage()));
+        task.setStatus(taskEntity.getStatus().getCode());
+        task.setCreateTime(new Date());
+        task.setUpdateTime(new Date());
+
         String lockKey = Constants.RedisKey.USER_CREDIT_ACCOUNT_LOCK + userId + Constants.UNDERLINE + creditOrderEntity.getOutBusinessNo();
         RLock lock = redissonClient.getLock(lockKey);
         try {
@@ -82,6 +100,8 @@ public class CreditRepository implements ICreditRepository {
                     }
 //                    2.保存积分订单
                     userCreditOrderService.save(userCreditOrderReq);
+//                    3.保存任务
+                    taskRepository.saveTask(task);
                 } catch (DuplicateKeyException e) {
                     status.setRollbackOnly();
                     log.error("调整账户积分额度异常，唯一索引冲突 userId:{} orderId:{}", userId, creditOrderEntity.getOrderId(), e);
@@ -94,6 +114,17 @@ public class CreditRepository implements ICreditRepository {
             });
         } finally {
             lock.unlock();
+        }
+
+        try {
+//            发送任务信息到MQ
+            taskRepository.sendMessage(task.getTopic(), task.getMessage());
+//            更新任务状态为完成
+            taskRepository.updateTaskCompleted(task.getMessageId());
+            log.info("调整账户积分记录，发送MQ消息完成 userId: {} orderId:{} topic: {}", userId, creditOrderEntity.getOrderId(), task.getTopic());
+        } catch (Exception e) {
+            log.error("调整账户积分记录，发送MQ消息失败 userId: {} topic: {}", userId, task.getTopic());
+            taskRepository.updateTaskFailed(task.getMessageId());
         }
 
     }

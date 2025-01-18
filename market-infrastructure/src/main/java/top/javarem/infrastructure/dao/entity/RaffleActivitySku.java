@@ -2,6 +2,7 @@ package top.javarem.infrastructure.dao.entity;
 
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -47,6 +48,11 @@ public class RaffleActivitySku implements Serializable {
      * 剩余库存
      */
     private Integer stockCountSurplus;
+
+    /**
+     * 商品金额
+     */
+    private BigDecimal productAmount;
 
     /**
      * 创建时间
