@@ -42,6 +42,7 @@ public class RaffleActivityAccountQuotaService extends AbstractRaffleActivityAcc
                 .dayCount(countEntity.getDayCount())
                 .outBusinessNo(skuRechargeEntity.getOutBusinessNo())
                 .payAmount(skuEntity.getProductAmount())
+                .activityOrderType(skuRechargeEntity.getOrderTradeTypeVO().getCode())
                 .build();
 
         return CreateQuotaOrderAggregate.builder()

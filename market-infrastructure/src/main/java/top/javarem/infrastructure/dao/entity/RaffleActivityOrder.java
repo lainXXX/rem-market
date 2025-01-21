@@ -75,6 +75,11 @@ public class RaffleActivityOrder implements Serializable {
     private BigDecimal payAmount;
 
     /**
+     * 活动订单类型【credit_pay_trade-积分兑换，需要支付类交易、 rebate_trade-返利类型，无需交易】
+     */
+    private String activityOrderType;
+
+    /**
      * 订单状态
      */
     private String status;

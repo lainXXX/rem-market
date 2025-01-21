@@ -1,5 +1,6 @@
 package top.javarem.domain.credit.service;
 
+import top.javarem.domain.credit.model.entity.CreditAccountEntity;
 import top.javarem.domain.credit.model.entity.TradeEntity;
 
 /**
@@ -16,4 +17,10 @@ public interface ICreditService {
      */
     String createOrder(TradeEntity tradeEntity);
 
+    /**
+     * 查询用户账户积分值
+     * @param userId 用户ID
+     * @return 积分账户实体对象
+     */
+    CreditAccountEntity queryUserCredit(String userId);
 }

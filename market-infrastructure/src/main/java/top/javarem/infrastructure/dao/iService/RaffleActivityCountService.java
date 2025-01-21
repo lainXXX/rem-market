@@ -11,4 +11,5 @@ import top.javarem.infrastructure.dao.entity.RaffleActivityCount;
 */
 public interface RaffleActivityCountService extends IService<RaffleActivityCount> {
 
+    RaffleActivityCount getActivityCountById(Long activityCountId);
 }

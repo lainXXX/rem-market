@@ -35,4 +35,15 @@ implements UserCreditAccountService {
 
     }
 
+    @Override
+    public UserCreditAccount queryUserCredit(String userId) {
+
+        return this.lambdaQuery()
+                .select(UserCreditAccount::getUserId, UserCreditAccount::getAvailableAmount)
+                .eq(UserCreditAccount::getUserId, userId)
+                .eq(UserCreditAccount::getAccountStatus, "open")
+                .one();
+
+    }
+
 }

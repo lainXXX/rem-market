@@ -3,10 +3,14 @@ package top.javarem.infrastructure.dao.iService.Impl;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
+import top.javarem.domain.activity.model.entity.SkuRechargeEntity;
+import top.javarem.domain.activity.model.entity.UnpaidActivityOrderEntity;
+import top.javarem.domain.activity.model.vo.OrderStateVO;
 import top.javarem.infrastructure.dao.entity.RaffleActivityOrder;
 import top.javarem.infrastructure.dao.iService.RaffleActivityOrderService;
 import top.javarem.infrastructure.dao.mapper.RaffleActivityOrderMapper;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 
@@ -40,5 +44,17 @@ public class RaffleActivityOrderServiceImpl extends ServiceImpl<RaffleActivityOr
                 .eq(RaffleActivityOrder::getOutBusinessNo, raffleActivityOrderRes.getOutBusinessNo())
                 .eq(RaffleActivityOrder::getStatus, "created"));
 
+    }
+
+    @Override
+    public RaffleActivityOrder queryUnpaidActivityOrder(SkuRechargeEntity skuRechargeEntity) {
+
+        return this.lambdaQuery()
+                .select(RaffleActivityOrder::getUserId, RaffleActivityOrder::getSku, RaffleActivityOrder::getOutBusinessNo, RaffleActivityOrder::getPayAmount)
+                .eq(RaffleActivityOrder::getUserId, skuRechargeEntity.getUserId())
+                .eq(RaffleActivityOrder::getStatus, OrderStateVO.created.getCode())
+                .ge(RaffleActivityOrder::getOrderTime, LocalDateTime.now().minusMonths(1))
+                .last("limit 1")
+                .one();
     }
 }

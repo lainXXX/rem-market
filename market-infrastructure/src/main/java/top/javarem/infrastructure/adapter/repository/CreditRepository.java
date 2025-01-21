@@ -13,6 +13,7 @@ import top.javarem.domain.credit.model.aggregate.TradeAggregate;
 import top.javarem.domain.credit.model.entity.CreditAccountEntity;
 import top.javarem.domain.credit.model.entity.CreditOrderEntity;
 import top.javarem.domain.credit.model.entity.TaskEntity;
+import top.javarem.domain.credit.model.vo.TradeTypeVO;
 import top.javarem.domain.credit.reposiotry.ICreditRepository;
 import top.javarem.infrastructure.dao.entity.Task;
 import top.javarem.infrastructure.dao.entity.UserCreditAccount;
@@ -21,6 +22,8 @@ import top.javarem.infrastructure.dao.iService.TaskService;
 import top.javarem.infrastructure.dao.iService.UserCreditAccountService;
 import top.javarem.infrastructure.dao.iService.UserCreditOrderService;
 import top.javarem.types.common.constants.Constants;
+import top.javarem.types.enums.ResponseCode;
+import top.javarem.types.exception.AppException;
 
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -60,10 +63,8 @@ public class CreditRepository implements ICreditRepository {
         // 积分账户
         UserCreditAccount userCreditAccountReq = new UserCreditAccount();
         userCreditAccountReq.setUserId(userId);
-        userCreditAccountReq.setTotalAmount(creditAccountEntity.getAdjustAmount());
         userCreditAccountReq.setAccountStatus(AccountStatusVO.open.getCode());
-        // 知识；仓储往上有业务语义，仓储往下到 dao 操作是没有业务语义的。所以不用在乎这块使用的字段名称，直接用持久化对象即可。
-        userCreditAccountReq.setAvailableAmount(creditAccountEntity.getAdjustAmount());
+//        账户积分再判断时再设置
 
         // 积分订单
         UserCreditOrder userCreditOrderReq = new UserCreditOrder();
@@ -86,17 +87,50 @@ public class CreditRepository implements ICreditRepository {
 
         String lockKey = Constants.RedisKey.USER_CREDIT_ACCOUNT_LOCK + userId + Constants.UNDERLINE + creditOrderEntity.getOutBusinessNo();
         RLock lock = redissonClient.getLock(lockKey);
+        Integer result;
         try {
             lock.lock(3, TimeUnit.SECONDS);
-            transactionTemplate.execute(status -> {
+            result = transactionTemplate.execute(status -> {
 
                 try {
 //                    1.保存账户积分
                     UserCreditAccount userCreditAccount = userCreditAccountService.getAccountByUserId(userId);
-                    if (userCreditAccount == null) {
-                        userCreditAccountService.save(userCreditAccountReq);
-                    } else {
-                        userCreditAccountService.addAccount(userCreditAccountReq);
+//                    正向交易和反向交易分别判断
+//                    2.反向交易判断
+                    if (userCreditOrderReq.getTradeType().equals(TradeTypeVO.RESERVE.getCode())) {
+//                        2.1反向交易 积分账户请求对象的积分值设置为负数 扣减操作
+                        userCreditAccountReq.setTotalAmount(creditAccountEntity.getAdjustAmount().negate());
+                        // 知识；仓储往上有业务语义，仓储往下到 dao 操作是没有业务语义的。所以不用在乎这块使用的字段名称，直接用持久化对象即可。
+                        userCreditAccountReq.setAvailableAmount(creditAccountEntity.getAdjustAmount().negate());
+//                        2.2扣减积分时 如果账户不存在或账户积分少于商品积分 则交易失败
+                        if (userCreditAccount == null || userCreditAccountReq.getAvailableAmount().compareTo(userCreditAccount.getAvailableAmount()) == 1) {
+                            log.error("{} {}", ResponseCode.ERROR_CREDIT_ACCOUNT.getCode(), ResponseCode.ERROR_CREDIT_ACCOUNT.getInfo());
+                            status.setRollbackOnly();
+                            return -1;
+                        }
+//                        2.3 扣减账户积分
+                        boolean addAccount = userCreditAccountService.addAccount(userCreditAccountReq);
+                        if (!addAccount) {
+                            status.setRollbackOnly();
+                            return 1;
+                        }
+                    }
+//                    3.正向交易
+                    else {
+//                        3.1 设置账户积分值
+                        userCreditAccountReq.setTotalAmount(creditAccountEntity.getAdjustAmount());
+                        // 知识；仓储往上有业务语义，仓储往下到 dao 操作是没有业务语义的。所以不用在乎这块使用的字段名称，直接用持久化对象即可。
+                        userCreditAccountReq.setAvailableAmount(creditAccountEntity.getAdjustAmount());
+//                        3.2 判断账户是否存在 不存在则创建
+                        if (userCreditAccount == null) {
+                            userCreditAccountService.save(userCreditAccountReq);
+                        } else {
+                            boolean addAccount = userCreditAccountService.addAccount(userCreditAccountReq);
+                            if (!addAccount) {
+                                status.setRollbackOnly();
+                                return 1;
+                            }
+                        }
                     }
 //                    2.保存积分订单
                     userCreditOrderService.save(userCreditOrderReq);
@@ -112,20 +146,36 @@ public class CreditRepository implements ICreditRepository {
                 return 1;
 
             });
+
         } finally {
             lock.unlock();
         }
 
-        try {
-//            发送任务信息到MQ
-            taskRepository.sendMessage(task.getTopic(), task.getMessage());
+        if (result == 1) {
+            try {
+//            发送任务信息到MQ (签到时的积分返利不需要发送)
+                if ( !creditOrderEntity.getOutBusinessNo().contains("integral")){
+                    taskRepository.sendMessage(task.getTopic(), task.getMessage());
+                }
 //            更新任务状态为完成
-            taskRepository.updateTaskCompleted(task.getMessageId());
-            log.info("调整账户积分记录，发送MQ消息完成 userId: {} orderId:{} topic: {}", userId, creditOrderEntity.getOrderId(), task.getTopic());
-        } catch (Exception e) {
-            log.error("调整账户积分记录，发送MQ消息失败 userId: {} topic: {}", userId, task.getTopic());
-            taskRepository.updateTaskFailed(task.getMessageId());
+                taskRepository.updateTaskCompleted(task.getMessageId());
+                log.info("调整账户积分记录，发送MQ消息完成 userId: {} orderId:{} topic: {}", userId, creditOrderEntity.getOrderId(), task.getTopic());
+            } catch (Exception e) {
+                log.error("调整账户积分记录，发送MQ消息失败 userId: {} topic: {}", userId, task.getTopic());
+                taskRepository.updateTaskFailed(task.getMessageId());
+            }
         }
+
+    }
+
+    @Override
+    public CreditAccountEntity queryUserCredit(String userId) {
+
+        UserCreditAccount userCreditAccount = userCreditAccountService.queryUserCredit(userId);
+        return CreditAccountEntity.builder()
+                .userId(userCreditAccount.getUserId())
+                .adjustAmount(userCreditAccount.getAvailableAmount())
+                .build();
 
     }
 

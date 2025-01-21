@@ -26,6 +26,8 @@ import top.javarem.types.exception.AppException;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -285,23 +287,23 @@ public class ActivityRepository implements IActivityRepository {
     public void saveCreditOrder(CreateQuotaOrderAggregate createQuotaOrderAggregate) {
 
 //        创建订单对象
-            ActivityOrderEntity activityOrderEntity = createQuotaOrderAggregate.getActivityOrder();
-            RaffleActivityOrder raffleActivityOrder = new RaffleActivityOrder();
-            BeanUtils.copyProperties(activityOrderEntity, raffleActivityOrder);
-            raffleActivityOrder.setCreateTime(LocalDateTime.now());
-            raffleActivityOrder.setUpdateTime(LocalDateTime.now());
+        ActivityOrderEntity activityOrderEntity = createQuotaOrderAggregate.getActivityOrder();
+        RaffleActivityOrder raffleActivityOrder = new RaffleActivityOrder();
+        BeanUtils.copyProperties(activityOrderEntity, raffleActivityOrder);
+        raffleActivityOrder.setCreateTime(LocalDateTime.now());
+        raffleActivityOrder.setUpdateTime(LocalDateTime.now());
 //        将订单写入
-            transactionTemplate.execute(status -> {
-                try {
+        transactionTemplate.execute(status -> {
+            try {
 //                存入订单
-                    activityOrderService.save(raffleActivityOrder);
-                    return 1;
-                } catch (DuplicateKeyException e) {
-                    status.setRollbackOnly();
-                    log.error("写入订单记录，唯一索引冲突 userId: {} activityId: {} sku: {}", activityOrderEntity.getUserId(), activityOrderEntity.getActivityId(), activityOrderEntity.getSku(), e);
-                    throw new AppException(ResponseCode.INDEX_DUP.getCode());
-                }
-            });
+                activityOrderService.save(raffleActivityOrder);
+                return 1;
+            } catch (DuplicateKeyException e) {
+                status.setRollbackOnly();
+                log.error("写入订单记录，唯一索引冲突 userId: {} activityId: {} sku: {}", activityOrderEntity.getUserId(), activityOrderEntity.getActivityId(), activityOrderEntity.getSku(), e);
+                throw new AppException(ResponseCode.INDEX_DUP.getCode());
+            }
+        });
     }
 
     @Override
@@ -688,6 +690,49 @@ public class ActivityRepository implements IActivityRepository {
         } finally {
             lock.unlock();
         }
+
+    }
+
+    @Override
+    public UnpaidActivityOrderEntity queryUnpaidActivityOrder(SkuRechargeEntity skuRechargeEntity) {
+
+        RaffleActivityOrder raffleActivityOrder = activityOrderService.queryUnpaidActivityOrder(skuRechargeEntity);
+        if (raffleActivityOrder == null) {
+            return null;
+        }
+        return UnpaidActivityOrderEntity.builder()
+                .userId(raffleActivityOrder.getUserId())
+                .sku(raffleActivityOrder.getSku())
+                .outBusinessNo(raffleActivityOrder.getOutBusinessNo())
+                .payAmount(raffleActivityOrder.getPayAmount())
+                .build();
+
+    }
+
+    @Override
+    public List<SkuProductEntity> getSkuProductListByActivityId(Long activityId) {
+
+//        1.获取sku商品集合
+        List<RaffleActivitySku> activitySkuList = skuService.getSkuProductListByActivityId(activityId);
+//        2.遍历填充skuProductEntity对象
+        List<SkuProductEntity> skuProductList = new ArrayList<SkuProductEntity>(activitySkuList.size());
+        for (RaffleActivitySku activitySku : activitySkuList) {
+            SkuProductEntity skuProductEntity = new SkuProductEntity();
+            skuProductEntity.setSku(activitySku.getSku());
+            skuProductEntity.setActivityId(activityId);
+            skuProductEntity.setActivityCountId(activitySku.getActivityCountId());
+            skuProductEntity.setStockCount(activitySku.getStockCount());
+            skuProductEntity.setStockCountSurplus(activitySku.getStockCountSurplus());
+            skuProductEntity.setProductAmount(activitySku.getProductAmount());
+
+            RaffleActivityCount raffleActivityCount = activityCountService.getActivityCountById(activitySku.getActivityCountId());
+            SkuProductEntity.ActivityCount activityCount = new SkuProductEntity.ActivityCount();
+            BeanUtils.copyProperties(raffleActivityCount, activityCount);
+            skuProductEntity.setActivityCount(activityCount);
+            skuProductList.add(skuProductEntity);
+        }
+
+        return skuProductList;
 
     }
 

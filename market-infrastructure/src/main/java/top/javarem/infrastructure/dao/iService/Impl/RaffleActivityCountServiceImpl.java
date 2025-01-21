@@ -14,4 +14,13 @@ import top.javarem.infrastructure.dao.mapper.RaffleActivityCountMapper;
 @Service
 public class RaffleActivityCountServiceImpl extends ServiceImpl<RaffleActivityCountMapper, RaffleActivityCount> implements RaffleActivityCountService {
 
+    @Override
+    public RaffleActivityCount getActivityCountById(Long activityCountId) {
+
+        return this.lambdaQuery()
+                .select(RaffleActivityCount::getTotalCount, RaffleActivityCount::getMonthCount, RaffleActivityCount::getDayCount)
+                .eq(RaffleActivityCount::getActivityCountId, activityCountId)
+                .one();
+
+    }
 }

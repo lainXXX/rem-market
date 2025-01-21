@@ -35,7 +35,7 @@ public abstract class AbstractRaffleActivityAccountQuotaService implements IRaff
     }
 
     @Override
-    public String createOrder(SkuRechargeEntity skuRechargeEntity) {
+    public UnpaidActivityOrderEntity createOrder(SkuRechargeEntity skuRechargeEntity) {
 //        1. 参数校验
         String userId = skuRechargeEntity.getUserId();
         Long sku = skuRechargeEntity.getSku();
@@ -43,6 +43,13 @@ public abstract class AbstractRaffleActivityAccountQuotaService implements IRaff
         if (null == sku || StringUtils.isBlank(userId) || StringUtils.isBlank(outBusinessNo)) {
             throw new AppException(Constants.ResponseCode.ILLEGAL_PARAMETER.getCode(), Constants.ResponseCode.ILLEGAL_PARAMETER.getInfo());
         }
+
+//        2.0 查询未支付订单[当前活动时间内]
+        UnpaidActivityOrderEntity unpaidActivityOrderEntity = repository.queryUnpaidActivityOrder(skuRechargeEntity);
+        if (null != unpaidActivityOrderEntity) {
+            return unpaidActivityOrderEntity;
+        }
+
 //        2.1.通过sku查询活动信息
         ActivitySkuEntity skuEntity = repository.getActivitySku(sku);
 //        2.2.查询活动信息
@@ -68,7 +75,14 @@ public abstract class AbstractRaffleActivityAccountQuotaService implements IRaff
 //        5. 交易策略 - 【积分兑换，支付类订单】【返利无支付交易订单，直接充值到账】【订单状态变更交易类型策略】
         ITradePolicy tradePolicy = tradePolicyGroup.get(skuRechargeEntity.getOrderTradeTypeVO().getCode());
         tradePolicy.trade(createQuotaOrderAggregate);
-        return createQuotaOrderAggregate.getActivityOrder().getOrderId();
+//        6.返回订单信息
+        ActivityOrderEntity activityOrder = createQuotaOrderAggregate.getActivityOrder();
+        return UnpaidActivityOrderEntity.builder()
+                .userId(activityOrder.getUserId())
+                .outBusinessNo(activityOrder.getOutBusinessNo())
+                .sku(activityOrder.getSku())
+                .payAmount(activityOrder.getPayAmount())
+                .build();
     }
 
     protected abstract CreateQuotaOrderAggregate buildOrderAggregate(SkuRechargeEntity skuRechargeEntity, ActivitySkuEntity skuEntity, ActivityEntity activityEntity, ActivityCountEntity countEntity);

@@ -3,6 +3,7 @@ package top.javarem.domain.activity.service;
 import top.javarem.domain.activity.model.entity.ActivityAccountCountEntity;
 import top.javarem.domain.activity.model.entity.DeliveryOrderEntity;
 import top.javarem.domain.activity.model.entity.SkuRechargeEntity;
+import top.javarem.domain.activity.model.entity.UnpaidActivityOrderEntity;
 
 /**
  * @Author: rem
@@ -17,7 +18,7 @@ public interface IRaffleActivityAccountQuotaService {
      * @param cart 活动sku实体，通过sku领取活动。
      * @return 活动参与记录实体
      */
-    String createOrder(SkuRechargeEntity cart);
+    UnpaidActivityOrderEntity createOrder(SkuRechargeEntity cart);
 
     /**
      * 订单出货 - 积分充值

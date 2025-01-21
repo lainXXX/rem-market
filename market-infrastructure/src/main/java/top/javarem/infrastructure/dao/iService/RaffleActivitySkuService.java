@@ -4,6 +4,8 @@ package top.javarem.infrastructure.dao.iService;
 import com.baomidou.mybatisplus.extension.service.IService;
 import top.javarem.infrastructure.dao.entity.RaffleActivitySku;
 
+import java.util.List;
+
 /**
 * @author aaa
 * @description 针对表【raffle_activity_sku】的数据库操作Service
@@ -11,4 +13,5 @@ import top.javarem.infrastructure.dao.entity.RaffleActivitySku;
 */
 public interface RaffleActivitySkuService extends IService<RaffleActivitySku> {
 
+    List<RaffleActivitySku> getSkuProductListByActivityId(Long activityId);
 }

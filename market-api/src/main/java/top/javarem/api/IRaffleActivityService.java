@@ -1,10 +1,10 @@
 package top.javarem.api;
 
-import top.javarem.api.dto.ActivityDrawRequestDTO;
-import top.javarem.api.dto.ActivityDrawResponseDTO;
-import top.javarem.api.dto.UserActivityAccountRequestDTO;
-import top.javarem.api.dto.UserActivityAccountResponseDTO;
+import top.javarem.api.dto.*;
 import top.javarem.api.response.Response;
+
+import java.math.BigDecimal;
+import java.util.List;
 
 /**
  * @Author: rem
@@ -42,5 +42,26 @@ public interface IRaffleActivityService {
      * @return
      */
     Response<UserActivityAccountResponseDTO> queryUserActivityAccount(UserActivityAccountRequestDTO request);
+
+    /**
+     * 积分兑换商品
+     * @param request 商品购物车请求对象
+     * @return
+     */
+    Response<Boolean> creditExchangeProduct(SkuProductShopCartRequestDTO request);
+
+    /**
+     * 获取用户账户积分值
+     * @param userId 用户ID
+     * @return 积分值
+     */
+    Response<BigDecimal> queryUserCredit(String userId);
+
+    /**
+     * 通过活动ID获取sku商品集合
+     * @param activityId 活动ID
+     * @return sku商品集合
+     */
+    Response<List<SkuProductResponseDTO>> getSkuProductListByActivityId(Long activityId);
 
 }

@@ -1,6 +1,7 @@
 package top.javarem.domain.credit.reposiotry;
 
 import top.javarem.domain.credit.model.aggregate.TradeAggregate;
+import top.javarem.domain.credit.model.entity.CreditAccountEntity;
 
 /**
  * @Author: rem
@@ -11,4 +12,5 @@ public interface ICreditRepository {
 
     void saveUserCreditTradeOrder(TradeAggregate tradeAggregate);
 
+    CreditAccountEntity queryUserCredit(String userId);
 }

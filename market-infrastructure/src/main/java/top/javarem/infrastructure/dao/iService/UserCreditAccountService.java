@@ -15,4 +15,6 @@ public interface UserCreditAccountService extends IService<UserCreditAccount> {
     boolean addAccount(UserCreditAccount userCreditAccount);
 
     UserCreditAccount getAccountByUserId(String userId);
+
+    UserCreditAccount queryUserCredit(String userId);
 }

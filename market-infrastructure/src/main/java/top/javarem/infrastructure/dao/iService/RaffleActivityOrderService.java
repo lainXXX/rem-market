@@ -2,6 +2,8 @@ package top.javarem.infrastructure.dao.iService;
 
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import top.javarem.domain.activity.model.entity.SkuRechargeEntity;
+import top.javarem.domain.activity.model.entity.UnpaidActivityOrderEntity;
 import top.javarem.infrastructure.dao.entity.RaffleActivityOrder;
 
 /**
@@ -14,4 +16,6 @@ public interface RaffleActivityOrderService extends IService<RaffleActivityOrder
     RaffleActivityOrder getOrder(String userId, String outBusinessNo);
 
     int updateOrderStatus(RaffleActivityOrder raffleActivityOrderRes);
+
+    RaffleActivityOrder queryUnpaidActivityOrder(SkuRechargeEntity skuRechargeEntity);
 }

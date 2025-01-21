@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import top.javarem.domain.credit.event.CreditAdjustSuccessMessageEvent;
 import top.javarem.domain.credit.model.aggregate.TradeAggregate;
+import top.javarem.domain.credit.model.entity.CreditAccountEntity;
 import top.javarem.domain.credit.model.entity.TradeEntity;
 import top.javarem.domain.credit.reposiotry.ICreditRepository;
 import top.javarem.types.event.BaseEvent;
@@ -63,9 +64,15 @@ public class CreditAdjustService implements ICreditService {
         // 5. 保存积分交易订单
         repository.saveUserCreditTradeOrder(tradeAggregate);
         String orderId = tradeAggregate.getCreditOrderEntity().getOrderId();
-        log.info("增加账户积分额度完成 userId:{} orderId:{}", tradeEntity.getUserId(), orderId);
 
         return orderId;
+
+    }
+
+    @Override
+    public CreditAccountEntity queryUserCredit(String userId) {
+
+        return repository.queryUserCredit(userId);
 
     }
 
