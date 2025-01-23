@@ -2,6 +2,7 @@ package top.javarem.api.dto;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -10,7 +11,7 @@ import java.util.List;
  * @Description:
  */
 @Data
-public class RaffleStrategyRuleWeightResponseDTO {
+public class RaffleStrategyRuleWeightResponseDTO implements Serializable {
 
     private Integer ruleWeightCount;
 

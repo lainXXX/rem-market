@@ -3,6 +3,7 @@ package top.javarem.trigger.http;
 import com.google.gson.Gson;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
 import top.javarem.api.IRaffleStrategyService;
@@ -34,6 +35,7 @@ import java.util.Map;
 @RequestMapping("/${app.config.api-version}/raffle/strategy")
 @Slf4j
 @CrossOrigin("*")
+@DubboService(version = "1.0")
 public class RaffleStrategyController implements IRaffleStrategyService {
 
     private final IRaffleStrategy raffleStrategy;

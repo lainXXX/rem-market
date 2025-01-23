@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import top.javarem.domain.activity.model.entity.ActivityPartakeEntity;
 import top.javarem.domain.activity.model.entity.SkuRechargeEntity;
+import top.javarem.domain.activity.model.entity.UnpaidActivityOrderEntity;
 import top.javarem.domain.activity.model.entity.UserRaffleConsumeOrderEntity;
 import top.javarem.domain.activity.model.vo.OrderTradeTypeVO;
 import top.javarem.domain.activity.service.IRaffleActivityAccountQuotaService;
@@ -73,7 +74,7 @@ public class RaffleActivityTest {
         skuRechargeEntity.setSku(1111L);
         // outBusinessNo 作为幂等仿重使用，同一个业务单号2次使用会抛出索引冲突 Duplicate entry '700091009111' for key 'uq_out_business_no' 确保唯一性。
         skuRechargeEntity.setOutBusinessNo("700091009111");
-        String orderId = raffleOrder.createOrder(skuRechargeEntity);
+        UnpaidActivityOrderEntity orderId = raffleOrder.createOrder(skuRechargeEntity);
         log.info("测试结果：{}", orderId);
     }
 
@@ -90,7 +91,7 @@ public class RaffleActivityTest {
                 .sku(9011L)
                 .outBusinessNo("700091009128")
                 .build();
-        String activityOrder = raffleOrder.createOrder(skuRechargeEntity);
+        UnpaidActivityOrderEntity activityOrder = raffleOrder.createOrder(skuRechargeEntity);
         log.info("orderId : {}", activityOrder);
         Thread.sleep(5000);
     }
@@ -117,7 +118,7 @@ public class RaffleActivityTest {
         skuRechargeEntity.setSku(9011L);
         skuRechargeEntity.setOutBusinessNo("700091009135");
         skuRechargeEntity.setOrderTradeTypeVO(OrderTradeTypeVO.credit_pay_trade);
-        String orderId = accountQuotaService.createOrder(skuRechargeEntity);
+        UnpaidActivityOrderEntity orderId = accountQuotaService.createOrder(skuRechargeEntity);
         log.info("orderId : {}", orderId);
         try {
             Thread.sleep(5000);

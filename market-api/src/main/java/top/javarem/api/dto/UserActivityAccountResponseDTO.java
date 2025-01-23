@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 /**
  * @Author: rem
  * @Date: 2025/01/14/18:35
@@ -14,7 +16,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserActivityAccountResponseDTO {
+public class UserActivityAccountResponseDTO implements Serializable {
 
     /**
      * 总次数

@@ -2,6 +2,7 @@ package top.javarem.api.dto;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
@@ -10,7 +11,7 @@ import java.math.BigDecimal;
  * @Description:sku商品响应传输对象
  */
 @Data
-public class SkuProductResponseDTO {
+public class SkuProductResponseDTO implements Serializable {
 
     private Long sku;
 

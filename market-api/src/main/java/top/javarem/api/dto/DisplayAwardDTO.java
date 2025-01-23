@@ -2,6 +2,7 @@ package top.javarem.api.dto;
 
 import lombok.Data;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
@@ -10,7 +11,7 @@ import java.math.BigDecimal;
  * @Description:用于展示的奖品信息
  */
 @Data
-public class DisplayAwardDTO {
+public class DisplayAwardDTO implements Serializable {
 
     private Integer awardId;
     /**

@@ -75,6 +75,29 @@ mybatis-plus:
       id-type: auto
   mapper-locations: classpath:mapper/*.xml
 
+dubbo:
+  application:
+    name: rem-market  # 应用名称
+    version: 1.0  # 应用版本
+  registry:
+    id: nacos-registry  # 注册中心ID
+    address: nacos://110.41.180.185:8848  # Nacos注册中心地址
+  protocol:
+    name: dubbo  # 使用Dubbo协议
+    port: -1  # 自动选择端口
+  scan:
+    base-packages: top.javarem.api  # 扫描指定的包
+
+
+zookeeper:
+  sdk:
+    config:
+      connect-string: 110.41.180.185:2181
+      base-sleep-time-ms: 1000
+      max-retries: 3
+      session-timeout-ms: 18000
+      connection-timeout-ms: 30000
+
 # 日志
 logging:
   level:
