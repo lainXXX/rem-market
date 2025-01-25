@@ -51,7 +51,7 @@ thread:
 redis:
   sdk:
     config:
-      host: 110.41.180.185
+      host: localhost
       port: 6379
       pool-size: 10
       min-idle-size: 5

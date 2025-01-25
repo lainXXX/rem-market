@@ -57,6 +57,12 @@
                 <artifactId>dubbo-spring-boot-starter</artifactId>
                 <version>3.0.9</version>
             </dependency>
+            <!-- R-Nacos Client -->
+            <dependency>
+                <groupId>com.alibaba.nacos</groupId>
+                <artifactId>nacos-client</artifactId>
+                <version>2.2.3</version>
+            </dependency>
             <dependency>
                 <groupId>com.alibaba.nacos</groupId>
                 <artifactId>nacos-client</artifactId>

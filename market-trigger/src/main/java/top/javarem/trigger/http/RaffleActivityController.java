@@ -31,6 +31,7 @@ import top.javarem.domain.strategy.model.entity.RaffleAwardEntity;
 import top.javarem.domain.strategy.model.entity.RaffleFactorEntity;
 import top.javarem.domain.strategy.service.IRaffleStrategy;
 import top.javarem.domain.strategy.service.armory.IStrategyArmory;
+import top.javarem.types.annotations.DCCValue;
 import top.javarem.types.common.constants.Constants;
 import top.javarem.types.enums.ResponseCode;
 import top.javarem.types.exception.AppException;
@@ -65,6 +66,10 @@ public class RaffleActivityController implements IRaffleActivityService {
     private final ICreditService creditService;
     private final IRaffleActivitySkuProductService raffleActivitySkuProductService;
     private final ICreditService creditAdjustService;
+
+    // dcc 统一配置中心动态配置降级开关
+    @DCCValue("degradeSwitch:open")
+    private String degradeSwitch;
 
     public RaffleActivityController(IRaffleActivityPartakeService partakeService, IActivityArmory activityArmory, IStrategyArmory strategyArmory, IRaffleStrategy strategy, IAwardService awardService, IBehaviorRebateService rebateService, IRaffleActivityAccountQuotaService raffleActivityAccountQuotaService, ICreditService creditService, IRaffleActivitySkuProductService raffleActivitySkuProductService, ICreditService creditAdjustService) {
         this.partakeService = partakeService;
@@ -102,7 +107,14 @@ public class RaffleActivityController implements IRaffleActivityService {
     @Override
     public Response<ActivityDrawResponseDTO> draw(@RequestBody ActivityDrawRequestDTO request) {
         try {
-            log.info("抽奖活动- 用户id:{} 活动id:{}", request.getActivityId(), request.getActivityId());
+            log.info("抽奖活动- 用户id:{} 活动id:{}", request.getUserId(), request.getActivityId());
+            if (!"open".equals(degradeSwitch)) {
+                log.info("活动已降级 抽奖失败");
+                return Response.<ActivityDrawResponseDTO>builder()
+                        .code(ResponseCode.DEGRADE_SWITCH.getCode())
+                        .info(ResponseCode.DEGRADE_SWITCH.getInfo())
+                        .build();
+            }
 //        1.参数校验
             if (request.getActivityId() == null || StringUtils.isBlank(request.getUserId())) {
                 throw new AppException(Constants.ResponseCode.ILLEGAL_PARAMETER.getCode(), Constants.ResponseCode.ILLEGAL_PARAMETER.getInfo());
