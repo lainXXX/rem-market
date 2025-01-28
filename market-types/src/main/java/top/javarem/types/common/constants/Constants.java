@@ -52,6 +52,8 @@ public class Constants {
         public static final String ACTIVITY_ACCOUNT_LOCK = "rem_market_activity_account_lock_key_";
         public static final String USER_CREDIT_ACCOUNT_LOCK = "user_credit_account_lock_key_";
         public static final String ACTIVITY_ACCOUNT_UPDATE_LOCK = "activity_account_update_lock_key_";
+        public static final String RATE_LIMITER_KEY = "rate_limiter_key_";
+        public static final String RATE_LIMITER_COUNT_KEY = "rate_limiter_count_key_";
     }
 
     @Getter

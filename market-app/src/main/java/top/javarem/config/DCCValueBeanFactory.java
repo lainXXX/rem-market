@@ -7,6 +7,8 @@ import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.recipes.cache.ChildData;
 import org.apache.curator.framework.recipes.cache.CuratorCache;
 import org.apache.curator.framework.recipes.cache.CuratorCacheListener;
+import org.springframework.aop.framework.AopProxyUtils;
+import org.springframework.aop.support.AopUtils;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.BeanPostProcessor;
@@ -60,9 +62,17 @@ public class DCCValueBeanFactory implements BeanPostProcessor {
                     Object objBean = dccGroup.get(dccValuePath);
                     if (null == objBean) return;
                     try {
+                        Class<?> objBeanClass = objBean.getClass();
+                        // 检查 objBean 是否是代理对象
+                        if (AopUtils.isAopProxy(objBean)) {
+                            // 获取代理对象的目标对象
+                            objBeanClass = AopUtils.getTargetClass(objBean);
+//                            objBeanClass = AopProxyUtils.ultimateTargetClass(objBean);
+                        }
                         String filedName = dccValuePath.substring(dccValuePath.lastIndexOf("/") + 1);
                         String newValue = new String(data.getData());
-                        Field field = objBean.getClass().getDeclaredField(filedName);
+                        
+                        Field field = objBeanClass.getDeclaredField(filedName);
                         field.setAccessible(true);
                         field.set(objBean, newValue);
                         field.setAccessible(false);
@@ -86,8 +96,13 @@ public class DCCValueBeanFactory implements BeanPostProcessor {
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
 
-        Class<?> beanClass = bean.getClass();
-        Field[] declaredFields = beanClass.getDeclaredFields();
+        Class<?> targetBeanClass = bean.getClass();
+        Object targetBeanObject = bean;
+        if (AopUtils.isAopProxy(bean)) {
+            targetBeanClass = AopUtils.getTargetClass(bean);
+            targetBeanObject = AopProxyUtils.getSingletonTarget(bean);
+        }
+        Field[] declaredFields = targetBeanClass.getDeclaredFields();
         for (Field field : declaredFields) {
             if (!field.isAnnotationPresent(DCCValue.class)) continue;
             String value = field.getAnnotation(DCCValue.class).value();
@@ -103,7 +118,7 @@ public class DCCValueBeanFactory implements BeanPostProcessor {
                     client.create().creatingParentsIfNeeded().forPath(keyPath, defaultValue.getBytes());
                     if (StringUtils.isNotBlank(defaultValue)) {
                         field.setAccessible(true);
-                        field.set(bean, defaultValue);
+                        field.set(targetBeanObject, defaultValue);
                         field.setAccessible(false);
                     }
                     log.info("DCC 节点监听 创建节点 {}", keyPath);
@@ -112,12 +127,12 @@ public class DCCValueBeanFactory implements BeanPostProcessor {
                     String configValue = new String(client.getData().forPath(keyPath));
                     if (StringUtils.isNotBlank(configValue)) {
                         field.setAccessible(true);
-                        field.set(bean, configValue);
+                        field.set(targetBeanObject, configValue);
                         field.setAccessible(false);
                     }
                     log.info("DCC 节点监听 设置配置 {} {} {}", keyPath, field.getName(), configValue);
                 }
-                dccGroup.put(keyPath, bean);
+                dccGroup.put(keyPath, targetBeanObject);
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }

@@ -10,9 +10,11 @@ import lombok.NoArgsConstructor;
 public enum ResponseCode {
     SUCCESS("0000", "调用成功"),
     UN_ERROR("0001", "调用失败"),
-    DEGRADE_SWITCH("0004", "活动已降级"),
     ILLEGAL_PARAMETER("0002", "非法参数"),
     NO_LOGIN("0003", "未登录"),
+    DEGRADE_SWITCH("0004", "活动已降级"),
+    RATE_LIMITER("0005", "访问限流拦截"),
+    HYSTRIX("0006", "访问熔断拦截"),
     RULE_WEIGHT_NULL("WEIGHT_001", "rule weight 为null"),
     RULE_WEIGHT_ERROR("WEIGHT_002", "数据库中rule weight配置错误"),
     INDEX_DUP("0003", "唯一索引冲突"),
@@ -24,7 +26,7 @@ public enum ResponseCode {
     ERROR_ACCOUNT_TOTAL_QUOTA("ERROR_BIZ_007", "账户总定额不足"),
     ERROR_ACCOUNT_MONTH_QUOTA("ERROR_BIZ_008", "账户月定额不足"),
     ERROR_ACCOUNT_DAY_QUOTA("ERROR_BIZ_009", "账户日定额不足"),
-    ERROR_CREDIT_ACCOUNT("ERROR_BIZ_010", "账户积分不足")
+    ERROR_CREDIT_ACCOUNT("ERROR_BIZ_010", "账户积分不足"),
     ;
 
     private String code;
