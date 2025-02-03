@@ -1,15 +1,18 @@
 package top.javarem.trigger.job;
 
+import com.xxl.job.core.handler.annotation.XxlJob;
 import io.jsonwebtoken.lang.Collections;
 import lombok.extern.slf4j.Slf4j;
+import org.redisson.api.RLock;
+import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import top.javarem.domain.task.model.entity.TaskEntity;
 import top.javarem.domain.task.service.ITaskService;
 
 import java.util.List;
 import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @Author: rem
@@ -26,10 +29,21 @@ public class SendMessageTaskJob {
     @Autowired
     private ThreadPoolExecutor executor;
 
-    @Scheduled(cron = "0/30 * * * * ?")
+    @Autowired
+    private RedissonClient redissonClient;
+
+    /**
+     * 本地化任务注解；@Scheduled(cron = "0/5 * * * * ?")
+     * 分布式任务注解；@XxlJob("SendMessageTaskJob")
+     */
+    @XxlJob("SendMessageTaskJob_DB1")
     public void execute() {
         log.info("发送MQ消息任务开始执行");
+        RLock lock = redissonClient.getLock("rem-market-SendMessageTaskJob_DB1");
+        boolean isLocked = false;
         try {
+            isLocked =lock.tryLock(3, 0, TimeUnit.SECONDS);
+            if (!isLocked) return;
             List<TaskEntity> taskEntityList = taskService.queryNoSendMessageTaskList();
             if (Collections.isEmpty(taskEntityList)) {
                 return;

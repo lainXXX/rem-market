@@ -1,11 +1,15 @@
 package top.javarem.trigger.job;
 
+import com.xxl.job.core.handler.annotation.XxlJob;
 import lombok.extern.slf4j.Slf4j;
+import org.redisson.api.RLock;
+import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import top.javarem.domain.strategy.model.vo.AwardStockDecrQueueVO;
 import top.javarem.domain.strategy.service.IRaffleStock;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * @Author: rem
@@ -19,9 +23,17 @@ public class UpdateAwardStockJob {
     @Autowired
     private IRaffleStock raffleStock;
 
-    @Scheduled(cron = "0 0/1 * * * ?")
+    @Autowired
+    private RedissonClient redissonClient;
+
+//    @Scheduled(cron = "0 0/1 * * * ?")
+    @XxlJob("UpdateAwardStockJob")
     public void executeAwardStockJob() {
+        RLock lock = redissonClient.getLock("rem-market-UpdateAwardStockJob");
+        boolean isLocked = false;
         try {
+            isLocked =lock.tryLock(3, 0, TimeUnit.SECONDS);
+            if (!isLocked) return;
             log.info("更新奖品库存任务");
             while (!raffleStock.isEmptyStockDecrQueue()) {
                 AwardStockDecrQueueVO awardStockDecrQueueVO = raffleStock.handleQueueValue();

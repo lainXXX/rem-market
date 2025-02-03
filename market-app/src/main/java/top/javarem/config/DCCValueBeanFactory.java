@@ -35,10 +35,10 @@ public class DCCValueBeanFactory implements BeanPostProcessor {
 
     private final Map<String, Object> dccGroup = new HashMap<>();
 
-    private final CuratorFramework client;
-    public DCCValueBeanFactory(CuratorFramework client) throws Exception {
-        this.client = client;
-
+    @Autowired(required = false)
+    private CuratorFramework client;
+    public DCCValueBeanFactory() throws Exception {
+        if (client == null) return;
         /**
          * 检查该路径的子节点是否存在 不存在则创建
          */
@@ -95,6 +95,8 @@ public class DCCValueBeanFactory implements BeanPostProcessor {
 
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
+
+        if (client == null) return bean;
 
         Class<?> targetBeanClass = bean.getClass();
         Object targetBeanObject = bean;
