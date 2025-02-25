@@ -9,17 +9,15 @@ import java.math.BigDecimal;
 
 /**
  * @Author: rem
- * @Date: 2025/01/16/16:02
- * @Description:奖品分发聚合对象
+ * @Date: 2025/02/25/14:59
+ * @Description:其他奖品聚合对象
  */
 @Data
-public class GiveOutPrizeAggregate {
+public class OthersPrizeAggregate {
 
     private String userId;
 
     private UserAwardRecordEntity userAwardRecordEntity;
-
-    private UserCreditAwardEntity userCreditAwardEntity;
 
     public void setUserAwardRecordEntity(String userId, String orderId, Integer awardId, String status) {
         this.userAwardRecordEntity = UserAwardRecordEntity.builder()
@@ -27,14 +25,6 @@ public class GiveOutPrizeAggregate {
                 .orderId(orderId)
                 .awardId(awardId)
                 .status(status)
-                .build();
-    }
-
-    public void setUserCreditAwardEntity(String userId, BigDecimal creditAmount) {
-        this.userCreditAwardEntity = UserCreditAwardEntity.builder()
-                .userId(userId)
-                .creditAmount(creditAmount)
-                .accountStatus(AccountStatusVO.open.getCode())
                 .build();
     }
 

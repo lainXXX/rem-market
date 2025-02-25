@@ -1,6 +1,7 @@
 package top.javarem.domain.award.repository;
 
 import top.javarem.domain.award.model.aggregate.GiveOutPrizeAggregate;
+import top.javarem.domain.award.model.aggregate.OthersPrizeAggregate;
 import top.javarem.domain.award.model.aggregate.UserAwardRecodeAggregate;
 
 /**
@@ -16,4 +17,6 @@ public interface IAwardRepository {
     void saveGiveOutPrizeAggregate(GiveOutPrizeAggregate giveOutPrizeAggregate);
 
     String getAwardKey(Integer awardId);
+
+    void saveOthersPrizeAggregate(OthersPrizeAggregate othersPrizeAggregate);
 }

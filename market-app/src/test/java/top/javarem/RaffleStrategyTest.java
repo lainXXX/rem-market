@@ -12,6 +12,7 @@ import top.javarem.domain.strategy.model.entity.RaffleFactorEntity;
 import top.javarem.domain.strategy.repository.IStrategyRepository;
 import top.javarem.domain.strategy.service.IRaffleStrategy;
 import top.javarem.domain.strategy.service.armory.IStrategyArmory;
+import top.javarem.domain.strategy.service.armory.IStrategyArmoryDispatch;
 import top.javarem.domain.strategy.service.rule.chain.IStrategyLogicChain;
 import top.javarem.domain.strategy.service.rule.chain.factory.DefaultChainFactory;
 import top.javarem.domain.strategy.service.rule.chain.impl.RuleWeightLogicNode;
@@ -37,6 +38,9 @@ public class RaffleStrategyTest {
     private IStrategyArmory strategyArmory;
 
     @Resource
+    private IStrategyArmoryDispatch strategyArmoryDispatch;
+
+    @Resource
     private RuleWeightLogicNode ruleWeightLogicNode;
 
     @Resource
@@ -48,11 +52,20 @@ public class RaffleStrategyTest {
     @Resource
     private LockLogicTreeNode lockLogicTreeNode;
 
-    @Test
+//    @BeforeEach
     public void test_strategyArmory() {
-        // 策略装配 100001、100002、100003
-        boolean success = strategyArmory.assembleRaffleStrategy(100003L);
-        log.info("策略装配测试结果：{}", success);
+        // 动态Mock值操作，可用于调整选择哪个算法
+//        ReflectionTestUtils.setField(strategyArmory, "ALGORITHM_THRESHOLD_VALUE", 10);
+        boolean success = strategyArmory.assembleRaffleStrategy(100006L);
+        log.info("测试结果：{}", success);
+    }
+
+    /**
+     * 从装配的策略中随机获取奖品ID值
+     */
+    @Test
+    public void test_getRandomAwardId() {
+        log.info("测试结果：{} - 奖品ID值", strategyArmoryDispatch.getRandomAwardId(100006L));
     }
 
     @Test
@@ -119,5 +132,6 @@ public class RaffleStrategyTest {
         }
         Thread.sleep(20 * 1000);
     }
+
 
 }

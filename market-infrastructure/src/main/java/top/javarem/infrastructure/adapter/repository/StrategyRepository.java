@@ -102,7 +102,7 @@ public class StrategyRepository implements IStrategyRepository {
      * @param ShuffleAwardTable
      */
     @Override
-    public void storeShuffleAwardTable(String key, int range, Map<Integer, Integer> ShuffleAwardTable) {
+    public <K, V> void storeShuffleAwardTable(String key, int range, Map<K, V> ShuffleAwardTable) {
 //        将策略id储存 还有该策略的抽奖奖品数量范围
         redissonClient.getBucket(Constants.RedisKey.AWARD_RANGE_KEY + key).set(range);
 //        储存该策略下的奖品搜索表
@@ -128,9 +128,9 @@ public class StrategyRepository implements IStrategyRepository {
     }
 
     @Override
-    public Integer getRandomAwardId(String key, int rangeKey) {
+    public <K, V> Map<K, V> getAwardMap(String key) {
 
-        return (Integer) redissonClient.getMap(Constants.RedisKey.AWARD_TABLE_KEY + key).get(rangeKey);
+        return redissonClient.getMap(Constants.RedisKey.AWARD_TABLE_KEY + key);
     }
 
     @Override
@@ -501,11 +501,26 @@ public class StrategyRepository implements IStrategyRepository {
                     .awardIds(ruleValues)
                     .awardList(awards)
                     .build()
-                    );
+            );
         }
         // 设置缓存 - 实际场景中，这类数据，可以在活动下架的时候统一清空缓存。
         bucket.set(ruleWeightVOS);
         return ruleWeightVOS;
+    }
+
+    @Override
+    public void cacheStrategyArmoryAlgorithm(String key, String beanName) {
+        String cacheKey = Constants.RedisKey.STRATEGY_ARMORY_ALGORITHM_KEY + key;
+        redissonClient.getBucket(cacheKey).set(beanName);
+    }
+
+    @Override
+    public String queryStrategyArmoryAlgorithmFromCache(String key) {
+
+        String cacheKey = Constants.RedisKey.STRATEGY_ARMORY_ALGORITHM_KEY + key;
+        RBucket<String> bucket = redissonClient.<String>getBucket(cacheKey);
+        if (!bucket.isExists()) return null;
+        return bucket.get();
     }
 
     private List<RuleTreeNode> getNodes(String treeId) {

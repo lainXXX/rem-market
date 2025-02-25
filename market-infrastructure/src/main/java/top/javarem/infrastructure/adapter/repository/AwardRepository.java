@@ -10,6 +10,7 @@ import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.support.TransactionTemplate;
 import top.javarem.domain.award.model.aggregate.GiveOutPrizeAggregate;
+import top.javarem.domain.award.model.aggregate.OthersPrizeAggregate;
 import top.javarem.domain.award.model.aggregate.UserAwardRecodeAggregate;
 import top.javarem.domain.award.model.entity.TaskEntity;
 import top.javarem.domain.award.model.entity.UserAwardRecordEntity;
@@ -194,6 +195,42 @@ public class AwardRepository implements IAwardRepository {
                         .one().getAwardKey();
         bucket.set(awardKey);
         return awardKey;
+    }
+
+    @Override
+    public void saveOthersPrizeAggregate(OthersPrizeAggregate othersPrizeAggregate) {
+//        创建数据库映射对应 并把对应数据传入
+        String userId = othersPrizeAggregate.getUserId();
+        UserAwardRecordEntity userAwardRecordEntity = othersPrizeAggregate.getUserAwardRecordEntity();
+        UserAwardRecord userAwardRecord = new UserAwardRecord();
+//        拷贝数据
+        BeanUtils.copyProperties(userAwardRecordEntity, userAwardRecord);
+//        拷贝数据
+        UserCreditAccount userCreditAccount = new UserCreditAccount();
+        userCreditAccount.setAccountStatus(AccountStatusVO.open.getCode());
+//        TODO 路由配置
+        transactionTemplate.execute(status -> {
+            try {
+//            更新奖品记录
+                boolean updateResult = userAwardRecordService.updateAwardRecordCompletedState(userAwardRecord);
+                if (!updateResult) {
+                    log.warn("更新中奖记录, 重复更新拦截 userId:{} giveOutPrizesAggregate:{}", userId, new Gson().toJson(othersPrizeAggregate));
+                    status.setRollbackOnly();
+                }
+//            标记订单为完成
+                userRaffleOrderService.lambdaUpdate()
+                        .set(UserRaffleOrder::getStatus, "used")
+                        .eq(UserRaffleOrder::getUserId, userId)
+                        .eq(UserRaffleOrder::getOrderId, userAwardRecord.getOrderId())
+                        .update();
+                return 1;
+            } catch (DuplicateKeyException e) {
+                status.setRollbackOnly();
+                log.error("更新中奖记录，唯一索引冲突 userId: {} ", userId, e);
+                throw new AppException(ResponseCode.INDEX_DUP.getCode(), e);
+            }
+        });
+
     }
 
 }

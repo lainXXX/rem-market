@@ -54,6 +54,7 @@ public class Constants {
         public static final String ACTIVITY_ACCOUNT_UPDATE_LOCK = "activity_account_update_lock_key_";
         public static final String RATE_LIMITER_KEY = "rate_limiter_key_";
         public static final String RATE_LIMITER_COUNT_KEY = "rate_limiter_count_key_";
+        public static final String STRATEGY_ARMORY_ALGORITHM_KEY = "strategy_armory_algorithm_key_";
     }
 
     @Getter

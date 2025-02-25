@@ -17,13 +17,13 @@ public interface IStrategyRepository {
 
     List<StrategyAwardEntity> getStrategyAwardList(Long strategyId);
 
-    void storeShuffleAwardTable(String key, int range, Map<Integer, Integer> ShuffleAwardTable);
+    <K, V> void storeShuffleAwardTable(String key, int range, Map<K, V> ShuffleAwardTable);
 
     int getAwardRange(Long strategyId);
 
     Integer getAwardRange(String key);
 
-    Integer getRandomAwardId(String key, int rangeKey);
+    <K, V> Map<K, V> getAwardMap(String key);
 
     String getUserRuleModel(String userId);
 
@@ -62,4 +62,19 @@ public interface IStrategyRepository {
     Integer getUserScore(String userId, Long strategyId);
 
     List<RuleWeightVO> queryRuleWeight(Long strategyId);
+
+    /**
+     * 存储抽奖策略对应的Bean算法
+     *
+     * @param key      策略ID
+     * @param beanName 策略对象名称
+     */
+    void cacheStrategyArmoryAlgorithm(String key, String beanName);
+
+    /**
+     * 从缓存中查询策略装配算法名称
+     * @param key cacheKey后缀
+     * @return 策略装配算法名称
+     */
+    String queryStrategyArmoryAlgorithmFromCache(String key);
 }

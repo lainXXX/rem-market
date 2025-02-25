@@ -23,6 +23,8 @@ import java.util.Map;
 @Service
 public class AwardService implements IAwardService{
 
+    private final String OTHERS_BEAN_NAME = "others";
+
     private final IAwardRepository awardRepository;
 
     private final SendAwardMessageEvent sendAwardMessageEvent;
@@ -75,7 +77,12 @@ public class AwardService implements IAwardService{
         }
 
         // 奖品服务
-        IDistributeAward distributeAward = distributeAwardMap.get(awardKey);
+        IDistributeAward distributeAward = null;
+        if (! OTHERS_BEAN_NAME.equals(awardKey)) {
+            distributeAward = distributeAwardMap.get(OTHERS_BEAN_NAME);
+        } else {
+            distributeAward = distributeAwardMap.get(awardKey);
+        }
 
         if (null == distributeAward) {
             log.error("分发奖品，对应的服务不存在。awardKey:{}", awardKey);
